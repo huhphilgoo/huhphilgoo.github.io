@@ -261,20 +261,21 @@ def langnav(current, hrefs):
 
 
 def masthead(depth, right='', nav=''):
-    up = '../' * depth
-    home = f'<a href="{up}">{E(SITE["title"])}</a>' if depth else f'<a href="./">{E(SITE["title"])}</a>'
-    return (f'<div class="masthead">{home}<span class="spacer"></span>'
+    """No wordmark: the owner's handle is deliberately kept off the pages."""
+    return (f'<div class="masthead"><span class="spacer"></span>'
             f'{nav}<span class="meta">{right}</span></div>')
 
 
-def footer(depth, app=None):
+def footer(depth, app=None, lang='en'):
+    """No package id and no developer name here — both were removed at the owner's
+    request. They still appear in the identifier block of each privacy policy, where
+    Google requires them; do not strip them from there."""
     up = '../' * depth
-    left = (f'{E(app["name"])} ({E(app["nameKo"])}) · {E(app["package"])}'
-            if app else f'Apps by {E(DEV["nameKo"])}')
-    privacy = f'<a href="{up}{app["slug"]}/privacy/">Privacy policy</a>' if app else ''
+    left = f'{E(app["name"])} ({E(app["nameKo"])})' if app else ''
+    label = {'en': ('Privacy policy', 'Contact'), 'ko': ('개인정보처리방침', '문의')}[lang]
+    privacy = f'<a href="{up}{app["slug"]}/privacy/">{label[0]}</a>' if app else ''
     return (f'<footer><span>{left}</span><span class="spacer"></span>{privacy}'
-            f'<a href="mailto:{E(DEV["email"])}">Contact</a>'
-            f'<span>Made by {E(DEV["nameKo"])}</span></footer>')
+            f'<a href="mailto:{E(DEV["email"])}">{label[1]}</a></footer>')
 
 
 STORE_ICONS = {
@@ -297,7 +298,13 @@ def store_buttons(app):
 
 # ── privacy page ──────────────────────────────────────────────────────────────
 
-def privacy_page(app):
+def privacy_page(app, lang):
+    """One locale per URL: English at /<slug>/privacy/, Korean at /<slug>/privacy/ko/.
+
+    The identifier block stays on BOTH pages. Google rejected this app's earlier policy
+    precisely because it did not name the app and developer as the store listing does,
+    so the block is not optional decoration — do not remove it to tidy the page up.
+    """
     p = app['privacy']
     store_ko = app['storeNames'].get('play') or app['name']
     dev_ko, dev_en = DEV['nameKo'], DEV['nameEn']
@@ -396,22 +403,33 @@ def privacy_page(app):
     en.append(f'<h2>8. Contact</h2><p>{E(dev_en)} ({E(dev_ko)}) · {E(app["name"])} '
               f'(<code>{E(app["package"])}</code>) · <a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a></p>')
 
+    depth = 2 if lang == 'en' else 3
+    hrefs = ({'en': './', 'ko': 'ko/'} if lang == 'en' else {'en': '../', 'ko': './'})
+    base, slug = SITE['baseUrl'], app['slug']
+    alternates = ''.join(
+        f'\n<link rel="alternate" hreflang="{c}" href="{base}/{slug}/privacy/{"" if c == "en" else "ko/"}">'
+        for c in LANGS)
+
+    if lang == 'ko':
+        eyebrow, heading, sections = '개인정보처리방침', app['nameKo'], ko
+        title = f'{app["nameKo"]} 개인정보처리방침'
+        desc = f'{app["nameKo"]}({app["package"]}) 개인정보처리방침.'
+    else:
+        eyebrow, heading, sections = 'Privacy policy', app['name'], en
+        title = f'{app["name"]} — Privacy policy'
+        desc = f'Privacy policy for {app["name"]} ({app["nameKo"]}), {app["package"]}.'
+
     body = f"""<div class="wrap narrow">
-{masthead(2, E(app['name']))}
+{masthead(depth, E(app['name']), langnav(lang, hrefs))}
 <section class="policy">
-  <p class="eyebrow">Privacy policy · 개인정보처리방침</p>
-  <h1>{E(app['nameKo'])}</h1>
+  <p class="eyebrow">{E(eyebrow)}</p>
+  <h1>{E(heading)}</h1>
   {idblock}
-  <div class="langswitch"><a href="#ko">한국어</a><a href="#en">English</a></div>
-  <h2 id="ko">한국어</h2>
-  {''.join(ko)}
-  <h2 id="en">English</h2>
-  {''.join(en)}
+  {''.join(sections)}
 </section>
-{footer(2, app)}
+{footer(depth, app, lang)}
 </div>"""
-    return page(f'{app["name"]} — Privacy policy', body, 2, '🔒',
-                f'Privacy policy for {app["name"]} ({app["nameKo"]}), {app["package"]}.')
+    return page(title, body, depth, '🔒', desc, lang=lang, head_extra=alternates)
 
 
 # ── landing page ──────────────────────────────────────────────────────────────
@@ -536,7 +554,7 @@ def landing_page(app, lang):
   {shot(2)}
 </section>
 
-{footer(depth, app)}
+{footer(depth, app, lang)}
 </div>"""
 
     summary = app['summary'] if lang == 'en' else app.get('summaryKo', app['summary'])
@@ -591,9 +609,11 @@ def main():
 
     for app in DATA['apps']:
         d = ROOT / app['slug']
-        (d / 'privacy').mkdir(parents=True, exist_ok=True)
-        (d / 'privacy' / 'index.html').write_text(privacy_page(app), encoding='utf-8')
-        print(f'{app["slug"]}/privacy/index.html')
+        for lang in LANGS:
+            target = d / 'privacy' if lang == 'en' else d / 'privacy' / lang
+            target.mkdir(parents=True, exist_ok=True)
+            (target / 'index.html').write_text(privacy_page(app, lang), encoding='utf-8')
+            print(f'{app["slug"]}/privacy/{"" if lang == "en" else lang + "/"}index.html')
         if app.get('landing'):
             for lang in LANGS:
                 target = d if lang == 'en' else d / lang
