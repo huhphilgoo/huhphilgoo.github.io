@@ -66,16 +66,16 @@ SERVICES = {
 E = html.escape
 
 
-def page(title, body, css_depth, favicon='📱', description=''):
+def page(title, body, css_depth, favicon='📱', description='', lang='en', head_extra=''):
     """Wrap body content in a full document. css_depth = how many ../ to reach the root."""
     up = '../' * css_depth
     desc = f'\n<meta name="description" content="{E(description)}">' if description else ''
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{E(title)}</title>{desc}
+<title>{E(title)}</title>{desc}{head_extra}
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{favicon}</text></svg>">
 <link rel="stylesheet" href="{up}assets/site.css">
 </head>
@@ -227,6 +227,15 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
   text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:6px 12px}
 .langswitch a:hover{color:var(--ink);border-color:var(--accent)}
 
+/* EN / KO switcher in the masthead */
+.langnav{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--sheet)}
+.langnav a{font-family:var(--util);font-size:.72rem;letter-spacing:.09em;text-decoration:none;
+  color:var(--muted);padding:5px 11px;line-height:1.5}
+.langnav a+a{border-left:1px solid var(--line)}
+.langnav a:hover{color:var(--ink)}
+.langnav a.on{background:var(--accent);color:var(--accent-ink)}
+.langnav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
 @media (max-width:860px){
   .two,.story{grid-template-columns:1fr}
   .grid{grid-template-columns:repeat(2,1fr)}
@@ -242,11 +251,20 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
 """
 
 
-def masthead(depth, right=''):
+def langnav(current, hrefs):
+    """EN / KO switcher. `hrefs` maps a lang code to its URL relative to the current page."""
+    out = []
+    for code, label in (('en', 'EN'), ('ko', 'KO')):
+        cls = ' class="on"' if code == current else ''
+        out.append(f'<a href="{E(hrefs[code])}" hreflang="{code}"{cls}>{label}</a>')
+    return f'<nav class="langnav" aria-label="Language">{"".join(out)}</nav>'
+
+
+def masthead(depth, right='', nav=''):
     up = '../' * depth
     home = f'<a href="{up}">{E(SITE["title"])}</a>' if depth else f'<a href="./">{E(SITE["title"])}</a>'
     return (f'<div class="masthead">{home}<span class="spacer"></span>'
-            f'<span class="meta">{right}</span></div>')
+            f'{nav}<span class="meta">{right}</span></div>')
 
 
 def footer(depth, app=None):
@@ -398,76 +416,106 @@ def privacy_page(app):
 
 # ── landing page ──────────────────────────────────────────────────────────────
 
-def landing_page(app):
+LANGS = ('en', 'ko')
+
+
+def landing_page(app, lang):
+    """Render one locale of an app's landing page.
+
+    English lives at /<slug>/ and Korean at /<slug>/ko/, so the Korean page sits one
+    level deeper — every relative path below is derived from `depth` rather than
+    hard-coded, which is the thing that breaks when a locale is added carelessly.
+    """
     L = app['landing']
-    head, mark = L['headline']
+    T = L[lang]
+    depth = 1 if lang == 'en' else 2
+    up = '../' * (depth - 1)          # from this page back to the app's own directory
+    base = SITE['baseUrl']
+    slug = app['slug']
+
+    head, mark = T['headline']
     shots = L.get('shots', [])
 
     def shot(i):
         if i >= len(shots):
             return ''
-        src, alt, cap = shots[i]
-        return (f'<figure class="shot"><img src="{E(src)}" alt="{E(alt)}">'
+        s = shots[i]
+        alt, cap = s[lang]
+        return (f'<figure class="shot"><img src="{E(up + s["src"])}" alt="{E(alt)}" loading="lazy">'
                 f'<figcaption class="caption">{E(cap)}</figcaption></figure>')
 
     left = ''.join(f'<li><span class="cross">—</span><span class="gone">{E(x)}</span></li>'
-                   for x in L['left_out'])
+                   for x in T['leftOut'])
     keep = ''.join(f'<li><span class="tick">+</span><span>{E(x)}</span></li>'
-                   for x in L['what_remains'])
-    cells = ''.join(f'<div class="cell"><h3>{E(t)}</h3><p>{E(d)}</p></div>' for t, d in L['features'])
-    sw = ''.join(f'<span class="sw" style="background:{c}" data-hex="{c}"></span>' for c in L.get('palette', []))
-    paras = ''.join(f'<p>{t}</p>' for t in L['story']['paragraphs'])
+                   for x in T['remains'])
+    cells = ''.join(f'<div class="cell"><h3>{E(t)}</h3><p>{E(d)}</p></div>'
+                    for t, d in T['features']['items'])
+    sw = ''.join(f'<span class="sw" style="background:{c}" data-hex="{c}"></span>'
+                 for c in L.get('palette', []))
+    paras = ''.join(f'<p>{t}</p>' for t in T['story']['paragraphs'])
     rules = ''.join(f'<div class="rule"><span class="year">{E(y)}</span><span>{E(t)}</span></div>'
-                    for y, t in L['story']['timeline'])
+                    for y, t in T['story']['timeline'])
 
     palette_section = ''
     if sw:
+        ps = T['paletteSection']
         palette_section = f"""<section>
-  <p class="eyebrow">The palette</p>
-  <h2>These eighteen. That's the whole set.</h2>
-  <p class="lede" style="margin-top:14px">They came from the first version in 2017 and have not
-  changed since. Picking a colour takes one tap, and it takes the same one tap every time.</p>
+  <p class="eyebrow">{E(ps['eyebrow'])}</p>
+  <h2>{E(ps['title'])}</h2>
+  <p class="lede" style="margin-top:14px">{ps['lede']}</p>
   <div class="swatches">{sw}</div>
   {shot(1)}
 </section>"""
 
-    sibling = f'<p class="lede" style="margin-top:18px">{L["sibling"]}</p>' if L.get('sibling') else ''
+    sibling = (f'<p class="lede" style="margin-top:18px">{T["story"]["sibling"]}</p>'
+               if T['story'].get('sibling') else '')
+
+    privacy_href = f'{up}privacy/'
+    privacy_lede = T['privacySection']['lede'].replace(
+        '{privacy}', f'<a href="{privacy_href}">{E(T["privacyLinkText"])}</a>')
+
+    # Cross-locale links, plus hreflang so search engines pair the two pages.
+    hrefs = {'en': up or './', 'ko': f'{up}ko/'} if lang == 'en' else {'en': '../', 'ko': './'}
+    alternates = ''.join(
+        f'\n<link rel="alternate" hreflang="{c}" href="{base}/{slug}/{"" if c == "en" else "ko/"}">'
+        for c in LANGS)
+
+    idea, feat, story, priv, close = (T['idea'], T['features'], T['story'],
+                                      T['privacySection'], T['close'])
 
     body = f"""<div class="wrap">
-{masthead(1, 'Free · iOS &amp; Android')}
+{masthead(depth, T['meta'], langnav(lang, hrefs))}
 
 <section class="hero">
   <h1>{E(head)}
     <span class="markword">{E(mark)}<svg viewBox="0 0 340 24" aria-hidden="true"><path d="M4 16 C58 6, 96 20, 150 12 C204 4, 246 18, 336 9"/></svg></span>.
   </h1>
-  <p class="lede">{E(L['lede'])}</p>
+  <p class="lede">{T['lede']}</p>
   {store_buttons(app)}
   {shot(0)}
 </section>
 
 <section>
-  <p class="eyebrow">The idea</p>
-  <h2>Most of the work went into what isn't here.</h2>
-  <p class="lede" style="margin-top:14px">Every drawing app I tried wanted something from me before it
-  would let me draw a line. {E(app['name'])} asks for nothing. That constraint decided every feature
-  below — including the ones I removed.</p>
+  <p class="eyebrow">{E(idea['eyebrow'])}</p>
+  <h2>{E(idea['title'])}</h2>
+  <p class="lede" style="margin-top:14px">{idea['lede']}</p>
   <div class="two">
-    <div class="card"><h3>Left out, on purpose</h3><ul class="list">{left}</ul></div>
-    <div class="card"><h3>What that leaves</h3><ul class="list">{keep}</ul></div>
+    <div class="card"><h3>{E(T['leftOutTitle'])}</h3><ul class="list">{left}</ul></div>
+    <div class="card"><h3>{E(T['remainsTitle'])}</h3><ul class="list">{keep}</ul></div>
   </div>
 </section>
 
 <section>
-  <p class="eyebrow">What's in it</p>
-  <h2>Six things, done properly.</h2>
+  <p class="eyebrow">{E(feat['eyebrow'])}</p>
+  <h2>{E(feat['title'])}</h2>
   <div class="grid">{cells}</div>
 </section>
 
 {palette_section}
 
 <section>
-  <p class="eyebrow">Where it came from</p>
-  <h2>Nine years, one screen.</h2>
+  <p class="eyebrow">{E(story['eyebrow'])}</p>
+  <h2>{E(story['title'])}</h2>
   <div class="story">
     <div>{paras}</div>
     <div>{rules}</div>
@@ -476,25 +524,23 @@ def landing_page(app):
 </section>
 
 <section>
-  <p class="eyebrow">Privacy</p>
-  <h2>Your drawings stay on your phone.</h2>
-  <p class="lede" style="margin-top:14px">There is no server to upload them to. Everything is handled on
-  the device and is gone when you delete the app. The app is free and carries ads, which means Google
-  AdMob and Firebase Analytics collect the usual advertising identifier and device information — all of
-  it written out in the <a href="privacy/">privacy policy</a>.</p>
+  <p class="eyebrow">{E(priv['eyebrow'])}</p>
+  <h2>{E(priv['title'])}</h2>
+  <p class="lede" style="margin-top:14px">{privacy_lede}</p>
 </section>
 
 <section>
-  <h2>Go draw something.</h2>
-  <p class="lede" style="margin-top:12px">Free on both stores. It works offline, so you can install it
-  now and use it on the plane.</p>
+  <h2>{E(close['title'])}</h2>
+  <p class="lede" style="margin-top:12px">{close['lede']}</p>
   {store_buttons(app)}
   {shot(2)}
 </section>
 
-{footer(1, app)}
+{footer(depth, app)}
 </div>"""
-    return page(app['name'], body, 1, '🎨', app['summary'])
+
+    summary = app['summary'] if lang == 'en' else app.get('summaryKo', app['summary'])
+    return page(app['name'], body, depth, '🎨', summary, lang=lang, head_extra=alternates)
 
 
 # ── hub ───────────────────────────────────────────────────────────────────────
@@ -549,8 +595,11 @@ def main():
         (d / 'privacy' / 'index.html').write_text(privacy_page(app), encoding='utf-8')
         print(f'{app["slug"]}/privacy/index.html')
         if app.get('landing'):
-            (d / 'index.html').write_text(landing_page(app), encoding='utf-8')
-            print(f'{app["slug"]}/index.html')
+            for lang in LANGS:
+                target = d if lang == 'en' else d / lang
+                target.mkdir(parents=True, exist_ok=True)
+                (target / 'index.html').write_text(landing_page(app, lang), encoding='utf-8')
+                print(f'{app["slug"]}/{"" if lang == "en" else lang + "/"}index.html')
 
     (ROOT / '.nojekyll').touch()
 

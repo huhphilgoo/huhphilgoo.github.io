@@ -5,8 +5,9 @@ single `app-ads.txt` that AdMob reads. Served by GitHub Pages straight from `mai
 
     https://huhphilgoo.github.io/                    hub
     https://huhphilgoo.github.io/app-ads.txt         AdMob verification
-    https://huhphilgoo.github.io/paintboard/         landing page
-    https://huhphilgoo.github.io/paintboard/privacy/ privacy policy
+    https://huhphilgoo.github.io/paintboard/         landing page (English)
+    https://huhphilgoo.github.io/paintboard/ko/      landing page (한국어)
+    https://huhphilgoo.github.io/paintboard/privacy/ privacy policy (both languages)
 
 ## Everything here is generated
 
@@ -23,6 +24,9 @@ files in the repo *are* the site.
 1. Add an entry to `src/apps.json`.
 2. Drop web-sized screenshots in `<slug>/assets/` if the app gets a landing page.
    Set `"landing": null` for apps that only need a privacy policy.
+   A landing page needs an `en` and a `ko` block; English renders at `/<slug>/` and
+   Korean at `/<slug>/ko/`, cross-linked by the EN/KO switcher and `hreflang` tags.
+   Images and the palette are shared between the two, so they are declared once.
 3. Run `python3 src/build.py`, review, commit, push.
 4. Point the store listings at the new URL:
    - Play Console → 앱 콘텐츠 → 개인정보처리방침 → `…/<slug>/privacy/`

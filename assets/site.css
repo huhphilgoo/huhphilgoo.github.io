@@ -137,6 +137,15 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
   text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:6px 12px}
 .langswitch a:hover{color:var(--ink);border-color:var(--accent)}
 
+/* EN / KO switcher in the masthead */
+.langnav{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--sheet)}
+.langnav a{font-family:var(--util);font-size:.72rem;letter-spacing:.09em;text-decoration:none;
+  color:var(--muted);padding:5px 11px;line-height:1.5}
+.langnav a+a{border-left:1px solid var(--line)}
+.langnav a:hover{color:var(--ink)}
+.langnav a.on{background:var(--accent);color:var(--accent-ink)}
+.langnav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
 @media (max-width:860px){
   .two,.story{grid-template-columns:1fr}
   .grid{grid-template-columns:repeat(2,1fr)}
