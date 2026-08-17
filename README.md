@@ -1,27 +1,49 @@
 # huhphilgoo.github.io
 
-Root site for the developer domain. It exists so that files which **must** live at a
-domain root can be served — chiefly `app-ads.txt`.
+One site for every app: the hub, each app's landing page and privacy policy, and the
+single `app-ads.txt` that AdMob reads. Served by GitHub Pages straight from `main`.
 
-## app-ads.txt
+    https://huhphilgoo.github.io/                    hub
+    https://huhphilgoo.github.io/app-ads.txt         AdMob verification
+    https://huhphilgoo.github.io/paintboard/         landing page
+    https://huhphilgoo.github.io/paintboard/privacy/ privacy policy
 
-AdMob verifies app ownership by reading the developer website declared in the app's
-store listing and fetching `<that domain>/app-ads.txt`. The path is fixed by the IAB
-spec: root only, lowercase, plain text. A subpath (e.g. `/paintboard-site/app-ads.txt`)
-is not read, and a blog that redirects unknown paths to its homepage returns HTML and
-fails the format check — that was the original problem with `goodgods.com`.
+## Everything here is generated
 
-Current entry covers every app under AdMob publisher `pub-4185693428426764`
-(PaintBoard / 그림판 on both stores, and any future app on the same publisher ID):
+Do **not** hand-edit the HTML — it is overwritten on every build. Edit `src/apps.json`
+(the data) or `src/build.py` (the templates and stylesheet), then:
 
-    google.com, pub-4185693428426764, DIRECT, f08c47fec0942fa0
+    python3 src/build.py
 
-For this to work, the store listing's website field must point at
-`https://huhphilgoo.github.io` — Play Console → 스토어 설정 → 스토어 등록정보 연락처
-세부정보 → 웹사이트, and App Store Connect → 앱 정보 → 마케팅 URL.
+Commit the result. There is no CI and no build step on GitHub's side; the generated
+files in the repo *are* the site.
 
-Adding another ad network later means adding one more line; do not remove this one.
+## Adding an app
 
-## Apps
+1. Add an entry to `src/apps.json`.
+2. Drop web-sized screenshots in `<slug>/assets/` if the app gets a landing page.
+   Set `"landing": null` for apps that only need a privacy policy.
+3. Run `python3 src/build.py`, review, commit, push.
+4. Point the store listings at the new URL:
+   - Play Console → 앱 콘텐츠 → 개인정보처리방침 → `…/<slug>/privacy/`
+   - App Store Connect → 앱 정보 → 개인정보 보호 정책 URL → same
 
-- PaintBoard (그림판) — landing page: https://huhphilgoo.github.io/paintboard-site/
+## Two rules that are easy to get wrong
+
+**`app-ads.txt` must stay at the repo root.** The IAB spec reads it only from a domain
+root — `/paintboard/app-ads.txt` would never be found. It is generated from the
+`adNetworks` list, and one file covers every app sharing those publisher IDs. AdMob
+locates it through the **website field of the store listing**, so that field must be
+`https://huhphilgoo.github.io` (root, no path).
+
+**Every app needs its own privacy page.** Google rejects a policy that does not identify
+the app and developer exactly as the store listing does — a shared template page naming
+no app is precisely what got PaintBoard flagged in August 2026. That is why the
+identifiers live in `apps.json` and every page is rebuilt from them rather than copied.
+
+## Why not a blog
+
+The policies used to live on Tistory. A blog cannot serve `app-ads.txt` from a domain
+root (unknown paths return the blog homepage as HTML, which fails the format check), it
+gives no version history for a legal document, and one shared post cannot satisfy the
+per-app identification requirement.

@@ -1,0 +1,115 @@
+{
+  "site": {
+    "title": "huhphilgoo",
+    "intro": "Apps by 허필구. Small, fast, and free — no accounts, no subscriptions.",
+    "baseUrl": "https://huhphilgoo.github.io"
+  },
+
+  "developer": {
+    "nameKo": "허필구",
+    "nameEn": "Heo Philgoo",
+    "email": "pgmagician@gmail.com"
+  },
+
+  "_adNetworksNote": "One app-ads.txt at the domain root covers every app on these publisher IDs. Add a line only when a new ad network is added; never remove an existing one.",
+  "adNetworks": [
+    { "domain": "google.com", "publisherId": "pub-4185693428426764", "relationship": "DIRECT", "certId": "f08c47fec0942fa0" }
+  ],
+
+  "_appsNote": "One entry per app. `storeNames` MUST match the store listings exactly — Google rejects a privacy policy that does not identify the app and developer as listed. Set `landing` to null for apps that only need a privacy page.",
+  "apps": [
+    {
+      "slug": "paintboard",
+      "name": "PaintBoard",
+      "nameKo": "그림판",
+      "accent": "#ED1C24",
+      "accentDark": "#FF4A44",
+      "package": "com.huhfeelgood.drawing",
+      "storeNames": {
+        "play": "그림판",
+        "appStore": "paintboard - simple board"
+      },
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=com.huhfeelgood.drawing",
+        "appStore": "https://apps.apple.com/app/id1196581980"
+      },
+      "summary": "A sketchpad that opens instantly and gets out of the way.",
+      "policyUpdated": { "ko": "2026년 8월 18일", "en": "August 18, 2026" },
+
+      "privacy": {
+        "collectsDirectly": false,
+        "storage": {
+          "ko": "이용자가 앱에서 만든 그림, 입력한 텍스트, 불러온 사진은 이용자의 기기 안에서만 처리되며 개발자의 서버로 전송되지 않습니다.",
+          "en": "Drawings, text, and imported photos are processed entirely on your device and are never transmitted to the developer."
+        },
+        "services": ["admob", "firebaseAnalytics"],
+        "consent": { "ump": true, "att": true },
+        "permissions": [
+          {
+            "ko": ["사진/미디어 접근", "이용자가 선택한 사진을 캔버스 배경으로 불러오기", "선택한 사진만 앱 내에서 처리하며 외부로 전송하지 않음"],
+            "en": ["Photos and media", "To load a photo you select as a canvas background", "Only the selected photo is used, and it never leaves your device"]
+          },
+          {
+            "ko": ["사진 저장 및 공유", "완성한 그림을 PNG 이미지로 저장하거나 다른 앱으로 공유", "이용자가 직접 실행할 때만 동작"],
+            "en": ["Save and share", "To export your drawing as a PNG or share it to another app", "Only when you initiate it"]
+          },
+          {
+            "ko": ["네트워크 접근", "광고 수신 및 이용 통계 전송", "그리기 기능 자체는 오프라인에서도 동작"],
+            "en": ["Network access", "To receive ads and send usage analytics", "The drawing features themselves work offline"]
+          }
+        ],
+        "minAge": 18
+      },
+
+      "landing": {
+        "headline": ["Open it and", "draw"],
+        "lede": "No account. No tutorial. No subscription. A sketchpad that is ready the moment the screen is, and gets out of the way after that.",
+        "left_out": [
+          "A colour picker",
+          "Accounts and sign-in",
+          "Subscriptions and in-app purchases",
+          "Layers, blend modes, brush engines",
+          "Onboarding and tooltips",
+          "A cloud that holds your drawings"
+        ],
+        "what_remains": [
+          "Eighteen colours, chosen once so you don't have to",
+          "Four tools: brush, pencil, marker, eraser",
+          "Text you can drag, resize and rotate",
+          "Any photo as the canvas background",
+          "Full offline use — the network is only for ads",
+          "Export or share as PNG, straight from the canvas"
+        ],
+        "features": [
+          ["Four tools", "Brush, pencil, marker and eraser — each with its own weight and edge, not one slider pretending to be four."],
+          ["Eighteen colours", "A fixed palette. No wheel, no hex field, no decision to make before the first stroke."],
+          ["Text on canvas", "Type anywhere, then move, resize or rotate it. It lives in the drawing, so the eraser treats it like ink."],
+          ["Photo backgrounds", "Drop in a photo and draw over it. The photo never leaves the device."],
+          ["Zoom, pan, rotate", "Pinch to zoom for detail, rotate the canvas ninety degrees when the drawing wants a different orientation."],
+          ["Share as PNG", "One tap to save to your photos or hand it to any other app."]
+        ],
+        "_paletteNote": "The real kPaletteColors from lib/models/drawing_models.dart in the drawing repo. Update here if that list ever changes.",
+        "palette": ["#ED1C24", "#FF7F27", "#FFF200", "#22B14C", "#00A2E8", "#FFAEC9", "#FFC90E", "#EFE4B0", "#B5E61D", "#99D9EA", "#000000", "#3F48CC", "#A349A4", "#7F7F7F", "#FFFFFF", "#7092BE", "#C8BFE7", "#C3C3C3"],
+        "shots": [
+          ["assets/draw.jpg", "A hand-drawn sketch of hills, grass and a sun on PaintBoard's white canvas, with the tool panel and colour palette on the right", "The whole app. One screen, no menus."],
+          ["assets/text.jpg", "Korean text typed onto the same sketch, over a lilac background", "Text behaves like ink — it can be drawn over, and erased."],
+          ["assets/background.jpg", "The same sketch with the canvas background filled sky blue from the palette", "One tap fills the background — the drawing stays on top."]
+        ],
+        "story": {
+          "paragraphs": [
+            "I wrote the first version in <strong>2017</strong> as a native iOS app, for one reason: I wanted to sketch something quickly and every app on my phone made me set up first.",
+            "This year I rewrote it from nothing in <strong>Flutter</strong>, so the Android half of the world could have it too. The rewrite was almost entirely an exercise in restraint — the temptation to add layers, brushes and a colour wheel is constant, and every one of them would have cost the thing that makes it useful.",
+            "It is still one screen. It still opens in under a second. It still has eighteen colours."
+          ],
+          "timeline": [
+            ["2017", "First release — native Swift, iPhone and iPad"],
+            ["2024", "Text on canvas, photo backgrounds"],
+            ["2026", "Rewritten in Flutter; Android release"],
+            ["Now", "Version 3.0.1, on both stores"]
+          ]
+        },
+        "sibling": "There's also <strong>PaintBoardPro</strong> on the App Store — a separate app with a full colour picker, not a paid tier of this one. PaintBoard is deliberately the simpler of the two, and it stays free."
+      }
+    }
+  ]
+}
