@@ -309,6 +309,18 @@ def privacy_page(app, lang):
     # iOS-only apps have no Play listing; fall back to the Korean App Store name
     store_ko = (app['storeNames'].get('play') or app['storeNames'].get('appStoreKo')
                 or app['name'])
+
+    # Ad-ID reset paths differ per platform; naming a store the app isn't on reads as
+    # boilerplate, so derive the list from the app's own store links.
+    has_play, has_ios = bool(app['links'].get('play')), bool(app['links'].get('appStore'))
+    if not (has_play or has_ios):
+        has_play = has_ios = True
+    adid_ko = ' / '.join(x for x, on in (
+        ('Android: 설정 → Google → 광고', has_play),
+        ('iOS: 설정 → 개인정보 보호 및 보안 → 추적', has_ios)) if on)
+    adid_en = '; '.join(x for x, on in (
+        ('Android: Settings → Google → Ads', has_play),
+        ('iOS: Settings → Privacy &amp; Security → Tracking', has_ios)) if on)
     dev_ko, dev_en = DEV['nameKo'], DEV['nameEn']
     upd = app['policyUpdated']
 
@@ -355,8 +367,7 @@ def privacy_page(app, lang):
               '어떠한 정보도 공유하지 않습니다.</p>')
     ko.append('<h2>5. 데이터 보관 및 삭제</h2><ul>'
               '<li>이용자가 앱에서 만든 데이터와 설정값은 기기 내부에만 저장되며, <strong>앱을 삭제하면 함께 삭제</strong>됩니다.</li>'
-              '<li>광고 식별자의 재설정 및 삭제는 기기 설정에서 하실 수 있습니다. '
-              'Android: 설정 → Google → 광고 / iOS: 설정 → 개인정보 보호 및 보안 → 추적</li>'
+              f'<li>광고 식별자의 재설정 및 삭제는 기기 설정에서 하실 수 있습니다. {adid_ko}</li>'
               f'<li>제3자 서비스에 수집된 정보의 삭제를 원하시는 경우 <a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a>로 연락해 주시면 안내해 드립니다.</li></ul>')
     ko.append(f'<h2>6. 아동의 개인정보</h2><p>본 앱은 만 {p["minAge"]}세 미만 아동을 대상으로 하지 않으며, '
               '아동으로부터 고의로 개인정보를 수집하지 않습니다.</p>')
@@ -395,8 +406,8 @@ def privacy_page(app, lang):
               'third-party services listed in section 2 (Google LLC) under their own policies.</p>')
     en.append('<h2>5. Retention and deletion</h2><p>Your data and settings are stored only on your device '
               'and are removed when you uninstall the app. You can reset or delete your advertising ID in '
-              'your device settings (Android: Settings → Google → Ads; iOS: Settings → Privacy &amp; Security → '
-              f'Tracking). For deletion requests concerning third-party data, contact '
+              f'your device settings ({adid_en}). '
+              f'For deletion requests concerning third-party data, contact '
               f'<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a>.</p>')
     en.append(f'<h2>6. Children’s privacy</h2><p>This app is not directed to children under the age of '
               f'{p["minAge"]}, and the developer does not knowingly collect personal information from them.</p>')
