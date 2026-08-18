@@ -487,6 +487,9 @@ def landing_page(app, lang):
   {shot(1)}
 </section>"""
 
+    # Apps without a palette have no home for shot(1); give it to the features section
+    feature_shot = '' if sw else shot(1)
+
     sibling = (f'<p class="lede" style="margin-top:18px">{T["story"]["sibling"]}</p>'
                if T['story'].get('sibling') else '')
 
@@ -528,7 +531,7 @@ def landing_page(app, lang):
 <section>
   <p class="eyebrow">{E(feat['eyebrow'])}</p>
   <h2>{E(feat['title'])}</h2>
-  <div class="grid">{cells}</div>
+  <div class="grid">{cells}</div>{feature_shot}
 </section>
 
 {palette_section}
