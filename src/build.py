@@ -306,7 +306,9 @@ def privacy_page(app, lang):
     so the block is not optional decoration — do not remove it to tidy the page up.
     """
     p = app['privacy']
-    store_ko = app['storeNames'].get('play') or app['name']
+    # iOS-only apps have no Play listing; fall back to the Korean App Store name
+    store_ko = (app['storeNames'].get('play') or app['storeNames'].get('appStoreKo')
+                or app['name'])
     dev_ko, dev_en = DEV['nameKo'], DEV['nameEn']
     upd = app['policyUpdated']
 

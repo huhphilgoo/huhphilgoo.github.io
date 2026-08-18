@@ -358,6 +358,78 @@
           }
         }
       }
+    },
+    {
+      "slug": "bshort",
+      "name": "bshort",
+      "nameKo": "bshort - 감성 숏츠 메이커",
+      "package": "com.huhfeelgood.bshort",
+      "storeNames": {
+        "appStore": "bshort - Aesthetic Shorts",
+        "appStoreKo": "bshort - 감성 숏츠 메이커"
+      },
+      "links": {
+        "appStore": "https://apps.apple.com/app/id6794173490"
+      },
+      "summary": "Pick a few photos and get a vertical short — no timeline, no editing.",
+      "summaryKo": "사진 몇 장 고르면 세로 숏츠가 나옵니다. 편집 화면 없음.",
+      "policyUpdated": {
+        "ko": "2026년 8월 18일",
+        "en": "August 18, 2026"
+      },
+      "privacy": {
+        "storage": {
+          "ko": "이용자가 선택한 사진과 동영상, 불러온 음악 파일, 완성된 영상은 모두 이용자의 기기 안에서만 처리되며 개발자의 서버로 전송되지 않습니다. 영상 합성도 기기에서 직접 이루어집니다. 본 앱은 회원가입이나 계정이 없습니다.",
+          "en": "The photos and videos you select, any music you import, and the finished video are processed entirely on your device and are never transmitted to the developer. Rendering happens on the device itself. The app has no accounts and no sign-in."
+        },
+        "services": [
+          "admob"
+        ],
+        "consent": {
+          "ump": false,
+          "att": true
+        },
+        "permissions": [
+          {
+            "ko": [
+              "사진 앨범에 추가",
+              "완성된 영상을 이용자의 사진 앨범에 저장",
+              "저장을 누를 때만 동작하며, 앨범의 기존 사진을 읽지 않음"
+            ],
+            "en": [
+              "Add to Photos",
+              "To save the finished video to your photo library",
+              "Only when you tap save; the app does not read your existing photos"
+            ]
+          },
+          {
+            "ko": [
+              "추적 허용 여부 (ATT)",
+              "맞춤 광고 제공 여부를 이용자가 선택",
+              "거부해도 앱의 모든 기능을 그대로 사용할 수 있음"
+            ],
+            "en": [
+              "Tracking permission (ATT)",
+              "To let you choose whether ads are personalized",
+              "Declining does not restrict any feature of the app"
+            ]
+          },
+          {
+            "ko": [
+              "네트워크 접근",
+              "광고 수신",
+              "영상 제작 기능 자체는 오프라인에서도 동작"
+            ],
+            "en": [
+              "Network access",
+              "To receive ads",
+              "Creating videos works offline"
+            ]
+          }
+        ],
+        "minAge": 14
+      },
+      "landing": null
     }
   ]
 }
