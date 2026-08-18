@@ -416,6 +416,18 @@ def privacy_page(app, lang):
     en.append(f'<h2>8. Contact</h2><p>{E(dev_en)} ({E(dev_ko)}) · {E(app["name"])} '
               f'(<code>{E(app["package"])}</code>) · <a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a></p>')
 
+    # An app may supply its own numbered sections instead of the shared boilerplate.
+    # The intro paragraph is kept either way — it carries the app, package and developer
+    # names that a store review checks for. Bodies are raw HTML, like the landing prose.
+    if p.get('sections'):
+        ko, en = ko[:1], en[:1]
+        for n, sec in enumerate(p['sections'], 1):
+            mail = f'<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a>'
+            ko.append(f'<h2>{n}. {E(sec["ko"]["title"])}</h2>'
+                      + sec['ko']['body'].replace('{email}', mail))
+            en.append(f'<h2>{n}. {E(sec["en"]["title"])}</h2>'
+                      + sec['en']['body'].replace('{email}', mail))
+
     depth = 2 if lang == 'en' else 3
     hrefs = ({'en': './', 'ko': 'ko/'} if lang == 'en' else {'en': '../', 'ko': './'})
     base, slug = SITE['baseUrl'], app['slug']
