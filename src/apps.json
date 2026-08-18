@@ -374,8 +374,8 @@
       "summary": "Pick a few photos and get a vertical short — no timeline, no editing.",
       "summaryKo": "사진 몇 장 고르면 세로 숏츠가 나옵니다. 편집 화면 없음.",
       "policyUpdated": {
-        "ko": "2026년 8월 18일",
-        "en": "August 18, 2026"
+        "ko": "2026년 8월 19일",
+        "en": "August 19, 2026"
       },
       "privacy": {
         "storage": {
@@ -463,11 +463,11 @@
           {
             "ko": {
               "title": "광고",
-              "body": "<p>본 앱은 무료이며 Google AdMob 광고가 붙습니다. 광고는 템플릿 목록 사이에 카드 형태로 표시됩니다.</p>\n<p>Google AdMob이 수집하는 항목은 광고 식별자(IDFA), 기기 정보(모델·iOS 버전·언어·국가), IP 주소로 추정한 대략적인 위치, 광고 노출 및 클릭 기록입니다. 광고 게재와 성과 측정, 광고 사기 방지에 쓰이고, 이용자가 동의한 경우 맞춤 광고에도 쓰입니다. 처리 주체는 Google LLC이며 자세한 내용은 <a href=\"https://policies.google.com/technologies/ads\">Google 광고 정책</a>에서 확인하실 수 있습니다.</p>\n<p><strong>맞춤 광고 동의</strong> — 앱을 처음 실행할 때 iOS의 앱 추적 투명성(ATT) 안내가 표시됩니다. 거부하시면 맞춤 광고에 쓰이는 식별자가 제공되지 않으며, 그래도 앱의 모든 기능은 그대로 동작합니다. 선택은 나중에 <strong>설정 → 개인정보 보호 및 보안 → 추적</strong>에서 언제든 바꾸실 수 있습니다.</p>\n<p>광고를 받아오는 때를 제외하면 본 앱은 네트워크를 사용하지 않습니다.</p>"
+              "body": "<p>본 앱은 무료이며 Google AdMob 광고가 붙습니다. 광고는 템플릿 목록 사이에 카드 형태로 표시됩니다.</p>\n<p>Google이 공표한 바에 따르면 Google Mobile Ads SDK는 다음을 수집합니다.</p>\n<ul>\n<li><strong>기기 식별자</strong> — 광고 식별자(IDFA) 등</li>\n<li><strong>광고 데이터</strong> — 표시된 광고와 노출·클릭 기록</li>\n<li><strong>대략적인 위치</strong> — IP 주소에서 추정하며, 앱은 위치 권한을 쓰지 않습니다</li>\n<li><strong>상호작용 기록</strong> — 앱 실행, 탭 등</li>\n<li><strong>구입 내역</strong></li>\n<li><strong>충돌 로그와 실적 데이터</strong> — 실행 시간·응답 지연 등 진단 정보이며 추적에는 쓰이지 않습니다</li>\n</ul>\n<p>광고 게재와 성과 측정, 광고 사기 방지에 쓰이고, 이용자가 동의한 경우 맞춤 광고에도 쓰입니다. 앱에는 계정이 없으므로 이 정보들은 이용자의 신원에 연결되지 않습니다. 처리 주체는 Google LLC이며, 자세한 내용은 <a href=\"https://policies.google.com/technologies/ads\">Google 광고 정책</a>과 <a href=\"https://developers.google.com/admob/ios/privacy/data-disclosure\">AdMob 데이터 공개 문서</a>에서 확인하실 수 있습니다.</p>\n<p><strong>맞춤 광고 동의</strong> — 앱을 처음 실행할 때 iOS의 앱 추적 투명성(ATT) 안내가 표시됩니다. 거부하시면 맞춤 광고에 쓰이는 식별자가 제공되지 않으며, 그래도 앱의 모든 기능은 그대로 동작합니다. 선택은 나중에 <strong>설정 → 개인정보 보호 및 보안 → 추적</strong>에서 언제든 바꾸실 수 있습니다.</p>\n<p>광고를 받아오는 때를 제외하면 본 앱은 네트워크를 사용하지 않습니다.</p>"
             },
             "en": {
               "title": "Advertising",
-              "body": "<p>The app is free and carries Google AdMob ads, shown as cards between the templates.</p>\n<p>AdMob collects your advertising identifier (IDFA), device information (model, iOS version, language, country), an approximate location derived from your IP address, and a record of ad impressions and clicks. It uses these to serve and measure ads and to prevent ad fraud, and — where you have agreed — to personalize them. The processor is Google LLC; their <a href=\"https://policies.google.com/technologies/ads\">advertising policy</a> has the detail.</p>\n<p><strong>Your choice about personalized ads.</strong> On first launch, iOS shows the App Tracking Transparency prompt. Decline it and no identifier is shared for personalization — every feature of the app still works. You can change the choice at any time under <strong>Settings → Privacy &amp; Security → Tracking</strong>.</p>\n<p>Apart from fetching ads, the app does not use the network.</p>"
+              "body": "<p>The app is free and carries Google AdMob ads, shown as cards between the templates.</p>\n<p>By Google's own disclosure, the Google Mobile Ads SDK collects:</p>\n<ul>\n<li><strong>Device identifiers</strong> — the advertising identifier (IDFA) and similar</li>\n<li><strong>Advertising data</strong> — which ads were shown, and impression and click records</li>\n<li><strong>Approximate location</strong> — derived from your IP address; the app itself uses no location permission</li>\n<li><strong>Interaction data</strong> — app launches, taps and similar</li>\n<li><strong>Purchase history</strong></li>\n<li><strong>Crash logs and performance data</strong> — diagnostics such as launch time and hang rate, not used for tracking</li>\n</ul>\n<p>These are used to serve and measure ads and to prevent ad fraud, and — where you have agreed — to personalize them. The app has no account, so none of it is linked to your identity. The processor is Google LLC; the detail is in their <a href=\"https://policies.google.com/technologies/ads\">advertising policy</a> and <a href=\"https://developers.google.com/admob/ios/privacy/data-disclosure\">AdMob data disclosure</a>.</p>\n<p><strong>Your choice about personalized ads.</strong> On first launch, iOS shows the App Tracking Transparency prompt. Decline it and no identifier is shared for personalization — every feature of the app still works. You can change the choice at any time under <strong>Settings → Privacy &amp; Security → Tracking</strong>.</p>\n<p>Apart from fetching ads, the app does not use the network.</p>"
             }
           },
           {
