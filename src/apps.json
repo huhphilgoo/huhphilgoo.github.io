@@ -739,6 +739,329 @@
           }
         }
       }
+    },
+    {
+      "slug": "paintboardpro",
+      "name": "PaintBoardPro",
+      "nameKo": "그림판 프로",
+      "package": "com.huhfeelgood.paintboardpro",
+      "storeNames": {
+        "play": "그림판 프로",
+        "appStore": "paintBoardPro",
+        "appStoreKo": "그림판 프로"
+      },
+      "links": {
+        "appStore": "https://apps.apple.com/app/id1567221567"
+      },
+      "comingSoon": [
+        "play"
+      ],
+      "summary": "A drawing board that takes a stylus seriously — five pen tips, pressure, and shapes that snap clean.",
+      "summaryKo": "펜을 제대로 쓰는 그림판. 펜촉 다섯 가지, 필압, 그리고 삐뚤게 그려도 반듯해지는 도형.",
+      "policyUpdated": {
+        "ko": "2026년 8월 19일",
+        "en": "August 19, 2026"
+      },
+      "privacy": {
+        "storage": {
+          "ko": "이용자가 앱에서 그린 그림, 입력한 텍스트, 불러온 사진은 이용자의 기기 안에서만 처리되며 개발자의 서버로 전송되지 않습니다. 본 앱은 회원가입이나 계정이 없고, 그림을 보관하는 클라우드도 두고 있지 않습니다. 그림을 공유할 때만 PNG 파일이 기기의 임시 폴더에 잠시 생성되며, 운영체제가 이를 정리합니다.",
+          "en": "Drawings, text, and imported photos are processed entirely on your device and are never transmitted to the developer. The app has no accounts, no sign-in, and no cloud storage for your work. Sharing a drawing briefly writes a PNG to the app's temporary folder, which the operating system clears."
+        },
+        "services": [
+          "admob",
+          "firebaseAnalytics"
+        ],
+        "consent": {
+          "ump": true,
+          "att": true
+        },
+        "permissions": [
+          {
+            "ko": [
+              "사진 접근",
+              "이용자가 선택한 사진을 캔버스 배경으로 불러오기",
+              "운영체제의 사진 선택기가 전달한 사진 한 장만 처리하며, 앨범의 다른 사진은 읽지 않음"
+            ],
+            "en": [
+              "Photo access",
+              "To load a photo you select as a canvas background",
+              "Only the single photo handed over by the system picker is used; the rest of your library is never read"
+            ]
+          },
+          {
+            "ko": [
+              "사진 저장 및 공유",
+              "완성한 그림을 PNG 이미지로 저장하거나 다른 앱으로 공유",
+              "이용자가 공유 버튼을 누를 때만 동작"
+            ],
+            "en": [
+              "Save and share",
+              "To export your drawing as a PNG or send it to another app",
+              "Only when you tap share"
+            ]
+          },
+          {
+            "ko": [
+              "추적 허용 여부 (ATT)",
+              "맞춤 광고를 받을지 이용자가 선택",
+              "거부해도 앱의 모든 기능을 그대로 사용할 수 있음"
+            ],
+            "en": [
+              "Tracking permission (ATT)",
+              "To let you choose whether ads are personalized",
+              "Declining does not restrict any feature of the app"
+            ]
+          },
+          {
+            "ko": [
+              "네트워크 접근",
+              "광고 수신 및 이용 통계 전송",
+              "그리기 기능 자체는 오프라인에서도 동작"
+            ],
+            "en": [
+              "Network access",
+              "To receive ads and send usage analytics",
+              "The drawing features themselves work offline"
+            ]
+          }
+        ],
+        "minAge": 18
+      },
+      "landing": {
+        "shots": [
+          {
+            "src": "assets/draw.jpg",
+            "en": [
+              "A hand-drawn landscape — house, tree, hills and a sun — on PaintBoardPro's white canvas, with the floating toolbar along the top",
+              "One canvas, one toolbar. Everything else gets out of the way."
+            ],
+            "ko": [
+              "흰 캔버스에 손으로 그린 집과 나무, 언덕과 태양. 위쪽에 떠 있는 도구 막대",
+              "캔버스 하나, 도구 막대 하나. 나머지는 물러나 있습니다."
+            ]
+          },
+          {
+            "src": "assets/shapes.jpg",
+            "en": [
+              "A circle, rectangle, triangle and five-pointed star, each drawn by hand and snapped to a clean shape",
+              "All four were drawn freehand. Pausing at the end is what squared them up."
+            ],
+            "ko": [
+              "손으로 그린 원, 사각형, 삼각형, 별. 모두 반듯한 도형으로 정리된 모습",
+              "넷 다 손으로 그린 것입니다. 끝에서 잠깐 멈춘 것이 전부입니다."
+            ]
+          },
+          {
+            "src": "assets/pens.jpg",
+            "en": [
+              "Five strokes in different colours, one per pen tip, with the tip picker and size slider open below them",
+              "The five tips, drawn side by side. Each keeps its own thickness."
+            ],
+            "ko": [
+              "펜촉별로 하나씩 그은 다섯 가지 획과, 그 아래 열려 있는 펜촉 선택 패널과 굵기 슬라이더",
+              "다섯 펜촉을 나란히 그은 모습. 굵기는 펜촉마다 따로 기억합니다."
+            ]
+          }
+        ],
+        "en": {
+          "meta": "Free · iOS &amp; Android",
+          "headline": [
+            "A drawing board that takes a",
+            "stylus"
+          ],
+          "lede": "Five pen tips that actually feel different, pressure from your Apple Pencil or S Pen, and a palm you can rest on the screen. Draw a shape roughly and it comes out straight.",
+          "idea": {
+            "eyebrow": "The idea",
+            "title": "Most drawing apps treat a stylus as a mouse with a point.",
+            "lede": "It isn't one. It knows how hard you are pressing, it knows a hand is resting beside it, and it is held at an angle. PaintBoardPro was built around those three facts, and everything below follows from them."
+          },
+          "leftOutTitle": "Deliberately left out",
+          "leftOut": [
+            "Layers and blend modes",
+            "Accounts and sign-in",
+            "Subscriptions and in-app purchases",
+            "A cloud that holds your drawings",
+            "First-run tours and tooltips",
+            "A brush engine with fifty presets"
+          ],
+          "remainsTitle": "What's left",
+          "remains": [
+            "Five pen tips, each with its own width",
+            "Pressure and palm rejection on a real stylus",
+            "Shape recognition for line, circle, rectangle, triangle and star",
+            "A paint bucket that fills an enclosed area in one tap",
+            "Text in six Korean typefaces, movable and rotatable",
+            "Photo backgrounds, and PNG export straight from the canvas"
+          ],
+          "features": {
+            "eyebrow": "What's in it",
+            "title": "Six things, done properly.",
+            "items": [
+              [
+                "Five pen tips",
+                "Round, pencil, flat, highlighter and calligraphy. The highlighter builds up where strokes cross. The calligraphy nib thickens and thins with the direction you move. Each tip remembers its own width."
+              ],
+              [
+                "Pressure, and a palm you can rest",
+                "Press harder for a thicker line. While the pen is down, touches from your hand are ignored — so you can lean on the screen the way you lean on paper."
+              ],
+              [
+                "Shapes that snap",
+                "Draw a line, circle, ellipse, rectangle, triangle or star and hold still for a moment. It squares up at the angle you drew it, and one undo brings the hand-drawn original back."
+              ],
+              [
+                "Paint bucket",
+                "Tap inside any enclosed outline and it fills. The fill is fixed into the drawing, so you can draw over it and erase it like everything else."
+              ],
+              [
+                "Text on canvas",
+                "Six bundled Korean typefaces plus the system font. Drag to move, pinch to resize, twist to rotate. Text lives in the drawing, so the eraser reaches it."
+              ],
+              [
+                "Any colour you want",
+                "A full picker with grid, spectrum and slider modes, and a hex field. Ink, page and text colours are set independently."
+              ]
+            ]
+          },
+          "story": {
+            "eyebrow": "Where it came from",
+            "title": "Five years on iOS, now everywhere.",
+            "paragraphs": [
+              "The first version shipped on the App Store in <strong>2021</strong>, written in Swift. It was the app I wanted when a tablet and a pen were sitting in front of me and everything available treated the pen as a blunt finger.",
+              "This year I rewrote it from nothing in <strong>Flutter</strong> so Android tablets could have it as well. Two things came out of the rewrite that the original never had: real pressure with palm rejection, and shape recognition — neither of which is a feature you notice, which is the point.",
+              "It is still one canvas. There are still no layers. The pen is still the whole interface."
+            ],
+            "timeline": [
+              [
+                "2021",
+                "First release — native Swift, iPhone and iPad"
+              ],
+              [
+                "2024",
+                "Custom typefaces, photo backgrounds"
+              ],
+              [
+                "2026",
+                "Rewritten in Flutter; pressure, palm rejection, shape snapping"
+              ],
+              [
+                "Now",
+                "Version 2.0.0 — on the App Store, Android coming"
+              ]
+            ],
+            "sibling": "There's also <strong>PaintBoard</strong> on both stores — a <strong>separate, simpler app</strong> with a fixed eighteen-colour palette and four tools, not a free tier of this one. If you draw with a finger and want fewer decisions, that is the one to get."
+          },
+          "privacySection": {
+            "eyebrow": "Privacy",
+            "title": "Your drawings stay on your device.",
+            "lede": "There is no server to upload them to, and no account to attach them to. Everything is handled on the device and is gone when you delete the app. The app is free and carries ads, which means Google AdMob and Firebase Analytics collect the usual advertising identifier and device information — all of it written out in the {privacy}."
+          },
+          "privacyLinkText": "privacy policy",
+          "close": {
+            "title": "Go draw something.",
+            "lede": "Free on the App Store, with the Android release on the way. It works offline — the network is only ever used for ads."
+          }
+        },
+        "ko": {
+          "meta": "무료 · iOS &amp; Android",
+          "headline": [
+            "펜을 제대로 쓰는",
+            "그림판"
+          ],
+          "lede": "정말로 다르게 느껴지는 다섯 가지 펜촉, 애플펜슬과 S펜의 필압, 그리고 화면에 얹어도 되는 손. 대충 그린 도형은 반듯하게 나옵니다.",
+          "idea": {
+            "eyebrow": "만든 이유",
+            "title": "대부분의 그림 앱은 스타일러스를 끝이 뾰족한 마우스로 취급합니다.",
+            "lede": "펜은 마우스가 아닙니다. 얼마나 세게 눌렸는지 알고, 옆에 손이 얹혀 있다는 것도 알고, 기울어진 채로 쥐어집니다. 그림판 프로는 이 세 가지 사실 위에 만들었고, 아래의 모든 것이 거기서 나왔습니다."
+          },
+          "leftOutTitle": "일부러 뺀 것",
+          "leftOut": [
+            "레이어와 블렌드 모드",
+            "계정과 로그인",
+            "구독과 인앱결제",
+            "그림을 보관하는 클라우드",
+            "첫 실행 안내와 툴팁",
+            "프리셋 오십 개짜리 브러시 엔진"
+          ],
+          "remainsTitle": "그래서 남은 것",
+          "remains": [
+            "굵기를 각각 기억하는 다섯 가지 펜촉",
+            "실제 스타일러스의 필압과 손바닥 오터치 방지",
+            "선·원·사각형·삼각형·별을 알아보는 도형 인식",
+            "닫힌 영역을 한 번에 칠하는 페인트통",
+            "한글 서체 6종, 옮기고 돌릴 수 있는 텍스트",
+            "사진 배경과 캔버스에서 바로 내보내는 PNG"
+          ],
+          "features": {
+            "eyebrow": "들어 있는 것",
+            "title": "여섯 가지, 제대로.",
+            "items": [
+              [
+                "다섯 가지 펜촉",
+                "둥근펜, 연필, 납작펜, 형광펜, 캘리그래피. 형광펜은 겹쳐 그은 만큼 진해지고, 캘리그래피는 긋는 방향에 따라 굵기가 저절로 달라집니다. 굵기는 펜촉마다 따로 기억합니다."
+              ],
+              [
+                "필압, 그리고 얹어도 되는 손",
+                "세게 누르면 굵게 그려집니다. 펜이 닿아 있는 동안에는 손의 터치를 무시하기 때문에, 종이에 쓸 때처럼 손을 얹고 그릴 수 있습니다."
+              ],
+              [
+                "반듯해지는 도형",
+                "선, 원, 타원, 사각형, 삼각형, 별을 그린 뒤 잠깐 멈추면 정리됩니다. 기울여 그리면 그 각도 그대로 정리되고, 되돌리기 한 번이면 손그림이 그대로 돌아옵니다."
+              ],
+              [
+                "페인트통",
+                "닫힌 윤곽 안을 탭하면 채워집니다. 채운 결과는 그림 안에 고정되므로 위에 덧그릴 수도, 지울 수도 있습니다."
+              ],
+              [
+                "캔버스 위의 텍스트",
+                "한글 서체 6종과 기본 서체. 끌어서 옮기고, 벌려서 키우고, 비틀어서 돌립니다. 텍스트도 그림 안에 있어서 지우개로 지워집니다."
+              ],
+              [
+                "원하는 색 아무거나",
+                "격자·스펙트럼·슬라이더 세 가지 방식과 헥사 입력을 갖춘 색상 선택기. 그림 색, 배경 색, 글자 색을 따로 정합니다."
+              ]
+            ]
+          },
+          "story": {
+            "eyebrow": "어디서 왔나",
+            "title": "iOS에서 5년, 이제 양쪽으로.",
+            "paragraphs": [
+              "첫 버전은 <strong>2021년</strong> App Store에 Swift로 냈습니다. 태블릿과 펜을 앞에 두고 그리려는데, 나와 있는 앱들이 하나같이 펜을 뭉툭한 손가락으로 취급하던 것이 이유였습니다.",
+              "올해 <strong>Flutter</strong>로 처음부터 다시 썼습니다. 안드로이드 태블릿에서도 쓸 수 있도록요. 재작성에서 원본에 없던 두 가지가 생겼습니다. 손바닥 오터치를 막는 진짜 필압, 그리고 도형 인식입니다. 둘 다 쓰면서 의식하지 않게 되는 기능이고, 그게 목적이었습니다.",
+              "여전히 캔버스는 하나입니다. 레이어는 여전히 없습니다. 펜이 여전히 인터페이스의 전부입니다."
+            ],
+            "timeline": [
+              [
+                "2021",
+                "첫 출시 — 네이티브 Swift, iPhone·iPad"
+              ],
+              [
+                "2024",
+                "전용 서체, 사진 배경 추가"
+              ],
+              [
+                "2026",
+                "Flutter로 전면 재작성. 필압, 손바닥 방지, 도형 인식"
+              ],
+              [
+                "현재",
+                "버전 2.0.0 — App Store 출시, 안드로이드 준비 중"
+              ]
+            ],
+            "sibling": "양쪽 스토어에 <strong>그림판</strong>도 있습니다. 18색 고정 팔레트와 도구 네 개를 가진 <strong>별개의 더 단순한 앱</strong>이고, 이 앱의 무료 버전이 아닙니다. 손가락으로 그리고 결정할 것이 적은 쪽을 원하시면 그쪽이 맞습니다."
+          },
+          "privacySection": {
+            "eyebrow": "개인정보",
+            "title": "그림은 기기 안에 남습니다.",
+            "lede": "업로드할 서버도, 그림을 묶어둘 계정도 없습니다. 모든 처리가 기기에서 이뤄지고, 앱을 지우면 함께 사라집니다. 앱은 무료이고 광고가 붙기 때문에 Google AdMob과 Firebase Analytics가 통상적인 광고 식별자와 기기 정보를 수집합니다. 그 내용은 전부 {privacy}에 적어두었습니다."
+          },
+          "privacyLinkText": "개인정보처리방침",
+          "close": {
+            "title": "이제 그려보세요.",
+            "lede": "App Store에서 무료이고, 안드로이드는 준비 중입니다. 오프라인에서 동작하며 네트워크는 광고에만 씁니다."
+          }
+        }
+      }
     }
   ]
 }

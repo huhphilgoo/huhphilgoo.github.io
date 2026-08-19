@@ -163,6 +163,8 @@ footer .spacer{flex:1}
   transition:transform .14s ease, box-shadow .14s ease}
 .btn-primary{background:var(--accent);color:var(--accent-ink)}
 .btn-secondary{background:var(--sheet);color:var(--ink);border-color:var(--line)}
+.btn-soon{background:transparent;color:var(--muted);border:1px dashed var(--line);cursor:default}
+.btn-soon:hover{transform:none;box-shadow:none}
 .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
 .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .btn svg{width:17px;height:17px;flex:none}
@@ -283,16 +285,28 @@ STORE_ICONS = {
     'appStore': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.2 1.1 0 1.6-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5 0 0-2.3-.9-2.3-3.6ZM14.2 5.4c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 .1 2.1-.5 2.7-1.3Z"/></svg>',
 }
 STORE_LABELS = {'play': 'Google Play', 'appStore': 'App Store'}
+SOON_LABELS = {'en': 'Coming soon', 'ko': '곧 출시'}
 
 
-def store_buttons(app):
+def store_buttons(app, lang='en'):
+    """Store buttons for one app.
+
+    A store listed in `comingSoon` renders as a DISABLED button carrying the
+    store's icon, so a not-yet-released platform still shows its shape without
+    offering a link that goes nowhere. A store that is neither linked nor
+    declared coming renders nothing at all.
+    """
+    soon = app.get('comingSoon', [])
     out = []
     for i, key in enumerate(('play', 'appStore')):
         url = app['links'].get(key)
-        if not url:
-            continue
         cls = 'btn-primary' if i == 0 else 'btn-secondary'
-        out.append(f'<a class="btn {cls}" href="{E(url)}">{STORE_ICONS[key]}{STORE_LABELS[key]}</a>')
+        if url:
+            out.append(f'<a class="btn {cls}" href="{E(url)}">{STORE_ICONS[key]}{STORE_LABELS[key]}</a>')
+        elif key in soon:
+            label = f'{STORE_LABELS[key]} · {SOON_LABELS[lang]}'
+            out.append(f'<span class="btn btn-soon" aria-disabled="true">'
+                       f'{STORE_ICONS[key]}{label}</span>')
     return f'<div class="cta">{"".join(out)}</div>'
 
 
@@ -537,7 +551,7 @@ def landing_page(app, lang):
     <span class="markword">{E(mark)}<svg viewBox="0 0 340 24" aria-hidden="true"><path d="M4 16 C58 6, 96 20, 150 12 C204 4, 246 18, 336 9"/></svg></span>.
   </h1>
   <p class="lede">{T['lede']}</p>
-  {store_buttons(app)}
+  {store_buttons(app, lang)}
   {shot(0)}
 </section>
 
@@ -578,7 +592,7 @@ def landing_page(app, lang):
 <section>
   <h2>{E(close['title'])}</h2>
   <p class="lede" style="margin-top:12px">{close['lede']}</p>
-  {store_buttons(app)}
+  {store_buttons(app, lang)}
   {shot(2)}
 </section>
 
@@ -600,6 +614,8 @@ def hub_page():
         for key in ('play', 'appStore'):
             if app['links'].get(key):
                 links.append(f'<a href="{E(app["links"][key])}">{STORE_LABELS[key]}</a>')
+            elif key in app.get('comingSoon', []):
+                links.append(f'<span class="muted">{STORE_LABELS[key]} · {SOON_LABELS["en"]}</span>')
         links.append(f'<a href="{E(app["slug"])}/privacy/">Privacy</a>')
         cards.append(f"""<div class="app">
   <h3>{E(app['name'])}<span class="ko">{E(app['nameKo'])}</span></h3>

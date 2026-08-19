@@ -73,6 +73,8 @@ footer .spacer{flex:1}
   transition:transform .14s ease, box-shadow .14s ease}
 .btn-primary{background:var(--accent);color:var(--accent-ink)}
 .btn-secondary{background:var(--sheet);color:var(--ink);border-color:var(--line)}
+.btn-soon{background:transparent;color:var(--muted);border:1px dashed var(--line);cursor:default}
+.btn-soon:hover{transform:none;box-shadow:none}
 .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
 .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .btn svg{width:17px;height:17px;flex:none}
