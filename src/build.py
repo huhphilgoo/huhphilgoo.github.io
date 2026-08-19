@@ -48,6 +48,10 @@ SERVICES = {
                'interaction data',
                'to serve and measure ads, prevent ad fraud, and — where you have consented — '
                'to personalize ads'),
+        'ja': ('広告の配信',
+               '広告識別子（AAID/IDFA）、端末情報（機種・OSバージョン・言語・国）、'
+               'IPアドレスから推定されるおおよその位置、広告の操作履歴',
+               '広告の配信と効果測定、広告不正の防止、ユーザーが同意した場合のパーソナライズ広告の提供'),
         'url': 'https://policies.google.com/technologies/ads',
     },
     'firebaseAnalytics': {
@@ -59,6 +63,10 @@ SERVICES = {
                'app launch and usage events, device and app version information, approximate '
                'region, and app instance ID',
                'for stability monitoring and product improvement'),
+        'ja': ('利用状況の分析',
+               'アプリの起動・利用イベント、端末およびアプリのバージョン情報、おおよその地域、'
+               'アプリインスタンスID',
+               'アプリの安定性の確認と機能改善のための統計分析'),
         'url': 'https://firebase.google.com/support/privacy',
     },
 }
@@ -253,13 +261,41 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
 """
 
 
+LANG_LABELS = {'en': 'EN', 'ko': 'KO', 'ja': 'JA'}
+DEFAULT_LANGS = ('en', 'ko')
+
+
+def langs_of(app):
+    """Languages an app publishes. English is always first and lives at the URL root;
+    every other language gets a `/<code>/` subdirectory. Apps that predate the third
+    language simply omit the key and stay bilingual."""
+    return tuple(app.get('languages', DEFAULT_LANGS))
+
+
+def lang_dir(lang):
+    return '' if lang == 'en' else f'{lang}/'
+
+
 def langnav(current, hrefs):
-    """EN / KO switcher. `hrefs` maps a lang code to its URL relative to the current page."""
+    """Language switcher. `hrefs` maps a lang code to its URL relative to the current
+    page, and its key order decides the order the tabs appear in."""
     out = []
-    for code, label in (('en', 'EN'), ('ko', 'KO')):
+    for code, href in hrefs.items():
         cls = ' class="on"' if code == current else ''
-        out.append(f'<a href="{E(hrefs[code])}" hreflang="{code}"{cls}>{label}</a>')
+        out.append(f'<a href="{E(href)}" hreflang="{code}"{cls}>{LANG_LABELS[code]}</a>')
     return f'<nav class="langnav" aria-label="Language">{"".join(out)}</nav>'
+
+
+def rel_hrefs(app, lang):
+    """URLs of every locale of the CURRENT page, relative to it.
+
+    Derived from the app's language list rather than hard-coded, which is what makes
+    adding a third locale a data change instead of a code change. Non-English pages sit
+    one directory deeper, so they climb once before descending into a sibling locale.
+    """
+    up = '' if lang == 'en' else '../'
+    return {c: './' if c == lang else (up + lang_dir(c) or './')
+            for c in langs_of(app)}
 
 
 def masthead(depth, right='', nav=''):
@@ -274,7 +310,8 @@ def footer(depth, app=None, lang='en'):
     Google requires them; do not strip them from there."""
     up = '../' * depth
     left = f'{E(app["name"])} ({E(app["nameKo"])})' if app else ''
-    label = {'en': ('Privacy policy', 'Contact'), 'ko': ('개인정보처리방침', '문의')}[lang]
+    label = {'en': ('Privacy policy', 'Contact'), 'ko': ('개인정보처리방침', '문의'),
+             'ja': ('プライバシーポリシー', 'お問い合わせ')}[lang]
     privacy = f'<a href="{up}{app["slug"]}/privacy/">{label[0]}</a>' if app else ''
     return (f'<footer><span>{left}</span><span class="spacer"></span>{privacy}'
             f'<a href="mailto:{E(DEV["email"])}">{label[1]}</a></footer>')
@@ -285,7 +322,7 @@ STORE_ICONS = {
     'appStore': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.2 1.1 0 1.6-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5 0 0-2.3-.9-2.3-3.6ZM14.2 5.4c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 .1 2.1-.5 2.7-1.3Z"/></svg>',
 }
 STORE_LABELS = {'play': 'Google Play', 'appStore': 'App Store'}
-SOON_LABELS = {'en': 'Coming soon', 'ko': '곧 출시'}
+SOON_LABELS = {'en': 'Coming soon', 'ko': '곧 출시', 'ja': '近日公開'}
 
 
 def store_buttons(app, lang='en'):
@@ -335,11 +372,20 @@ def privacy_page(app, lang):
     adid_en = '; '.join(x for x, on in (
         ('Android: Settings → Google → Ads', has_play),
         ('iOS: Settings → Privacy &amp; Security → Tracking', has_ios)) if on)
+    adid_ja = ' / '.join(x for x, on in (
+        ('Android: 設定 → Google → 広告', has_play),
+        ('iOS: 設定 → プライバシーとセキュリティ → トラッキング', has_ios)) if on)
     dev_ko, dev_en = DEV['nameKo'], DEV['nameEn']
     upd = app['policyUpdated']
 
+    # The App row names the app as each store lists it. Japanese pages add the JP
+    # store name; the ko/en pages are unchanged. This block is what a store review
+    # checks the policy against, so it must never lose a name the listing uses.
+    app_names = f"{E(app['nameKo'])} ({E(app['name'])})"
+    if lang == 'ja' and app.get('nameJa'):
+        app_names = f"{E(app['nameJa'])} · {app_names}"
     idblock = f"""<div class="idblock"><dl>
-<dt>앱 이름 / App</dt><dd>{E(app['nameKo'])} ({E(app['name'])})</dd>
+<dt>앱 이름 / App</dt><dd>{app_names}</dd>
 <dt>개발자 / Developer</dt><dd>{E(dev_ko)} ({E(dev_en)})</dd>
 <dt>패키지명 / Package</dt><dd>{E(app['package'])}</dd>
 <dt>문의 / Contact</dt><dd><a href="mailto:{E(DEV['email'])}">{E(DEV['email'])}</a></dd>
@@ -430,29 +476,88 @@ def privacy_page(app, lang):
     en.append(f'<h2>8. Contact</h2><p>{E(dev_en)} ({E(dev_ko)}) · {E(app["name"])} '
               f'(<code>{E(app["package"])}</code>) · <a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a></p>')
 
+    # Japanese
+    store_ja = (app['storeNames'].get('appStoreJa') or app.get('nameJa') or app['name'])
+    ja = [f'<p>本プライバシーポリシーは、<strong>{E(dev_en)}（{E(dev_ko)}）</strong>（以下「開発者」）が'
+          f'開発・公開するアプリケーション<strong>{E(store_ja)}</strong>'
+          f'（パッケージ名 <code>{E(app["package"])}</code>、以下「本アプリ」）に適用されます。'
+          f'最終更新日: {E(upd.get("ja", upd["en"]))}。</p>']
+    ja.append('<h2>1. 開発者が直接収集する情報</h2>'
+              '<p>開発者は本アプリを通じてユーザーの個人情報を<strong>直接収集したり、'
+              'サーバーに保存したりすることはありません。</strong>'
+              '本アプリは会員登録、ログイン、アカウント作成を必要としません。</p>')
+    ja.append(f'<p>{E(p["storage"].get("ja", p["storage"]["en"]))}</p>')
+
+    ja.append('<h2>2. 第三者サービスが自動的に収集する情報</h2>')
+    for sid in p['services']:
+        sv = SERVICES[sid]
+        purpose, collected, why = sv.get('ja', sv['en'])
+        ja.append(f'<p><strong>{E(sv["name"])} — {E(purpose)}</strong></p><ul>'
+                  f'<li>収集する項目: {E(collected)}</li>'
+                  f'<li>利用目的: {E(why)}</li>'
+                  f'<li>処理者: Google LLC · <a href="{sv["url"]}">{sv["url"]}</a></li></ul>')
+    cj = []
+    if p['consent'].get('ump'):
+        cj.append('欧州経済領域（EEA）および英国などの対象地域のユーザーには、初回起動時に'
+                  '<strong>Google UMP（ユーザーメッセージングプラットフォーム）</strong>を通じて'
+                  '広告のパーソナライズに関する同意を確認します。')
+    if p['consent'].get('att'):
+        cj.append('iOSでは<strong>アプリのトラッキングの透明性（ATT）</strong>の許可要求により、'
+                  'ユーザーがトラッキングを許可または拒否できます。')
+    if cj:
+        ja.append('<p><strong>同意の管理</strong></p><ul>' + ''.join(f'<li>{c}</li>' for c in cj) + '</ul>')
+
+    rows_ja = ''.join('<tr><td>{}</td><td>{}</td><td>{}</td></tr>'.format(
+                        *(E(v) for v in x.get('ja', x['en'])))
+                      for x in p['permissions'])
+    ja.append('<h2>3. 端末の権限の利用</h2><div class="tablewrap"><table>'
+              '<tr><th>権限</th><th>利用目的</th><th>備考</th></tr>' + rows_ja + '</table></div>')
+
+    ja.append('<h2>4. 第三者への提供</h2><p>開発者はユーザーの個人情報を第三者に販売または貸与しません。'
+              '上記2に記載した第三者サービス（Google LLC）が各社のポリシーに基づいて情報を処理する場合を除き、'
+              'いかなる情報も共有しません。</p>')
+    ja.append('<h2>5. データの保管と削除</h2><ul>'
+              '<li>ユーザーが本アプリで作成したデータと設定は端末内にのみ保存され、'
+              '<strong>アプリを削除すると一緒に削除されます。</strong></li>'
+              f'<li>広告識別子のリセットおよび削除は端末の設定から行えます。{adid_ja}</li>'
+              f'<li>第三者サービスが収集した情報の削除をご希望の場合は、'
+              f'<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a>までご連絡ください。</li></ul>')
+    ja.append(f'<h2>6. 子どものプライバシー</h2><p>本アプリは{p["minAge"]}歳未満の子どもを対象としておらず、'
+              '子どもから故意に個人情報を収集することはありません。</p>')
+    ja.append('<h2>7. ポリシーの変更</h2>'
+              '<p>本ポリシーを変更する場合は、変更内容と最終更新日を本ページに掲載します。</p>')
+    ja.append(f'<h2>8. お問い合わせ</h2><p>{E(dev_en)}（{E(dev_ko)}） · {E(store_ja)} '
+              f'(<code>{E(app["package"])}</code>) · '
+              f'<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a></p>')
+
     # An app may supply its own numbered sections instead of the shared boilerplate.
     # The intro paragraph is kept either way — it carries the app, package and developer
     # names that a store review checks for. Bodies are raw HTML, like the landing prose.
     if p.get('sections'):
-        ko, en = ko[:1], en[:1]
+        ko, en, ja = ko[:1], en[:1], ja[:1]
         for n, sec in enumerate(p['sections'], 1):
             mail = f'<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a>'
-            ko.append(f'<h2>{n}. {E(sec["ko"]["title"])}</h2>'
-                      + sec['ko']['body'].replace('{email}', mail))
-            en.append(f'<h2>{n}. {E(sec["en"]["title"])}</h2>'
-                      + sec['en']['body'].replace('{email}', mail))
+            for code, bucket in (('ko', ko), ('en', en), ('ja', ja)):
+                part = sec.get(code) or sec['en']
+                bucket.append(f'<h2>{n}. {E(part["title"])}</h2>'
+                              + part['body'].replace('{email}', mail))
 
     depth = 2 if lang == 'en' else 3
-    hrefs = ({'en': './', 'ko': 'ko/'} if lang == 'en' else {'en': '../', 'ko': './'})
+    hrefs = rel_hrefs(app, lang)
     base, slug = SITE['baseUrl'], app['slug']
     alternates = ''.join(
-        f'\n<link rel="alternate" hreflang="{c}" href="{base}/{slug}/privacy/{"" if c == "en" else "ko/"}">'
-        for c in LANGS)
+        f'\n<link rel="alternate" hreflang="{c}" href="{base}/{slug}/privacy/{lang_dir(c)}">'
+        for c in langs_of(app))
 
+    name_ja = app.get('nameJa') or app['name']
     if lang == 'ko':
         eyebrow, heading, sections = '개인정보처리방침', app['nameKo'], ko
         title = f'{app["nameKo"]} 개인정보처리방침'
         desc = f'{app["nameKo"]}({app["package"]}) 개인정보처리방침.'
+    elif lang == 'ja':
+        eyebrow, heading, sections = 'プライバシーポリシー', name_ja, ja
+        title = f'{name_ja} プライバシーポリシー'
+        desc = f'{name_ja}（{app["package"]}）のプライバシーポリシー。'
     else:
         eyebrow, heading, sections = 'Privacy policy', app['name'], en
         title = f'{app["name"]} — Privacy policy'
@@ -472,8 +577,6 @@ def privacy_page(app, lang):
 
 
 # ── landing page ──────────────────────────────────────────────────────────────
-
-LANGS = ('en', 'ko')
 
 
 def landing_page(app, lang):
@@ -535,10 +638,10 @@ def landing_page(app, lang):
         '{privacy}', f'<a href="{privacy_href}">{E(T["privacyLinkText"])}</a>')
 
     # Cross-locale links, plus hreflang so search engines pair the two pages.
-    hrefs = {'en': up or './', 'ko': f'{up}ko/'} if lang == 'en' else {'en': '../', 'ko': './'}
+    hrefs = rel_hrefs(app, lang)
     alternates = ''.join(
-        f'\n<link rel="alternate" hreflang="{c}" href="{base}/{slug}/{"" if c == "en" else "ko/"}">'
-        for c in LANGS)
+        f'\n<link rel="alternate" hreflang="{c}" href="{base}/{slug}/{lang_dir(c)}">'
+        for c in langs_of(app))
 
     idea, feat, story, priv, close = (T['idea'], T['features'], T['story'],
                                       T['privacySection'], T['close'])
@@ -599,7 +702,8 @@ def landing_page(app, lang):
 {footer(depth, app, lang)}
 </div>"""
 
-    summary = app['summary'] if lang == 'en' else app.get('summaryKo', app['summary'])
+    summary = {'ko': app.get('summaryKo'), 'ja': app.get('summaryJa')}.get(lang) \
+        or app['summary']
     return page(app['name'], body, depth, '🎨', summary, lang=lang, head_extra=alternates)
 
 
@@ -653,13 +757,13 @@ def main():
 
     for app in DATA['apps']:
         d = ROOT / app['slug']
-        for lang in LANGS:
+        for lang in langs_of(app):
             target = d / 'privacy' if lang == 'en' else d / 'privacy' / lang
             target.mkdir(parents=True, exist_ok=True)
             (target / 'index.html').write_text(privacy_page(app, lang), encoding='utf-8')
             print(f'{app["slug"]}/privacy/{"" if lang == "en" else lang + "/"}index.html')
         if app.get('landing'):
-            for lang in LANGS:
+            for lang in langs_of(app):
                 target = d if lang == 'en' else d / lang
                 target.mkdir(parents=True, exist_ok=True)
                 (target / 'index.html').write_text(landing_page(app, lang), encoding='utf-8')
