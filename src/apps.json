@@ -1346,19 +1346,19 @@
               "es": "assets/record_es.jpg"
             },
             "en": [
-              "The transaction list beside the entry screen, with amount, category and payment method",
+              "The transaction list beside the transaction screen, with amount, category and payment method",
               "Date, amount, category, payment method. That is the whole entry."
             ],
             "ko": [
-              "거래 목록과 입력 화면. 금액·카테고리·결제 수단이 보인다",
+              "거래 목록과 거래 화면. 금액·카테고리·결제 수단이 보인다",
               "날짜, 금액, 카테고리, 결제 수단. 입력은 이게 전부입니다."
             ],
             "ja": [
-              "取引一覧と入力画面。金額・カテゴリー・支払い方法が見える",
+              "取引一覧と取引画面。金額・カテゴリー・支払い方法が見える",
               "日付、金額、カテゴリー、支払い方法。入力はこれだけです。"
             ],
             "es": [
-              "La lista de movimientos junto a la pantalla de entrada, con importe, categoría y método de pago",
+              "La lista de movimientos junto a la pantalla de movimiento, con importe, categoría y método de pago",
               "Fecha, importe, categoría, método de pago. Eso es toda la entrada."
             ]
           },
@@ -1394,20 +1394,20 @@
               "es": "assets/settings_es.jpg"
             },
             "en": [
-              "The settings screen showing language, base currency, categories, budgets and data export",
-              "Language, currency, categories, budgets, and a way to take your data out."
+              "The settings screen showing language, base currency, data export and import, and category management",
+              "Language, currency, categories, and a way to take your data out."
             ],
             "ko": [
-              "언어·기준 통화·카테고리·예산·데이터 내보내기가 있는 설정 화면",
-              "언어, 통화, 카테고리, 예산, 그리고 데이터를 가져나가는 방법."
+              "언어·기준 통화·데이터 내보내기와 가져오기·카테고리 관리가 있는 설정 화면",
+              "언어, 통화, 카테고리, 그리고 데이터를 가져나가는 방법."
             ],
             "ja": [
-              "言語・基準通貨・カテゴリー・予算・データ書き出しがある設定画面",
-              "言語、通貨、カテゴリー、予算、そしてデータを持ち出す手段。"
+              "言語・基準通貨・データの書き出しと読み込み・カテゴリー管理がある設定画面",
+              "言語、通貨、カテゴリー、そしてデータを持ち出す手段。"
             ],
             "es": [
-              "La pantalla de ajustes con idioma, moneda base, categorías, presupuestos y exportación de datos",
-              "Idioma, moneda, categorías, presupuestos y una forma de llevarte tus datos."
+              "La pantalla de ajustes con idioma, moneda base, exportación e importación de datos y gestión de categorías",
+              "Idioma, moneda, categorías y una forma de llevarte tus datos."
             ]
           }
         ],
