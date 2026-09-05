@@ -48,6 +48,12 @@ SERVICES = {
                'interaction data',
                'to serve and measure ads, prevent ad fraud, and — where you have consented — '
                'to personalize ads'),
+        'es': ('publicidad',
+               'identificador de publicidad (AAID/IDFA), información del dispositivo '
+               '(modelo, versión del sistema operativo, idioma, país), ubicación aproximada '
+               'derivada de la dirección IP e interacciones con los anuncios',
+               'para mostrar y medir anuncios, prevenir el fraude publicitario y, cuando '
+               'usted lo haya consentido, personalizar los anuncios'),
         'ja': ('広告の配信',
                '広告識別子（AAID/IDFA）、端末情報（機種・OSバージョン・言語・国）、'
                'IPアドレスから推定されるおおよその位置、広告の操作履歴',
@@ -63,6 +69,11 @@ SERVICES = {
                'app launch and usage events, device and app version information, approximate '
                'region, and app instance ID',
                'for stability monitoring and product improvement'),
+        'es': ('análisis de uso',
+               'eventos de inicio y uso de la aplicación, información de versión del '
+               'dispositivo y de la aplicación, región aproximada e ID de instancia de la '
+               'aplicación',
+               'para comprobar la estabilidad y mejorar el producto'),
         'ja': ('利用状況の分析',
                'アプリの起動・利用イベント、端末およびアプリのバージョン情報、おおよその地域、'
                'アプリインスタンスID',
@@ -261,7 +272,7 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
 """
 
 
-LANG_LABELS = {'en': 'EN', 'ko': 'KO', 'ja': 'JA'}
+LANG_LABELS = {'en': 'EN', 'ko': 'KO', 'ja': 'JA', 'es': 'ES'}
 DEFAULT_LANGS = ('en', 'ko')
 
 
@@ -298,6 +309,14 @@ def rel_hrefs(app, lang):
             for c in langs_of(app)}
 
 
+def name_pair(app, sep=' '):
+    """"<Latin name> (<Korean name>)", collapsed to one when an app uses the same
+    name in both — "K-Pockit (K-Pockit)" is noise, not an identifier."""
+    if app['nameKo'] == app['name']:
+        return E(app['name'])
+    return f"{E(app['name'])}{sep}({E(app['nameKo'])})"
+
+
 def masthead(depth, right='', nav=''):
     """No wordmark: the owner's handle is deliberately kept off the pages."""
     return (f'<div class="masthead"><span class="spacer"></span>'
@@ -309,9 +328,10 @@ def footer(depth, app=None, lang='en'):
     request. They still appear in the identifier block of each privacy policy, where
     Google requires them; do not strip them from there."""
     up = '../' * depth
-    left = f'{E(app["name"])} ({E(app["nameKo"])})' if app else ''
+    left = name_pair(app) if app else ''
     label = {'en': ('Privacy policy', 'Contact'), 'ko': ('개인정보처리방침', '문의'),
-             'ja': ('プライバシーポリシー', 'お問い合わせ')}[lang]
+             'ja': ('プライバシーポリシー', 'お問い合わせ'),
+             'es': ('Política de privacidad', 'Contacto')}[lang]
     privacy = f'<a href="{up}{app["slug"]}/privacy/">{label[0]}</a>' if app else ''
     return (f'<footer><span>{left}</span><span class="spacer"></span>{privacy}'
             f'<a href="mailto:{E(DEV["email"])}">{label[1]}</a></footer>')
@@ -322,7 +342,8 @@ STORE_ICONS = {
     'appStore': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.2 1.1 0 1.6-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5 0 0-2.3-.9-2.3-3.6ZM14.2 5.4c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 .1 2.1-.5 2.7-1.3Z"/></svg>',
 }
 STORE_LABELS = {'play': 'Google Play', 'appStore': 'App Store'}
-SOON_LABELS = {'en': 'Coming soon', 'ko': '곧 출시', 'ja': '近日公開'}
+SOON_LABELS = {'en': 'Coming soon', 'ko': '곧 출시', 'ja': '近日公開',
+               'es': 'Próximamente'}
 
 
 def store_buttons(app, lang='en'):
@@ -375,15 +396,21 @@ def privacy_page(app, lang):
     adid_ja = ' / '.join(x for x, on in (
         ('Android: 設定 → Google → 広告', has_play),
         ('iOS: 設定 → プライバシーとセキュリティ → トラッキング', has_ios)) if on)
+    adid_es = '; '.join(x for x, on in (
+        ('Android: Ajustes → Google → Anuncios', has_play),
+        ('iOS: Ajustes → Privacidad y seguridad → Rastreo', has_ios)) if on)
     dev_ko, dev_en = DEV['nameKo'], DEV['nameEn']
     upd = app['policyUpdated']
 
     # The App row names the app as each store lists it. Japanese pages add the JP
     # store name; the ko/en pages are unchanged. This block is what a store review
     # checks the policy against, so it must never lose a name the listing uses.
-    app_names = f"{E(app['nameKo'])} ({E(app['name'])})"
-    if lang == 'ja' and app.get('nameJa'):
+    app_names = (E(app['name']) if app['nameKo'] == app['name']
+                 else f"{E(app['nameKo'])} ({E(app['name'])})")
+    if lang == 'ja' and app.get('nameJa') and app['nameJa'] != app['name']:
         app_names = f"{E(app['nameJa'])} · {app_names}"
+    if lang == 'es' and app.get('nameEs') and app['nameEs'] != app['name']:
+        app_names = f"{E(app['nameEs'])} · {app_names}"
     idblock = f"""<div class="idblock"><dl>
 <dt>앱 이름 / App</dt><dd>{app_names}</dd>
 <dt>개발자 / Developer</dt><dd>{E(dev_ko)} ({E(dev_en)})</dd>
@@ -530,14 +557,64 @@ def privacy_page(app, lang):
               f'(<code>{E(app["package"])}</code>) · '
               f'<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a></p>')
 
+    # Spanish
+    store_es = (app['storeNames'].get('appStoreEs') or app.get('nameEs') or app['name'])
+    es = [f'<p>Esta Política de Privacidad se aplica a la aplicación móvil '
+          f'<strong>{E(store_es)}</strong> (paquete <code>{E(app["package"])}</code>), '
+          f'desarrollada y publicada por <strong>{E(dev_en)} ({E(dev_ko)})</strong>. '
+          f'Última actualización: {E(upd.get("es", upd["en"]))}.</p>']
+    es.append('<h2>1. Información recopilada directamente por el desarrollador</h2>'
+              '<p>El desarrollador <strong>no recopila ni almacena información personal en '
+              'ningún servidor.</strong> La aplicación no requiere registro, inicio de sesión '
+              'ni cuenta.</p>')
+    es.append(f'<p>{E(p["storage"].get("es", p["storage"]["en"]))}</p>')
+    es.append('<h2>2. Información recopilada por servicios de terceros</h2>')
+    for sid in p['services']:
+        sv = SERVICES[sid]
+        purpose, collected, why = sv.get('es', sv['en'])
+        es.append(f'<p><strong>{E(sv["name"])} ({E(purpose)})</strong>: {E(collected)} — '
+                  f'{E(why)}. Tratados por Google LLC. <a href="{sv["url"]}">{sv["url"]}</a></p>')
+    cs = []
+    if p['consent'].get('ump'):
+        cs.append('A los usuarios del EEE y del Reino Unido se les muestra un formulario de '
+                  'consentimiento de Google UMP en el primer inicio.')
+    if p['consent'].get('att'):
+        cs.append('En iOS, la Transparencia de Seguimiento de Apps (ATT) le permite permitir '
+                  'o denegar el seguimiento.')
+    if cs:
+        es.append('<p><strong>Consentimiento.</strong> ' + ' '.join(cs) + '</p>')
+    rows_es = ''.join('<tr><td>{}</td><td>{}</td><td>{}</td></tr>'.format(
+                        *(E(v) for v in x.get('es', x['en'])))
+                      for x in p['permissions'])
+    es.append('<h2>3. Permisos del dispositivo</h2><div class="tablewrap"><table>'
+              '<tr><th>Permiso</th><th>Finalidad</th><th>Nota</th></tr>' + rows_es
+              + '</table></div>')
+    es.append('<h2>4. Comunicación de la información</h2><p>El desarrollador no vende ni '
+              'alquila su información personal. No se comparte ninguna información salvo el '
+              'tratamiento que realizan los servicios de terceros indicados en el apartado 2 '
+              '(Google LLC) conforme a sus propias políticas.</p>')
+    es.append('<h2>5. Conservación y eliminación</h2><p>Sus datos y ajustes se guardan '
+              'únicamente en su dispositivo y se eliminan al desinstalar la aplicación. Puede '
+              'restablecer o eliminar su identificador de publicidad en los ajustes del '
+              f'dispositivo ({adid_es}). Para solicitudes de eliminación relativas a datos de '
+              f'terceros, escriba a <a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a>.</p>')
+    es.append(f'<h2>6. Privacidad de los menores</h2><p>Esta aplicación no está dirigida a '
+              f'menores de {p["minAge"]} años y el desarrollador no recopila conscientemente '
+              f'información personal de ellos.</p>')
+    es.append('<h2>7. Cambios en esta política</h2><p>Cualquier cambio se publicará en esta '
+              'página junto con la fecha de revisión actualizada.</p>')
+    es.append(f'<h2>8. Contacto</h2><p>{E(dev_en)} ({E(dev_ko)}) · {E(store_es)} '
+              f'(<code>{E(app["package"])}</code>) · '
+              f'<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a></p>')
+
     # An app may supply its own numbered sections instead of the shared boilerplate.
     # The intro paragraph is kept either way — it carries the app, package and developer
     # names that a store review checks for. Bodies are raw HTML, like the landing prose.
     if p.get('sections'):
-        ko, en, ja = ko[:1], en[:1], ja[:1]
+        ko, en, ja, es = ko[:1], en[:1], ja[:1], es[:1]
         for n, sec in enumerate(p['sections'], 1):
             mail = f'<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a>'
-            for code, bucket in (('ko', ko), ('en', en), ('ja', ja)):
+            for code, bucket in (('ko', ko), ('en', en), ('ja', ja), ('es', es)):
                 part = sec.get(code) or sec['en']
                 bucket.append(f'<h2>{n}. {E(part["title"])}</h2>'
                               + part['body'].replace('{email}', mail))
@@ -558,10 +635,17 @@ def privacy_page(app, lang):
         eyebrow, heading, sections = 'プライバシーポリシー', name_ja, ja
         title = f'{name_ja} プライバシーポリシー'
         desc = f'{name_ja}（{app["package"]}）のプライバシーポリシー。'
+    elif lang == 'es':
+        name_es = app.get('nameEs') or app['name']
+        eyebrow, heading, sections = 'Política de privacidad', name_es, es
+        title = f'{name_es} — Política de privacidad'
+        desc = f'Política de privacidad de {name_es} ({app["package"]}).'
     else:
         eyebrow, heading, sections = 'Privacy policy', app['name'], en
         title = f'{app["name"]} — Privacy policy'
-        desc = f'Privacy policy for {app["name"]} ({app["nameKo"]}), {app["package"]}.'
+        pair = (app['name'] if app['nameKo'] == app['name']
+                else f'{app["name"]} ({app["nameKo"]})')
+        desc = f'Privacy policy for {pair}, {app["package"]}.'
 
     body = f"""<div class="wrap narrow">
 {masthead(depth, E(app['name']), langnav(lang, hrefs))}
@@ -601,7 +685,10 @@ def landing_page(app, lang):
             return ''
         s = shots[i]
         alt, cap = s[lang]
-        return (f'<figure class="shot"><img src="{E(up + s["src"])}" alt="{E(alt)}" loading="lazy">'
+        # `src` is either one image shared by every locale, or a map of locale to
+        # image for an app whose screenshots are full of translated text.
+        src = s['src'][lang] if isinstance(s['src'], dict) else s['src']
+        return (f'<figure class="shot"><img src="{E(up + src)}" alt="{E(alt)}" loading="lazy">'
                 f'<figcaption class="caption">{E(cap)}</figcaption></figure>')
 
     left = ''.join(f'<li><span class="cross">—</span><span class="gone">{E(x)}</span></li>'
@@ -702,9 +789,10 @@ def landing_page(app, lang):
 {footer(depth, app, lang)}
 </div>"""
 
-    summary = {'ko': app.get('summaryKo'), 'ja': app.get('summaryJa')}.get(lang) \
-        or app['summary']
-    return page(app['name'], body, depth, '🎨', summary, lang=lang, head_extra=alternates)
+    summary = {'ko': app.get('summaryKo'), 'ja': app.get('summaryJa'),
+               'es': app.get('summaryEs')}.get(lang) or app['summary']
+    return page(app['name'], body, depth, app.get('icon', '🎨'), summary,
+                lang=lang, head_extra=alternates)
 
 
 # ── hub ───────────────────────────────────────────────────────────────────────
@@ -712,6 +800,8 @@ def landing_page(app, lang):
 def hub_page():
     cards = []
     for app in DATA['apps']:
+        ko_name = ('' if app['nameKo'] == app['name']
+                   else f'<span class="ko">{E(app["nameKo"])}</span>')
         links = []
         if app.get('landing'):
             links.append(f'<a href="{E(app["slug"])}/">About</a>')
@@ -722,7 +812,7 @@ def hub_page():
                 links.append(f'<span class="muted">{STORE_LABELS[key]} · {SOON_LABELS["en"]}</span>')
         links.append(f'<a href="{E(app["slug"])}/privacy/">Privacy</a>')
         cards.append(f"""<div class="app">
-  <h3>{E(app['name'])}<span class="ko">{E(app['nameKo'])}</span></h3>
+  <h3>{E(app['name'])}{ko_name}</h3>
   <p>{E(app['summary'])}</p>
   <div class="row">{''.join(links)}</div>
 </div>""")
