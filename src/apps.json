@@ -1808,6 +1808,568 @@
         "ja",
         "es"
       ]
+    },
+    {
+      "slug": "colorexpress",
+      "name": "Color Express",
+      "nameKo": "컬러 익스프레스",
+      "nameJa": "カラーエクスプレス",
+      "icon": "🚃",
+      "package": "com.huhfeelgood.colorexpress",
+      "storeNames": {
+        "play": "Color Express",
+        "appStore": "Color Express",
+        "appStoreJa": "カラーエクスプレス"
+      },
+      "links": {},
+      "comingSoon": [
+        "appStore",
+        "play"
+      ],
+      "languages": [
+        "en",
+        "ko",
+        "ja",
+        "es"
+      ],
+      "summary": "A colour-matching puzzle about the way out — clear a straight path and put every passenger on the train of their colour.",
+      "summaryKo": "길을 여는 색 맞추기 퍼즐. 직선으로 길을 뚫어 손님을 제 색 기차에 태워 보내세요.",
+      "summaryJa": "道をひらく色合わせパズル。まっすぐ道を開けて、お客さんを同じ色の電車に乗せましょう。",
+      "summaryEs": "Un puzle de colores sobre la salida: abre un camino recto y sube a cada pasajero al tren de su color.",
+      "policyUpdated": {
+        "ko": "2026년 9월 9일",
+        "en": "September 9, 2026",
+        "ja": "2026年9月9日",
+        "es": "9 de septiembre de 2026"
+      },
+      "privacy": {
+        "storage": {
+          "ko": "진행한 레벨, 별점, 최고 기록, 사운드 설정은 기기 안의 저장소에만 보관되며 개발자의 서버로 전송되지 않습니다. 본 앱은 회원가입이나 계정이 없고, 앱을 삭제하면 저장된 기록도 함께 사라집니다. 게임은 인터넷 없이도 동작하며, 네트워크는 광고를 불러올 때에만 사용됩니다.",
+          "en": "Your level progress, stars, best records and sound settings are kept only in storage on your device and are never transmitted to the developer's server. The app has no sign-up and no account, and the saved data goes when the app goes. The game runs without an internet connection; the network is used only to load ads.",
+          "ja": "進行したレベル、スター、最高記録、サウンド設定は端末内のストレージにのみ保存され、開発者のサーバーへ送信されることはありません。本アプリには会員登録もアカウントもなく、アプリを削除すると保存された記録も一緒に消えます。ゲームはインターネットがなくても動作し、ネットワークは広告の読み込みにのみ使用します。",
+          "es": "El progreso de niveles, las estrellas, los récords y los ajustes de sonido se guardan únicamente en el almacenamiento del dispositivo y nunca se transmiten al servidor del desarrollador. La aplicación no tiene registro ni cuenta, y los datos guardados desaparecen junto con la aplicación. El juego funciona sin conexión a internet; la red solo se usa para cargar anuncios."
+        },
+        "services": [
+          "admob"
+        ],
+        "consent": {
+          "ump": true,
+          "att": true
+        },
+        "permissions": [
+          {
+            "ko": [
+              "네트워크 접속",
+              "광고를 불러오기 위해",
+              "게임 기록은 전송되지 않으며, 인터넷 없이도 플레이할 수 있음"
+            ],
+            "en": [
+              "Network access",
+              "To load ads",
+              "No game data is sent, and the game can be played offline"
+            ],
+            "ja": [
+              "ネットワーク接続",
+              "広告を読み込むため",
+              "ゲームの記録は送信されず、オフラインでもプレイできます"
+            ],
+            "es": [
+              "Acceso a la red",
+              "Para cargar anuncios",
+              "No se envían datos del juego y se puede jugar sin conexión"
+            ]
+          },
+          {
+            "ko": [
+              "광고 식별자",
+              "광고 게재와 성과 측정을 위해 Google AdMob이 사용",
+              "기기 설정에서 초기화하거나 맞춤 광고를 끌 수 있음"
+            ],
+            "en": [
+              "Advertising identifier",
+              "Used by Google AdMob to serve and measure ads",
+              "You can reset it or turn off personalized ads in your device settings"
+            ],
+            "ja": [
+              "広告識別子",
+              "広告の配信と効果測定のためにGoogle AdMobが使用します",
+              "端末の設定からリセットしたり、パーソナライズ広告をオフにできます"
+            ],
+            "es": [
+              "Identificador de publicidad",
+              "Google AdMob lo usa para mostrar y medir anuncios",
+              "Puede restablecerlo o desactivar los anuncios personalizados en los ajustes"
+            ]
+          },
+          {
+            "ko": [
+              "추적 허용 여부 (ATT)",
+              "iOS에서 맞춤 광고를 받을지 이용자가 선택",
+              "거부해도 게임의 모든 기능을 그대로 사용할 수 있음"
+            ],
+            "en": [
+              "Tracking permission (ATT)",
+              "On iOS, to let you allow or deny personalized ads",
+              "Declining leaves every feature of the game available"
+            ],
+            "ja": [
+              "トラッキングの許可 (ATT)",
+              "iOSでパーソナライズ広告を受け取るかをユーザーが選ぶため",
+              "拒否してもゲームのすべての機能をそのまま使えます"
+            ],
+            "es": [
+              "Permiso de seguimiento (ATT)",
+              "En iOS, para permitir o rechazar los anuncios personalizados",
+              "Rechazarlo deja disponibles todas las funciones del juego"
+            ]
+          }
+        ],
+        "minAge": 18
+      },
+      "landing": {
+        "shots": [
+          {
+            "src": {
+              "en": "assets/play_en.jpg",
+              "ko": "assets/play_ko.jpg",
+              "ja": "assets/play_ja.jpg",
+              "es": "assets/play_es.jpg"
+            },
+            "en": [
+              "Two levels in play: a coloured train at the platform and a grid of passengers below",
+              "Tap a passenger with a clear straight line out. Matching colour boards; the rest wait on the bench."
+            ],
+            "ko": [
+              "플레이 화면 두 장. 승강장의 색 기차와 그 아래 손님 격자",
+              "직선으로 뻥 뚫린 손님을 탭하세요. 색이 맞으면 탑승, 아니면 벤치로."
+            ],
+            "ja": [
+              "プレイ中の2画面。ホームの色つき電車と、その下のお客さんのマス",
+              "まっすぐ道が開いたお客さんをタップ。色が合えば乗車、違えばベンチへ。"
+            ],
+            "es": [
+              "Dos niveles en juego: un tren de color en el andén y una cuadrícula de pasajeros",
+              "Toca a un pasajero con una línea recta despejada. Si coincide el color, sube; si no, espera en el banco."
+            ]
+          },
+          {
+            "src": {
+              "en": "assets/map_en.jpg",
+              "ko": "assets/map_ko.jpg",
+              "ja": "assets/map_ja.jpg",
+              "es": "assets/map_es.jpg"
+            },
+            "en": [
+              "The railway line of levels beside the title screen",
+              "Seventy stations along one line, and a title screen with nothing else on it."
+            ],
+            "ko": [
+              "레벨 노선도와 타이틀 화면",
+              "한 노선에 일흔 개의 역, 그리고 아무것도 없는 타이틀 화면."
+            ],
+            "ja": [
+              "レベルの路線図とタイトル画面",
+              "一本の路線に70の駅、そして何も置かないタイトル画面。"
+            ],
+            "es": [
+              "La línea de ferrocarril de niveles junto a la pantalla de título",
+              "Setenta estaciones en una línea y una pantalla de título sin nada más."
+            ]
+          }
+        ],
+        "en": {
+          "meta": "Free · No account",
+          "headline": [
+            "A puzzle about",
+            "the way out"
+          ],
+          "lede": "A coloured train stops with three seats. Tap the passengers whose colour matches and they board — but only if one straight line out is completely clear. No timer, no lives, no sign-up.",
+          "idea": {
+            "eyebrow": "The idea",
+            "title": "The colour is the easy part.",
+            "lede": "Matching colours takes a second; getting the passenger out takes the thought. A passenger can leave only along a straight line — up, down, left or right — that runs clear to the edge of the board. Corners do not count. So the board is read from the outside in: clear the edge to open the row behind it, and the one behind that."
+          },
+          "leftOutTitle": "Deliberately left out",
+          "leftOut": [
+            "Timers and countdowns",
+            "Lives, hearts and energy",
+            "Accounts and sign-in",
+            "Subscriptions and in-app purchases",
+            "Scores, points and leaderboards",
+            "Boosters sold for money"
+          ],
+          "remainsTitle": "What's left",
+          "remains": [
+            "One rule you learn in a single tap",
+            "70 levels, six layouts each, drawn at random",
+            "Every layout verified solvable before it ships",
+            "A bench that fills up and ends the level",
+            "Stars for how little you used the bench",
+            "Korean, English, Japanese, Spanish — and offline"
+          ],
+          "features": {
+            "eyebrow": "What's in it",
+            "title": "Six things, done properly.",
+            "items": [
+              [
+                "One rule, and it is strict",
+                "A straight, unbroken line to the edge of the board — up, down, left or right. Turning a corner is not a path. Everything in the game follows from that one sentence."
+              ],
+              [
+                "No board is ever unsolvable",
+                "Every layout is generated and then checked by a solver: it must be winnable, and it must be unwinnable without using the bench. Boards that fail either test are thrown away, not shipped."
+              ],
+              [
+                "A different board every run",
+                "Each of the 70 levels holds six verified layouts and picks one at random — including when you replay it. The level you failed is not the level you retry."
+              ],
+              [
+                "The bench is the pressure",
+                "Wrong-coloured passengers wait on a bench with very few slots. Fill it with no way out and the level is over. Later levels give you fewer slots, not more passengers."
+              ],
+              [
+                "Stars for restraint",
+                "The rating counts how many passengers you had to park on the bench — not points. Three stars means you barely used it."
+              ],
+              [
+                "No clock, nothing to lose",
+                "Think for a second or for a minute. Nothing counts down, nothing runs out, and nothing asks you to come back tomorrow."
+              ]
+            ]
+          },
+          "story": {
+            "eyebrow": "Where it came from",
+            "title": "One rule, rewritten until it was hard.",
+            "paragraphs": [
+              "It began in <strong>July 2026</strong> as a colour-matching prototype in Flutter and Flame: passengers on a grid, a lift that took three at a time.",
+              "The rule changed almost immediately. Reaching the exit used to be a maze search, which made the board impossible to read at a glance. Replacing it with a single <strong>straight line to the edge</strong> made every move visible — and the puzzle far harder to plan.",
+              "The lift became a train, the grid grew to seven colours, and the levels stopped being written by hand: a solver now builds and checks all <strong>70 levels</strong>, six layouts apiece."
+            ],
+            "timeline": [
+              [
+                "2026.07",
+                "First prototype — colour matching on a grid"
+              ],
+              [
+                "2026.07",
+                "The straight-line rule replaced maze pathfinding"
+              ],
+              [
+                "2026.07",
+                "70 levels, six solver-verified layouts each"
+              ],
+              [
+                "Now",
+                "Version 1.0.0 — Korean, English, Japanese, Spanish"
+              ]
+            ]
+          },
+          "privacySection": {
+            "eyebrow": "Privacy",
+            "title": "There is nothing here to collect.",
+            "lede": "No account, no cloud, no leaderboard to upload to. Your progress is a handful of numbers in the device's own storage, and it is deleted with the app. The game is free and carries ads, which means Google AdMob collects the usual advertising identifier and device information — all of it written out in the {privacy}."
+          },
+          "privacyLinkText": "privacy policy",
+          "close": {
+            "title": "Clear a path.",
+            "lede": "Free, and it works offline — the network is only used for ads. Coming to the App Store and Google Play."
+          }
+        },
+        "ko": {
+          "meta": "무료 · 계정 없음",
+          "headline": [
+            "길을 여는",
+            "퍼즐"
+          ],
+          "lede": "세 자리짜리 색 기차가 승강장에 섭니다. 색이 맞는 손님을 탭하면 타는데, 나가는 직선 하나가 끝까지 뚫려 있어야 합니다. 시간 제한도, 목숨도, 회원가입도 없습니다.",
+          "idea": {
+            "eyebrow": "이 게임의 발상",
+            "title": "색을 맞추는 건 쉬운 쪽입니다.",
+            "lede": "색은 1초면 맞춥니다. 어려운 건 그 손님을 밖으로 빼내는 일입니다. 손님은 상하좌우 중 한 방향이 판 끝까지 완전히 비어 있을 때만 나갈 수 있습니다. 꺾어 가는 길은 길이 아닙니다. 그래서 판은 바깥부터 읽게 됩니다 — 가장자리를 치워 뒷줄을 열고, 또 그 뒷줄을 엽니다."
+          },
+          "leftOutTitle": "일부러 뺀 것",
+          "leftOut": [
+            "제한 시간과 카운트다운",
+            "목숨·하트·에너지",
+            "계정과 로그인",
+            "구독과 인앱결제",
+            "점수·포인트·순위표",
+            "돈으로 파는 부스터"
+          ],
+          "remainsTitle": "남은 것",
+          "remains": [
+            "한 번 탭하면 알게 되는 규칙 하나",
+            "70개 레벨, 각 6개 배치를 무작위로",
+            "출시 전에 풀리는지 전부 검증된 배치",
+            "가득 차면 판이 끝나는 벤치",
+            "벤치를 덜 쓸수록 올라가는 별점",
+            "한국어·영어·일본어·스페인어, 그리고 오프라인"
+          ],
+          "features": {
+            "eyebrow": "들어 있는 것",
+            "title": "여섯 가지를 제대로.",
+            "items": [
+              [
+                "규칙은 하나, 대신 엄격합니다",
+                "판 끝까지 한 번도 끊기지 않는 직선 — 위·아래·왼쪽·오른쪽. 꺾어 가는 건 길이 아닙니다. 이 한 문장에서 게임의 나머지가 전부 따라 나옵니다."
+              ],
+              [
+                "못 푸는 판은 나오지 않습니다",
+                "모든 배치는 생성한 뒤 솔버가 검사합니다. 반드시 풀려야 하고, 동시에 벤치 없이는 풀리지 않아야 합니다. 둘 중 하나라도 실패한 배치는 버려지고 앱에 들어가지 않습니다."
+              ],
+              [
+                "매판 다른 판",
+                "70개 레벨마다 검증된 배치가 6개씩 들어 있고, 그중 하나를 무작위로 고릅니다. 다시하기도 마찬가지입니다. 방금 실패한 판과 지금 시작하는 판은 다른 판입니다."
+              ],
+              [
+                "압박은 벤치에서 옵니다",
+                "색이 다른 손님은 칸이 몇 개 없는 벤치에서 기다립니다. 벤치가 다 찼는데 길이 없으면 그 판은 끝입니다. 뒤로 갈수록 손님이 늘어나는 게 아니라 벤치가 줄어듭니다."
+              ],
+              [
+                "아낀 만큼 별을 받습니다",
+                "별점은 점수가 아니라 벤치에 몇 명을 앉혔는지로 매깁니다. 별 셋은 벤치를 거의 쓰지 않았다는 뜻입니다."
+              ],
+              [
+                "시계도, 잃을 것도 없습니다",
+                "1초를 생각하든 1분을 생각하든 같습니다. 줄어드는 것도, 떨어지는 것도, 내일 다시 오라는 것도 없습니다."
+              ]
+            ]
+          },
+          "story": {
+            "eyebrow": "어떻게 만들어졌나",
+            "title": "규칙 하나를, 어려워질 때까지 고쳐 썼습니다.",
+            "paragraphs": [
+              "<strong>2026년 7월</strong>, Flutter와 Flame으로 만든 색 맞추기 프로토타입에서 시작했습니다. 격자 위의 손님들, 그리고 한 번에 셋을 태우는 엘리베이터.",
+              "규칙은 거의 곧바로 바뀌었습니다. 원래는 미로처럼 길을 찾는 방식이었는데, 그러면 판을 한눈에 읽을 수가 없었습니다. 이것을 <strong>판 끝까지 가는 직선 하나</strong>로 바꾸자 모든 수가 눈에 보이게 됐고, 대신 계획하기는 훨씬 어려워졌습니다.",
+              "엘리베이터는 기차가 되고, 색은 일곱 가지로 늘고, 레벨은 손으로 만들기를 그만뒀습니다. 지금은 솔버가 <strong>70개 레벨</strong>을 배치 6개씩 만들고 검사합니다."
+            ],
+            "timeline": [
+              [
+                "2026.07",
+                "첫 프로토타입 — 격자 위의 색 맞추기"
+              ],
+              [
+                "2026.07",
+                "미로 길찾기를 직선 규칙으로 교체"
+              ],
+              [
+                "2026.07",
+                "70개 레벨, 검증된 배치 6개씩"
+              ],
+              [
+                "지금",
+                "버전 1.0.0 — 한국어·영어·일본어·스페인어"
+              ]
+            ]
+          },
+          "privacySection": {
+            "eyebrow": "개인정보",
+            "title": "가져갈 것이 없습니다.",
+            "lede": "계정도, 클라우드도, 기록을 올릴 순위표도 없습니다. 진행 상황은 기기 저장소에 든 숫자 몇 개고, 앱을 지우면 같이 지워집니다. 이 게임은 무료이고 광고가 붙어 있어서, Google AdMob이 통상적인 광고 식별자와 기기 정보를 수집합니다 — 그 내용은 {privacy}에 전부 적어 두었습니다."
+          },
+          "privacyLinkText": "개인정보 처리방침",
+          "close": {
+            "title": "길을 여세요.",
+            "lede": "무료이고 오프라인에서도 돌아갑니다. 네트워크는 광고에만 씁니다. App Store와 Google Play에 곧 출시됩니다."
+          }
+        },
+        "ja": {
+          "meta": "無料 · アカウント不要",
+          "headline": [
+            "道をひらく",
+            "パズル"
+          ],
+          "lede": "3席の色つき電車がホームに停まります。色の合うお客さんをタップすると乗車しますが、外へ出る直線が一本、端まで空いていなければなりません。制限時間もライフも会員登録もありません。",
+          "idea": {
+            "eyebrow": "このゲームの発想",
+            "title": "色を合わせるのは、簡単なほうです。",
+            "lede": "色は1秒で合います。難しいのは、そのお客さんを外へ出すことです。お客さんは上下左右のどれか一方向が盤の端まで完全に空いているときだけ出られます。曲がる道は道ではありません。だから盤は外側から読むことになります。端を片づけて奥の列を開け、さらにその奥を開ける。"
+          },
+          "leftOutTitle": "あえて入れなかったもの",
+          "leftOut": [
+            "制限時間とカウントダウン",
+            "ライフ・ハート・スタミナ",
+            "アカウントとログイン",
+            "サブスクリプションとアプリ内課金",
+            "スコア・ポイント・ランキング",
+            "有料のブースター"
+          ],
+          "remainsTitle": "残ったもの",
+          "remains": [
+            "1回タップすれば分かるルールが一つ",
+            "70レベル、各6配置をランダムに",
+            "配信前にすべて解けることを検証済み",
+            "埋まればその面が終わるベンチ",
+            "ベンチを使わないほど上がるスター",
+            "韓国語・英語・日本語・スペイン語、そしてオフライン"
+          ],
+          "features": {
+            "eyebrow": "入っているもの",
+            "title": "六つを、きちんと。",
+            "items": [
+              [
+                "ルールは一つ、そのぶん厳格です",
+                "盤の端まで一度も途切れない直線 — 上・下・左・右。曲がるのは道ではありません。ゲームの残りはすべて、この一文から出てきます。"
+              ],
+              [
+                "解けない盤は出てきません",
+                "すべての配置は生成後にソルバーが検査します。必ず解けること、そして同時にベンチなしでは解けないこと。どちらかを満たさない配置は捨てられ、アプリには入りません。"
+              ],
+              [
+                "遊ぶたびに違う盤",
+                "70レベルそれぞれに検証済みの配置が6つあり、その中から一つをランダムに選びます。やり直しも同じです。いま失敗した盤と、次に始まる盤は別の盤です。"
+              ],
+              [
+                "プレッシャーはベンチから",
+                "色の違うお客さんは、席のごく少ないベンチで待ちます。ベンチが埋まって道もなければ、その面は終わりです。後半はお客さんが増えるのではなく、ベンチが減ります。"
+              ],
+              [
+                "節約したぶんスターになります",
+                "評価は点数ではなく、ベンチに何人座らせたかで決まります。スター3つは、ベンチをほとんど使わなかったという意味です。"
+              ],
+              [
+                "時計も、失うものもありません",
+                "1秒考えても1分考えても同じです。減るものも、尽きるものも、明日また来いと言うものもありません。"
+              ]
+            ]
+          },
+          "story": {
+            "eyebrow": "どこから来たか",
+            "title": "一つのルールを、難しくなるまで書き直しました。",
+            "paragraphs": [
+              "<strong>2026年7月</strong>、FlutterとFlameで作った色合わせのプロトタイプから始まりました。マス目の上のお客さんと、一度に3人を運ぶエレベーター。",
+              "ルールはすぐに変わりました。もとは迷路のように道を探す方式でしたが、それでは盤を一目で読めません。これを<strong>端まで届く一本の直線</strong>に変えたことで、すべての手が目に見えるようになり、そのぶん計画するのは格段に難しくなりました。",
+              "エレベーターは電車になり、色は7種類に増え、レベルは手作りをやめました。いまはソルバーが<strong>70レベル</strong>を、配置6つずつ生成して検査しています。"
+            ],
+            "timeline": [
+              [
+                "2026.07",
+                "最初のプロトタイプ — マス目の色合わせ"
+              ],
+              [
+                "2026.07",
+                "迷路の経路探索を直線ルールに置き換え"
+              ],
+              [
+                "2026.07",
+                "70レベル、検証済みの配置を6つずつ"
+              ],
+              [
+                "現在",
+                "バージョン1.0.0 — 韓国語・英語・日本語・スペイン語"
+              ]
+            ]
+          },
+          "privacySection": {
+            "eyebrow": "プライバシー",
+            "title": "集めるものがありません。",
+            "lede": "アカウントも、クラウドも、記録を送るランキングもありません。進行状況は端末のストレージにある数個の数字で、アプリを削除すれば一緒に消えます。本作は無料で広告が入るため、Google AdMobが通常の広告識別子と端末情報を収集します。その内容は{privacy}にすべて記載しています。"
+          },
+          "privacyLinkText": "プライバシーポリシー",
+          "close": {
+            "title": "道をひらこう。",
+            "lede": "無料で、オフラインでも動きます。ネットワークは広告にのみ使用します。App StoreとGoogle Playで近日公開。"
+          }
+        },
+        "es": {
+          "meta": "Gratis · Sin cuenta",
+          "headline": [
+            "Un puzle sobre",
+            "la salida"
+          ],
+          "lede": "Un tren de color para en el andén con tres asientos. Toca a los pasajeros cuyo color coincide y suben, pero solo si una línea recta de salida está completamente despejada. Sin cronómetro, sin vidas, sin registro.",
+          "idea": {
+            "eyebrow": "La idea",
+            "title": "El color es la parte fácil.",
+            "lede": "Emparejar colores lleva un segundo; sacar al pasajero es lo que cuesta pensar. Un pasajero solo puede salir por una línea recta — arriba, abajo, izquierda o derecha — que llegue despejada hasta el borde del tablero. Girar una esquina no es un camino. Por eso el tablero se lee de fuera hacia dentro: despeja el borde para abrir la fila de detrás, y luego la siguiente."
+          },
+          "leftOutTitle": "Dejado fuera a propósito",
+          "leftOut": [
+            "Cronómetros y cuentas atrás",
+            "Vidas, corazones y energía",
+            "Cuentas e inicio de sesión",
+            "Suscripciones y compras dentro de la app",
+            "Puntuaciones, puntos y clasificaciones",
+            "Mejoras que se venden por dinero"
+          ],
+          "remainsTitle": "Lo que queda",
+          "remains": [
+            "Una regla que se aprende en un toque",
+            "70 niveles, seis tableros cada uno, al azar",
+            "Cada tablero verificado como resoluble antes de publicarse",
+            "Un banco que se llena y termina el nivel",
+            "Estrellas por lo poco que usaste el banco",
+            "Coreano, inglés, japonés y español — y sin conexión"
+          ],
+          "features": {
+            "eyebrow": "Qué incluye",
+            "title": "Seis cosas, bien hechas.",
+            "items": [
+              [
+                "Una regla, y es estricta",
+                "Una línea recta e ininterrumpida hasta el borde del tablero: arriba, abajo, izquierda o derecha. Girar una esquina no es un camino. Todo lo demás sale de esa única frase."
+              ],
+              [
+                "Ningún tablero es irresoluble",
+                "Cada tablero se genera y después lo comprueba un solucionador: tiene que poder ganarse, y a la vez no poder ganarse sin usar el banco. Los que fallan cualquiera de las dos pruebas se descartan y no llegan a la app."
+              ],
+              [
+                "Un tablero distinto cada partida",
+                "Cada uno de los 70 niveles guarda seis tableros verificados y elige uno al azar, también al reintentar. El nivel que fallaste no es el nivel que vuelves a jugar."
+              ],
+              [
+                "La presión está en el banco",
+                "Los pasajeros de otro color esperan en un banco con muy pocas plazas. Si se llena y no queda salida, el nivel termina. Los niveles avanzados no traen más pasajeros: traen menos plazas."
+              ],
+              [
+                "Estrellas por contención",
+                "La valoración cuenta cuántos pasajeros tuviste que dejar en el banco, no los puntos. Tres estrellas significa que apenas lo usaste."
+              ],
+              [
+                "Sin reloj y sin nada que perder",
+                "Piensa un segundo o un minuto, da igual. Nada baja, nada se agota y nada te pide volver mañana."
+              ]
+            ]
+          },
+          "story": {
+            "eyebrow": "De dónde viene",
+            "title": "Una regla, reescrita hasta que costó.",
+            "paragraphs": [
+              "Empezó en <strong>julio de 2026</strong> como un prototipo de emparejar colores hecho en Flutter y Flame: pasajeros sobre una cuadrícula y un ascensor que se llevaba a tres cada vez.",
+              "La regla cambió casi enseguida. Salir era antes una búsqueda tipo laberinto, y así el tablero no se leía de un vistazo. Sustituirla por una <strong>única línea recta hasta el borde</strong> hizo visible cada movimiento y, a cambio, mucho más difícil planificar.",
+              "El ascensor pasó a ser un tren, los colores llegaron a siete y los niveles dejaron de escribirse a mano: ahora un solucionador construye y comprueba los <strong>70 niveles</strong>, con seis tableros cada uno."
+            ],
+            "timeline": [
+              [
+                "2026.07",
+                "Primer prototipo — emparejar colores en una cuadrícula"
+              ],
+              [
+                "2026.07",
+                "La regla de la línea recta sustituye al laberinto"
+              ],
+              [
+                "2026.07",
+                "70 niveles, seis tableros verificados cada uno"
+              ],
+              [
+                "Ahora",
+                "Versión 1.0.0 — coreano, inglés, japonés y español"
+              ]
+            ]
+          },
+          "privacySection": {
+            "eyebrow": "Privacidad",
+            "title": "Aquí no hay nada que recoger.",
+            "lede": "Sin cuenta, sin nube y sin clasificación a la que subir nada. Tu progreso son unos pocos números en el almacenamiento del dispositivo y se borra junto con la aplicación. El juego es gratuito y lleva anuncios, lo que significa que Google AdMob recoge el identificador de publicidad habitual e información del dispositivo, todo ello detallado en la {privacy}."
+          },
+          "privacyLinkText": "política de privacidad",
+          "close": {
+            "title": "Abre un camino.",
+            "lede": "Gratis y funciona sin conexión: la red solo se usa para los anuncios. Próximamente en App Store y Google Play."
+          }
+        }
+      }
     }
   ]
 }
