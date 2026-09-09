@@ -680,6 +680,13 @@ def landing_page(app, lang):
     head, mark = T['headline']
     shots = L.get('shots', [])
 
+    # The headline's second half normally carries a hand-drawn accent underline.
+    # An app can opt out with "markHeadline": false — the words stay, the stroke
+    # goes. (Color Express: the screenshots below are already full of colour.)
+    underline = ('<svg viewBox="0 0 340 24" aria-hidden="true"><path d="M4 16 '
+                 'C58 6, 96 20, 150 12 C204 4, 246 18, 336 9"/></svg>'
+                 if app.get('markHeadline', True) else '')
+
     def shot(i):
         if i >= len(shots):
             return ''
@@ -738,7 +745,7 @@ def landing_page(app, lang):
 
 <section class="hero">
   <h1>{E(head)}
-    <span class="markword">{E(mark)}<svg viewBox="0 0 340 24" aria-hidden="true"><path d="M4 16 C58 6, 96 20, 150 12 C204 4, 246 18, 336 9"/></svg></span>.
+    <span class="markword">{E(mark)}{underline}</span>.
   </h1>
   <p class="lede">{T['lede']}</p>
   {store_buttons(app, lang)}

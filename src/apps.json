@@ -1832,6 +1832,7 @@
         "ja",
         "es"
       ],
+      "markHeadline": false,
       "summary": "A colour-matching puzzle about the way out — clear a straight path and put every passenger on the train of their colour.",
       "summaryKo": "길을 여는 색 맞추기 퍼즐. 직선으로 길을 뚫어 손님을 제 색 기차에 태워 보내세요.",
       "summaryJa": "道をひらく色合わせパズル。まっすぐ道を開けて、お客さんを同じ色の電車に乗せましょう。",
