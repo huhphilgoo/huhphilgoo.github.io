@@ -1215,20 +1215,18 @@
         "appStore": "K-Pockit"
       },
       "links": {
-        "appStore": "https://apps.apple.com/app/id6762417616"
+        "appStore": "https://apps.apple.com/app/id6762417616",
+        "play": "https://play.google.com/store/apps/details?id=com.hpg.expense_tracker"
       },
-      "comingSoon": [
-        "play"
-      ],
       "summary": "A budget app you actually keep — four taps a record, donut statistics, and nothing leaves your phone.",
       "summaryKo": "계속 쓰게 되는 가계부. 한 건에 네 번의 탭, 도넛 통계, 그리고 폰 밖으로 나가지 않는 기록.",
       "summaryJa": "続けられる家計簿。1件4タップ、ドーナツ統計、そして端末の外に出ない記録。",
       "summaryEs": "Un control de gastos que sí mantienes: cuatro toques por registro, estadísticas de anillo y nada sale de tu teléfono.",
       "policyUpdated": {
-        "ko": "2026년 9월 5일",
-        "en": "September 5, 2026",
-        "ja": "2026年9月5日",
-        "es": "5 de septiembre de 2026"
+        "ko": "2026년 9월 9일",
+        "en": "September 9, 2026",
+        "ja": "2026年9月9日",
+        "es": "9 de septiembre de 2026"
       },
       "privacy": {
         "storage": {
@@ -1473,11 +1471,11 @@
           },
           "story": {
             "eyebrow": "Where it came from",
-            "title": "Built on iOS, now heading to Android.",
+            "title": "Built on iOS, now on both.",
             "paragraphs": [
               "The first version reached the App Store in <strong>April 2026</strong> — a ledger for the kind of person who tries a budget app every January and stops by February.",
               "<strong>2.0</strong> arrived that June: a redesign, the donut statistics, budgets, custom categories, and CSV and JSON export so the records were never trapped in the app.",
-              "The Android build is the same Flutter codebase and finished its closed test in <strong>2026</strong>. It is with Google now."
+              "The Android build is the same Flutter codebase. It went through a closed test and reached <strong>Google Play</strong> in September 2026 — the same bundle the testers ran."
             ],
             "timeline": [
               [
@@ -1490,7 +1488,7 @@
               ],
               [
                 "2026.09",
-                "Android closed test finished; Play release pending"
+                "Released on Google Play"
               ],
               [
                 "Now",
@@ -1506,7 +1504,7 @@
           "privacyLinkText": "privacy policy",
           "close": {
             "title": "Start with today's coffee.",
-            "lede": "Free on the App Store, with the Android release on the way. It works offline — the network is only used for ads and for exchange rates."
+            "lede": "Free on the App Store and Google Play. It works offline — the network is only used for ads and for exchange rates."
           }
         },
         "ko": {
@@ -1571,11 +1569,11 @@
           },
           "story": {
             "eyebrow": "어디서 왔나",
-            "title": "iOS에서 만들어, 이제 안드로이드로.",
+            "title": "iOS에서 만들어, 이제 양쪽으로.",
             "paragraphs": [
               "첫 버전은 <strong>2026년 4월</strong> App Store에 올라갔습니다. 1월마다 가계부 앱을 깔고 2월에 그만두는 사람을 위한 장부였습니다.",
               "<strong>2.0</strong>은 그해 6월에 나왔습니다. 디자인을 새로 하고 도넛 통계, 예산, 커스텀 카테고리, 그리고 기록이 앱 안에 갇히지 않도록 CSV·JSON 내보내기를 넣었습니다.",
-              "안드로이드는 같은 Flutter 코드로 만들었고 <strong>2026년</strong>에 비공개 테스트를 마쳤습니다. 지금은 구글 심사 중입니다."
+              "안드로이드는 같은 Flutter 코드로 만들었습니다. 비공개 테스트를 거쳐 2026년 9월 <strong>Google Play</strong>에 출시했고, 테스터가 쓰던 것과 같은 빌드입니다."
             ],
             "timeline": [
               [
@@ -1588,7 +1586,7 @@
               ],
               [
                 "2026.09",
-                "안드로이드 비공개 테스트 완료, Play 출시 대기"
+                "Google Play 출시"
               ],
               [
                 "현재",
@@ -1604,7 +1602,7 @@
           "privacyLinkText": "개인정보처리방침",
           "close": {
             "title": "오늘 마신 커피부터.",
-            "lede": "App Store에서 무료이고, 안드로이드는 준비 중입니다. 오프라인에서 동작하며 네트워크는 광고와 환율에만 씁니다."
+            "lede": "App Store와 Google Play에서 무료입니다. 오프라인에서 동작하며 네트워크는 광고와 환율에만 씁니다."
           }
         },
         "ja": {
@@ -1669,11 +1667,11 @@
           },
           "story": {
             "eyebrow": "どこから来たか",
-            "title": "iOSで作り、これからAndroidへ。",
+            "title": "iOSで作り、いまは両方で。",
             "paragraphs": [
               "最初のバージョンは<strong>2026年4月</strong>にApp Storeへ。毎年1月に家計簿アプリを入れて2月にやめてしまう人のための帳簿でした。",
               "<strong>2.0</strong>はその年の6月です。デザインを一新し、ドーナツ統計、予算、カスタムカテゴリー、そして記録がアプリの中に閉じ込められないようCSV・JSON書き出しを加えました。",
-              "Android版は同じFlutterのコードで作り、<strong>2026年</strong>にクローズドテストを終えました。現在はGoogleの審査中です。"
+              "Android版は同じFlutterのコードです。クローズドテストを経て2026年9月に<strong>Google Play</strong>で公開しました。テスターが使ったものと同じビルドです。"
             ],
             "timeline": [
               [
@@ -1686,7 +1684,7 @@
               ],
               [
                 "2026.09",
-                "Androidのクローズドテスト完了、Play公開待ち"
+                "Google Playで公開"
               ],
               [
                 "現在",
@@ -1702,7 +1700,7 @@
           "privacyLinkText": "プライバシーポリシー",
           "close": {
             "title": "今日のコーヒーから。",
-            "lede": "App Storeで無料、Androidは準備中です。オフラインで動作し、ネットワークは広告と為替レートにしか使いません。"
+            "lede": "App StoreとGoogle Playで無料です。オフラインで動作し、ネットワークは広告と為替レートにしか使いません。"
           }
         },
         "es": {
@@ -1767,11 +1765,11 @@
           },
           "story": {
             "eyebrow": "De dónde viene",
-            "title": "Nacida en iOS, ahora camino de Android.",
+            "title": "Nacida en iOS, ahora en ambas.",
             "paragraphs": [
               "La primera versión llegó a la App Store en <strong>abril de 2026</strong>: un libro de cuentas para quien instala una app de gastos cada enero y la deja en febrero.",
               "La <strong>2.0</strong> llegó en junio de ese año: rediseño, las estadísticas de anillo, los presupuestos, las categorías propias y la exportación a CSV y JSON para que los registros nunca quedaran atrapados en la app.",
-              "La versión de Android es el mismo código Flutter y terminó su prueba cerrada en <strong>2026</strong>. Ahora está en manos de Google."
+              "La versión de Android es el mismo código Flutter. Pasó una prueba cerrada y llegó a <strong>Google Play</strong> en septiembre de 2026, con el mismo paquete que probaron los testers."
             ],
             "timeline": [
               [
@@ -1784,7 +1782,7 @@
               ],
               [
                 "2026.09",
-                "Prueba cerrada de Android terminada; pendiente de publicarse en Play"
+                "Publicada en Google Play"
               ],
               [
                 "Ahora",
@@ -1800,7 +1798,7 @@
           "privacyLinkText": "política de privacidad",
           "close": {
             "title": "Empieza por el café de hoy.",
-            "lede": "Gratis en la App Store, con la versión de Android en camino. Funciona sin conexión: la red solo se usa para los anuncios y para los tipos de cambio."
+            "lede": "Gratis en la App Store y en Google Play. Funciona sin conexión: la red solo se usa para los anuncios y para los tipos de cambio."
           }
         }
       },
