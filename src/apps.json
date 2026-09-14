@@ -1851,10 +1851,10 @@
       "summaryJa": "道をひらく色合わせパズル。まっすぐ道を開けて、お客さんを同じ色の電車に乗せましょう。",
       "summaryEs": "Un puzle de colores sobre la salida: abre un camino recto y sube a cada pasajero al tren de su color.",
       "policyUpdated": {
-        "ko": "2026년 9월 9일",
-        "en": "September 9, 2026",
-        "ja": "2026年9月9日",
-        "es": "9 de septiembre de 2026"
+        "ko": "2026년 9월 14일",
+        "en": "September 14, 2026",
+        "ja": "2026年9月14日",
+        "es": "14 de septiembre de 2026"
       },
       "privacy": {
         "storage": {
@@ -1868,6 +1868,12 @@
         ],
         "consent": {
           "ump": true,
+          "manage": {
+            "ko": "해당 지역 이용자는 홈 화면 오른쪽 위의 개인정보 아이콘(방패 모양)을 눌러 언제든 동의를 변경하거나 철회할 수 있습니다.",
+            "en": "Those users can change or withdraw their consent at any time with the privacy icon (a shield) at the top right of the home screen.",
+            "ja": "対象地域のユーザーは、ホーム画面右上のプライバシーアイコン（盾の形）から、いつでも同意を変更・撤回できます。",
+            "es": "Esos usuarios pueden cambiar o retirar su consentimiento en cualquier momento con el icono de privacidad (un escudo) en la parte superior derecha de la pantalla de inicio."
+          },
           "usStates": true,
           "att": true
         },
