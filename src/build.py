@@ -439,6 +439,9 @@ def privacy_page(app, lang):
     if p['consent'].get('ump'):
         consent.append('유럽경제지역(EEA)·영국 등 해당 지역 이용자에게는 앱 최초 실행 시 '
                        '<strong>Google UMP(사용자 메시지 플랫폼)</strong>를 통해 광고 개인 맞춤설정 동의 여부를 확인합니다.')
+    if p['consent'].get('usStates'):
+        consent.append('미국 캘리포니아 등 해당 주(州) 이용자에게는 주 개인정보보호법에 따른 고지를 표시하며, '
+                       '개인정보의 <strong>판매·공유 거부(Opt-Out)</strong> 선택권을 제공합니다.')
     if p['consent'].get('att'):
         consent.append('iOS에서는 <strong>앱 추적 투명성(ATT)</strong> 권한 요청을 통해 이용자가 추적을 허용하거나 거부할 수 있습니다.')
     if consent:
@@ -480,6 +483,9 @@ def privacy_page(app, lang):
     ce = []
     if p['consent'].get('ump'):
         ce.append('Users in the EEA and the UK are shown a Google UMP consent form on first launch.')
+    if p['consent'].get('usStates'):
+        ce.append('Users in applicable US states are shown a state privacy notice and can opt out '
+                  'of the sale or sharing of personal information.')
     if p['consent'].get('att'):
         ce.append('On iOS, App Tracking Transparency (ATT) lets you allow or deny tracking.')
     if ce:
@@ -528,6 +534,9 @@ def privacy_page(app, lang):
         cj.append('欧州経済領域（EEA）および英国などの対象地域のユーザーには、初回起動時に'
                   '<strong>Google UMP（ユーザーメッセージングプラットフォーム）</strong>を通じて'
                   '広告のパーソナライズに関する同意を確認します。')
+    if p['consent'].get('usStates'):
+        cj.append('米国の対象となる州のユーザーには、州のプライバシー法に基づく通知を表示し、'
+                  '個人情報の販売・共有を<strong>オプトアウト</strong>する選択肢を提供します。')
     if p['consent'].get('att'):
         cj.append('iOSでは<strong>アプリのトラッキングの透明性（ATT）</strong>の許可要求により、'
                   'ユーザーがトラッキングを許可または拒否できます。')
@@ -578,6 +587,10 @@ def privacy_page(app, lang):
     if p['consent'].get('ump'):
         cs.append('A los usuarios del EEE y del Reino Unido se les muestra un formulario de '
                   'consentimiento de Google UMP en el primer inicio.')
+    if p['consent'].get('usStates'):
+        cs.append('A los usuarios de los estados de EE. UU. aplicables se les muestra un aviso de '
+                  'privacidad estatal y pueden rechazar la venta o el uso compartido de su '
+                  'informacion personal.')
     if p['consent'].get('att'):
         cs.append('En iOS, la Transparencia de Seguimiento de Apps (ATT) le permite permitir '
                   'o denegar el seguimiento.')
