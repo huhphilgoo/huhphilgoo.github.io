@@ -205,6 +205,8 @@ footer .spacer{flex:1}
 .cell{background:var(--sheet);padding:24px}
 .cell h3{margin-bottom:7px}
 .cell p{font-size:.92rem;color:var(--muted)}
+.soon{display:inline-block;margin-left:8px;padding:1px 7px;border:1px dashed var(--line);border-radius:6px;
+  font-family:var(--util);font-size:.68rem;font-weight:400;color:var(--muted);vertical-align:middle;white-space:nowrap}
 .swatches{display:grid;grid-template-columns:repeat(18,1fr);gap:6px;margin-top:32px}
 .sw{aspect-ratio:1;border-radius:7px;border:1px solid rgba(120,120,120,.28);position:relative;transition:transform .16s ease}
 .sw:hover{transform:translateY(-5px) scale(1.06);z-index:2}
@@ -344,6 +346,12 @@ STORE_ICONS = {
 STORE_LABELS = {'play': 'Google Play', 'appStore': 'App Store'}
 SOON_LABELS = {'en': 'Coming soon', 'ko': '곧 출시', 'ja': '近日公開',
                'es': 'Próximamente'}
+
+# A feature that is built but not yet switched on in the app. Mark it by adding a
+# trailing "soon" — ["title", "body", "soon"] in features.items, ["text", "soon"]
+# in remains — and it renders with a dashed tag instead of reading as shipped.
+FEATURE_SOON_LABELS = {'en': 'Coming soon', 'ko': '예정', 'ja': '近日対応',
+                       'es': 'Próximamente'}
 
 
 def store_buttons(app, lang='en'):
@@ -721,10 +729,15 @@ def landing_page(app, lang):
 
     left = ''.join(f'<li><span class="cross">—</span><span class="gone">{E(x)}</span></li>'
                    for x in T['leftOut'])
-    keep = ''.join(f'<li><span class="tick">+</span><span>{E(x)}</span></li>'
-                   for x in T['remains'])
-    cells = ''.join(f'<div class="cell"><h3>{E(t)}</h3><p>{E(d)}</p></div>'
-                    for t, d in T['features']['items'])
+    def soon(parts):
+        return (f'<span class="soon">{E(FEATURE_SOON_LABELS[lang])}</span>'
+                if parts and parts[-1] == 'soon' else '')
+
+    keep = ''.join(
+        f'<li><span class="tick">+</span><span>{E(x[0])}{soon(x[1:])}</span></li>'
+        for x in ([x] if isinstance(x, str) else x for x in T['remains']))
+    cells = ''.join(f'<div class="cell"><h3>{E(it[0])}{soon(it[2:])}</h3><p>{E(it[1])}</p></div>'
+                    for it in T['features']['items'])
     sw = ''.join(f'<span class="sw" style="background:{c}" data-hex="{c}"></span>'
                  for c in L.get('palette', []))
     paras = ''.join(f'<p>{t}</p>' for t in T['story']['paragraphs'])

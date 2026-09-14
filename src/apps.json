@@ -1449,7 +1449,7 @@
             "A calculator built into the amount field",
             "Live exchange rates across eleven currencies",
             "Payment method and card issuer on every record",
-            "Budgets per category and for the month",
+            ["Budgets per category and for the month", "soon"],
             "CSV and JSON export you can take anywhere"
           ],
           "features": {
@@ -1474,7 +1474,8 @@
               ],
               [
                 "Budgets you set yourself",
-                "A cap for the month or for one category. It is there to be checked, not to send you notifications."
+                "A cap for the month or for one category. It is there to be checked, not to send you notifications.",
+                "soon"
               ],
               [
                 "Your own categories",
@@ -1487,7 +1488,7 @@
             "title": "Built on iOS, now on both.",
             "paragraphs": [
               "The first version reached the App Store in <strong>April 2026</strong> — a ledger for the kind of person who tries a budget app every January and stops by February.",
-              "<strong>2.0</strong> arrived that June: a redesign, the donut statistics, budgets, custom categories, and CSV and JSON export so the records were never trapped in the app.",
+              "<strong>2.0</strong> arrived that June: a redesign, the donut statistics, custom categories, and CSV and JSON export so the records were never trapped in the app.",
               "The Android build is the same Flutter codebase. It went through a closed test and reached <strong>Google Play</strong> in September 2026 — the same bundle the testers ran."
             ],
             "timeline": [
@@ -1497,7 +1498,7 @@
               ],
               [
                 "2026.06",
-                "2.0 — new design, statistics, budgets, export"
+                "2.0 — new design, statistics, export"
               ],
               [
                 "2026.09",
@@ -1547,7 +1548,7 @@
             "금액 칸에 들어 있는 계산기",
             "11개 통화의 실시간 환율",
             "기록마다 남는 결제 수단과 카드사",
-            "카테고리별, 그리고 이번 달 예산",
+            ["카테고리별, 그리고 이번 달 예산", "soon"],
             "어디로든 가져갈 수 있는 CSV·JSON 내보내기"
           ],
           "features": {
@@ -1572,7 +1573,8 @@
               ],
               [
                 "직접 정하는 예산",
-                "이번 달 전체, 또는 카테고리 하나에 한도를 둡니다. 알림을 보내려고 있는 게 아니라 들여다보라고 있는 기능입니다."
+                "이번 달 전체, 또는 카테고리 하나에 한도를 둡니다. 알림을 보내려고 있는 게 아니라 들여다보라고 있는 기능입니다.",
+                "soon"
               ],
               [
                 "나만의 카테고리",
@@ -1585,7 +1587,7 @@
             "title": "iOS에서 만들어, 이제 양쪽으로.",
             "paragraphs": [
               "첫 버전은 <strong>2026년 4월</strong> App Store에 올라갔습니다. 1월마다 가계부 앱을 깔고 2월에 그만두는 사람을 위한 장부였습니다.",
-              "<strong>2.0</strong>은 그해 6월에 나왔습니다. 디자인을 새로 하고 도넛 통계, 예산, 커스텀 카테고리, 그리고 기록이 앱 안에 갇히지 않도록 CSV·JSON 내보내기를 넣었습니다.",
+              "<strong>2.0</strong>은 그해 6월에 나왔습니다. 디자인을 새로 하고 도넛 통계, 커스텀 카테고리, 그리고 기록이 앱 안에 갇히지 않도록 CSV·JSON 내보내기를 넣었습니다.",
               "안드로이드는 같은 Flutter 코드로 만들었습니다. 비공개 테스트를 거쳐 2026년 9월 <strong>Google Play</strong>에 출시했고, 테스터가 쓰던 것과 같은 빌드입니다."
             ],
             "timeline": [
@@ -1595,7 +1597,7 @@
               ],
               [
                 "2026.06",
-                "2.0 — 새 디자인, 통계, 예산, 내보내기"
+                "2.0 — 새 디자인, 통계, 내보내기"
               ],
               [
                 "2026.09",
@@ -1645,7 +1647,7 @@
             "金額欄に入っている電卓",
             "11通貨の最新レート",
             "記録ごとに残る支払い方法とカード会社",
-            "カテゴリー別と今月の予算",
+            ["カテゴリー別と今月の予算", "soon"],
             "どこへでも持ち出せるCSV・JSON書き出し"
           ],
           "features": {
@@ -1670,7 +1672,8 @@
               ],
               [
                 "自分で決める予算",
-                "今月全体、またはカテゴリー1つに上限を置きます。通知を送るためではなく、見に行くための機能です。"
+                "今月全体、またはカテゴリー1つに上限を置きます。通知を送るためではなく、見に行くための機能です。",
+                "soon"
               ],
               [
                 "自分のカテゴリー",
@@ -1683,7 +1686,7 @@
             "title": "iOSで作り、いまは両方で。",
             "paragraphs": [
               "最初のバージョンは<strong>2026年4月</strong>にApp Storeへ。毎年1月に家計簿アプリを入れて2月にやめてしまう人のための帳簿でした。",
-              "<strong>2.0</strong>はその年の6月です。デザインを一新し、ドーナツ統計、予算、カスタムカテゴリー、そして記録がアプリの中に閉じ込められないようCSV・JSON書き出しを加えました。",
+              "<strong>2.0</strong>はその年の6月です。デザインを一新し、ドーナツ統計、カスタムカテゴリー、そして記録がアプリの中に閉じ込められないようCSV・JSON書き出しを加えました。",
               "Android版は同じFlutterのコードです。クローズドテストを経て2026年9月に<strong>Google Play</strong>で公開しました。テスターが使ったものと同じビルドです。"
             ],
             "timeline": [
@@ -1693,7 +1696,7 @@
               ],
               [
                 "2026.06",
-                "2.0 — 新デザイン、統計、予算、書き出し"
+                "2.0 — 新デザイン、統計、書き出し"
               ],
               [
                 "2026.09",
@@ -1743,7 +1746,7 @@
             "Una calculadora dentro del campo de importe",
             "Tipos de cambio actuales en once monedas",
             "Método de pago y entidad emisora en cada registro",
-            "Presupuestos por categoría y para el mes",
+            ["Presupuestos por categoría y para el mes", "soon"],
             "Exportación a CSV y JSON que puedes llevarte"
           ],
           "features": {
@@ -1768,7 +1771,8 @@
               ],
               [
                 "Presupuestos que pones tú",
-                "Un límite para el mes o para una categoría. Está para que lo consultes, no para mandarte notificaciones."
+                "Un límite para el mes o para una categoría. Está para que lo consultes, no para mandarte notificaciones.",
+                "soon"
               ],
               [
                 "Tus propias categorías",
@@ -1781,7 +1785,7 @@
             "title": "Nacida en iOS, ahora en ambas.",
             "paragraphs": [
               "La primera versión llegó a la App Store en <strong>abril de 2026</strong>: un libro de cuentas para quien instala una app de gastos cada enero y la deja en febrero.",
-              "La <strong>2.0</strong> llegó en junio de ese año: rediseño, las estadísticas de anillo, los presupuestos, las categorías propias y la exportación a CSV y JSON para que los registros nunca quedaran atrapados en la app.",
+              "La <strong>2.0</strong> llegó en junio de ese año: rediseño, las estadísticas de anillo, las categorías propias y la exportación a CSV y JSON para que los registros nunca quedaran atrapados en la app.",
               "La versión de Android es el mismo código Flutter. Pasó una prueba cerrada y llegó a <strong>Google Play</strong> en septiembre de 2026, con el mismo paquete que probaron los testers."
             ],
             "timeline": [
@@ -1791,7 +1795,7 @@
               ],
               [
                 "2026.06",
-                "2.0 — nuevo diseño, estadísticas, presupuestos, exportación"
+                "2.0 — nuevo diseño, estadísticas, exportación"
               ],
               [
                 "2026.09",
