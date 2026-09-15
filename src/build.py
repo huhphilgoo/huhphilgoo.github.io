@@ -456,6 +456,19 @@ def privacy_page(app, lang):
         consent.append('iOS에서는 <strong>앱 추적 투명성(ATT)</strong> 권한 요청을 통해 이용자가 추적을 허용하거나 거부할 수 있습니다.')
     if consent:
         ko.append('<p><strong>동의 관리</strong></p><ul>' + ''.join(f'<li>{c}</li>' for c in consent) + '</ul>')
+    if p['consent'].get('gdpr'):
+        # Opt-in per app: GDPR / UK GDPR detail (legal basis, rights, transfer). Apps
+        # without `consent.gdpr` render exactly as before.
+        ko.append('<p><strong>유럽경제지역·영국 이용자의 권리 (GDPR·UK GDPR)</strong></p><ul>'
+                  '<li><strong>처리의 법적 근거</strong>: 해당 지역에서 광고 목적의 개인정보 처리는 이용자의 '
+                  '<strong>동의</strong>를 근거로 합니다.</li>'
+                  '<li>이용자는 열람, 정정, 삭제, 처리 제한, 이의 제기, 데이터 이동을 요구하실 수 있고, '
+                  '<strong>동의는 언제든 철회하실 수 있습니다.</strong> 철회 전에 이루어진 처리가 소급해 위법해지지는 않습니다.</li>'
+                  '<li>개발자는 이용자를 식별할 수 있는 정보를 보관하지 않습니다. 제3자 서비스가 처리하는 정보에 관한 요청은 '
+                  f'<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a>으로 연락해 주시면 방법을 안내해 드립니다.</li>'
+                  '<li><strong>국외 이전</strong>: 처리 주체인 Google LLC는 미국에 있으며, 정보가 이용자의 국가 밖으로 '
+                  '이전될 수 있습니다. 이전에는 Google이 적용하는 표준계약조항 등 법이 정한 보호조치가 적용됩니다.</li>'
+                  '<li>거주 국가의 개인정보 감독기관에 민원을 제기하실 권리가 있습니다.</li></ul>')
 
     rows = ''.join(f'<tr><td>{E(x["ko"][0])}</td><td>{E(x["ko"][1])}</td><td>{E(x["ko"][2])}</td></tr>'
                    for x in p['permissions'])
@@ -502,6 +515,18 @@ def privacy_page(app, lang):
         ce.append('On iOS, App Tracking Transparency (ATT) lets you allow or deny tracking.')
     if ce:
         en.append('<p><strong>Consent.</strong> ' + ' '.join(ce) + '</p>')
+    if p['consent'].get('gdpr'):
+        en.append('<p><strong>Your rights in the EEA and the UK (GDPR / UK GDPR).</strong> '
+                  'In these regions the legal basis for processing personal data for advertising is '
+                  '<strong>your consent</strong>. You may request access, rectification, erasure, restriction of '
+                  'processing, objection and data portability, and you may <strong>withdraw your consent at any '
+                  'time</strong>; withdrawal does not make processing carried out before it unlawful. The developer '
+                  'keeps nothing that identifies you; for requests about data processed by the third-party services, '
+                  f'write to <a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a> and we will explain how. '
+                  '<strong>International transfer:</strong> the processor, Google LLC, is based in the United States, so '
+                  'data may be transferred outside your country under the safeguards Google applies, such as the '
+                  'Standard Contractual Clauses. You also have the right to lodge a complaint with your data '
+                  'protection supervisory authority.</p>')
     rows_en = ''.join(f'<tr><td>{E(x["en"][0])}</td><td>{E(x["en"][1])}</td><td>{E(x["en"][2])}</td></tr>'
                       for x in p['permissions'])
     en.append('<h2>3. Device permissions</h2><div class="tablewrap"><table>'
@@ -546,8 +571,10 @@ def privacy_page(app, lang):
         cj.append('欧州経済領域（EEA）および英国などの対象地域のユーザーには、初回起動時に'
                   '<strong>Google UMP（ユーザーメッセージングプラットフォーム）</strong>を通じて'
                   '広告のパーソナライズに関する同意を確認します。')
-    if p['consent'].get('manage'):
+    if p['consent'].get('manage', {}).get('ja'):
         cj.append(E(p['consent']['manage']['ja']))
+    if p['consent'].get('gdpr') and 'ja' in langs_of(app):
+        raise SystemExit('consent.gdpr has no ja text yet: ' + app['slug'])
     if p['consent'].get('usStates'):
         cj.append('米国の対象となる州のユーザーには、州のプライバシー法に基づく通知を表示し、'
                   '個人情報の販売・共有を<strong>オプトアウト</strong>する選択肢を提供します。')
@@ -601,8 +628,10 @@ def privacy_page(app, lang):
     if p['consent'].get('ump'):
         cs.append('A los usuarios del EEE y del Reino Unido se les muestra un formulario de '
                   'consentimiento de Google UMP en el primer inicio.')
-    if p['consent'].get('manage'):
+    if p['consent'].get('manage', {}).get('es'):
         cs.append(E(p['consent']['manage']['es']))
+    if p['consent'].get('gdpr') and 'es' in langs_of(app):
+        raise SystemExit('consent.gdpr has no es text yet: ' + app['slug'])
     if p['consent'].get('usStates'):
         cs.append('A los usuarios de los estados de EE. UU. aplicables se les muestra un aviso de '
                   'privacidad estatal y pueden rechazar la venta o el uso compartido de su '
