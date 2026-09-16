@@ -25,12 +25,6 @@
       "name": "PaintBoard",
       "nameKo": "그림판",
       "package": "com.huhfeelgood.drawing",
-      "privacyLanguages": [
-        "en",
-        "ko",
-        "ja",
-        "es"
-      ],
       "storeNames": {
         "play": "그림판",
         "appStore": "paintboard - simple board",
@@ -174,6 +168,14 @@
             "ko": [
               "그림판 캔버스에 손으로 그린 언덕 위의 집과 해, 구름, 새, 사과나무. 오른쪽에 도구 패널과 색상 팔레트",
               "이게 앱의 전부입니다. 한 화면, 메뉴 없음."
+            ],
+            "ja": [
+              "PaintBoard のキャンバスに手描きされた、緑の丘の上の家と太陽、雲、鳥、りんごの木。右側に道具パネルと色のパレット",
+              "これがアプリのすべてです。1画面、メニューなし。"
+            ],
+            "es": [
+              "Una casa dibujada a mano sobre una colina verde con sol, nubes, pájaros y un manzano en el lienzo de PaintBoard, con el panel de herramientas y la paleta de colores a la derecha",
+              "Toda la aplicación. Una pantalla, sin menús."
             ]
           },
           {
@@ -185,6 +187,14 @@
             "ko": [
               "18색 중 여러 색으로 그린 무지개와 풍선 다발. 풍선 줄은 연필로 그렸습니다",
               "이 그림의 색은 모두 그 열여덟 가지 중 하나입니다."
+            ],
+            "ja": [
+              "18色のうち多くの色で描かれた虹と風船の束。風船のひもはえんぴつで描かれている",
+              "この絵の色は、すべてその18色のどれかです。"
+            ],
+            "es": [
+              "Un arcoíris y un ramo de globos dibujados con muchos de los dieciocho colores, con los hilos de los globos a lápiz",
+              "Todos los colores de esta imagen son uno de los dieciocho."
             ]
           },
           {
@@ -196,6 +206,14 @@
             "ko": [
               "팔레트의 남색으로 배경을 채운 뒤 달과 별, 고리 행성, 로켓을 그린 밤하늘",
               "배경을 열여덟 색 중 하나로 채워도 그림은 그대로 위에 남습니다."
+            ],
+            "ja": [
+              "パレットの藍色で背景を塗り、その上に月や星、環のある惑星、ロケットを描いた夜空",
+              "背景を18色のどれかで塗っても、絵はそのまま上に残ります。"
+            ],
+            "es": [
+              "Un cielo nocturno con luna, estrellas, un planeta con anillos y un cohete, dibujados sobre un fondo índigo rellenado desde la paleta",
+              "Rellena el fondo con cualquiera de los dieciocho colores. El dibujo se queda encima."
             ]
           }
         ],
@@ -270,7 +288,7 @@
             "paragraphs": [
               "I wrote the first version in <strong>2017</strong> as a native iOS app, for one reason: I wanted to sketch something quickly and every app on my phone made me set up first.",
               "This year I rewrote it from nothing in <strong>Flutter</strong>, so the Android half of the world could have it too. The rewrite was almost entirely an exercise in restraint — the temptation to add layers, brushes and a colour wheel is constant, and every one of them would have cost the thing that makes it useful.",
-              "It is still one screen. It still opens in under a second. It still has eighteen colours."
+              "It is still one screen. It still has eighteen colours."
             ],
             "timeline": [
               [
@@ -287,7 +305,7 @@
               ],
               [
                 "Now",
-                "Version 3.0.1, on both stores"
+                "Version 3.0.3, on both stores"
               ]
             ],
             "sibling": "There's also <strong>PaintBoardPro</strong> on the App Store — a separate app with a full colour picker, not a paid tier of this one. PaintBoard is deliberately the simpler of the two, and it stays free."
@@ -374,7 +392,7 @@
             "paragraphs": [
               "첫 버전은 <strong>2017년</strong>에 네이티브 iOS 앱으로 만들었습니다. 이유는 하나였습니다. 뭔가를 빠르게 스케치하고 싶은데, 폰에 있는 앱들이 전부 준비부터 시키더군요.",
               "올해 <strong>Flutter</strong>로 처음부터 다시 썼습니다. 안드로이드를 쓰는 절반의 사람들도 쓸 수 있도록요. 재작성은 거의 전부 절제의 문제였습니다. 레이어와 브러시와 색상환을 넣고 싶은 유혹은 끊이지 않는데, 그중 무엇을 넣었어도 이 앱을 쓸모 있게 만드는 바로 그것을 잃었을 겁니다.",
-              "여전히 한 화면이고, 여전히 1초 안에 열리고, 여전히 색은 열여덟 개입니다."
+              "여전히 한 화면이고, 여전히 색은 열여덟 개입니다."
             ],
             "timeline": [
               [
@@ -391,7 +409,7 @@
               ],
               [
                 "현재",
-                "버전 3.0.1, 양쪽 스토어"
+                "버전 3.0.3, 양쪽 스토어"
               ]
             ],
             "sibling": "App Store에는 <strong>PaintBoardPro</strong>도 있습니다. 색상 피커가 있는 <strong>별개의 앱</strong>이고, 이 앱의 유료 버전이 아닙니다. 그림판은 의도적으로 둘 중 단순한 쪽이며, 계속 무료입니다."
@@ -406,8 +424,222 @@
             "title": "이제 그려보세요.",
             "lede": "양쪽 스토어에서 무료입니다. 오프라인에서도 동작하니 지금 설치해두면 비행기에서도 쓸 수 있습니다."
           }
+        },
+        "ja": {
+          "meta": "無料 · iOS と Android",
+          "headline": [
+            "決めることは少なく、",
+            "描く時間は長く"
+          ],
+          "lede": "アカウントなし。チュートリアルなし。サブスクリプションなし。18色と4つの道具は固定です。最初の一筆の前に選ぶものはなく、描き始めたあとに邪魔をするものもありません。",
+          "idea": {
+            "eyebrow": "考えたこと",
+            "title": "手間のほとんどは、入れなかったものに使いました。",
+            "lede": "試したお絵かきアプリはどれも、線を一本引く前に何かを要求してきました。PaintBoard は何も求めません。その制約が、下に並ぶ機能を——そして削った機能を——すべて決めました。"
+          },
+          "leftOutTitle": "あえて入れなかったもの",
+          "leftOut": [
+            "カラーピッカー",
+            "アカウントとログイン",
+            "サブスクリプションとアプリ内課金",
+            "レイヤー、合成モード、ブラシエンジン",
+            "チュートリアルとツールチップ",
+            "絵を預かるクラウド"
+          ],
+          "remainsTitle": "そうして残ったもの",
+          "remains": [
+            "18色。迷わなくていいように、こちらで決めてあります",
+            "4つの道具：ブラシ、えんぴつ、マーカー、消しゴム",
+            "ドラッグ・サイズ変更・回転ができる文字",
+            "どんな写真でもキャンバスの背景に",
+            "完全オフラインで使えます。通信は広告のためだけです",
+            "キャンバスからそのまま PNG で保存・共有"
+          ],
+          "features": {
+            "eyebrow": "入っているもの",
+            "title": "6つだけ、きちんと。",
+            "items": [
+              [
+                "4つの道具",
+                "ブラシ、えんぴつ、マーカー、消しゴム。それぞれ太さと線の端が違います。スライダー1本で4役を演じたりはしません。"
+              ],
+              [
+                "18色",
+                "固定のパレットです。カラーホイールも、カラーコードの入力欄も、最初の一筆の前に決めることもありません。"
+              ],
+              [
+                "キャンバスの文字",
+                "好きな場所に入力して、移動・サイズ変更・回転ができます。絵の中に入るので、消しゴムはインクと同じように扱います。"
+              ],
+              [
+                "写真の背景",
+                "写真を読み込んで、その上に描けます。写真が端末の外に出ることはありません。"
+              ],
+              [
+                "拡大・移動・回転",
+                "指を広げて細部を拡大し、絵の向きを変えたくなったらキャンバスを90度回せます。"
+              ],
+              [
+                "PNGで共有",
+                "写真に保存するのも、ほかのアプリに渡すのも、そのままできます。"
+              ]
+            ]
+          },
+          "paletteSection": {
+            "eyebrow": "パレット",
+            "title": "この18色。これで全部です。",
+            "lede": "2017年の最初のバージョンから変わっていません。色を選ぶのは1タップ、そしていつでも同じ1タップです。"
+          },
+          "story": {
+            "eyebrow": "はじまり",
+            "title": "9年、1画面。",
+            "paragraphs": [
+              "最初のバージョンは<strong>2017年</strong>に iOS のネイティブアプリとして書きました。理由はひとつ、思いついたものをさっと描きたいのに、手元のアプリはどれも先に設定を求めてきたからです。",
+              "今年、<strong>Flutter</strong> でゼロから書き直しました。Android 側の人にも使ってほしかったからです。書き直しのほとんどは我慢の作業でした。レイヤーやブラシやカラーホイールを足したくなる誘惑は絶えずあり、そのどれもが、このアプリを使いやすくしているものを奪っていたはずです。",
+              "いまも1画面のままです。色もいまだに18色です。"
+            ],
+            "timeline": [
+              [
+                "2017",
+                "初リリース — ネイティブ Swift、iPhone と iPad"
+              ],
+              [
+                "2024",
+                "キャンバスの文字、写真の背景"
+              ],
+              [
+                "2026",
+                "Flutter で書き直し、Android 版をリリース"
+              ],
+              [
+                "現在",
+                "バージョン 3.0.3、両ストアで配信中"
+              ]
+            ],
+            "sibling": "App Store には<strong>PaintBoardPro</strong>もあります。フルのカラーピッカーを備えた別のアプリで、本アプリの有料版ではありません。PaintBoard は2つのうち意図的にシンプルなほうで、これからも無料です。"
+          },
+          "privacySection": {
+            "eyebrow": "プライバシー",
+            "title": "描いた絵は、端末の中に残ります。",
+            "lede": "アップロードする先のサーバーがありません。すべて端末の中で処理され、アプリを削除すれば一緒に消えます。本アプリは無料で広告が表示されるため、Google AdMob と Firebase Analytics が一般的な広告識別子と端末情報を取得します。その内容は{privacy}にすべて記載しています。"
+          },
+          "privacyLinkText": "プライバシーポリシー",
+          "close": {
+            "title": "さあ、何か描きましょう。",
+            "lede": "両ストアで無料です。オフラインでも動くので、いま入れて飛行機の中で使えます。"
+          }
+        },
+        "es": {
+          "meta": "Gratis · iOS y Android",
+          "headline": [
+            "Menos decisiones,",
+            "más dibujo"
+          ],
+          "lede": "Sin cuenta. Sin tutorial. Sin suscripción. Dieciocho colores y cuatro herramientas, fijos: no hay nada que elegir antes del primer trazo ni nada que estorbe después.",
+          "idea": {
+            "eyebrow": "La idea",
+            "title": "Casi todo el trabajo está en lo que no está.",
+            "lede": "Todas las aplicaciones de dibujo que probé querían algo de mí antes de dejarme trazar una línea. PaintBoard no pide nada. Esa restricción decidió cada función de abajo, incluidas las que quité."
+          },
+          "leftOutTitle": "Fuera, a propósito",
+          "leftOut": [
+            "Un selector de color",
+            "Cuentas e inicio de sesión",
+            "Suscripciones y compras dentro de la aplicación",
+            "Capas, modos de fusión, motores de pinceles",
+            "Tutoriales y globos de ayuda",
+            "Una nube que guarde tus dibujos"
+          ],
+          "remainsTitle": "Lo que queda",
+          "remains": [
+            "Dieciocho colores, elegidos una vez para que tú no tengas que hacerlo",
+            "Cuatro herramientas: pincel, lápiz, marcador y borrador",
+            "Texto que puedes arrastrar, redimensionar y girar",
+            "Cualquier foto como fondo del lienzo",
+            "Uso completo sin conexión: la red solo sirve para los anuncios",
+            "Exporta o comparte en PNG, directamente desde el lienzo"
+          ],
+          "features": {
+            "eyebrow": "Qué trae",
+            "title": "Seis cosas, bien hechas.",
+            "items": [
+              [
+                "Cuatro herramientas",
+                "Pincel, lápiz, marcador y borrador, cada uno con su propio grosor y borde; no un control deslizante que finge ser cuatro."
+              ],
+              [
+                "Dieciocho colores",
+                "Una paleta fija. Sin rueda, sin campo hexadecimal, sin ninguna decisión antes del primer trazo."
+              ],
+              [
+                "Texto en el lienzo",
+                "Escribe donde quieras y luego muévelo, cámbialo de tamaño o gíralo. Vive dentro del dibujo, así que el borrador lo trata como tinta."
+              ],
+              [
+                "Fondos con foto",
+                "Carga una foto y dibuja encima. La foto nunca sale del dispositivo."
+              ],
+              [
+                "Zoom, desplazamiento y giro",
+                "Pellizca para acercarte al detalle y gira el lienzo noventa grados cuando el dibujo lo pida."
+              ],
+              [
+                "Compartir en PNG",
+                "Guárdalo en tus fotos o pásalo a cualquier otra aplicación."
+              ]
+            ]
+          },
+          "paletteSection": {
+            "eyebrow": "La paleta",
+            "title": "Estos dieciocho. Ese es todo el conjunto.",
+            "lede": "Vienen de la primera versión de 2017 y no han cambiado desde entonces. Elegir un color cuesta un toque, y cuesta ese mismo toque siempre."
+          },
+          "story": {
+            "eyebrow": "De dónde viene",
+            "title": "Nueve años, una pantalla.",
+            "paragraphs": [
+              "Escribí la primera versión en <strong>2017</strong> como aplicación nativa de iOS, por una razón: quería bosquejar algo rápido y todas las aplicaciones de mi teléfono me obligaban a configurar antes.",
+              "Este año la reescribí desde cero en <strong>Flutter</strong>, para que la mitad Android del mundo también la tuviera. La reescritura fue casi por completo un ejercicio de contención: la tentación de añadir capas, pinceles y una rueda de color es constante, y cada una de ellas habría costado justo aquello que la hace útil.",
+              "Sigue siendo una sola pantalla. Siguen siendo dieciocho colores."
+            ],
+            "timeline": [
+              [
+                "2017",
+                "Primera versión: Swift nativo, iPhone y iPad"
+              ],
+              [
+                "2024",
+                "Texto en el lienzo, fondos con foto"
+              ],
+              [
+                "2026",
+                "Reescrita en Flutter; lanzamiento en Android"
+              ],
+              [
+                "Ahora",
+                "Versión 3.0.3, en ambas tiendas"
+              ]
+            ],
+            "sibling": "También está <strong>PaintBoardPro</strong> en el App Store: una aplicación aparte con selector de color completo, no una versión de pago de esta. PaintBoard es deliberadamente la más sencilla de las dos, y sigue siendo gratuita."
+          },
+          "privacySection": {
+            "eyebrow": "Privacidad",
+            "title": "Tus dibujos se quedan en tu teléfono.",
+            "lede": "No hay ningún servidor al que subirlos. Todo se procesa en el dispositivo y desaparece cuando borras la aplicación. La aplicación es gratuita y muestra anuncios, lo que significa que Google AdMob y Firebase Analytics recogen el identificador de publicidad y la información de dispositivo habituales, todo ello detallado en la {privacy}."
+          },
+          "privacyLinkText": "política de privacidad",
+          "close": {
+            "title": "Ve a dibujar algo.",
+            "lede": "Gratis en ambas tiendas. Funciona sin conexión, así que puedes instalarla ahora y usarla en el avión."
+          }
         }
-      }
+      },
+      "languages": [
+        "en",
+        "ko",
+        "ja",
+        "es"
+      ]
     },
     {
       "slug": "bshort",

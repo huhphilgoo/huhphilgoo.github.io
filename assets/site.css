@@ -25,7 +25,11 @@ body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
 section{padding:72px 0;border-top:1px solid var(--line-soft)}
 section:first-of-type{border-top:0}
 h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
-h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.03;letter-spacing:-.03em;font-weight:800}
+/* keep-all: CJK breaks between any two characters by default, which splits a
+   Japanese verb or a Korean word across lines. Break at spaces instead, with
+   break-word as the escape hatch for a run wider than the line. */
+h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.03;letter-spacing:-.03em;font-weight:800;
+  word-break:keep-all;overflow-wrap:break-word}
 h2{font-size:clamp(1.5rem,3vw,2rem);line-height:1.16;letter-spacing:-.02em;font-weight:700}
 h3{font-size:1.05rem;letter-spacing:-.01em;font-weight:700}
 p{margin:0}
