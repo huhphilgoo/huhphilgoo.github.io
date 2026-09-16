@@ -51,16 +51,48 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--l
 footer a:hover{color:var(--ink)}
 footer .spacer{flex:1}
 
-/* hub */
-.apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:36px}
-.app{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:24px;
-  display:flex;flex-direction:column;gap:10px}
-.app h3{display:flex;align-items:baseline;gap:9px}
-.app .ko{font-family:var(--body);font-size:.85rem;font-weight:400;color:var(--muted)}
-.app p{font-size:.93rem;color:var(--muted);flex:1}
-.app .row{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.85rem}
-.app .row a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
-.app .row a:hover{border-color:var(--accent)}
+/* hub — a store shelf: one card per app */
+.store{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px;margin-top:40px}
+.tile{position:relative;background:var(--sheet);border:1px solid var(--line);border-radius:18px;
+  overflow:hidden;display:flex;flex-direction:column;transition:transform .16s ease, box-shadow .16s ease}
+.tile:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.tile:focus-within{outline:2px solid var(--accent);outline-offset:3px}
+/* position the image absolutely: with a normal child, a tall screenshot stretches the
+   aspect-ratio box and one card's cover ends up taller than the rest */
+.tile .cover{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--line-soft);
+  border-bottom:1px solid var(--line-soft)}
+.tile .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:top center;display:block}
+/* "hubCover": "framed" — the whole screenshot, smaller, floating as a card of its own.
+   For wide or busy shots (PaintBoard is 2.2:1 and saturated) a cropped cover blows one
+   corner of the drawing up and hides the app's layout. */
+.tile .cover.framed{display:flex;align-items:center;justify-content:center;padding:20px 24px}
+.tile .cover.framed img{position:static;width:auto;height:auto;max-width:100%;max-height:100%;
+  object-fit:contain;border-radius:8px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.tile .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.tile .head{display:flex;gap:14px;align-items:center}
+.tile .icon{width:64px;height:64px;border-radius:22.5%;flex:none;display:block;
+  border:1px solid rgba(120,120,120,.18)}
+.tile h3{font-size:1.12rem;line-height:1.25;word-break:keep-all;overflow-wrap:break-word}
+/* the whole card opens the app page; store badges sit above this layer */
+.tile h3 a{text-decoration:none}
+.tile h3 a::after{content:"";position:absolute;inset:0;z-index:1}
+.tile h3 a:focus-visible{outline:none}
+.tile .sub{font-size:.82rem;color:var(--muted);margin-top:2px}
+.tile .cat{display:inline-block;font-family:var(--util);font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-top:6px}
+.tile .summary{font-size:.93rem;color:var(--muted);flex:1;word-break:keep-all;overflow-wrap:break-word}
+.tile .badges{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:10px;
+  font-size:.8rem;font-weight:600;text-decoration:none;border:1px solid var(--line);
+  background:var(--sheet);color:var(--ink);transition:border-color .14s ease}
+.badge svg{width:15px;height:15px;flex:none}
+a.badge:hover{border-color:var(--accent)}
+/* not `.soon` — that class already styles the landing pages' feature tags */
+.badge-soon{border-style:dashed;color:var(--muted);font-weight:400}
+.tile .fine{position:relative;z-index:2;font-size:.76rem}
+.tile .fine a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.tile .fine a:hover{color:var(--ink)}
 
 /* landing */
 .hero{padding-top:52px}

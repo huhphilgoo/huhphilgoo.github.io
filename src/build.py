@@ -160,16 +160,48 @@ footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--l
 footer a:hover{color:var(--ink)}
 footer .spacer{flex:1}
 
-/* hub */
-.apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:36px}
-.app{background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:24px;
-  display:flex;flex-direction:column;gap:10px}
-.app h3{display:flex;align-items:baseline;gap:9px}
-.app .ko{font-family:var(--body);font-size:.85rem;font-weight:400;color:var(--muted)}
-.app p{font-size:.93rem;color:var(--muted);flex:1}
-.app .row{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.85rem}
-.app .row a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
-.app .row a:hover{border-color:var(--accent)}
+/* hub — a store shelf: one card per app */
+.store{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px;margin-top:40px}
+.tile{position:relative;background:var(--sheet);border:1px solid var(--line);border-radius:18px;
+  overflow:hidden;display:flex;flex-direction:column;transition:transform .16s ease, box-shadow .16s ease}
+.tile:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.tile:focus-within{outline:2px solid var(--accent);outline-offset:3px}
+/* position the image absolutely: with a normal child, a tall screenshot stretches the
+   aspect-ratio box and one card's cover ends up taller than the rest */
+.tile .cover{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--line-soft);
+  border-bottom:1px solid var(--line-soft)}
+.tile .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:top center;display:block}
+/* "hubCover": "framed" — the whole screenshot, smaller, floating as a card of its own.
+   For wide or busy shots (PaintBoard is 2.2:1 and saturated) a cropped cover blows one
+   corner of the drawing up and hides the app's layout. */
+.tile .cover.framed{display:flex;align-items:center;justify-content:center;padding:20px 24px}
+.tile .cover.framed img{position:static;width:auto;height:auto;max-width:100%;max-height:100%;
+  object-fit:contain;border-radius:8px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.tile .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.tile .head{display:flex;gap:14px;align-items:center}
+.tile .icon{width:64px;height:64px;border-radius:22.5%;flex:none;display:block;
+  border:1px solid rgba(120,120,120,.18)}
+.tile h3{font-size:1.12rem;line-height:1.25;word-break:keep-all;overflow-wrap:break-word}
+/* the whole card opens the app page; store badges sit above this layer */
+.tile h3 a{text-decoration:none}
+.tile h3 a::after{content:"";position:absolute;inset:0;z-index:1}
+.tile h3 a:focus-visible{outline:none}
+.tile .sub{font-size:.82rem;color:var(--muted);margin-top:2px}
+.tile .cat{display:inline-block;font-family:var(--util);font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-top:6px}
+.tile .summary{font-size:.93rem;color:var(--muted);flex:1;word-break:keep-all;overflow-wrap:break-word}
+.tile .badges{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:10px;
+  font-size:.8rem;font-weight:600;text-decoration:none;border:1px solid var(--line);
+  background:var(--sheet);color:var(--ink);transition:border-color .14s ease}
+.badge svg{width:15px;height:15px;flex:none}
+a.badge:hover{border-color:var(--accent)}
+/* not `.soon` — that class already styles the landing pages' feature tags */
+.badge-soon{border-style:dashed;color:var(--muted);font-weight:400}
+.tile .fine{position:relative;z-index:2;font-size:.76rem}
+.tile .fine a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.tile .fine a:hover{color:var(--ink)}
 
 /* landing */
 .hero{padding-top:52px}
@@ -909,37 +941,92 @@ def landing_page(app, lang):
 
 # ── hub ───────────────────────────────────────────────────────────────────────
 
-def hub_page():
+HUB_LANGS = ('en', 'ko')
+# The hub's own "not yet on this store" label. Shorter than SOON_LABELS, which the
+# landing pages' store buttons keep using, so changing it here touches no app page.
+HUB_SOON_LABELS = {'en': 'Coming soon', 'ko': '예정'}
+HUB_TEXT = {
+    'en': {'privacy': 'Privacy', 'intro': 'intro'},
+    'ko': {'privacy': '개인정보처리방침', 'intro': 'introKo'},
+}
+
+
+def hub_page(lang='en'):
+    """The site root, laid out like a store shelf: one card per app.
+
+    English at /, Korean at /ko/. Each card shows the app's first landing screenshot,
+    its real icon (`<slug>/assets/icon.png`, cut from the app project's 1024px icon),
+    name, category and summary, and store badges. The whole card opens the app page
+    (a stretched link on the title), while the badges and the privacy link sit above
+    that layer so they stay separately clickable — nested <a> elements are invalid.
+
+    Only numbers the apps really have are shown: no ratings, no download counts.
+    """
+    T = HUB_TEXT[lang]
+    depth = 0 if lang == 'en' else 1
+    up = '../' * depth
+    soon = HUB_SOON_LABELS[lang]
     cards = []
     for app in DATA['apps']:
-        ko_name = ('' if app['nameKo'] == app['name']
-                   else f'<span class="ko">{E(app["nameKo"])}</span>')
-        links = []
-        if app.get('landing'):
-            links.append(f'<a href="{E(app["slug"])}/">About</a>')
-        for key in ('play', 'appStore'):
-            if app['links'].get(key):
-                links.append(f'<a href="{E(app["links"][key])}">{STORE_LABELS[key]}</a>')
-            elif key in app.get('comingSoon', []):
-                links.append(f'<span class="muted">{STORE_LABELS[key]} · {SOON_LABELS["en"]}</span>')
-        links.append(f'<a href="{E(app["slug"])}/privacy/">Privacy</a>')
-        cards.append(f"""<div class="app">
-  <h3>{E(app['name'])}{ko_name}</h3>
-  <p>{E(app['summary'])}</p>
-  <div class="row">{''.join(links)}</div>
-</div>""")
+        slug = app['slug']
+        name = app['name'] if lang == 'en' else app['nameKo']
+        other = app['nameKo'] if lang == 'en' else app['name']
+        sub = '' if other == name else f'<p class="sub">{E(other)}</p>'
+        summary = app['summary'] if lang == 'en' else app['summaryKo']
+        cat = app['category'][lang]
+        # Link to the app page in this language when it has one, else its English page.
+        detail = f'{up}{slug}/' + (lang_dir(lang) if lang in langs_of(app) else '')
 
+        cover = ''
+        shots = (app.get('landing') or {}).get('shots', [])
+        if shots:
+            s0 = shots[0]
+            src = s0['src'].get(lang, s0['src']['en']) if isinstance(s0['src'], dict) else s0['src']
+            alt = (s0.get(lang) or s0['en'])[0]
+            framed = ' framed' if app.get('hubCover') == 'framed' else ''
+            cover = (f'<div class="cover{framed}"><img src="{E(up + slug + "/" + src)}" alt="{E(alt)}" '
+                     f'loading="lazy"></div>')
+
+        badges = []
+        for key in ('appStore', 'play'):
+            url = app['links'].get(key)
+            if url:
+                badges.append(f'<a class="badge" href="{E(url)}">{STORE_ICONS[key]}{STORE_LABELS[key]}</a>')
+            elif key in app.get('comingSoon', []):
+                badges.append(f'<span class="badge badge-soon">{STORE_ICONS[key]}{STORE_LABELS[key]} · {soon}</span>')
+        badges_html = f'<div class="badges">{"".join(badges)}</div>' if badges else ''
+
+        cards.append(f"""<article class="tile">
+  {cover}
+  <div class="body">
+    <div class="head">
+      <img class="icon" src="{E(up + slug)}/assets/icon.png" alt="" width="64" height="64">
+      <div>
+        <h3><a href="{E(detail)}">{E(name)}</a></h3>{sub}
+        <span class="cat">{E(cat)}</span>
+      </div>
+    </div>
+    <p class="summary">{E(summary)}</p>
+    {badges_html}
+    <p class="fine"><a href="{E(up + slug)}/privacy/{lang_dir(lang) if lang in privacy_langs_of(app) else ''}">{T['privacy']}</a></p>
+  </div>
+</article>""")
+
+    hrefs = {c: ('./' if c == lang else (up + lang_dir(c) or './')) for c in HUB_LANGS}
+    base = SITE['baseUrl']
+    alternates = ''.join(f'\n<link rel="alternate" hreflang="{c}" href="{base}/{lang_dir(c)}">'
+                         for c in HUB_LANGS)
+    intro = SITE[T['intro']]
     body = f"""<div class="wrap">
-{masthead(0)}
+{masthead(depth, nav=langnav(lang, hrefs))}
 <section>
-  <p class="eyebrow">Apps</p>
   <h1>{E(SITE['title'])}</h1>
-  <p class="lede" style="margin-top:16px">{E(SITE['intro'])}</p>
-  <div class="apps">{''.join(cards)}</div>
+  <p class="lede" style="margin-top:16px">{E(intro)}</p>
+  <div class="store">{''.join(cards)}</div>
 </section>
-{footer(0)}
+{footer(depth, lang=lang)}
 </div>"""
-    return page(SITE['title'], body, 0, '📱', SITE['intro'])
+    return page(SITE['title'], body, depth, '📱', intro, lang=lang, head_extra=alternates)
 
 
 # ── write everything ──────────────────────────────────────────────────────────
@@ -954,8 +1041,11 @@ def main():
     (ROOT / 'assets' / 'site.css').write_text(CSS, encoding='utf-8')
     print('assets/site.css')
 
-    (ROOT / 'index.html').write_text(hub_page(), encoding='utf-8')
-    print('index.html')
+    for lang in HUB_LANGS:
+        target = ROOT if lang == 'en' else ROOT / lang
+        target.mkdir(parents=True, exist_ok=True)
+        (target / 'index.html').write_text(hub_page(lang), encoding='utf-8')
+        print(f'{lang_dir(lang)}index.html')
 
     for app in DATA['apps']:
         d = ROOT / app['slug']

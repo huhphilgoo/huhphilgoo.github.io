@@ -2,6 +2,7 @@
   "site": {
     "title": "huhphilgoo",
     "intro": "Apps by 허필구. Small, fast, and free — no accounts, no subscriptions.",
+    "introKo": "허필구가 만든 앱입니다. 작고, 빠르고, 무료 — 계정도 구독도 없습니다.",
     "baseUrl": "https://huhphilgoo.github.io"
   },
   "developer": {
@@ -22,6 +23,8 @@
   "apps": [
     {
       "slug": "paintboard",
+      "category": {"en": "Art & Design", "ko": "예술/디자인"},
+      "hubCover": "framed",
       "name": "PaintBoard",
       "nameKo": "그림판",
       "package": "com.huhfeelgood.drawing",
@@ -643,6 +646,7 @@
     },
     {
       "slug": "bshort",
+      "category": {"en": "Photo & Video", "ko": "사진/비디오"},
       "name": "bshort",
       "nameKo": "bshort - 감성 숏츠 메이커",
       "package": "com.huhfeelgood.bshort",
@@ -1034,6 +1038,8 @@
     },
     {
       "slug": "paintboardpro",
+      "category": {"en": "Art & Design", "ko": "예술/디자인"},
+      "hubCover": "framed",
       "name": "PaintBoardPro",
       "nameKo": "그림판 프로",
       "package": "com.huhfeelgood.paintboardpro",
@@ -1499,6 +1505,7 @@
     },
     {
       "slug": "pockit",
+      "category": {"en": "Finance", "ko": "금융"},
       "name": "K-Pockit",
       "nameKo": "K-Pockit",
       "icon": "💸",
@@ -2109,6 +2116,7 @@
     },
     {
       "slug": "colorexpress",
+      "category": {"en": "Games", "ko": "게임"},
       "name": "Color Express",
       "nameKo": "컬러 익스프레스",
       "nameJa": "カラーエクスプレス",
