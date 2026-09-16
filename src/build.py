@@ -279,10 +279,21 @@ DEFAULT_LANGS = ('en', 'ko')
 
 
 def langs_of(app):
-    """Languages an app publishes. English is always first and lives at the URL root;
-    every other language gets a `/<code>/` subdirectory. Apps that predate the third
-    language simply omit the key and stay bilingual."""
+    """Languages an app's LANDING page publishes. English is always first and lives at
+    the URL root; every other language gets a `/<code>/` subdirectory. Apps that predate
+    the third language simply omit the key and stay bilingual."""
     return tuple(app.get('languages', DEFAULT_LANGS))
+
+
+def privacy_langs_of(app):
+    """Languages the PRIVACY POLICY publishes, which can run ahead of the landing page.
+
+    An app ships a new language as soon as its UI is translated, and both stores demand
+    a policy the user can read — but the landing page needs marketing prose that may not
+    be written yet. `privacyLanguages` lets the policy cover the app's real locales
+    without inventing landing copy; omit it and the two stay in step.
+    """
+    return tuple(app.get('privacyLanguages', langs_of(app)))
 
 
 def lang_dir(lang):
@@ -299,7 +310,7 @@ def langnav(current, hrefs):
     return f'<nav class="langnav" aria-label="Language">{"".join(out)}</nav>'
 
 
-def rel_hrefs(app, lang):
+def rel_hrefs(app, lang, kind='landing'):
     """URLs of every locale of the CURRENT page, relative to it.
 
     Derived from the app's language list rather than hard-coded, which is what makes
@@ -307,8 +318,9 @@ def rel_hrefs(app, lang):
     one directory deeper, so they climb once before descending into a sibling locale.
     """
     up = '' if lang == 'en' else '../'
+    codes = privacy_langs_of(app) if kind == 'privacy' else langs_of(app)
     return {c: './' if c == lang else (up + lang_dir(c) or './')
-            for c in langs_of(app)}
+            for c in codes}
 
 
 def name_pair(app, sep=' '):
@@ -415,10 +427,10 @@ def privacy_page(app, lang):
     # checks the policy against, so it must never lose a name the listing uses.
     app_names = (E(app['name']) if app['nameKo'] == app['name']
                  else f"{E(app['nameKo'])} ({E(app['name'])})")
-    if lang == 'ja' and app.get('nameJa') and app['nameJa'] != app['name']:
-        app_names = f"{E(app['nameJa'])} · {app_names}"
-    if lang == 'es' and app.get('nameEs') and app['nameEs'] != app['name']:
-        app_names = f"{E(app['nameEs'])} · {app_names}"
+    alt = {'ja': app['storeNames'].get('appStoreJa') or app.get('nameJa'),
+           'es': app['storeNames'].get('appStoreEs') or app.get('nameEs')}.get(lang)
+    if alt and alt != app['name']:
+        app_names = f"{E(alt)} · {app_names}"
     idblock = f"""<div class="idblock"><dl>
 <dt>앱 이름 / App</dt><dd>{app_names}</dd>
 <dt>개발자 / Developer</dt><dd>{E(dev_ko)} ({E(dev_en)})</dd>
@@ -573,8 +585,6 @@ def privacy_page(app, lang):
                   '広告のパーソナライズに関する同意を確認します。')
     if p['consent'].get('manage', {}).get('ja'):
         cj.append(E(p['consent']['manage']['ja']))
-    if p['consent'].get('gdpr') and 'ja' in langs_of(app):
-        raise SystemExit('consent.gdpr has no ja text yet: ' + app['slug'])
     if p['consent'].get('usStates'):
         cj.append('米国の対象となる州のユーザーには、州のプライバシー法に基づく通知を表示し、'
                   '個人情報の販売・共有を<strong>オプトアウト</strong>する選択肢を提供します。')
@@ -583,6 +593,20 @@ def privacy_page(app, lang):
                   'ユーザーがトラッキングを許可または拒否できます。')
     if cj:
         ja.append('<p><strong>同意の管理</strong></p><ul>' + ''.join(f'<li>{c}</li>' for c in cj) + '</ul>')
+    if p['consent'].get('gdpr'):
+        ja.append('<p><strong>欧州経済領域・英国のユーザーの権利（GDPR・UK GDPR）</strong></p><ul>'
+                  '<li><strong>処理の法的根拠</strong>: 対象地域における広告目的での個人データの処理は、'
+                  'ユーザーの<strong>同意</strong>を根拠としています。</li>'
+                  '<li>ユーザーは、アクセス、訂正、削除、処理の制限、異議申立て、データポータビリティを'
+                  '求めることができ、<strong>同意はいつでも撤回できます。</strong>'
+                  '撤回前に行われた処理が遡って違法になることはありません。</li>'
+                  '<li>開発者はユーザーを識別できる情報を保持していません。第三者サービスが処理する情報に'
+                  f'関するご請求は、<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a> まで'
+                  'ご連絡いただければ方法をご案内します。</li>'
+                  '<li><strong>国外への移転</strong>: 処理者である Google LLC は米国に所在するため、'
+                  'データがユーザーの国の外へ移転される場合があります。移転には、Google が適用する'
+                  '標準契約条項など、法令が定める保護措置が適用されます。</li>'
+                  '<li>お住まいの国のデータ保護監督機関に苦情を申し立てる権利があります。</li></ul>')
 
     rows_ja = ''.join('<tr><td>{}</td><td>{}</td><td>{}</td></tr>'.format(
                         *(E(v) for v in x.get('ja', x['en'])))
@@ -630,17 +654,31 @@ def privacy_page(app, lang):
                   'consentimiento de Google UMP en el primer inicio.')
     if p['consent'].get('manage', {}).get('es'):
         cs.append(E(p['consent']['manage']['es']))
-    if p['consent'].get('gdpr') and 'es' in langs_of(app):
-        raise SystemExit('consent.gdpr has no es text yet: ' + app['slug'])
     if p['consent'].get('usStates'):
         cs.append('A los usuarios de los estados de EE. UU. aplicables se les muestra un aviso de '
                   'privacidad estatal y pueden rechazar la venta o el uso compartido de su '
-                  'informacion personal.')
+                  'información personal.')
     if p['consent'].get('att'):
         cs.append('En iOS, la Transparencia de Seguimiento de Apps (ATT) le permite permitir '
                   'o denegar el seguimiento.')
     if cs:
         es.append('<p><strong>Consentimiento.</strong> ' + ' '.join(cs) + '</p>')
+    if p['consent'].get('gdpr'):
+        es.append('<p><strong>Sus derechos en el EEE y el Reino Unido (RGPD / RGPD del Reino '
+                  'Unido).</strong> En estas regiones, la base jurídica del tratamiento de datos '
+                  'personales con fines publicitarios es <strong>su consentimiento</strong>. Puede '
+                  'solicitar el acceso, la rectificación, la supresión, la limitación del '
+                  'tratamiento, la oposición y la portabilidad de los datos, y puede '
+                  '<strong>retirar su consentimiento en cualquier momento</strong>; la retirada no '
+                  'hace ilícito el tratamiento realizado antes de ella. El desarrollador no '
+                  'conserva ningún dato que le identifique; para solicitudes relativas a los datos '
+                  'tratados por los servicios de terceros, escriba a '
+                  f'<a href="mailto:{E(DEV["email"])}">{E(DEV["email"])}</a> y le indicaremos cómo '
+                  'hacerlo. <strong>Transferencias internacionales:</strong> el encargado del '
+                  'tratamiento, Google LLC, tiene su sede en los Estados Unidos, por lo que sus '
+                  'datos pueden transferirse fuera de su país con las garantías que aplica Google, '
+                  'como las Cláusulas Contractuales Tipo. También tiene derecho a presentar una '
+                  'reclamación ante su autoridad de control en materia de protección de datos.</p>')
     rows_es = ''.join('<tr><td>{}</td><td>{}</td><td>{}</td></tr>'.format(
                         *(E(v) for v in x.get('es', x['en'])))
                       for x in p['permissions'])
@@ -678,11 +716,11 @@ def privacy_page(app, lang):
                               + part['body'].replace('{email}', mail))
 
     depth = 2 if lang == 'en' else 3
-    hrefs = rel_hrefs(app, lang)
+    hrefs = rel_hrefs(app, lang, 'privacy')
     base, slug = SITE['baseUrl'], app['slug']
     alternates = ''.join(
         f'\n<link rel="alternate" hreflang="{c}" href="{base}/{slug}/privacy/{lang_dir(c)}">'
-        for c in langs_of(app))
+        for c in privacy_langs_of(app))
 
     name_ja = app.get('nameJa') or app['name']
     if lang == 'ko':
@@ -917,7 +955,7 @@ def main():
 
     for app in DATA['apps']:
         d = ROOT / app['slug']
-        for lang in langs_of(app):
+        for lang in privacy_langs_of(app):
             target = d / 'privacy' if lang == 'en' else d / 'privacy' / lang
             target.mkdir(parents=True, exist_ok=True)
             (target / 'index.html').write_text(privacy_page(app, lang), encoding='utf-8')

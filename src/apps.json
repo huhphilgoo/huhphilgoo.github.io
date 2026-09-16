@@ -25,9 +25,17 @@
       "name": "PaintBoard",
       "nameKo": "그림판",
       "package": "com.huhfeelgood.drawing",
+      "privacyLanguages": [
+        "en",
+        "ko",
+        "ja",
+        "es"
+      ],
       "storeNames": {
         "play": "그림판",
-        "appStore": "paintboard - simple board"
+        "appStore": "paintboard - simple board",
+        "appStoreJa": "PaintBoard - お絵かきボード",
+        "appStoreEs": "paintboard - Lienzo y colores"
       },
       "links": {
         "play": "https://play.google.com/store/apps/details?id=com.huhfeelgood.drawing",
@@ -37,12 +45,16 @@
       "summaryKo": "열여덟 색과 네 가지 도구, 정할 것이 없는 그림판.",
       "policyUpdated": {
         "ko": "2026년 9월 15일",
-        "en": "September 15, 2026"
+        "en": "September 15, 2026",
+        "ja": "2026年9月15日",
+        "es": "15 de septiembre de 2026"
       },
       "privacy": {
         "storage": {
           "ko": "이용자가 앱에서 만든 그림, 입력한 텍스트, 불러온 사진은 이용자의 기기 안에서만 처리되며 개발자의 서버로 전송되지 않습니다.",
-          "en": "Drawings, text, and imported photos are processed entirely on your device and are never transmitted to the developer."
+          "en": "Drawings, text, and imported photos are processed entirely on your device and are never transmitted to the developer.",
+          "ja": "ユーザーが本アプリで作成した絵、入力した文字、読み込んだ写真は、すべて端末内で処理され、開発者のサーバーに送信されることはありません。",
+          "es": "Los dibujos, los textos y las fotos importadas se procesan íntegramente en su dispositivo y nunca se transmiten al desarrollador."
         },
         "services": [
           "admob",
@@ -52,7 +64,9 @@
           "ump": true,
           "manage": {
             "ko": "해당 지역 이용자는 앱 오른쪽 패널의 ⓘ 버튼 → 광고 동의 설정에서 언제든 동의를 변경하거나 철회할 수 있습니다. 동의가 필요한 지역에서는 이용 통계(Firebase Analytics)를 수집하지 않습니다.",
-            "en": "Those users can change or withdraw their consent at any time from the ⓘ button in the app’s right-hand panel → Ad consent settings. In regions where consent is required, usage analytics (Firebase Analytics) is not collected."
+            "en": "Those users can change or withdraw their consent at any time from the ⓘ button in the app’s right-hand panel → Ad consent settings. In regions where consent is required, usage analytics (Firebase Analytics) is not collected.",
+            "ja": "対象地域のユーザーは、アプリ右側パネルの ⓘ ボタン →「広告の同意設定」から、いつでも同意を変更・撤回できます。同意が必要な地域では、利用状況の統計（Firebase Analytics）を収集しません。",
+            "es": "Esos usuarios pueden cambiar o retirar su consentimiento en cualquier momento desde el botón ⓘ del panel derecho de la aplicación → «Consentimiento de anuncios». En las regiones donde se requiere consentimiento, no se recopilan estadísticas de uso (Firebase Analytics)."
           },
           "gdpr": true,
           "usStates": true,
@@ -69,6 +83,16 @@
               "Photos and media",
               "To load a photo you select as a canvas background",
               "Only the selected photo is used, and it never leaves your device"
+            ],
+            "ja": [
+              "写真・メディアへのアクセス",
+              "ユーザーが選んだ写真をキャンバスの背景として読み込むため",
+              "選択した写真のみをアプリ内で処理し、外部に送信しません"
+            ],
+            "es": [
+              "Fotos y archivos multimedia",
+              "Para cargar como fondo del lienzo la foto que usted seleccione",
+              "Solo se usa la foto seleccionada y nunca sale de su dispositivo"
             ]
           },
           {
@@ -81,6 +105,16 @@
               "Save and share",
               "To export your drawing as a PNG or share it to another app",
               "Only when you initiate it"
+            ],
+            "ja": [
+              "写真の保存と共有",
+              "完成した絵を PNG 画像として保存したり、ほかのアプリに共有したりするため",
+              "ユーザーが操作したときのみ動作します"
+            ],
+            "es": [
+              "Guardar y compartir",
+              "Para exportar su dibujo como PNG o compartirlo con otra aplicación",
+              "Solo cuando usted lo inicia"
             ]
           },
           {
@@ -93,6 +127,16 @@
               "Network access",
               "To receive ads and send usage analytics",
               "The drawing features themselves work offline"
+            ],
+            "ja": [
+              "ネットワークへのアクセス",
+              "広告の受信と利用状況の統計の送信のため",
+              "描画機能そのものはオフラインでも動作します"
+            ],
+            "es": [
+              "Acceso a la red",
+              "Para recibir anuncios y enviar estadísticas de uso",
+              "Las funciones de dibujo funcionan sin conexión"
             ]
           }
         ],
