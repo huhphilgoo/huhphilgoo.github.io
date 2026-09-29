@@ -207,7 +207,11 @@ a.badge:hover{border-color:var(--accent)}
 .hero{padding-top:52px}
 .hero h1{margin-bottom:22px}
 .markword{position:relative;display:inline-block;white-space:nowrap}
-.markword svg{position:absolute;left:0;right:0;bottom:-.22em;width:100%;height:.34em;overflow:visible}
+/* The stroke spans the whole word. Its box keeps the drawing's 340:24 shape until
+   it reaches the old .34em cap; past that (a long word) it only stretches sideways.
+   It stays centred on the same line either way, so short words render as before. */
+.markword svg{position:absolute;left:0;bottom:-.05em;width:100%;height:auto;aspect-ratio:340/24;
+  max-height:.34em;transform:translateY(50%);overflow:visible}
 .markword path{fill:none;stroke:var(--accent);stroke-width:9;stroke-linecap:round;
   stroke-dasharray:340;stroke-dashoffset:340;animation:draw 1.05s cubic-bezier(.6,.05,.3,1) .35s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
@@ -835,7 +839,7 @@ def landing_page(app, lang):
     # The headline's second half normally carries a hand-drawn accent underline.
     # An app can opt out with "markHeadline": false — the words stay, the stroke
     # goes. (Color Express: the screenshots below are already full of colour.)
-    underline = ('<svg viewBox="0 0 340 24" aria-hidden="true"><path d="M4 16 '
+    underline = ('<svg viewBox="0 0 340 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16 '
                  'C58 6, 96 20, 150 12 C204 4, 246 18, 336 9"/></svg>'
                  if app.get('markHeadline', True) else '')
 

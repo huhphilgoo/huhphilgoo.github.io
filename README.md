@@ -34,6 +34,20 @@ files in the repo *are* the site.
    - Play Console → 앱 콘텐츠 → 개인정보처리방침 → `…/<slug>/privacy/`
    - App Store Connect → 앱 정보 → 개인정보 보호 정책 URL → same
 
+## The landing headline and its underline
+
+`landing.<lang>.headline` is two or three strings. The **second** one gets the
+hand-drawn red underline, and a full stop is added at the end:
+
+    ["Your phone as a", "macro pad"]                       → Your phone as a *macro pad*.
+    ["A", "macro pad", " that changes with the app you're in"]
+                                                            → A *macro pad* that changes with the app you're in.
+
+Use the three-part form when the word to stress sits mid-sentence (the third part
+carries its own leading space). Underline the word the page is about — the
+product noun, not the last word by accident. The stroke spans the whole word
+however long it is. `"markHeadline": false` on the app drops the stroke.
+
 ## Two rules that are easy to get wrong
 
 **`app-ads.txt` must stay at the repo root.** The IAB spec reads it only from a domain
