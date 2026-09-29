@@ -2686,20 +2686,20 @@
       }
     },
     {
-      "slug": "macrokeyboard",
+      "slug": "velozpad",
       "category": {
         "en": "Productivity",
         "ko": "생산성"
       },
       "icon": "⌨️",
-      "name": "MacroKeyboard",
-      "nameKo": "MacroKeyboard",
-      "nameJa": "MacroKeyboard",
+      "name": "VelozPad",
+      "nameKo": "VelozPad",
+      "nameJa": "VelozPad",
       "package": "com.philgooheo.macrokeyboard",
       "_storeNamesNote": "Not on any store yet. Set these to the listing names, character for character, before submitting.",
       "storeNames": {
-        "play": "MacroKeyboard",
-        "appStore": "MacroKeyboard"
+        "play": "VelozPad",
+        "appStore": "VelozPad"
       },
       "links": {},
       "comingSoon": [
@@ -2855,19 +2855,19 @@
           {
             "ko": {
               "title": "이 앱의 구성",
-              "body": "<p>MacroKeyboard는 두 부분으로 이루어집니다. 휴대폰·태블릿에서 쓰는 <strong>앱</strong>과, 이용자의 Mac에 설치하는 <strong>Mac 에이전트</strong>입니다. 앱에서 버튼을 누르거나 노브를 돌리면 <strong>에이전트가 이용자의 Mac에서 그 동작을 실행합니다.</strong> 단축키 입력, 텍스트 입력, 앱 실행, 재생·볼륨 같은 미디어 키, 그리고 이용자가 Mac에 직접 등록한 스크립트의 실행이 여기에 해당합니다.</p>\n<p>본 방침은 앱과 Mac 에이전트 모두에 적용됩니다. 두 프로그램 모두 회원가입이나 계정이 없습니다.</p>"
+              "body": "<p>VelozPad는 두 부분으로 이루어집니다. 휴대폰·태블릿에서 쓰는 <strong>앱</strong>과, 이용자의 Mac에 설치하는 <strong>Mac 에이전트</strong>입니다. 앱에서 버튼을 누르거나 노브를 돌리면 <strong>에이전트가 이용자의 Mac에서 그 동작을 실행합니다.</strong> 단축키 입력, 텍스트 입력, 앱 실행, 재생·볼륨 같은 미디어 키, 그리고 이용자가 Mac에 직접 등록한 스크립트의 실행이 여기에 해당합니다.</p>\n<p>본 방침은 앱과 Mac 에이전트 모두에 적용됩니다. 두 프로그램 모두 회원가입이나 계정이 없습니다.</p>"
             },
             "en": {
               "title": "How the app is built",
-              "body": "<p>MacroKeyboard has two parts: the <strong>app</strong> on your phone or tablet, and the <strong>Mac agent</strong> you install on your Mac. When you press a button or turn the knob in the app, <strong>the agent carries out that action on your Mac</strong> — pressing a keyboard shortcut, typing text, opening an app, sending a media key such as play or volume, or running a script you have registered on the Mac yourself.</p>\n<p>This policy covers both the app and the Mac agent. Neither has an account or sign-in.</p>"
+              "body": "<p>VelozPad has two parts: the <strong>app</strong> on your phone or tablet, and the <strong>Mac agent</strong> you install on your Mac. When you press a button or turn the knob in the app, <strong>the agent carries out that action on your Mac</strong> — pressing a keyboard shortcut, typing text, opening an app, sending a media key such as play or volume, or running a script you have registered on the Mac yourself.</p>\n<p>This policy covers both the app and the Mac agent. Neither has an account or sign-in.</p>"
             },
             "ja": {
               "title": "本アプリの構成",
-              "body": "<p>MacroKeyboardは2つの部分からなります。スマートフォン・タブレットで使う<strong>アプリ</strong>と、ユーザーのMacにインストールする<strong>Macエージェント</strong>です。アプリでボタンを押したりノブを回したりすると、<strong>エージェントがユーザーのMac上でその動作を実行します。</strong>ショートカットの入力、テキストの入力、アプリの起動、再生・音量などのメディアキー、そしてユーザー自身がMacに登録したスクリプトの実行がこれにあたります。</p>\n<p>本ポリシーはアプリとMacエージェントの両方に適用されます。どちらにも会員登録やアカウントはありません。</p>"
+              "body": "<p>VelozPadは2つの部分からなります。スマートフォン・タブレットで使う<strong>アプリ</strong>と、ユーザーのMacにインストールする<strong>Macエージェント</strong>です。アプリでボタンを押したりノブを回したりすると、<strong>エージェントがユーザーのMac上でその動作を実行します。</strong>ショートカットの入力、テキストの入力、アプリの起動、再生・音量などのメディアキー、そしてユーザー自身がMacに登録したスクリプトの実行がこれにあたります。</p>\n<p>本ポリシーはアプリとMacエージェントの両方に適用されます。どちらにも会員登録やアカウントはありません。</p>"
             },
             "es": {
               "title": "Cómo está hecha la app",
-              "body": "<p>MacroKeyboard tiene dos partes: la <strong>app</strong> del teléfono o la tableta y el <strong>agente para Mac</strong> que usted instala en su Mac. Cuando pulsa un botón o gira la rueda en la app, <strong>el agente ejecuta esa acción en su Mac</strong>: pulsar un atajo de teclado, escribir texto, abrir una app, enviar una tecla multimedia como reproducir o volumen, o ejecutar un script que usted mismo ha registrado en el Mac.</p>\n<p>Esta política se aplica a la app y al agente para Mac. Ninguno de los dos tiene cuenta ni inicio de sesión.</p>"
+              "body": "<p>VelozPad tiene dos partes: la <strong>app</strong> del teléfono o la tableta y el <strong>agente para Mac</strong> que usted instala en su Mac. Cuando pulsa un botón o gira la rueda en la app, <strong>el agente ejecuta esa acción en su Mac</strong>: pulsar un atajo de teclado, escribir texto, abrir una app, enviar una tecla multimedia como reproducir o volumen, o ejecutar un script que usted mismo ha registrado en el Mac.</p>\n<p>Esta política se aplica a la app y al agente para Mac. Ninguno de los dos tiene cuenta ni inicio de sesión.</p>"
             }
           },
           {
@@ -3101,7 +3101,7 @@
           "idea": {
             "eyebrow": "The idea",
             "title": "A macro pad should know which app you are in.",
-            "lede": "A hardware pad holds one set of keys until you change it yourself. MacroKeyboard watches which app is in front on the Mac and swaps the phone's buttons to match — timeline keys in Final Cut, brushes in Photoshop. The pad is the phone you already carry."
+            "lede": "A hardware pad holds one set of keys until you change it yourself. VelozPad watches which app is in front on the Mac and swaps the phone's buttons to match — timeline keys in Final Cut, brushes in Photoshop. The pad is the phone you already carry."
           },
           "leftOutTitle": "Deliberately left out",
           "leftOut": [
@@ -3199,7 +3199,7 @@
           "idea": {
             "eyebrow": "아이디어",
             "title": "매크로패드는 지금 어느 앱인지 알아야 합니다.",
-            "lede": "하드웨어 매크로패드는 손으로 바꾸기 전까지 같은 키를 들고 있습니다. MacroKeyboard는 Mac에서 앞에 나온 앱을 보고 휴대폰의 버튼을 그 앱에 맞게 바꿉니다. 파이널컷에서는 타임라인, 포토샵에서는 브러시. 매크로패드는 이미 들고 다니는 휴대폰입니다."
+            "lede": "하드웨어 매크로패드는 손으로 바꾸기 전까지 같은 키를 들고 있습니다. VelozPad는 Mac에서 앞에 나온 앱을 보고 휴대폰의 버튼을 그 앱에 맞게 바꿉니다. 파이널컷에서는 타임라인, 포토샵에서는 브러시. 매크로패드는 이미 들고 다니는 휴대폰입니다."
           },
           "leftOutTitle": "일부러 뺀 것",
           "leftOut": [
@@ -3297,7 +3297,7 @@
           "idea": {
             "eyebrow": "アイデア",
             "title": "マクロパッドは、いまどのアプリなのかを知っているべきです。",
-            "lede": "ハードウェアのマクロパッドは、自分で切り替えるまで同じキーのままです。MacroKeyboardはMacで前面にあるアプリを見て、スマートフォンのボタンをそのアプリに合わせて入れ替えます。Final Cutならタイムライン、Photoshopならブラシ。マクロパッドは、いつも持ち歩いているスマートフォンです。"
+            "lede": "ハードウェアのマクロパッドは、自分で切り替えるまで同じキーのままです。VelozPadはMacで前面にあるアプリを見て、スマートフォンのボタンをそのアプリに合わせて入れ替えます。Final Cutならタイムライン、Photoshopならブラシ。マクロパッドは、いつも持ち歩いているスマートフォンです。"
           },
           "leftOutTitle": "あえて入れなかったもの",
           "leftOut": [
@@ -3395,7 +3395,7 @@
           "idea": {
             "eyebrow": "La idea",
             "title": "Un teclado de macros debería saber en qué app está usted.",
-            "lede": "Un teclado de macros físico mantiene las mismas teclas hasta que usted lo cambia. MacroKeyboard mira qué app está delante en el Mac y cambia los botones del teléfono para que encajen: línea de tiempo en Final Cut, pinceles en Photoshop. El teclado es el teléfono que ya lleva encima."
+            "lede": "Un teclado de macros físico mantiene las mismas teclas hasta que usted lo cambia. VelozPad mira qué app está delante en el Mac y cambia los botones del teléfono para que encajen: línea de tiempo en Final Cut, pinceles en Photoshop. El teclado es el teléfono que ya lleva encima."
           },
           "leftOutTitle": "Dejado fuera a propósito",
           "leftOut": [
