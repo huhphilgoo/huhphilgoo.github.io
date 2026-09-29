@@ -825,7 +825,11 @@ def landing_page(app, lang):
     base = SITE['baseUrl']
     slug = app['slug']
 
-    head, mark = T['headline']
+    # Two parts put the underlined word last: ["Your phone as a", "macro pad"].
+    # Three parts let it sit mid-sentence: ["A", "macro pad", " that changes with …"]
+    # — the third part is written with its own leading space.
+    head, mark, *rest = T['headline']
+    tail = rest[0] if rest else ''
     shots = L.get('shots', [])
 
     # The headline's second half normally carries a hand-drawn accent underline.
@@ -900,7 +904,7 @@ def landing_page(app, lang):
 
 <section class="hero">
   <h1>{E(head)}
-    <span class="markword">{E(mark)}{underline}</span>.
+    <span class="markword">{E(mark)}{underline}</span>{E(tail)}.
   </h1>
   <p class="lede">{T['lede']}</p>
   {store_buttons(app, lang)}

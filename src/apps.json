@@ -3140,10 +3140,11 @@
           }
         ],
         "en": {
-          "meta": "Free · iPhone &amp; Android · macOS (Windows in the works)",
+          "meta": "Free · iPhone &amp; Android",
           "headline": [
-            "A macro pad that changes with",
-            "the app you're in"
+            "A",
+            "macro pad",
+            " that changes with the app you're in"
           ],
           "lede": "Buttons and a knob on your phone that press shortcuts, type text, open apps and run your scripts on the computer beside you. Bring Final Cut to the front and the phone turns into Final Cut's pad.",
           "idea": {
@@ -3238,7 +3239,7 @@
           }
         },
         "ko": {
-          "meta": "무료 · iPhone · Android · macOS (Windows 준비 중)",
+          "meta": "무료 · iPhone · Android",
           "headline": [
             "지금 쓰는 앱에 맞춰 바뀌는",
             "매크로패드"
@@ -3336,9 +3337,9 @@
           }
         },
         "ja": {
-          "meta": "無料 · iPhone · Android · macOS（Windows 準備中）",
+          "meta": "無料 · iPhone · Android",
           "headline": [
-            "使っているアプリに合わせて変わる、",
+            "アプリに合わせて変わる、",
             "マクロパッド"
           ],
           "lede": "スマートフォンのボタンとノブで、隣のPCのショートカットを押し、文字を入力し、アプリを開き、スクリプトを実行します。PCでFinal Cutを前面に出すと、スマートフォンがFinal Cut用のボタンに切り替わります。",
@@ -3434,10 +3435,11 @@
           }
         },
         "es": {
-          "meta": "Gratis · iPhone y Android · macOS (Windows en preparación)",
+          "meta": "Gratis · iPhone y Android",
           "headline": [
-            "Un teclado de macros que cambia con",
-            "la app que usa"
+            "Un",
+            "teclado de macros",
+            " que cambia con la app que usa"
           ],
           "lede": "Botones y una rueda en el teléfono que pulsan atajos, escriben texto, abren apps y ejecutan sus scripts en el ordenador que tiene al lado. Traiga Final Cut al frente y el teléfono se convierte en el panel de Final Cut.",
           "idea": {
