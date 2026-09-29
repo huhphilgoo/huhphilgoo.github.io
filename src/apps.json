@@ -2684,6 +2684,806 @@
           }
         }
       }
+    },
+    {
+      "slug": "macrokeyboard",
+      "category": {
+        "en": "Productivity",
+        "ko": "생산성"
+      },
+      "icon": "⌨️",
+      "name": "MacroKeyboard",
+      "nameKo": "MacroKeyboard",
+      "nameJa": "MacroKeyboard",
+      "package": "com.philgooheo.macrokeyboard",
+      "_storeNamesNote": "Not on any store yet. Set these to the listing names, character for character, before submitting.",
+      "storeNames": {
+        "play": "MacroKeyboard",
+        "appStore": "MacroKeyboard"
+      },
+      "links": {},
+      "comingSoon": [
+        "appStore",
+        "play",
+        "macAgent"
+      ],
+      "languages": [
+        "en",
+        "ko",
+        "ja",
+        "es"
+      ],
+      "summary": "Your phone as a macro pad for the Mac — buttons and a knob that change with the app in front.",
+      "summaryKo": "휴대폰을 Mac의 매크로패드로. 앞에 나온 앱에 따라 버튼과 노브가 바뀝니다.",
+      "summaryJa": "スマートフォンをMacのマクロパッドに。前面のアプリに合わせてボタンとノブが切り替わります。",
+      "summaryEs": "Su teléfono como teclado de macros para el Mac: botones y una rueda que cambian con la app que tiene delante.",
+      "policyUpdated": {
+        "ko": "2026년 9월 29일",
+        "en": "September 29, 2026",
+        "ja": "2026年9月29日",
+        "es": "29 de septiembre de 2026"
+      },
+      "privacy": {
+        "_sectionsNote": "`sections` replaces the shared boilerplate body for this app. The keys below (storage/services/consent/permissions/minAge) are the verified source data the prose was written from — keep them in sync if the app changes. Ads: written ahead of the AdMob release at the owner's request (2026-09-29); the consent controls the text promises must be on the app's Settings screen when ads ship.",
+        "storage": {
+          "ko": "휴대폰: 페어링 정보(Mac 주소·인증서 지문·토큰)와 기기 ID는 iOS 키체인/Android 키스토어 암호화 저장소, 버튼 구성은 앱 폴더의 profiles.json, 설정은 앱 환경설정. Android는 allowBackup=false. Mac: ~/Library/Application Support/com.philgooheo.macrokeyboardAgent 의 agent_cert.pem·agent_key.pem(600)·devices.json(600, 토큰 원문)·profiles.json·scripts.json(600). 활동 기록은 메모리에만 100줄. 개발자 서버로 가는 데이터 없음.",
+          "en": "Phone: pairing details (Mac address, certificate fingerprint, token) and device ID in the iOS Keychain / Android Keystore-encrypted storage; button layouts in profiles.json in the app folder; settings in app preferences. Android allowBackup=false. Mac: ~/Library/Application Support/com.philgooheo.macrokeyboardAgent holds agent_cert.pem, agent_key.pem (600), devices.json (600, raw tokens), profiles.json, scripts.json (600). Activity log in memory only, 100 lines. No data goes to a developer server."
+        },
+        "services": [
+          "admob"
+        ],
+        "consent": {
+          "ump": true,
+          "usStates": true,
+          "att": true,
+          "gdpr": true
+        },
+        "permissions": [
+          {
+            "ko": [
+              "카메라",
+              "Mac 화면의 페어링 QR 코드 읽기",
+              "페어링 화면에서만 사용, 사진 저장·전송 없음"
+            ],
+            "en": [
+              "Camera",
+              "To read the pairing QR code on the Mac's screen",
+              "Pairing screen only; no picture saved or sent"
+            ],
+            "ja": [
+              "カメラ",
+              "Macの画面のペアリング用QRコードの読み取り",
+              "ペアリング画面でのみ使用し、写真の保存・送信なし"
+            ],
+            "es": [
+              "Cámara",
+              "Leer el código QR de emparejamiento del Mac",
+              "Solo en el emparejamiento; no se guarda ni envía ninguna imagen"
+            ]
+          },
+          {
+            "ko": [
+              "로컬 네트워크 (iOS)",
+              "같은 네트워크의 Mac 에이전트 찾기와 연결",
+              "Bonjour _macrokb._tcp 만"
+            ],
+            "en": [
+              "Local network (iOS)",
+              "To find and connect to the Mac agent",
+              "Bonjour _macrokb._tcp only"
+            ],
+            "ja": [
+              "ローカルネットワーク（iOS）",
+              "同じネットワークのMacエージェントの検出と接続",
+              "Bonjour _macrokb._tcp のみ"
+            ],
+            "es": [
+              "Red local (iOS)",
+              "Encontrar el agente para Mac y conectarse",
+              "Solo Bonjour _macrokb._tcp"
+            ]
+          },
+          {
+            "ko": [
+              "네트워크 접근·멀티캐스트 (Android)",
+              "Mac 에이전트 찾기와 연결, 광고 수신",
+              "INTERNET · ACCESS_NETWORK_STATE · CHANGE_WIFI_MULTICAST_STATE"
+            ],
+            "en": [
+              "Network access and multicast (Android)",
+              "To find and connect to the Mac agent, and receive ads",
+              "INTERNET · ACCESS_NETWORK_STATE · CHANGE_WIFI_MULTICAST_STATE"
+            ],
+            "ja": [
+              "ネットワークアクセス・マルチキャスト（Android）",
+              "Macエージェントの検出と接続、広告の受信",
+              "INTERNET · ACCESS_NETWORK_STATE · CHANGE_WIFI_MULTICAST_STATE"
+            ],
+            "es": [
+              "Acceso a la red y multidifusión (Android)",
+              "Encontrar el agente para Mac, conectarse y recibir anuncios",
+              "INTERNET · ACCESS_NETWORK_STATE · CHANGE_WIFI_MULTICAST_STATE"
+            ]
+          },
+          {
+            "ko": [
+              "추적 허용 여부 (ATT)",
+              "맞춤 광고를 받을지 이용자가 선택",
+              "거부해도 모든 기능 사용 가능"
+            ],
+            "en": [
+              "Tracking permission (ATT)",
+              "To let you choose whether ads are personalized",
+              "Declining restricts nothing"
+            ],
+            "ja": [
+              "トラッキングの許可（ATT）",
+              "パーソナライズ広告を受け取るかどうかをユーザーが選ぶため",
+              "拒否してもすべての機能を利用可能"
+            ],
+            "es": [
+              "Permiso de rastreo (ATT)",
+              "Elegir si los anuncios se personalizan",
+              "Rechazarlo no limita nada"
+            ]
+          },
+          {
+            "ko": [
+              "손쉬운 사용 (Mac)",
+              "단축키·텍스트 입력을 Mac에 전달, 녹화 중에만 키 읽기",
+              "읽기 전용 이벤트 탭, 키를 가로채지 않음"
+            ],
+            "en": [
+              "Accessibility (Mac)",
+              "To deliver shortcuts and text; reads keys only while recording",
+              "Listen-only event tap; never intercepts keys"
+            ],
+            "ja": [
+              "アクセシビリティ（Mac）",
+              "ショートカット・テキスト入力をMacに届ける、録画中のみキーを読む",
+              "読み取り専用のイベントタップ、キーを横取りしない"
+            ],
+            "es": [
+              "Accesibilidad (Mac)",
+              "Entregar atajos y texto; lee teclas solo al grabar",
+              "Solo escucha; nunca intercepta teclas"
+            ]
+          }
+        ],
+        "minAge": 18,
+        "sections": [
+          {
+            "ko": {
+              "title": "이 앱의 구성",
+              "body": "<p>MacroKeyboard는 두 부분으로 이루어집니다. 휴대폰·태블릿에서 쓰는 <strong>앱</strong>과, 이용자의 Mac에 설치하는 <strong>Mac 에이전트</strong>입니다. 앱에서 버튼을 누르거나 노브를 돌리면 <strong>에이전트가 이용자의 Mac에서 그 동작을 실행합니다.</strong> 단축키 입력, 텍스트 입력, 앱 실행, 재생·볼륨 같은 미디어 키, 그리고 이용자가 Mac에 직접 등록한 스크립트의 실행이 여기에 해당합니다.</p>\n<p>본 방침은 앱과 Mac 에이전트 모두에 적용됩니다. 두 프로그램 모두 회원가입이나 계정이 없습니다.</p>"
+            },
+            "en": {
+              "title": "How the app is built",
+              "body": "<p>MacroKeyboard has two parts: the <strong>app</strong> on your phone or tablet, and the <strong>Mac agent</strong> you install on your Mac. When you press a button or turn the knob in the app, <strong>the agent carries out that action on your Mac</strong> — pressing a keyboard shortcut, typing text, opening an app, sending a media key such as play or volume, or running a script you have registered on the Mac yourself.</p>\n<p>This policy covers both the app and the Mac agent. Neither has an account or sign-in.</p>"
+            },
+            "ja": {
+              "title": "本アプリの構成",
+              "body": "<p>MacroKeyboardは2つの部分からなります。スマートフォン・タブレットで使う<strong>アプリ</strong>と、ユーザーのMacにインストールする<strong>Macエージェント</strong>です。アプリでボタンを押したりノブを回したりすると、<strong>エージェントがユーザーのMac上でその動作を実行します。</strong>ショートカットの入力、テキストの入力、アプリの起動、再生・音量などのメディアキー、そしてユーザー自身がMacに登録したスクリプトの実行がこれにあたります。</p>\n<p>本ポリシーはアプリとMacエージェントの両方に適用されます。どちらにも会員登録やアカウントはありません。</p>"
+            },
+            "es": {
+              "title": "Cómo está hecha la app",
+              "body": "<p>MacroKeyboard tiene dos partes: la <strong>app</strong> del teléfono o la tableta y el <strong>agente para Mac</strong> que usted instala en su Mac. Cuando pulsa un botón o gira la rueda en la app, <strong>el agente ejecuta esa acción en su Mac</strong>: pulsar un atajo de teclado, escribir texto, abrir una app, enviar una tecla multimedia como reproducir o volumen, o ejecutar un script que usted mismo ha registrado en el Mac.</p>\n<p>Esta política se aplica a la app y al agente para Mac. Ninguno de los dos tiene cuenta ni inicio de sesión.</p>"
+            }
+          },
+          {
+            "ko": {
+              "title": "휴대폰과 Mac 사이에 오가는 것",
+              "body": "<p>앱과 Mac 에이전트는 <strong>이용자의 네트워크 안에서 서로 직접 연결됩니다.</strong> 개발자의 서버나 인터넷의 중계 서버를 거치지 않으며, 개발자는 이 통신 내용을 볼 수 없습니다. 연결은 암호화(TLS)되고, 처음 연결할 때 Mac 화면의 QR 코드로 확인한 그 Mac하고만 통신합니다. 페어링하지 않은 기기의 요청은 거부됩니다.</p>\n<p><strong>휴대폰 → Mac</strong></p><ul>\n<li>페어링할 때: 앱이 처음 실행될 때 만든 무작위 기기 ID와 기기 이름(휴대폰의 네트워크 이름)</li>\n<li>버튼을 누를 때: <strong>어느 버튼을 눌렀는지(버튼 ID)만</strong> 보냅니다</li>\n<li>버튼을 편집할 때: 버튼 구성(이름, 색, 아이콘, 단축키, 입력할 텍스트, 실행할 앱, 노브 설정)</li>\n</ul>\n<p><strong>휴대폰은 셸 명령을 보내지 않습니다.</strong> 스크립트는 Mac에서 이용자가 직접 등록해야 하며, 휴대폰은 등록된 스크립트를 이름으로 고를 수만 있습니다. Mac에 등록되지 않은 스크립트는 실행되지 않습니다.</p>\n<p><strong>Mac → 휴대폰</strong></p><ul>\n<li>Mac의 이름</li>\n<li>지금 Mac에서 앞에 나와 있는 앱의 이름과 식별자(예: <code>com.apple.FinalCut</code>) — 앱별로 버튼 화면을 바꾸는 데 쓰입니다</li>\n<li>Mac에 등록된 스크립트의 이름 목록 — 스크립트의 경로나 내용은 보내지 않습니다</li>\n<li>실행 결과, 그리고 단축키를 녹화할 때 Mac에서 눌린 키</li>\n</ul>"
+            },
+            "en": {
+              "title": "What passes between the phone and the Mac",
+              "body": "<p>The app and the Mac agent <strong>connect to each other directly, inside your own network.</strong> Nothing goes through a server of the developer's or a relay on the internet, and the developer cannot see any of it. The connection is encrypted (TLS), and the app talks only to the Mac it confirmed through the QR code on that Mac's screen when you first paired. Requests from a device that has not been paired are refused.</p>\n<p><strong>Phone → Mac</strong></p><ul>\n<li>When pairing: a random device ID the app creates on first launch, and the device's name (its network name)</li>\n<li>When you press a button: <strong>only which button was pressed</strong> (its ID)</li>\n<li>When you edit buttons: the button layout — names, colours, icons, shortcuts, text to type, apps to open, knob settings</li>\n</ul>\n<p><strong>The phone never sends a shell command.</strong> A script has to be registered on the Mac by you; the phone can only pick a registered script by its name. A script the Mac does not have registered is never run.</p>\n<p><strong>Mac → phone</strong></p><ul>\n<li>The Mac's name</li>\n<li>The name and identifier of the app currently in front on the Mac (for example <code>com.apple.FinalCut</code>), used to switch to that app's buttons</li>\n<li>The names of scripts registered on the Mac — never their location or contents</li>\n<li>Results, and the keys pressed on the Mac while you are recording a shortcut</li>\n</ul>"
+            },
+            "ja": {
+              "title": "スマートフォンとMacのあいだでやり取りされるもの",
+              "body": "<p>アプリとMacエージェントは<strong>ユーザーのネットワーク内で互いに直接つながります。</strong>開発者のサーバーやインターネット上の中継サーバーは経由せず、開発者はこの通信内容を見ることができません。接続は暗号化（TLS）され、最初のペアリング時にMacの画面のQRコードで確認したそのMacとだけ通信します。ペアリングしていない端末からの要求は拒否されます。</p>\n<p><strong>スマートフォン → Mac</strong></p><ul>\n<li>ペアリング時：アプリの初回起動時に作られるランダムな端末IDと、端末の名前（ネットワーク上の名前）</li>\n<li>ボタンを押したとき：<strong>どのボタンが押されたか（ボタンID）だけ</strong></li>\n<li>ボタンを編集したとき：ボタンの構成（名前、色、アイコン、ショートカット、入力するテキスト、起動するアプリ、ノブの設定）</li>\n</ul>\n<p><strong>スマートフォンがシェルコマンドを送ることはありません。</strong>スクリプトはユーザー自身がMacで登録する必要があり、スマートフォンは登録済みのスクリプトを名前で選べるだけです。Macに登録されていないスクリプトは実行されません。</p>\n<p><strong>Mac → スマートフォン</strong></p><ul>\n<li>Macの名前</li>\n<li>いまMacで前面にあるアプリの名前と識別子（例：<code>com.apple.FinalCut</code>）— アプリごとにボタン画面を切り替えるために使います</li>\n<li>Macに登録されたスクリプトの名前の一覧 — スクリプトの場所や内容は送りません</li>\n<li>実行結果と、ショートカットを録画しているあいだにMacで押されたキー</li>\n</ul>"
+            },
+            "es": {
+              "title": "Lo que pasa entre el teléfono y el Mac",
+              "body": "<p>La app y el agente para Mac <strong>se conectan directamente entre sí, dentro de su propia red.</strong> Nada pasa por un servidor del desarrollador ni por un repetidor en internet, y el desarrollador no puede ver nada de ello. La conexión está cifrada (TLS) y la app solo habla con el Mac que confirmó mediante el código QR de su pantalla al emparejarlo. Las solicitudes de un dispositivo no emparejado se rechazan.</p>\n<p><strong>Teléfono → Mac</strong></p><ul>\n<li>Al emparejar: un ID de dispositivo aleatorio que la app crea al abrirse por primera vez y el nombre del dispositivo (su nombre en la red)</li>\n<li>Al pulsar un botón: <strong>solo qué botón se pulsó</strong> (su ID)</li>\n<li>Al editar los botones: su configuración — nombres, colores, iconos, atajos, texto que escribir, apps que abrir y ajustes de la rueda</li>\n</ul>\n<p><strong>El teléfono nunca envía comandos de shell.</strong> Un script debe registrarlo usted en el Mac; el teléfono solo puede elegir un script registrado por su nombre. Un script que el Mac no tiene registrado nunca se ejecuta.</p>\n<p><strong>Mac → teléfono</strong></p><ul>\n<li>El nombre del Mac</li>\n<li>El nombre y el identificador de la app que está delante en el Mac (por ejemplo <code>com.apple.FinalCut</code>), para cambiar a los botones de esa app</li>\n<li>Los nombres de los scripts registrados en el Mac — nunca su ubicación ni su contenido</li>\n<li>Los resultados y, mientras graba un atajo, las teclas pulsadas en el Mac</li>\n</ul>"
+            }
+          },
+          {
+            "ko": {
+              "title": "기기에 저장되는 것",
+              "body": "<p>모든 정보는 이용자의 기기 안에만 저장되며 개발자에게 전송되지 않습니다.</p>\n<p><strong>휴대폰</strong></p><ul>\n<li><strong>페어링 정보</strong>(Mac의 주소, 인증서 지문, 인증 토큰)와 기기 ID — 운영체제의 보안 저장소(iOS 키체인, Android 키스토어로 암호화된 저장소)에 보관합니다</li>\n<li><strong>버튼 구성</strong> — 앱 폴더의 파일에 보관합니다</li>\n<li><strong>설정값</strong>(자동 전환, 화면 켜 두기, 언어 등)</li>\n<li>Android에서는 이 정보가 Google 클라우드 백업에 포함되지 않도록 설정되어 있습니다</li>\n</ul>\n<p><strong>Mac</strong> — <code>~/Library/Application Support/com.philgooheo.macrokeyboardAgent</code> 폴더</p><ul>\n<li><strong>보안 연결용 인증서와 개인 키</strong> — 개인 키는 Mac 사용자 본인만 읽을 수 있는 파일(권한 600)로 저장합니다</li>\n<li><strong>페어링한 기기 목록</strong>(기기 ID, 이름, 인증 토큰, 페어링·최근 접속 시각, 차단 여부) — 본인만 읽을 수 있는 파일로 저장합니다</li>\n<li><strong>휴대폰에서 받은 버튼 구성</strong></li>\n<li><strong>이용자가 등록한 스크립트 목록</strong>(이름과 파일 위치)</li>\n</ul>\n<p>에이전트 창의 활동 기록은 메모리에만 최근 100줄까지 남고, 에이전트를 종료하면 사라집니다.</p>\n<p>이용자가 <strong>백업 파일을 직접 내보낼 때</strong>에만 버튼 구성이 파일로 만들어지며, 그 파일을 어디에 보낼지는 이용자가 정합니다.</p>"
+            },
+            "en": {
+              "title": "What is kept on your devices",
+              "body": "<p>Everything is stored on your own devices and nothing is sent to the developer.</p>\n<p><strong>Phone</strong></p><ul>\n<li><strong>Pairing details</strong> (the Mac's address, its certificate fingerprint, the access token) and the device ID — kept in the system's secure storage (the iOS Keychain; on Android, storage encrypted with the Android Keystore)</li>\n<li><strong>Your button layouts</strong> — a file in the app's own folder</li>\n<li><strong>Settings</strong> such as auto-switching, keeping the screen on, and language</li>\n<li>On Android, none of this is included in Google's cloud backup</li>\n</ul>\n<p><strong>Mac</strong> — in <code>~/Library/Application Support/com.philgooheo.macrokeyboardAgent</code></p><ul>\n<li><strong>The certificate and private key for the encrypted connection</strong> — the private key is a file only your Mac user account can read (permission 600)</li>\n<li><strong>The list of paired devices</strong> (device ID, name, access token, when it was paired and last seen, whether it is blocked) — a file only your account can read</li>\n<li><strong>Button layouts received from your phone</strong></li>\n<li><strong>The scripts you registered</strong> (name and file location)</li>\n</ul>\n<p>The activity log in the agent's window is kept only in memory, up to the last 100 lines, and disappears when the agent quits.</p>\n<p>A file containing your buttons is created <strong>only when you export a backup yourself</strong>, and where it goes is up to you.</p>"
+            },
+            "ja": {
+              "title": "端末に保存されるもの",
+              "body": "<p>すべての情報はユーザーの端末内にのみ保存され、開発者に送信されることはありません。</p>\n<p><strong>スマートフォン</strong></p><ul>\n<li><strong>ペアリング情報</strong>（Macのアドレス、証明書のフィンガープリント、認証トークン）と端末ID — OSの安全な保管領域（iOSのキーチェーン、AndroidではAndroidキーストアで暗号化された保管領域）に保存します</li>\n<li><strong>ボタンの構成</strong> — アプリ専用フォルダ内のファイルに保存します</li>\n<li><strong>設定値</strong>（自動切り替え、画面をつけたままにする、言語など）</li>\n<li>Androidでは、これらの情報はGoogleのクラウドバックアップに含まれないよう設定しています</li>\n</ul>\n<p><strong>Mac</strong> — <code>~/Library/Application Support/com.philgooheo.macrokeyboardAgent</code> フォルダ</p><ul>\n<li><strong>暗号化接続のための証明書と秘密鍵</strong> — 秘密鍵はMacのユーザー本人だけが読めるファイル（権限600）として保存します</li>\n<li><strong>ペアリングした端末の一覧</strong>（端末ID、名前、認証トークン、ペアリング・最終接続日時、ブロックの有無）— 本人だけが読めるファイルとして保存します</li>\n<li><strong>スマートフォンから受け取ったボタンの構成</strong></li>\n<li><strong>ユーザーが登録したスクリプトの一覧</strong>（名前とファイルの場所）</li>\n</ul>\n<p>エージェントのウィンドウに表示される活動履歴はメモリ上に直近100行まで残るだけで、エージェントを終了すると消えます。</p>\n<p>ボタンの構成がファイルとして作られるのは、<strong>ユーザー自身がバックアップを書き出したときだけ</strong>で、その送り先はユーザーが決めます。</p>"
+            },
+            "es": {
+              "title": "Lo que se guarda en sus dispositivos",
+              "body": "<p>Todo se guarda en sus propios dispositivos y nada se envía al desarrollador.</p>\n<p><strong>Teléfono</strong></p><ul>\n<li><strong>Datos de emparejamiento</strong> (la dirección del Mac, la huella de su certificado y el token de acceso) y el ID del dispositivo — en el almacenamiento seguro del sistema (el Llavero de iOS; en Android, almacenamiento cifrado con el Android Keystore)</li>\n<li><strong>Sus configuraciones de botones</strong> — un archivo en la carpeta propia de la app</li>\n<li><strong>Ajustes</strong> como el cambio automático, mantener la pantalla encendida y el idioma</li>\n<li>En Android, nada de esto se incluye en la copia de seguridad en la nube de Google</li>\n</ul>\n<p><strong>Mac</strong> — en <code>~/Library/Application Support/com.philgooheo.macrokeyboardAgent</code></p><ul>\n<li><strong>El certificado y la clave privada de la conexión cifrada</strong> — la clave privada es un archivo que solo su cuenta de usuario del Mac puede leer (permiso 600)</li>\n<li><strong>La lista de dispositivos emparejados</strong> (ID, nombre, token de acceso, fecha de emparejamiento y de la última conexión, y si está bloqueado) — un archivo que solo su cuenta puede leer</li>\n<li><strong>Las configuraciones de botones recibidas del teléfono</strong></li>\n<li><strong>Los scripts que usted ha registrado</strong> (nombre y ubicación del archivo)</li>\n</ul>\n<p>El registro de actividad de la ventana del agente se guarda solo en memoria, hasta las últimas 100 líneas, y desaparece al cerrar el agente.</p>\n<p>Solo se crea un archivo con sus botones <strong>cuando usted exporta una copia de seguridad</strong>, y usted decide adónde va.</p>"
+            }
+          },
+          {
+            "ko": {
+              "title": "권한",
+              "body": "<p><strong>휴대폰 앱</strong></p>\n<div class=\"tablewrap\"><table>\n<tr><th>권한</th><th>사용 목적</th><th>비고</th></tr>\n<tr><td>카메라</td><td>Mac 화면에 표시된 페어링 QR 코드 읽기</td><td>페어링 화면에서만 사용하며, 사진을 저장하거나 보내지 않습니다. 6자리 번호로 대신 페어링할 수도 있습니다.</td></tr>\n<tr><td>로컬 네트워크 (iOS)</td><td>같은 네트워크의 Mac 에이전트를 찾아 연결</td><td>Bonjour 서비스 <code>_macrokb._tcp</code>만 찾습니다.</td></tr>\n<tr><td>네트워크 접근 · 멀티캐스트 (Android)</td><td>Mac 에이전트 찾기와 연결, 광고 수신</td><td></td></tr>\n<tr><td>추적 허용 여부 (ATT, iOS)</td><td>맞춤 광고를 받을지 이용자가 선택</td><td>거부해도 앱의 모든 기능을 그대로 쓸 수 있습니다.</td></tr>\n</table></div>\n<p>위치, 연락처, 마이크, 사진 권한은 요청하지 않습니다. 연결된 동안 화면이 꺼지지 않게 하는 기능은 권한 없이 동작하며 설정에서 끌 수 있습니다.</p>\n<p><strong>Mac 에이전트</strong></p>\n<div class=\"tablewrap\"><table>\n<tr><th>권한</th><th>사용 목적</th><th>비고</th></tr>\n<tr><td>손쉬운 사용</td><td>단축키·텍스트 입력을 Mac에 전달</td><td>이 권한이 없으면 키 입력을 보낼 수 없습니다. 단축키를 녹화하는 동안에만 Mac에서 눌린 키를 읽으며, 읽기만 할 뿐 키를 가로채지 않습니다.</td></tr>\n<tr><td>들어오는 네트워크 연결</td><td>휴대폰 앱의 연결 받기</td><td>페어링한 기기만 명령을 보낼 수 있습니다.</td></tr>\n<tr><td>로그인 시 자동 실행</td><td>Mac을 켤 때 에이전트 실행</td><td>이용자가 설정에서 켰을 때만 동작합니다.</td></tr>\n</table></div>\n<p>에이전트는 앞에 나와 있는 앱이 바뀌었다는 운영체제의 알림을 받아 그 앱의 이름과 식별자만 확인합니다. 화면 내용이나 창의 내용은 읽지 않습니다.</p>"
+            },
+            "en": {
+              "title": "Permissions",
+              "body": "<p><strong>Phone app</strong></p>\n<div class=\"tablewrap\"><table>\n<tr><th>Permission</th><th>Purpose</th><th>Note</th></tr>\n<tr><td>Camera</td><td>To read the pairing QR code shown on the Mac's screen</td><td>Used only on the pairing screen; no picture is saved or sent. You can pair with a six-digit number instead.</td></tr>\n<tr><td>Local network (iOS)</td><td>To find and connect to the Mac agent on your network</td><td>Looks only for the Bonjour service <code>_macrokb._tcp</code>.</td></tr>\n<tr><td>Network access and multicast (Android)</td><td>To find and connect to the Mac agent, and to receive ads</td><td></td></tr>\n<tr><td>Tracking (ATT, iOS)</td><td>To let you choose whether ads are personalized</td><td>Declining restricts nothing in the app.</td></tr>\n</table></div>\n<p>The app does not ask for location, contacts, microphone or photos. Keeping the screen on while connected needs no permission and can be turned off in settings.</p>\n<p><strong>Mac agent</strong></p>\n<div class=\"tablewrap\"><table>\n<tr><th>Permission</th><th>Purpose</th><th>Note</th></tr>\n<tr><td>Accessibility</td><td>To deliver shortcuts and typed text to the Mac</td><td>Without it the agent cannot send keystrokes. It reads keys pressed on the Mac only while you are recording a shortcut, and only listens — it never intercepts them.</td></tr>\n<tr><td>Incoming network connections</td><td>To accept the phone app's connection</td><td>Only paired devices can send commands.</td></tr>\n<tr><td>Open at login</td><td>To start the agent when the Mac starts</td><td>Only if you turn it on in settings.</td></tr>\n</table></div>\n<p>The agent listens for the system's notice that a different app has come to the front, and reads only that app's name and identifier. It does not read what is on your screen or inside any window.</p>"
+            },
+            "ja": {
+              "title": "権限",
+              "body": "<p><strong>スマートフォンアプリ</strong></p>\n<div class=\"tablewrap\"><table>\n<tr><th>権限</th><th>利用目的</th><th>備考</th></tr>\n<tr><td>カメラ</td><td>Macの画面に表示されたペアリング用QRコードの読み取り</td><td>ペアリング画面でのみ使用し、写真を保存・送信することはありません。6桁の番号でペアリングすることもできます。</td></tr>\n<tr><td>ローカルネットワーク（iOS）</td><td>同じネットワーク上のMacエージェントを見つけて接続するため</td><td>Bonjourサービス <code>_macrokb._tcp</code> のみを探します。</td></tr>\n<tr><td>ネットワークアクセス・マルチキャスト（Android）</td><td>Macエージェントの検出と接続、広告の受信</td><td></td></tr>\n<tr><td>トラッキングの許可（ATT、iOS）</td><td>パーソナライズ広告を受け取るかどうかをユーザーが選ぶため</td><td>拒否しても本アプリのすべての機能をそのまま利用できます。</td></tr>\n</table></div>\n<p>位置情報、連絡先、マイク、写真の権限は求めません。接続中に画面を消さない機能は権限なしで動作し、設定でオフにできます。</p>\n<p><strong>Macエージェント</strong></p>\n<div class=\"tablewrap\"><table>\n<tr><th>権限</th><th>利用目的</th><th>備考</th></tr>\n<tr><td>アクセシビリティ</td><td>ショートカットやテキスト入力をMacに届けるため</td><td>この権限がないとキー入力を送れません。Macで押されたキーを読むのはショートカットを録画しているあいだだけで、読み取るだけでキーを横取りすることはありません。</td></tr>\n<tr><td>受信ネットワーク接続</td><td>スマートフォンアプリからの接続を受けるため</td><td>コマンドを送れるのはペアリングした端末だけです。</td></tr>\n<tr><td>ログイン時に起動</td><td>Macの起動時にエージェントを立ち上げるため</td><td>ユーザーが設定でオンにしたときだけ動作します。</td></tr>\n</table></div>\n<p>エージェントは、前面のアプリが切り替わったというOSの通知を受け取り、そのアプリの名前と識別子だけを確認します。画面の内容やウィンドウの中身は読み取りません。</p>"
+            },
+            "es": {
+              "title": "Permisos",
+              "body": "<p><strong>App del teléfono</strong></p>\n<div class=\"tablewrap\"><table>\n<tr><th>Permiso</th><th>Finalidad</th><th>Nota</th></tr>\n<tr><td>Cámara</td><td>Leer el código QR de emparejamiento que muestra el Mac</td><td>Solo en la pantalla de emparejamiento; no se guarda ni se envía ninguna imagen. También puede emparejar con un número de seis dígitos.</td></tr>\n<tr><td>Red local (iOS)</td><td>Encontrar el agente para Mac en su red y conectarse</td><td>Solo busca el servicio Bonjour <code>_macrokb._tcp</code>.</td></tr>\n<tr><td>Acceso a la red y multidifusión (Android)</td><td>Encontrar el agente para Mac, conectarse y recibir anuncios</td><td></td></tr>\n<tr><td>Rastreo (ATT, iOS)</td><td>Permitirle elegir si los anuncios se personalizan</td><td>Rechazarlo no limita ninguna función de la app.</td></tr>\n</table></div>\n<p>La app no pide acceso a la ubicación, los contactos, el micrófono ni las fotos. Mantener la pantalla encendida mientras está conectada no requiere permiso y puede desactivarse en los ajustes.</p>\n<p><strong>Agente para Mac</strong></p>\n<div class=\"tablewrap\"><table>\n<tr><th>Permiso</th><th>Finalidad</th><th>Nota</th></tr>\n<tr><td>Accesibilidad</td><td>Entregar atajos y texto escrito al Mac</td><td>Sin él, el agente no puede enviar pulsaciones. Solo lee las teclas pulsadas en el Mac mientras usted graba un atajo, y solo escucha: nunca las intercepta.</td></tr>\n<tr><td>Conexiones de red entrantes</td><td>Aceptar la conexión de la app del teléfono</td><td>Solo los dispositivos emparejados pueden enviar órdenes.</td></tr>\n<tr><td>Abrir al iniciar sesión</td><td>Arrancar el agente al encender el Mac</td><td>Solo si usted lo activa en los ajustes.</td></tr>\n</table></div>\n<p>El agente recibe el aviso del sistema de que otra app ha pasado al frente y lee únicamente el nombre y el identificador de esa app. No lee lo que hay en la pantalla ni dentro de ninguna ventana.</p>"
+            }
+          },
+          {
+            "ko": {
+              "title": "광고",
+              "body": "<p>본 앱은 무료이며 Google AdMob 광고가 붙습니다. 광고는 휴대폰 앱에만 표시되며, Mac 에이전트에는 광고가 없습니다.</p>\n<p>Google이 공표한 바에 따르면 Google Mobile Ads SDK는 다음을 수집합니다.</p>\n<ul>\n<li><strong>기기 식별자</strong> — 광고 식별자(IDFA, Android 광고 ID) 등</li>\n<li><strong>광고 데이터</strong> — 표시된 광고와 노출·클릭 기록</li>\n<li><strong>대략적인 위치</strong> — IP 주소에서 추정하며, 앱은 위치 권한을 쓰지 않습니다</li>\n<li><strong>상호작용 기록</strong> — 앱 실행, 탭 등</li>\n<li><strong>충돌 로그와 실적 데이터</strong> — 진단 정보이며 추적에는 쓰이지 않습니다</li>\n</ul>\n<p>광고 게재와 성과 측정, 광고 사기 방지에 쓰이고, 이용자가 동의한 경우 맞춤 광고에도 쓰입니다. 앱에는 계정이 없으므로 이 정보들은 이용자의 신원에 연결되지 않습니다. <strong>버튼 구성, 누른 버튼, Mac에서 앞에 나와 있는 앱 같은 정보는 광고 SDK에 전달되지 않습니다.</strong> 처리 주체는 Google LLC이며, 자세한 내용은 <a href=\"https://policies.google.com/technologies/ads\">Google 광고 정책</a>과 <a href=\"https://developers.google.com/admob/ios/privacy/data-disclosure\">AdMob 데이터 공개 문서</a>에서 확인하실 수 있습니다.</p>\n<p><strong>동의 수집(유럽경제지역·영국)</strong> — 해당 지역에서는 광고 목적의 개인정보 처리에 대해 앱을 처음 실행할 때 동의를 여쭙니다. 동의 화면은 Google의 사용자 메시지 플랫폼(UMP)이 제공하며, 지역 판단과 응답 보관도 이 플랫폼이 담당합니다. 이 지역에서 처리의 법적 근거는 <strong>이용자의 동의</strong>입니다.</p>\n<p><strong>미국 일부 주(캘리포니아 등)</strong> — 주 개인정보보호법에 따른 고지를 표시하며, 맞춤 광고를 위한 개인정보의 <strong>판매·공유를 거부(옵트아웃)</strong>하실 수 있습니다.</p>\n<p><strong>동의를 바꾸거나 철회하는 방법</strong> — 앱의 <strong>설정</strong> 화면에서 언제든 다시 선택하실 수 있습니다. 철회하셔도 앱의 모든 기능은 그대로 사용하실 수 있습니다.</p>\n<p><strong>맞춤 광고 동의(iOS)</strong> — 위와 별개로 iOS의 앱 추적 투명성(ATT) 안내가 표시됩니다. 거부하시면 맞춤 광고에 쓰이는 식별자가 제공되지 않으며, 그래도 앱의 모든 기능은 그대로 동작합니다. 선택은 나중에 <strong>설정 → 개인정보 보호 및 보안 → 추적</strong>에서 바꾸실 수 있습니다.</p>"
+            },
+            "en": {
+              "title": "Advertising",
+              "body": "<p>The app is free and carries Google AdMob ads. Ads appear only in the phone app; the Mac agent shows none.</p>\n<p>By Google's own disclosure, the Google Mobile Ads SDK collects:</p>\n<ul>\n<li><strong>Device identifiers</strong> — the advertising identifier (IDFA, Android advertising ID) and similar</li>\n<li><strong>Advertising data</strong> — which ads were shown, and impression and click records</li>\n<li><strong>Approximate location</strong> — derived from your IP address; the app itself uses no location permission</li>\n<li><strong>Interaction data</strong> — app launches, taps and similar</li>\n<li><strong>Crash logs and performance data</strong> — diagnostics, not used for tracking</li>\n</ul>\n<p>These are used to serve and measure ads and to prevent ad fraud, and — where you have agreed — to personalize them. The app has no account, so none of it is linked to your identity. <strong>Your button layouts, the buttons you press and the app in front on your Mac are never passed to the ad SDK.</strong> The processor is Google LLC; the detail is in their <a href=\"https://policies.google.com/technologies/ads\">advertising policy</a> and <a href=\"https://developers.google.com/admob/ios/privacy/data-disclosure\">AdMob data disclosure</a>.</p>\n<p><strong>Consent (European Economic Area and the UK).</strong> In these regions the app asks for your consent to the processing of personal data for advertising when you first open it. The consent screen is provided by Google's User Messaging Platform, which also determines the region and stores your response. Here the legal basis for processing is <strong>your consent</strong>.</p>\n<p><strong>Certain US states, including California.</strong> The app shows the notices required by state privacy laws, and you may <strong>opt out of the sale or sharing</strong> of personal information for personalized advertising.</p>\n<p><strong>Changing or withdrawing your choice.</strong> You can choose again at any time from the app's <strong>Settings</strong> screen. Withdrawing restricts nothing in the app.</p>\n<p><strong>Personalized ads (iOS).</strong> Separately, iOS shows its App Tracking Transparency prompt. If you decline, the identifier used for personalized ads is not provided, and every feature of the app still works. You can change this later under <strong>Settings → Privacy &amp; Security → Tracking</strong>.</p>"
+            },
+            "ja": {
+              "title": "広告",
+              "body": "<p>本アプリは無料で、Google AdMobの広告が表示されます。広告が表示されるのはスマートフォンアプリだけで、Macエージェントには広告はありません。</p>\n<p>Googleの公表によると、Google Mobile Ads SDKは次の情報を収集します。</p>\n<ul>\n<li><strong>端末識別子</strong> — 広告識別子（IDFA、Android広告ID）など</li>\n<li><strong>広告データ</strong> — 表示された広告と、表示・クリックの記録</li>\n<li><strong>おおよその位置</strong> — IPアドレスから推定したもので、本アプリは位置情報の権限を使いません</li>\n<li><strong>操作の記録</strong> — アプリの起動、タップなど</li>\n<li><strong>クラッシュログとパフォーマンスデータ</strong> — 診断情報であり、トラッキングには使われません</li>\n</ul>\n<p>これらは広告の配信と効果測定、広告詐欺の防止に使われ、ユーザーが同意した場合はパーソナライズ広告にも使われます。本アプリにはアカウントがないため、これらの情報がユーザーの身元に結びつくことはありません。<strong>ボタンの構成、押したボタン、Macで前面にあるアプリといった情報が広告SDKに渡されることはありません。</strong>処理主体はGoogle LLCで、詳しくは<a href=\"https://policies.google.com/technologies/ads\">Googleの広告ポリシー</a>と<a href=\"https://developers.google.com/admob/ios/privacy/data-disclosure\">AdMobのデータ開示</a>をご覧ください。</p>\n<p><strong>同意の取得（欧州経済領域・英国）</strong> — これらの地域では、アプリの初回起動時に広告目的の個人データ処理への同意をお伺いします。同意画面はGoogleのユーザー向けメッセージ プラットフォーム（UMP）が提供し、地域の判定と回答の保管もこのプラットフォームが担います。これらの地域における処理の法的根拠は<strong>ユーザーの同意</strong>です。</p>\n<p><strong>米国の一部の州（カリフォルニア州など）</strong> — 州のプライバシー法に基づく通知を表示し、パーソナライズ広告のための個人情報の<strong>販売・共有を拒否（オプトアウト）</strong>できます。</p>\n<p><strong>同意の変更・撤回</strong> — アプリの<strong>設定</strong>画面からいつでも選び直せます。撤回しても本アプリのすべての機能をそのまま利用できます。</p>\n<p><strong>パーソナライズ広告への同意（iOS）</strong> — 上記とは別に、iOSのAppトラッキングの透明性（ATT）の確認が表示されます。拒否するとパーソナライズ広告に使われる識別子は提供されず、それでも本アプリのすべての機能はそのまま動作します。選択はあとから<strong>設定 → プライバシーとセキュリティ → トラッキング</strong>で変更できます。</p>"
+            },
+            "es": {
+              "title": "Publicidad",
+              "body": "<p>La app es gratuita e incluye anuncios de Google AdMob. Los anuncios aparecen solo en la app del teléfono; el agente para Mac no muestra ninguno.</p>\n<p>Según la propia información de Google, el SDK de Google Mobile Ads recopila:</p>\n<ul>\n<li><strong>Identificadores del dispositivo</strong> — el identificador de publicidad (IDFA, ID de publicidad de Android) y similares</li>\n<li><strong>Datos publicitarios</strong> — qué anuncios se mostraron y registros de impresiones y clics</li>\n<li><strong>Ubicación aproximada</strong> — deducida de su dirección IP; la app no usa ningún permiso de ubicación</li>\n<li><strong>Datos de interacción</strong> — aperturas de la app, toques y similares</li>\n<li><strong>Registros de fallos y datos de rendimiento</strong> — diagnósticos que no se usan para rastrear</li>\n</ul>\n<p>Se usan para mostrar y medir anuncios y prevenir el fraude publicitario y, si usted lo ha aceptado, para personalizarlos. La app no tiene cuentas, así que nada de ello se vincula a su identidad. <strong>Sus configuraciones de botones, los botones que pulsa y la app que está delante en su Mac nunca se pasan al SDK de anuncios.</strong> El responsable del tratamiento es Google LLC; los detalles están en su <a href=\"https://policies.google.com/technologies/ads\">política de publicidad</a> y en la <a href=\"https://developers.google.com/admob/ios/privacy/data-disclosure\">divulgación de datos de AdMob</a>.</p>\n<p><strong>Consentimiento (Espacio Económico Europeo y Reino Unido).</strong> En estas regiones la app le pide su consentimiento para el tratamiento de datos personales con fines publicitarios la primera vez que la abre. La pantalla de consentimiento la ofrece la plataforma de mensajes para usuarios (UMP) de Google, que también determina la región y guarda su respuesta. Allí la base jurídica del tratamiento es <strong>su consentimiento</strong>.</p>\n<p><strong>Algunos estados de EE. UU., como California.</strong> La app muestra los avisos que exigen las leyes estatales de privacidad, y usted puede <strong>excluirse de la venta o el intercambio</strong> de información personal para publicidad personalizada.</p>\n<p><strong>Cambiar o retirar su elección.</strong> Puede volver a elegir en cualquier momento desde la pantalla de <strong>Ajustes</strong> de la app. Retirarla no limita nada en la app.</p>\n<p><strong>Anuncios personalizados (iOS).</strong> Aparte, iOS muestra su aviso de Transparencia en el rastreo de apps (ATT). Si lo rechaza, no se facilita el identificador usado para anuncios personalizados, y todas las funciones de la app siguen funcionando. Puede cambiarlo después en <strong>Ajustes → Privacidad y seguridad → Rastreo</strong>.</p>"
+            }
+          },
+          {
+            "ko": {
+              "title": "제3자 제공",
+              "body": "<p>개발자는 이용자의 정보를 판매하거나 대여하지 않습니다. 5항에 적은 Google LLC가 자사 정책에 따라 광고 정보를 처리하는 경우를 제외하면 어떤 정보도 제3자에게 제공하지 않습니다. 휴대폰과 Mac 사이의 통신은 이용자의 기기끼리만 이루어집니다.</p>\n<p>제3자가 수집한 정보의 삭제를 원하시면 {email}로 연락해 주시면 안내해 드립니다.</p>"
+            },
+            "en": {
+              "title": "Sharing",
+              "body": "<p>The developer does not sell or rent your information. Nothing is shared with anyone beyond the advertising processing Google LLC performs under its own policy, as described in section 5. Traffic between the phone and the Mac stays between your own devices.</p>\n<p>For deletion requests concerning data collected by a third party, write to {email} and you will be walked through it.</p>"
+            },
+            "ja": {
+              "title": "第三者への提供",
+              "body": "<p>開発者はユーザーの情報を販売・貸与しません。5項に記載したGoogle LLCが自社のポリシーに従って広告の情報を処理する場合を除き、いかなる情報も第三者に提供しません。スマートフォンとMacのあいだの通信は、ユーザーの端末同士でのみ行われます。</p>\n<p>第三者が収集した情報の削除をご希望の場合は、{email} までご連絡いただければご案内します。</p>"
+            },
+            "es": {
+              "title": "Cesión a terceros",
+              "body": "<p>El desarrollador no vende ni alquila su información. No se comparte nada con nadie más allá del tratamiento publicitario que Google LLC realiza según su propia política, descrito en el apartado 5. El tráfico entre el teléfono y el Mac se queda entre sus propios dispositivos.</p>\n<p>Para solicitar la eliminación de datos recopilados por un tercero, escriba a {email} y le indicaremos cómo hacerlo.</p>"
+            }
+          },
+          {
+            "ko": {
+              "title": "이용자의 권리와 삭제",
+              "body": "<p>본 앱은 계정이 없고 개발자가 이용자를 식별할 수 있는 정보를 보관하지 않으므로, 개발자에게 열람이나 정정을 요청하실 개인정보 자체가 없습니다. 아래 권리는 광고를 통해 수집되는 정보에 대한 것입니다.</p>\n<p><strong>유럽경제지역·영국</strong> — GDPR·UK GDPR에 따라 열람, 정정, 삭제, 처리 제한, 이의 제기, 데이터 이동을 요구하실 수 있고 <strong>동의는 언제든 철회하실 수 있습니다.</strong> 철회는 앱의 <strong>설정</strong> 화면에서 하실 수 있으며, 철회 전에 이루어진 처리가 소급해 위법해지지는 않습니다. 처리 주체인 Google LLC는 미국에 있으며, 정보가 이용자의 국가 밖으로 이전될 수 있습니다. 감독기관에 민원을 제기하실 권리도 있습니다.</p>\n<p><strong>미국 일부 주(캘리포니아 등)</strong> — 맞춤 광고를 위한 개인정보의 판매·공유 거부는 같은 <strong>설정</strong> 화면에서 하실 수 있습니다. 권리를 행사하셨다는 이유로 앱 이용에 불이익을 드리지 않습니다.</p>\n<p><strong>기기의 정보 지우기</strong> — 휴대폰의 정보는 앱을 삭제하면 함께 지워집니다. Mac의 정보는 에이전트를 삭제한 뒤 위 3항의 폴더를 지우면 모두 사라집니다. 특정 기기와의 연결만 끊으려면 앱의 <strong>설정 → 맥 연결 → 페어링 해제</strong>, 또는 에이전트의 기기 목록에서 차단하시면 됩니다. 광고 식별자는 기기 설정에서 재설정하실 수 있습니다.</p>"
+            },
+            "en": {
+              "title": "Your rights, and deleting data",
+              "body": "<p>The app has no account and the developer keeps nothing that identifies you, so there is no personal information held by the developer for you to access or correct. The rights below concern what is collected through advertising.</p>\n<p><strong>European Economic Area and the UK.</strong> Under the GDPR and UK GDPR you may request access, rectification, erasure, restriction of processing, objection and data portability, and you may <strong>withdraw your consent at any time</strong> from the app's <strong>Settings</strong> screen; doing so does not make processing carried out before the withdrawal unlawful. The processor, Google LLC, is in the United States, so data may be transferred outside your country. You also have the right to lodge a complaint with a supervisory authority.</p>\n<p><strong>Certain US states, including California.</strong> You can opt out of the sale or sharing of personal information for personalized advertising from the same <strong>Settings</strong> screen. You will not receive a lesser service for exercising this right.</p>\n<p><strong>Deleting what is on your devices.</strong> Everything on the phone is removed when you delete the app. On the Mac, delete the agent and then the folder named in section 3. To disconnect one device only, use <strong>Settings → Mac link → Unpair</strong> in the app, or block the device in the agent's device list. You can reset your advertising identifier in your device settings.</p>"
+            },
+            "ja": {
+              "title": "ユーザーの権利と削除",
+              "body": "<p>本アプリにはアカウントがなく、開発者はユーザーを特定できる情報を保管していないため、開発者に開示や訂正を求める個人情報そのものがありません。以下の権利は、広告を通じて収集される情報に関するものです。</p>\n<p><strong>欧州経済領域・英国</strong> — GDPR・UK GDPRに基づき、アクセス、訂正、削除、処理の制限、異議申立て、データポータビリティを求めることができ、<strong>同意はいつでも撤回できます。</strong>撤回はアプリの<strong>設定</strong>画面から行えます。撤回前に行われた処理が遡って違法になることはありません。処理主体であるGoogle LLCは米国にあり、情報がユーザーの国の外へ移転されることがあります。監督機関に苦情を申し立てる権利もあります。</p>\n<p><strong>米国の一部の州（カリフォルニア州など）</strong> — パーソナライズ広告のための個人情報の販売・共有の拒否は、同じ<strong>設定</strong>画面から行えます。権利を行使したことを理由に、アプリの利用で不利益を受けることはありません。</p>\n<p><strong>端末の情報を消す</strong> — スマートフォンの情報はアプリを削除すると一緒に消えます。Macの情報は、エージェントを削除したあと3項のフォルダを削除するとすべて消えます。特定の端末との接続だけを解除するには、アプリの<strong>設定 → Mac との接続 → ペアリングを解除</strong>、またはエージェントの端末一覧でブロックしてください。広告識別子は端末の設定でリセットできます。</p>"
+            },
+            "es": {
+              "title": "Sus derechos y cómo borrar datos",
+              "body": "<p>La app no tiene cuentas y el desarrollador no guarda nada que le identifique, así que no existe información personal en poder del desarrollador que usted pueda consultar o corregir. Los derechos siguientes se refieren a lo que se recopila a través de la publicidad.</p>\n<p><strong>Espacio Económico Europeo y Reino Unido.</strong> Según el RGPD y el RGPD del Reino Unido, puede solicitar acceso, rectificación, supresión, limitación del tratamiento, oposición y portabilidad, y puede <strong>retirar su consentimiento en cualquier momento</strong> desde la pantalla de <strong>Ajustes</strong> de la app; ello no hace ilícito el tratamiento realizado antes de la retirada. El responsable, Google LLC, está en Estados Unidos, por lo que los datos pueden transferirse fuera de su país. También tiene derecho a presentar una reclamación ante una autoridad de control.</p>\n<p><strong>Algunos estados de EE. UU., como California.</strong> Puede excluirse de la venta o el intercambio de información personal para publicidad personalizada desde la misma pantalla de <strong>Ajustes</strong>. Ejercer este derecho no le supondrá un peor servicio.</p>\n<p><strong>Borrar lo que hay en sus dispositivos.</strong> Todo lo del teléfono se elimina al borrar la app. En el Mac, borre el agente y después la carpeta indicada en el apartado 3. Para desconectar un solo dispositivo, use <strong>Ajustes → El Mac → Desvincular</strong> en la app, o bloquee el dispositivo en la lista del agente. Puede restablecer su identificador de publicidad en los ajustes del dispositivo.</p>"
+            }
+          },
+          {
+            "ko": {
+              "title": "아동의 개인정보",
+              "body": "<p>본 앱은 만 18세 미만 아동을 대상으로 하지 않으며, 아동으로부터 고의로 개인정보를 수집하지 않습니다.</p>"
+            },
+            "en": {
+              "title": "Children’s privacy",
+              "body": "<p>This app is not directed to children under the age of 18, and the developer does not knowingly collect personal information from them.</p>"
+            },
+            "ja": {
+              "title": "子どものプライバシー",
+              "body": "<p>本アプリは18歳未満の子どもを対象としておらず、子どもから意図的に個人情報を収集することはありません。</p>"
+            },
+            "es": {
+              "title": "Privacidad de los menores",
+              "body": "<p>Esta app no está dirigida a menores de 18 años, y el desarrollador no recopila a sabiendas información personal de ellos.</p>"
+            }
+          },
+          {
+            "ko": {
+              "title": "방침의 변경과 문의",
+              "body": "<p>본 방침이 변경되는 경우 변경 내용과 최종 수정일을 이 페이지에 게시합니다.</p>\n<p>문의: {email}</p>"
+            },
+            "en": {
+              "title": "Changes and contact",
+              "body": "<p>If this policy changes, the change and its revision date will be posted on this page.</p>\n<p>Questions: {email}</p>"
+            },
+            "ja": {
+              "title": "ポリシーの変更とお問い合わせ",
+              "body": "<p>本ポリシーを変更する場合は、変更内容と最終更新日をこのページに掲載します。</p>\n<p>お問い合わせ：{email}</p>"
+            },
+            "es": {
+              "title": "Cambios y contacto",
+              "body": "<p>Si esta política cambia, el cambio y su fecha de revisión se publicarán en esta página.</p>\n<p>Consultas: {email}</p>"
+            }
+          }
+        ]
+      },
+      "landing": {
+        "shots": [
+          {
+            "src": {
+              "en": "assets/hero_en.jpg",
+              "ko": "assets/hero_ko.jpg",
+              "ja": "assets/hero_ja.jpg",
+              "es": "assets/hero_es.jpg"
+            },
+            "en": [
+              "Six coloured buttons — play, cut, undo, marker, next frame, save — beside a large aluminium knob labelled Timeline",
+              "Final Cut's pad: six keys and a timeline knob."
+            ],
+            "ko": [
+              "재생·컷·실행 취소·마커·앞 프레임·저장 여섯 버튼과, 타임라인이라고 적힌 큰 알루미늄 노브",
+              "파이널컷용 화면. 버튼 여섯 개와 타임라인 노브."
+            ],
+            "ja": [
+              "再生・カット・取り消し・マーカー・次のコマ・保存の6つのボタンと、タイムラインと書かれた大きなアルミのノブ",
+              "Final Cut用の画面。6つのボタンとタイムラインのノブ。"
+            ],
+            "es": [
+              "Seis botones de colores — reproducir, cortar, deshacer, marcador, cuadro siguiente, guardar — junto a una gran rueda de aluminio con la etiqueta Línea de tiempo",
+              "El panel de Final Cut: seis teclas y una rueda para la línea de tiempo."
+            ]
+          },
+          {
+            "src": {
+              "en": "assets/editor_en.jpg",
+              "ko": "assets/editor_ko.jpg",
+              "ja": "assets/editor_ja.jpg",
+              "es": "assets/editor_es.jpg"
+            },
+            "en": [
+              "The button editor: a preview of a blue Copy button, its name, the shortcut ⌘C, sixteen colours and an icon picker",
+              "One screen to edit a button. The shortcut was recorded by pressing it on the Mac."
+            ],
+            "ko": [
+              "버튼 편집 화면. 파란 복사 버튼 미리보기와 이름, 단축키 ⌘C, 색 16가지, 아이콘 고르기",
+              "버튼 하나를 한 화면에서 고칩니다. 단축키는 Mac에서 직접 눌러 녹화했습니다."
+            ],
+            "ja": [
+              "ボタンの編集画面。青いコピーボタンのプレビューと名前、ショートカット⌘C、16色、アイコンの選択",
+              "ボタンは1画面で編集します。ショートカットはMacで実際に押して録画しました。"
+            ],
+            "es": [
+              "El editor de botones: vista previa de un botón azul Copiar, su nombre, el atajo ⌘C, dieciséis colores y un selector de iconos",
+              "Un botón se edita en una sola pantalla. El atajo se grabó pulsándolo en el Mac."
+            ]
+          },
+          {
+            "src": {
+              "en": "assets/switch_en.jpg",
+              "ko": "assets/switch_ko.jpg",
+              "ja": "assets/switch_ja.jpg",
+              "es": "assets/switch_es.jpg"
+            },
+            "en": [
+              "Two pads, one above the other: Final Cut's keys with a timeline knob, and Photoshop's keys with a brush-size knob",
+              "Bring Photoshop to the front and the timeline keys give way to brushes."
+            ],
+            "ko": [
+              "위아래 두 화면. 타임라인 노브가 있는 파이널컷 버튼과, 브러시 크기 노브가 있는 포토샵 버튼",
+              "Mac에서 포토샵을 앞으로 가져오면 타임라인 버튼이 브러시 버튼으로 바뀝니다."
+            ],
+            "ja": [
+              "上下に並んだ2つの画面。タイムラインのノブがあるFinal Cutのボタンと、ブラシサイズのノブがあるPhotoshopのボタン",
+              "MacでPhotoshopを前面に出すと、タイムラインのボタンがブラシのボタンに変わります。"
+            ],
+            "es": [
+              "Dos paneles, uno encima del otro: las teclas de Final Cut con una rueda de línea de tiempo y las de Photoshop con una rueda de tamaño de pincel",
+              "Traiga Photoshop al frente y las teclas de la línea de tiempo dejan paso a los pinceles."
+            ]
+          }
+        ],
+        "en": {
+          "meta": "Free · iPhone &amp; Android · Mac",
+          "headline": [
+            "Your phone as a",
+            "macro pad"
+          ],
+          "lede": "Buttons and a knob on your phone that press shortcuts, type text, open apps and run your scripts on the Mac beside you. Bring Final Cut to the front and the phone turns into Final Cut's pad.",
+          "idea": {
+            "eyebrow": "The idea",
+            "title": "A macro pad should know which app you are in.",
+            "lede": "A hardware pad holds one set of keys until you change it yourself. MacroKeyboard watches which app is in front on the Mac and swaps the phone's buttons to match — timeline keys in Final Cut, brushes in Photoshop. The pad is the phone you already carry."
+          },
+          "leftOutTitle": "Deliberately left out",
+          "leftOut": [
+            "Typing shell commands on the phone",
+            "Accounts and sign-in",
+            "A server in the middle of your keystrokes",
+            "Config files to set it up",
+            "Key codes you have to look up",
+            "Another gadget on the desk"
+          ],
+          "remainsTitle": "What's left",
+          "remains": [
+            "Up to fifteen buttons and a knob on each pad",
+            "Pads that follow the app in front on the Mac",
+            "Shortcuts recorded by pressing them on the Mac",
+            "Text, app launch, media keys and multi-step sequences",
+            "Scripts you register on the Mac, run by name",
+            "Korean, English, Japanese and Spanish"
+          ],
+          "features": {
+            "eyebrow": "What's in it",
+            "title": "Six things, done properly.",
+            "items": [
+              [
+                "It follows the app in front",
+                "Link a pad to Final Cut, Photoshop, Safari or VS Code. When that app comes to the front, the phone switches to its pad; leave it and you land on the pad you chose, or stay where you were."
+              ],
+              [
+                "A knob that keeps up",
+                "Turn it for the timeline, brush size or volume. Spin it fast and it takes big steps; lift your finger and it stops, instead of rolling on for seconds."
+              ],
+              [
+                "Record a shortcut by pressing it",
+                "Tap record on the phone and press the keys on the Mac. No key codes, no hunting for the ⌘ symbol."
+              ],
+              [
+                "More than one key",
+                "Type a line of text, open an app, play or pause, or chain steps: open the app, wait, press the shortcut."
+              ],
+              [
+                "Scripts stay on the Mac",
+                "Register a script on the Mac and the phone can run it by name. The phone never sends a command — only which button was pressed."
+              ],
+              [
+                "Paired, not just connected",
+                "Pairing is a QR code on the Mac's screen. After that the connection is encrypted and pinned to your Mac, and a device you have not paired is turned away."
+              ]
+            ]
+          },
+          "story": {
+            "eyebrow": "Where it came from",
+            "title": "Built for one desk, then made safe.",
+            "paragraphs": [
+              "It started with one question: could a button on an iPhone press <strong>⌘C</strong> on a Mac? The first build did exactly that, over the local network, in <strong>September 2026</strong>.",
+              "Everything after that was about not being dangerous. A phone that can make a Mac do things is a remote control for the computer, so pairing, encryption and a rule that <strong>scripts live only on the Mac</strong> came before any of the features above.",
+              "Then the part that makes it worth having: the pad follows the app in front. It has since run on an iPhone and on an Android tablet against the same Mac."
+            ],
+            "timeline": [
+              [
+                "2026.09",
+                "A button on the iPhone presses ⌘C on the Mac"
+              ],
+              [
+                "2026.09",
+                "Pairing, encryption and switching by app"
+              ],
+              [
+                "2026.09",
+                "Running on an Android tablet"
+              ],
+              [
+                "Now",
+                "Coming to the App Store and Google Play"
+              ]
+            ]
+          },
+          "privacySection": {
+            "eyebrow": "Privacy",
+            "title": "Your keystrokes stay on your network.",
+            "lede": "The phone and the Mac talk to each other directly, encrypted, inside your own network — there is no server of ours in between and no account. Your pads and your pairing live on your own devices. The app is free and carries ads, so Google AdMob collects the usual advertising identifier and device information; what you press never goes to it. All of it is written out in the {privacy}."
+          },
+          "privacyLinkText": "privacy policy",
+          "close": {
+            "title": "Put the pad next to the keyboard.",
+            "lede": "The app is coming to the App Store and Google Play. The Mac agent it needs will be a free download from this page."
+          }
+        },
+        "ko": {
+          "meta": "무료 · iPhone · Android · Mac",
+          "headline": [
+            "휴대폰으로 만드는 Mac",
+            "매크로패드"
+          ],
+          "lede": "휴대폰의 버튼과 노브로 옆에 있는 Mac에서 단축키를 누르고, 글자를 입력하고, 앱을 열고, 스크립트를 실행합니다. Mac에서 파이널컷을 앞으로 가져오면 휴대폰이 파이널컷 버튼으로 바뀝니다.",
+          "idea": {
+            "eyebrow": "아이디어",
+            "title": "매크로패드는 지금 어느 앱인지 알아야 합니다.",
+            "lede": "하드웨어 매크로패드는 손으로 바꾸기 전까지 같은 키를 들고 있습니다. MacroKeyboard는 Mac에서 앞에 나온 앱을 보고 휴대폰의 버튼을 그 앱에 맞게 바꿉니다. 파이널컷에서는 타임라인, 포토샵에서는 브러시. 매크로패드는 이미 들고 다니는 휴대폰입니다."
+          },
+          "leftOutTitle": "일부러 뺀 것",
+          "leftOut": [
+            "휴대폰에서 셸 명령 입력",
+            "계정과 로그인",
+            "키 입력 사이에 끼는 서버",
+            "설정 파일 편집",
+            "찾아봐야 하는 키 코드",
+            "책상 위의 또 다른 기기"
+          ],
+          "remainsTitle": "그래서 남은 것",
+          "remains": [
+            "화면마다 버튼 최대 15개와 노브 하나",
+            "Mac에서 앞에 나온 앱을 따라가는 화면",
+            "Mac에서 직접 눌러 녹화하는 단축키",
+            "텍스트 입력, 앱 실행, 미디어 키, 여러 단계 묶기",
+            "Mac에 등록한 스크립트를 이름으로 실행",
+            "한국어·영어·일본어·스페인어"
+          ],
+          "features": {
+            "eyebrow": "들어 있는 것",
+            "title": "여섯 가지, 제대로.",
+            "items": [
+              [
+                "앞에 나온 앱을 따라갑니다",
+                "화면을 파이널컷, 포토샵, Safari, VS Code에 연결해 두세요. 그 앱이 앞으로 나오면 휴대폰이 그 화면으로 바뀌고, 벗어나면 정해 둔 화면으로 가거나 그대로 머뭅니다."
+              ],
+              [
+                "따라오는 노브",
+                "타임라인, 브러시 크기, 볼륨을 돌립니다. 빠르게 돌리면 크게 움직이고, 손을 떼면 몇 초씩 혼자 구르지 않고 바로 멈춥니다."
+              ],
+              [
+                "눌러서 녹화하는 단축키",
+                "휴대폰에서 녹화를 누르고 Mac에서 키를 누르세요. 키 코드도, ⌘ 기호 찾기도 필요 없습니다."
+              ],
+              [
+                "키 하나 이상",
+                "글자 한 줄 입력, 앱 열기, 재생·정지, 그리고 여러 단계 묶기. 앱을 열고, 기다렸다가, 단축키를 누릅니다."
+              ],
+              [
+                "스크립트는 Mac에만",
+                "Mac에 스크립트를 등록하면 휴대폰에서 이름으로 실행할 수 있습니다. 휴대폰은 명령을 보내지 않습니다. 어느 버튼을 눌렀는지만 보냅니다."
+              ],
+              [
+                "연결이 아니라 페어링",
+                "페어링은 Mac 화면의 QR 코드 하나로 끝납니다. 그 뒤로 연결은 암호화되고 이용자의 Mac에만 고정되며, 페어링하지 않은 기기는 들어오지 못합니다."
+              ]
+            ]
+          },
+          "story": {
+            "eyebrow": "어디서 왔나",
+            "title": "책상 하나를 위해 만들고, 안전하게 다듬었습니다.",
+            "paragraphs": [
+              "질문 하나에서 시작했습니다. 아이폰의 버튼이 Mac에서 <strong>⌘C</strong>를 누를 수 있을까? 첫 빌드가 로컬 네트워크로 바로 그 일을 해낸 것이 <strong>2026년 9월</strong>입니다.",
+              "그다음은 전부 위험하지 않게 만드는 일이었습니다. Mac을 움직이는 휴대폰은 컴퓨터의 리모컨이기 때문에, 페어링과 암호화, 그리고 <strong>스크립트는 Mac에만 둔다</strong>는 원칙이 위의 어떤 기능보다 먼저 들어갔습니다.",
+              "그리고 이 앱을 가질 이유가 되는 부분, 앞에 나온 앱을 따라가는 화면이 붙었습니다. 지금은 같은 Mac을 아이폰과 Android 태블릿으로 모두 움직여 봤습니다."
+            ],
+            "timeline": [
+              [
+                "2026.09",
+                "아이폰 버튼으로 Mac에서 ⌘C"
+              ],
+              [
+                "2026.09",
+                "페어링, 암호화, 앱별 자동 전환"
+              ],
+              [
+                "2026.09",
+                "Android 태블릿에서 동작"
+              ],
+              [
+                "지금",
+                "App Store · Google Play 출시 준비 중"
+              ]
+            ]
+          },
+          "privacySection": {
+            "eyebrow": "개인정보",
+            "title": "키 입력은 이용자의 네트워크 밖으로 나가지 않습니다.",
+            "lede": "휴대폰과 Mac은 이용자의 네트워크 안에서 암호화된 채로 서로 직접 대화합니다. 사이에 개발자의 서버도, 계정도 없습니다. 버튼 구성과 페어링 정보는 이용자의 기기에만 있습니다. 앱은 무료이며 광고가 붙어 있어 Google AdMob이 일반적인 광고 식별자와 기기 정보를 수집하지만, 이용자가 누르는 버튼은 광고로 가지 않습니다. 자세한 내용은 {privacy}에 모두 적어 두었습니다."
+          },
+          "privacyLinkText": "개인정보처리방침",
+          "close": {
+            "title": "키보드 옆에 매크로패드를 두세요.",
+            "lede": "앱은 App Store와 Google Play에 곧 나옵니다. 함께 필요한 Mac 에이전트는 이 페이지에서 무료로 받으실 수 있게 됩니다."
+          }
+        },
+        "ja": {
+          "meta": "無料 · iPhone · Android · Mac",
+          "headline": [
+            "スマートフォンでつくる、Macの",
+            "マクロパッド"
+          ],
+          "lede": "スマートフォンのボタンとノブで、隣のMacのショートカットを押し、文字を入力し、アプリを開き、スクリプトを実行します。MacでFinal Cutを前面に出すと、スマートフォンがFinal Cut用のボタンに切り替わります。",
+          "idea": {
+            "eyebrow": "アイデア",
+            "title": "マクロパッドは、いまどのアプリなのかを知っているべきです。",
+            "lede": "ハードウェアのマクロパッドは、自分で切り替えるまで同じキーのままです。MacroKeyboardはMacで前面にあるアプリを見て、スマートフォンのボタンをそのアプリに合わせて入れ替えます。Final Cutならタイムライン、Photoshopならブラシ。マクロパッドは、いつも持ち歩いているスマートフォンです。"
+          },
+          "leftOutTitle": "あえて入れなかったもの",
+          "leftOut": [
+            "スマートフォンからのシェルコマンド入力",
+            "アカウントとログイン",
+            "キー入力のあいだに挟まるサーバー",
+            "設定ファイルの編集",
+            "調べないとわからないキーコード",
+            "机の上にもう1台の機械"
+          ],
+          "remainsTitle": "そうして残ったもの",
+          "remains": [
+            "画面ごとに最大15個のボタンとノブが1つ",
+            "Macで前面のアプリについていく画面",
+            "Macで実際に押して録画するショートカット",
+            "テキスト入力、アプリ起動、メディアキー、複数ステップのまとめ",
+            "Macに登録したスクリプトを名前で実行",
+            "韓国語・英語・日本語・スペイン語"
+          ],
+          "features": {
+            "eyebrow": "入っているもの",
+            "title": "6つを、きちんと。",
+            "items": [
+              [
+                "前面のアプリについていく",
+                "画面をFinal Cut、Photoshop、Safari、VS Codeに紐づけておきます。そのアプリが前面に来るとスマートフォンがその画面に切り替わり、離れると決めておいた画面に移るか、そのまま残ります。"
+              ],
+              [
+                "ついてくるノブ",
+                "タイムライン、ブラシサイズ、音量を回します。速く回すと大きく進み、指を離すと数秒も転がり続けずにすぐ止まります。"
+              ],
+              [
+                "押して録画するショートカット",
+                "スマートフォンで録画を押し、Macでキーを押してください。キーコードも、⌘記号を探す必要もありません。"
+              ],
+              [
+                "キー1つでは終わらない",
+                "テキストの入力、アプリを開く、再生・停止、そして複数ステップのまとめ。アプリを開き、待って、ショートカットを押します。"
+              ],
+              [
+                "スクリプトはMacだけに",
+                "Macにスクリプトを登録すると、スマートフォンから名前で実行できます。スマートフォンがコマンドを送ることはありません。送るのはどのボタンを押したかだけです。"
+              ],
+              [
+                "接続ではなく、ペアリング",
+                "ペアリングはMacの画面のQRコード1つで終わります。その後の接続は暗号化され、あなたのMacだけに固定されます。ペアリングしていない端末は入れません。"
+              ]
+            ]
+          },
+          "story": {
+            "eyebrow": "どこから来たか",
+            "title": "1つの机のために作り、安全に仕上げました。",
+            "paragraphs": [
+              "始まりは1つの問いでした。iPhoneのボタンでMacの<strong>⌘C</strong>を押せるだろうか。最初のビルドがローカルネットワーク越しにまさにそれをやってのけたのが<strong>2026年9月</strong>です。",
+              "その後はすべて、危なくないものにするための作業でした。Macを動かすスマートフォンはコンピューターのリモコンです。だからペアリングと暗号化、そして<strong>スクリプトはMacだけに置く</strong>という原則が、上のどの機能よりも先に入りました。",
+              "そしてこのアプリを持つ理由になる部分、前面のアプリについていく画面が加わりました。いまは同じMacを、iPhoneからもAndroidタブレットからも動かしています。"
+            ],
+            "timeline": [
+              [
+                "2026.09",
+                "iPhoneのボタンでMacの⌘C"
+              ],
+              [
+                "2026.09",
+                "ペアリング、暗号化、アプリごとの自動切り替え"
+              ],
+              [
+                "2026.09",
+                "Androidタブレットで動作"
+              ],
+              [
+                "いま",
+                "App Store・Google Playでの公開準備中"
+              ]
+            ]
+          },
+          "privacySection": {
+            "eyebrow": "プライバシー",
+            "title": "キー入力は、あなたのネットワークの外に出ません。",
+            "lede": "スマートフォンとMacは、あなたのネットワーク内で暗号化したまま直接やり取りします。あいだに開発者のサーバーもアカウントもありません。ボタンの構成とペアリングの情報は、あなたの端末にだけあります。アプリは無料で広告が表示されるため、Google AdMobが一般的な広告識別子と端末情報を収集しますが、あなたが押すボタンが広告に渡ることはありません。詳しくは{privacy}にすべて書いてあります。"
+          },
+          "privacyLinkText": "プライバシーポリシー",
+          "close": {
+            "title": "キーボードの隣に、マクロパッドを。",
+            "lede": "アプリはまもなくApp StoreとGoogle Playで公開されます。あわせて必要なMacエージェントは、このページから無料でダウンロードできるようになります。"
+          }
+        },
+        "es": {
+          "meta": "Gratis · iPhone y Android · Mac",
+          "headline": [
+            "Su teléfono, convertido en un",
+            "teclado de macros"
+          ],
+          "lede": "Botones y una rueda en el teléfono que pulsan atajos, escriben texto, abren apps y ejecutan sus scripts en el Mac que tiene al lado. Traiga Final Cut al frente y el teléfono se convierte en el panel de Final Cut.",
+          "idea": {
+            "eyebrow": "La idea",
+            "title": "Un teclado de macros debería saber en qué app está usted.",
+            "lede": "Un teclado de macros físico mantiene las mismas teclas hasta que usted lo cambia. MacroKeyboard mira qué app está delante en el Mac y cambia los botones del teléfono para que encajen: línea de tiempo en Final Cut, pinceles en Photoshop. El teclado es el teléfono que ya lleva encima."
+          },
+          "leftOutTitle": "Dejado fuera a propósito",
+          "leftOut": [
+            "Escribir comandos de shell en el teléfono",
+            "Cuentas e inicio de sesión",
+            "Un servidor en medio de sus pulsaciones",
+            "Archivos de configuración",
+            "Códigos de tecla que hay que buscar",
+            "Otro aparato encima de la mesa"
+          ],
+          "remainsTitle": "Lo que queda",
+          "remains": [
+            "Hasta quince botones y una rueda en cada panel",
+            "Paneles que siguen a la app que está delante en el Mac",
+            "Atajos que se graban pulsándolos en el Mac",
+            "Texto, abrir apps, teclas multimedia y secuencias de varios pasos",
+            "Scripts registrados en el Mac, ejecutados por su nombre",
+            "Coreano, inglés, japonés y español"
+          ],
+          "features": {
+            "eyebrow": "Lo que incluye",
+            "title": "Seis cosas, bien hechas.",
+            "items": [
+              [
+                "Sigue a la app que tiene delante",
+                "Vincule un panel a Final Cut, Photoshop, Safari o VS Code. Cuando esa app pasa al frente, el teléfono cambia a su panel; al salir, va al panel que usted eligió o se queda donde estaba."
+              ],
+              [
+                "Una rueda que responde",
+                "Gírela para la línea de tiempo, el tamaño del pincel o el volumen. Si gira rápido avanza a pasos largos; al levantar el dedo se detiene, en vez de seguir rodando varios segundos."
+              ],
+              [
+                "Grabe un atajo pulsándolo",
+                "Toque grabar en el teléfono y pulse las teclas en el Mac. Sin códigos de tecla ni buscar el símbolo ⌘."
+              ],
+              [
+                "Más que una tecla",
+                "Escribir una línea de texto, abrir una app, reproducir o pausar, o encadenar pasos: abrir la app, esperar, pulsar el atajo."
+              ],
+              [
+                "Los scripts se quedan en el Mac",
+                "Registre un script en el Mac y el teléfono podrá ejecutarlo por su nombre. El teléfono nunca envía una orden: solo qué botón se pulsó."
+              ],
+              [
+                "Emparejado, no solo conectado",
+                "El emparejamiento es un código QR en la pantalla del Mac. A partir de ahí la conexión va cifrada y ligada a su Mac, y un dispositivo no emparejado se rechaza."
+              ]
+            ]
+          },
+          "story": {
+            "eyebrow": "De dónde viene",
+            "title": "Hecho para una mesa y después, seguro.",
+            "paragraphs": [
+              "Empezó con una pregunta: ¿puede un botón del iPhone pulsar <strong>⌘C</strong> en un Mac? La primera versión hizo exactamente eso, por la red local, en <strong>septiembre de 2026</strong>.",
+              "Todo lo que vino después fue para que no fuera peligroso. Un teléfono capaz de mover un Mac es un mando a distancia del ordenador, así que el emparejamiento, el cifrado y la regla de que <strong>los scripts viven solo en el Mac</strong> llegaron antes que cualquiera de las funciones de arriba.",
+              "Luego llegó lo que hace que valga la pena: el panel sigue a la app que está delante. Desde entonces ha manejado el mismo Mac desde un iPhone y desde una tableta Android."
+            ],
+            "timeline": [
+              [
+                "2026.09",
+                "Un botón del iPhone pulsa ⌘C en el Mac"
+              ],
+              [
+                "2026.09",
+                "Emparejamiento, cifrado y cambio por app"
+              ],
+              [
+                "2026.09",
+                "Funcionando en una tableta Android"
+              ],
+              [
+                "Ahora",
+                "Próximamente en App Store y Google Play"
+              ]
+            ]
+          },
+          "privacySection": {
+            "eyebrow": "Privacidad",
+            "title": "Sus pulsaciones no salen de su red.",
+            "lede": "El teléfono y el Mac hablan directamente entre sí, cifrados, dentro de su propia red: no hay ningún servidor nuestro en medio ni cuenta alguna. Sus paneles y su emparejamiento viven en sus propios dispositivos. La app es gratuita e incluye anuncios, así que Google AdMob recopila el identificador de publicidad y la información del dispositivo habituales; lo que usted pulsa nunca le llega. Todo está detallado en la {privacy}."
+          },
+          "privacyLinkText": "política de privacidad",
+          "close": {
+            "title": "Ponga el panel junto al teclado.",
+            "lede": "La app llegará pronto a App Store y Google Play. El agente para Mac que necesita se podrá descargar gratis desde esta página."
+          }
+        }
+      }
     }
   ]
 }

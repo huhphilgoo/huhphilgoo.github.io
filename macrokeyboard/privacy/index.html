@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MacroKeyboard — Privacy policy</title>
+<meta name="description" content="Privacy policy for MacroKeyboard, com.philgooheo.macrokeyboard.">
+<link rel="alternate" hreflang="en" href="https://huhphilgoo.github.io/macrokeyboard/privacy/">
+<link rel="alternate" hreflang="ko" href="https://huhphilgoo.github.io/macrokeyboard/privacy/ko/">
+<link rel="alternate" hreflang="ja" href="https://huhphilgoo.github.io/macrokeyboard/privacy/ja/">
+<link rel="alternate" hreflang="es" href="https://huhphilgoo.github.io/macrokeyboard/privacy/es/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="wrap narrow">
+<div class="masthead"><span class="spacer"></span><nav class="langnav" aria-label="Language"><a href="./" hreflang="en" class="on">EN</a><a href="ko/" hreflang="ko">KO</a><a href="ja/" hreflang="ja">JA</a><a href="es/" hreflang="es">ES</a></nav><span class="meta">MacroKeyboard</span></div>
+<section class="policy">
+  <p class="eyebrow">Privacy policy</p>
+  <h1>MacroKeyboard</h1>
+  <div class="idblock"><dl>
+<dt>앱 이름 / App</dt><dd>MacroKeyboard</dd>
+<dt>개발자 / Developer</dt><dd>허필구 (Heo Philgoo)</dd>
+<dt>패키지명 / Package</dt><dd>com.philgooheo.macrokeyboard</dd>
+<dt>문의 / Contact</dt><dd><a href="mailto:pgmagician@gmail.com">pgmagician@gmail.com</a></dd>
+</dl></div>
+  <p>This Privacy Policy applies to the mobile application <strong>MacroKeyboard</strong> (listed as “MacroKeyboard”, package <code>com.philgooheo.macrokeyboard</code>), developed and published by <strong>Heo Philgoo (허필구)</strong>. Last updated: September 29, 2026.</p><h2>1. How the app is built</h2><p>MacroKeyboard has two parts: the <strong>app</strong> on your phone or tablet, and the <strong>Mac agent</strong> you install on your Mac. When you press a button or turn the knob in the app, <strong>the agent carries out that action on your Mac</strong> — pressing a keyboard shortcut, typing text, opening an app, sending a media key such as play or volume, or running a script you have registered on the Mac yourself.</p>
+<p>This policy covers both the app and the Mac agent. Neither has an account or sign-in.</p><h2>2. What passes between the phone and the Mac</h2><p>The app and the Mac agent <strong>connect to each other directly, inside your own network.</strong> Nothing goes through a server of the developer's or a relay on the internet, and the developer cannot see any of it. The connection is encrypted (TLS), and the app talks only to the Mac it confirmed through the QR code on that Mac's screen when you first paired. Requests from a device that has not been paired are refused.</p>
+<p><strong>Phone → Mac</strong></p><ul>
+<li>When pairing: a random device ID the app creates on first launch, and the device's name (its network name)</li>
+<li>When you press a button: <strong>only which button was pressed</strong> (its ID)</li>
+<li>When you edit buttons: the button layout — names, colours, icons, shortcuts, text to type, apps to open, knob settings</li>
+</ul>
+<p><strong>The phone never sends a shell command.</strong> A script has to be registered on the Mac by you; the phone can only pick a registered script by its name. A script the Mac does not have registered is never run.</p>
+<p><strong>Mac → phone</strong></p><ul>
+<li>The Mac's name</li>
+<li>The name and identifier of the app currently in front on the Mac (for example <code>com.apple.FinalCut</code>), used to switch to that app's buttons</li>
+<li>The names of scripts registered on the Mac — never their location or contents</li>
+<li>Results, and the keys pressed on the Mac while you are recording a shortcut</li>
+</ul><h2>3. What is kept on your devices</h2><p>Everything is stored on your own devices and nothing is sent to the developer.</p>
+<p><strong>Phone</strong></p><ul>
+<li><strong>Pairing details</strong> (the Mac's address, its certificate fingerprint, the access token) and the device ID — kept in the system's secure storage (the iOS Keychain; on Android, storage encrypted with the Android Keystore)</li>
+<li><strong>Your button layouts</strong> — a file in the app's own folder</li>
+<li><strong>Settings</strong> such as auto-switching, keeping the screen on, and language</li>
+<li>On Android, none of this is included in Google's cloud backup</li>
+</ul>
+<p><strong>Mac</strong> — in <code>~/Library/Application Support/com.philgooheo.macrokeyboardAgent</code></p><ul>
+<li><strong>The certificate and private key for the encrypted connection</strong> — the private key is a file only your Mac user account can read (permission 600)</li>
+<li><strong>The list of paired devices</strong> (device ID, name, access token, when it was paired and last seen, whether it is blocked) — a file only your account can read</li>
+<li><strong>Button layouts received from your phone</strong></li>
+<li><strong>The scripts you registered</strong> (name and file location)</li>
+</ul>
+<p>The activity log in the agent's window is kept only in memory, up to the last 100 lines, and disappears when the agent quits.</p>
+<p>A file containing your buttons is created <strong>only when you export a backup yourself</strong>, and where it goes is up to you.</p><h2>4. Permissions</h2><p><strong>Phone app</strong></p>
+<div class="tablewrap"><table>
+<tr><th>Permission</th><th>Purpose</th><th>Note</th></tr>
+<tr><td>Camera</td><td>To read the pairing QR code shown on the Mac's screen</td><td>Used only on the pairing screen; no picture is saved or sent. You can pair with a six-digit number instead.</td></tr>
+<tr><td>Local network (iOS)</td><td>To find and connect to the Mac agent on your network</td><td>Looks only for the Bonjour service <code>_macrokb._tcp</code>.</td></tr>
+<tr><td>Network access and multicast (Android)</td><td>To find and connect to the Mac agent, and to receive ads</td><td></td></tr>
+<tr><td>Tracking (ATT, iOS)</td><td>To let you choose whether ads are personalized</td><td>Declining restricts nothing in the app.</td></tr>
+</table></div>
+<p>The app does not ask for location, contacts, microphone or photos. Keeping the screen on while connected needs no permission and can be turned off in settings.</p>
+<p><strong>Mac agent</strong></p>
+<div class="tablewrap"><table>
+<tr><th>Permission</th><th>Purpose</th><th>Note</th></tr>
+<tr><td>Accessibility</td><td>To deliver shortcuts and typed text to the Mac</td><td>Without it the agent cannot send keystrokes. It reads keys pressed on the Mac only while you are recording a shortcut, and only listens — it never intercepts them.</td></tr>
+<tr><td>Incoming network connections</td><td>To accept the phone app's connection</td><td>Only paired devices can send commands.</td></tr>
+<tr><td>Open at login</td><td>To start the agent when the Mac starts</td><td>Only if you turn it on in settings.</td></tr>
+</table></div>
+<p>The agent listens for the system's notice that a different app has come to the front, and reads only that app's name and identifier. It does not read what is on your screen or inside any window.</p><h2>5. Advertising</h2><p>The app is free and carries Google AdMob ads. Ads appear only in the phone app; the Mac agent shows none.</p>
+<p>By Google's own disclosure, the Google Mobile Ads SDK collects:</p>
+<ul>
+<li><strong>Device identifiers</strong> — the advertising identifier (IDFA, Android advertising ID) and similar</li>
+<li><strong>Advertising data</strong> — which ads were shown, and impression and click records</li>
+<li><strong>Approximate location</strong> — derived from your IP address; the app itself uses no location permission</li>
+<li><strong>Interaction data</strong> — app launches, taps and similar</li>
+<li><strong>Crash logs and performance data</strong> — diagnostics, not used for tracking</li>
+</ul>
+<p>These are used to serve and measure ads and to prevent ad fraud, and — where you have agreed — to personalize them. The app has no account, so none of it is linked to your identity. <strong>Your button layouts, the buttons you press and the app in front on your Mac are never passed to the ad SDK.</strong> The processor is Google LLC; the detail is in their <a href="https://policies.google.com/technologies/ads">advertising policy</a> and <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">AdMob data disclosure</a>.</p>
+<p><strong>Consent (European Economic Area and the UK).</strong> In these regions the app asks for your consent to the processing of personal data for advertising when you first open it. The consent screen is provided by Google's User Messaging Platform, which also determines the region and stores your response. Here the legal basis for processing is <strong>your consent</strong>.</p>
+<p><strong>Certain US states, including California.</strong> The app shows the notices required by state privacy laws, and you may <strong>opt out of the sale or sharing</strong> of personal information for personalized advertising.</p>
+<p><strong>Changing or withdrawing your choice.</strong> You can choose again at any time from the app's <strong>Settings</strong> screen. Withdrawing restricts nothing in the app.</p>
+<p><strong>Personalized ads (iOS).</strong> Separately, iOS shows its App Tracking Transparency prompt. If you decline, the identifier used for personalized ads is not provided, and every feature of the app still works. You can change this later under <strong>Settings → Privacy &amp; Security → Tracking</strong>.</p><h2>6. Sharing</h2><p>The developer does not sell or rent your information. Nothing is shared with anyone beyond the advertising processing Google LLC performs under its own policy, as described in section 5. Traffic between the phone and the Mac stays between your own devices.</p>
+<p>For deletion requests concerning data collected by a third party, write to <a href="mailto:pgmagician@gmail.com">pgmagician@gmail.com</a> and you will be walked through it.</p><h2>7. Your rights, and deleting data</h2><p>The app has no account and the developer keeps nothing that identifies you, so there is no personal information held by the developer for you to access or correct. The rights below concern what is collected through advertising.</p>
+<p><strong>European Economic Area and the UK.</strong> Under the GDPR and UK GDPR you may request access, rectification, erasure, restriction of processing, objection and data portability, and you may <strong>withdraw your consent at any time</strong> from the app's <strong>Settings</strong> screen; doing so does not make processing carried out before the withdrawal unlawful. The processor, Google LLC, is in the United States, so data may be transferred outside your country. You also have the right to lodge a complaint with a supervisory authority.</p>
+<p><strong>Certain US states, including California.</strong> You can opt out of the sale or sharing of personal information for personalized advertising from the same <strong>Settings</strong> screen. You will not receive a lesser service for exercising this right.</p>
+<p><strong>Deleting what is on your devices.</strong> Everything on the phone is removed when you delete the app. On the Mac, delete the agent and then the folder named in section 3. To disconnect one device only, use <strong>Settings → Mac link → Unpair</strong> in the app, or block the device in the agent's device list. You can reset your advertising identifier in your device settings.</p><h2>8. Children’s privacy</h2><p>This app is not directed to children under the age of 18, and the developer does not knowingly collect personal information from them.</p><h2>9. Changes and contact</h2><p>If this policy changes, the change and its revision date will be posted on this page.</p>
+<p>Questions: <a href="mailto:pgmagician@gmail.com">pgmagician@gmail.com</a></p>
+</section>
+<footer><span>MacroKeyboard</span><span class="spacer"></span><a href="../../macrokeyboard/privacy/">Privacy policy</a><a href="mailto:pgmagician@gmail.com">Contact</a></footer>
+</div>
+</body>
+</html>

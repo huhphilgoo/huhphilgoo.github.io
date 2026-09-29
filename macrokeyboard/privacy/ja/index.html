@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MacroKeyboard プライバシーポリシー</title>
+<meta name="description" content="MacroKeyboard（com.philgooheo.macrokeyboard）のプライバシーポリシー。">
+<link rel="alternate" hreflang="en" href="https://huhphilgoo.github.io/macrokeyboard/privacy/">
+<link rel="alternate" hreflang="ko" href="https://huhphilgoo.github.io/macrokeyboard/privacy/ko/">
+<link rel="alternate" hreflang="ja" href="https://huhphilgoo.github.io/macrokeyboard/privacy/ja/">
+<link rel="alternate" hreflang="es" href="https://huhphilgoo.github.io/macrokeyboard/privacy/es/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body>
+<div class="wrap narrow">
+<div class="masthead"><span class="spacer"></span><nav class="langnav" aria-label="Language"><a href="../" hreflang="en">EN</a><a href="../ko/" hreflang="ko">KO</a><a href="./" hreflang="ja" class="on">JA</a><a href="../es/" hreflang="es">ES</a></nav><span class="meta">MacroKeyboard</span></div>
+<section class="policy">
+  <p class="eyebrow">プライバシーポリシー</p>
+  <h1>MacroKeyboard</h1>
+  <div class="idblock"><dl>
+<dt>앱 이름 / App</dt><dd>MacroKeyboard</dd>
+<dt>개발자 / Developer</dt><dd>허필구 (Heo Philgoo)</dd>
+<dt>패키지명 / Package</dt><dd>com.philgooheo.macrokeyboard</dd>
+<dt>문의 / Contact</dt><dd><a href="mailto:pgmagician@gmail.com">pgmagician@gmail.com</a></dd>
+</dl></div>
+  <p>本プライバシーポリシーは、<strong>Heo Philgoo（허필구）</strong>（以下「開発者」）が開発・公開するアプリケーション<strong>MacroKeyboard</strong>（パッケージ名 <code>com.philgooheo.macrokeyboard</code>、以下「本アプリ」）に適用されます。最終更新日: 2026年9月29日。</p><h2>1. 本アプリの構成</h2><p>MacroKeyboardは2つの部分からなります。スマートフォン・タブレットで使う<strong>アプリ</strong>と、ユーザーのMacにインストールする<strong>Macエージェント</strong>です。アプリでボタンを押したりノブを回したりすると、<strong>エージェントがユーザーのMac上でその動作を実行します。</strong>ショートカットの入力、テキストの入力、アプリの起動、再生・音量などのメディアキー、そしてユーザー自身がMacに登録したスクリプトの実行がこれにあたります。</p>
+<p>本ポリシーはアプリとMacエージェントの両方に適用されます。どちらにも会員登録やアカウントはありません。</p><h2>2. スマートフォンとMacのあいだでやり取りされるもの</h2><p>アプリとMacエージェントは<strong>ユーザーのネットワーク内で互いに直接つながります。</strong>開発者のサーバーやインターネット上の中継サーバーは経由せず、開発者はこの通信内容を見ることができません。接続は暗号化（TLS）され、最初のペアリング時にMacの画面のQRコードで確認したそのMacとだけ通信します。ペアリングしていない端末からの要求は拒否されます。</p>
+<p><strong>スマートフォン → Mac</strong></p><ul>
+<li>ペアリング時：アプリの初回起動時に作られるランダムな端末IDと、端末の名前（ネットワーク上の名前）</li>
+<li>ボタンを押したとき：<strong>どのボタンが押されたか（ボタンID）だけ</strong></li>
+<li>ボタンを編集したとき：ボタンの構成（名前、色、アイコン、ショートカット、入力するテキスト、起動するアプリ、ノブの設定）</li>
+</ul>
+<p><strong>スマートフォンがシェルコマンドを送ることはありません。</strong>スクリプトはユーザー自身がMacで登録する必要があり、スマートフォンは登録済みのスクリプトを名前で選べるだけです。Macに登録されていないスクリプトは実行されません。</p>
+<p><strong>Mac → スマートフォン</strong></p><ul>
+<li>Macの名前</li>
+<li>いまMacで前面にあるアプリの名前と識別子（例：<code>com.apple.FinalCut</code>）— アプリごとにボタン画面を切り替えるために使います</li>
+<li>Macに登録されたスクリプトの名前の一覧 — スクリプトの場所や内容は送りません</li>
+<li>実行結果と、ショートカットを録画しているあいだにMacで押されたキー</li>
+</ul><h2>3. 端末に保存されるもの</h2><p>すべての情報はユーザーの端末内にのみ保存され、開発者に送信されることはありません。</p>
+<p><strong>スマートフォン</strong></p><ul>
+<li><strong>ペアリング情報</strong>（Macのアドレス、証明書のフィンガープリント、認証トークン）と端末ID — OSの安全な保管領域（iOSのキーチェーン、AndroidではAndroidキーストアで暗号化された保管領域）に保存します</li>
+<li><strong>ボタンの構成</strong> — アプリ専用フォルダ内のファイルに保存します</li>
+<li><strong>設定値</strong>（自動切り替え、画面をつけたままにする、言語など）</li>
+<li>Androidでは、これらの情報はGoogleのクラウドバックアップに含まれないよう設定しています</li>
+</ul>
+<p><strong>Mac</strong> — <code>~/Library/Application Support/com.philgooheo.macrokeyboardAgent</code> フォルダ</p><ul>
+<li><strong>暗号化接続のための証明書と秘密鍵</strong> — 秘密鍵はMacのユーザー本人だけが読めるファイル（権限600）として保存します</li>
+<li><strong>ペアリングした端末の一覧</strong>（端末ID、名前、認証トークン、ペアリング・最終接続日時、ブロックの有無）— 本人だけが読めるファイルとして保存します</li>
+<li><strong>スマートフォンから受け取ったボタンの構成</strong></li>
+<li><strong>ユーザーが登録したスクリプトの一覧</strong>（名前とファイルの場所）</li>
+</ul>
+<p>エージェントのウィンドウに表示される活動履歴はメモリ上に直近100行まで残るだけで、エージェントを終了すると消えます。</p>
+<p>ボタンの構成がファイルとして作られるのは、<strong>ユーザー自身がバックアップを書き出したときだけ</strong>で、その送り先はユーザーが決めます。</p><h2>4. 権限</h2><p><strong>スマートフォンアプリ</strong></p>
+<div class="tablewrap"><table>
+<tr><th>権限</th><th>利用目的</th><th>備考</th></tr>
+<tr><td>カメラ</td><td>Macの画面に表示されたペアリング用QRコードの読み取り</td><td>ペアリング画面でのみ使用し、写真を保存・送信することはありません。6桁の番号でペアリングすることもできます。</td></tr>
+<tr><td>ローカルネットワーク（iOS）</td><td>同じネットワーク上のMacエージェントを見つけて接続するため</td><td>Bonjourサービス <code>_macrokb._tcp</code> のみを探します。</td></tr>
+<tr><td>ネットワークアクセス・マルチキャスト（Android）</td><td>Macエージェントの検出と接続、広告の受信</td><td></td></tr>
+<tr><td>トラッキングの許可（ATT、iOS）</td><td>パーソナライズ広告を受け取るかどうかをユーザーが選ぶため</td><td>拒否しても本アプリのすべての機能をそのまま利用できます。</td></tr>
+</table></div>
+<p>位置情報、連絡先、マイク、写真の権限は求めません。接続中に画面を消さない機能は権限なしで動作し、設定でオフにできます。</p>
+<p><strong>Macエージェント</strong></p>
+<div class="tablewrap"><table>
+<tr><th>権限</th><th>利用目的</th><th>備考</th></tr>
+<tr><td>アクセシビリティ</td><td>ショートカットやテキスト入力をMacに届けるため</td><td>この権限がないとキー入力を送れません。Macで押されたキーを読むのはショートカットを録画しているあいだだけで、読み取るだけでキーを横取りすることはありません。</td></tr>
+<tr><td>受信ネットワーク接続</td><td>スマートフォンアプリからの接続を受けるため</td><td>コマンドを送れるのはペアリングした端末だけです。</td></tr>
+<tr><td>ログイン時に起動</td><td>Macの起動時にエージェントを立ち上げるため</td><td>ユーザーが設定でオンにしたときだけ動作します。</td></tr>
+</table></div>
+<p>エージェントは、前面のアプリが切り替わったというOSの通知を受け取り、そのアプリの名前と識別子だけを確認します。画面の内容やウィンドウの中身は読み取りません。</p><h2>5. 広告</h2><p>本アプリは無料で、Google AdMobの広告が表示されます。広告が表示されるのはスマートフォンアプリだけで、Macエージェントには広告はありません。</p>
+<p>Googleの公表によると、Google Mobile Ads SDKは次の情報を収集します。</p>
+<ul>
+<li><strong>端末識別子</strong> — 広告識別子（IDFA、Android広告ID）など</li>
+<li><strong>広告データ</strong> — 表示された広告と、表示・クリックの記録</li>
+<li><strong>おおよその位置</strong> — IPアドレスから推定したもので、本アプリは位置情報の権限を使いません</li>
+<li><strong>操作の記録</strong> — アプリの起動、タップなど</li>
+<li><strong>クラッシュログとパフォーマンスデータ</strong> — 診断情報であり、トラッキングには使われません</li>
+</ul>
+<p>これらは広告の配信と効果測定、広告詐欺の防止に使われ、ユーザーが同意した場合はパーソナライズ広告にも使われます。本アプリにはアカウントがないため、これらの情報がユーザーの身元に結びつくことはありません。<strong>ボタンの構成、押したボタン、Macで前面にあるアプリといった情報が広告SDKに渡されることはありません。</strong>処理主体はGoogle LLCで、詳しくは<a href="https://policies.google.com/technologies/ads">Googleの広告ポリシー</a>と<a href="https://developers.google.com/admob/ios/privacy/data-disclosure">AdMobのデータ開示</a>をご覧ください。</p>
+<p><strong>同意の取得（欧州経済領域・英国）</strong> — これらの地域では、アプリの初回起動時に広告目的の個人データ処理への同意をお伺いします。同意画面はGoogleのユーザー向けメッセージ プラットフォーム（UMP）が提供し、地域の判定と回答の保管もこのプラットフォームが担います。これらの地域における処理の法的根拠は<strong>ユーザーの同意</strong>です。</p>
+<p><strong>米国の一部の州（カリフォルニア州など）</strong> — 州のプライバシー法に基づく通知を表示し、パーソナライズ広告のための個人情報の<strong>販売・共有を拒否（オプトアウト）</strong>できます。</p>
+<p><strong>同意の変更・撤回</strong> — アプリの<strong>設定</strong>画面からいつでも選び直せます。撤回しても本アプリのすべての機能をそのまま利用できます。</p>
+<p><strong>パーソナライズ広告への同意（iOS）</strong> — 上記とは別に、iOSのAppトラッキングの透明性（ATT）の確認が表示されます。拒否するとパーソナライズ広告に使われる識別子は提供されず、それでも本アプリのすべての機能はそのまま動作します。選択はあとから<strong>設定 → プライバシーとセキュリティ → トラッキング</strong>で変更できます。</p><h2>6. 第三者への提供</h2><p>開発者はユーザーの情報を販売・貸与しません。5項に記載したGoogle LLCが自社のポリシーに従って広告の情報を処理する場合を除き、いかなる情報も第三者に提供しません。スマートフォンとMacのあいだの通信は、ユーザーの端末同士でのみ行われます。</p>
+<p>第三者が収集した情報の削除をご希望の場合は、<a href="mailto:pgmagician@gmail.com">pgmagician@gmail.com</a> までご連絡いただければご案内します。</p><h2>7. ユーザーの権利と削除</h2><p>本アプリにはアカウントがなく、開発者はユーザーを特定できる情報を保管していないため、開発者に開示や訂正を求める個人情報そのものがありません。以下の権利は、広告を通じて収集される情報に関するものです。</p>
+<p><strong>欧州経済領域・英国</strong> — GDPR・UK GDPRに基づき、アクセス、訂正、削除、処理の制限、異議申立て、データポータビリティを求めることができ、<strong>同意はいつでも撤回できます。</strong>撤回はアプリの<strong>設定</strong>画面から行えます。撤回前に行われた処理が遡って違法になることはありません。処理主体であるGoogle LLCは米国にあり、情報がユーザーの国の外へ移転されることがあります。監督機関に苦情を申し立てる権利もあります。</p>
+<p><strong>米国の一部の州（カリフォルニア州など）</strong> — パーソナライズ広告のための個人情報の販売・共有の拒否は、同じ<strong>設定</strong>画面から行えます。権利を行使したことを理由に、アプリの利用で不利益を受けることはありません。</p>
+<p><strong>端末の情報を消す</strong> — スマートフォンの情報はアプリを削除すると一緒に消えます。Macの情報は、エージェントを削除したあと3項のフォルダを削除するとすべて消えます。特定の端末との接続だけを解除するには、アプリの<strong>設定 → Mac との接続 → ペアリングを解除</strong>、またはエージェントの端末一覧でブロックしてください。広告識別子は端末の設定でリセットできます。</p><h2>8. 子どものプライバシー</h2><p>本アプリは18歳未満の子どもを対象としておらず、子どもから意図的に個人情報を収集することはありません。</p><h2>9. ポリシーの変更とお問い合わせ</h2><p>本ポリシーを変更する場合は、変更内容と最終更新日をこのページに掲載します。</p>
+<p>お問い合わせ：<a href="mailto:pgmagician@gmail.com">pgmagician@gmail.com</a></p>
+</section>
+<footer><span>MacroKeyboard</span><span class="spacer"></span><a href="../../../macrokeyboard/privacy/">プライバシーポリシー</a><a href="mailto:pgmagician@gmail.com">お問い合わせ</a></footer>
+</div>
+</body>
+</html>

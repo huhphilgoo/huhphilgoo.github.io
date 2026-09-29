@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MacroKeyboard — Política de privacidad</title>
+<meta name="description" content="Política de privacidad de MacroKeyboard (com.philgooheo.macrokeyboard).">
+<link rel="alternate" hreflang="en" href="https://huhphilgoo.github.io/macrokeyboard/privacy/">
+<link rel="alternate" hreflang="ko" href="https://huhphilgoo.github.io/macrokeyboard/privacy/ko/">
+<link rel="alternate" hreflang="ja" href="https://huhphilgoo.github.io/macrokeyboard/privacy/ja/">
+<link rel="alternate" hreflang="es" href="https://huhphilgoo.github.io/macrokeyboard/privacy/es/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔒</text></svg>">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body>
+<div class="wrap narrow">
+<div class="masthead"><span class="spacer"></span><nav class="langnav" aria-label="Language"><a href="../" hreflang="en">EN</a><a href="../ko/" hreflang="ko">KO</a><a href="../ja/" hreflang="ja">JA</a><a href="./" hreflang="es" class="on">ES</a></nav><span class="meta">MacroKeyboard</span></div>
+<section class="policy">
+  <p class="eyebrow">Política de privacidad</p>
+  <h1>MacroKeyboard</h1>
+  <div class="idblock"><dl>
+<dt>앱 이름 / App</dt><dd>MacroKeyboard</dd>
+<dt>개발자 / Developer</dt><dd>허필구 (Heo Philgoo)</dd>
+<dt>패키지명 / Package</dt><dd>com.philgooheo.macrokeyboard</dd>
+<dt>문의 / Contact</dt><dd><a href="mailto:pgmagician@gmail.com">pgmagician@gmail.com</a></dd>
+</dl></div>
+  <p>Esta Política de Privacidad se aplica a la aplicación móvil <strong>MacroKeyboard</strong> (paquete <code>com.philgooheo.macrokeyboard</code>), desarrollada y publicada por <strong>Heo Philgoo (허필구)</strong>. Última actualización: 29 de septiembre de 2026.</p><h2>1. Cómo está hecha la app</h2><p>MacroKeyboard tiene dos partes: la <strong>app</strong> del teléfono o la tableta y el <strong>agente para Mac</strong> que usted instala en su Mac. Cuando pulsa un botón o gira la rueda en la app, <strong>el agente ejecuta esa acción en su Mac</strong>: pulsar un atajo de teclado, escribir texto, abrir una app, enviar una tecla multimedia como reproducir o volumen, o ejecutar un script que usted mismo ha registrado en el Mac.</p>
+<p>Esta política se aplica a la app y al agente para Mac. Ninguno de los dos tiene cuenta ni inicio de sesión.</p><h2>2. Lo que pasa entre el teléfono y el Mac</h2><p>La app y el agente para Mac <strong>se conectan directamente entre sí, dentro de su propia red.</strong> Nada pasa por un servidor del desarrollador ni por un repetidor en internet, y el desarrollador no puede ver nada de ello. La conexión está cifrada (TLS) y la app solo habla con el Mac que confirmó mediante el código QR de su pantalla al emparejarlo. Las solicitudes de un dispositivo no emparejado se rechazan.</p>
+<p><strong>Teléfono → Mac</strong></p><ul>
+<li>Al emparejar: un ID de dispositivo aleatorio que la app crea al abrirse por primera vez y el nombre del dispositivo (su nombre en la red)</li>
+<li>Al pulsar un botón: <strong>solo qué botón se pulsó</strong> (su ID)</li>
+<li>Al editar los botones: su configuración — nombres, colores, iconos, atajos, texto que escribir, apps que abrir y ajustes de la rueda</li>
+</ul>
+<p><strong>El teléfono nunca envía comandos de shell.</strong> Un script debe registrarlo usted en el Mac; el teléfono solo puede elegir un script registrado por su nombre. Un script que el Mac no tiene registrado nunca se ejecuta.</p>
+<p><strong>Mac → teléfono</strong></p><ul>
+<li>El nombre del Mac</li>
+<li>El nombre y el identificador de la app que está delante en el Mac (por ejemplo <code>com.apple.FinalCut</code>), para cambiar a los botones de esa app</li>
+<li>Los nombres de los scripts registrados en el Mac — nunca su ubicación ni su contenido</li>
+<li>Los resultados y, mientras graba un atajo, las teclas pulsadas en el Mac</li>
+</ul><h2>3. Lo que se guarda en sus dispositivos</h2><p>Todo se guarda en sus propios dispositivos y nada se envía al desarrollador.</p>
+<p><strong>Teléfono</strong></p><ul>
+<li><strong>Datos de emparejamiento</strong> (la dirección del Mac, la huella de su certificado y el token de acceso) y el ID del dispositivo — en el almacenamiento seguro del sistema (el Llavero de iOS; en Android, almacenamiento cifrado con el Android Keystore)</li>
+<li><strong>Sus configuraciones de botones</strong> — un archivo en la carpeta propia de la app</li>
+<li><strong>Ajustes</strong> como el cambio automático, mantener la pantalla encendida y el idioma</li>
+<li>En Android, nada de esto se incluye en la copia de seguridad en la nube de Google</li>
+</ul>
+<p><strong>Mac</strong> — en <code>~/Library/Application Support/com.philgooheo.macrokeyboardAgent</code></p><ul>
+<li><strong>El certificado y la clave privada de la conexión cifrada</strong> — la clave privada es un archivo que solo su cuenta de usuario del Mac puede leer (permiso 600)</li>
+<li><strong>La lista de dispositivos emparejados</strong> (ID, nombre, token de acceso, fecha de emparejamiento y de la última conexión, y si está bloqueado) — un archivo que solo su cuenta puede leer</li>
+<li><strong>Las configuraciones de botones recibidas del teléfono</strong></li>
+<li><strong>Los scripts que usted ha registrado</strong> (nombre y ubicación del archivo)</li>
+</ul>
+<p>El registro de actividad de la ventana del agente se guarda solo en memoria, hasta las últimas 100 líneas, y desaparece al cerrar el agente.</p>
+<p>Solo se crea un archivo con sus botones <strong>cuando usted exporta una copia de seguridad</strong>, y usted decide adónde va.</p><h2>4. Permisos</h2><p><strong>App del teléfono</strong></p>
+<div class="tablewrap"><table>
+<tr><th>Permiso</th><th>Finalidad</th><th>Nota</th></tr>
+<tr><td>Cámara</td><td>Leer el código QR de emparejamiento que muestra el Mac</td><td>Solo en la pantalla de emparejamiento; no se guarda ni se envía ninguna imagen. También puede emparejar con un número de seis dígitos.</td></tr>
+<tr><td>Red local (iOS)</td><td>Encontrar el agente para Mac en su red y conectarse</td><td>Solo busca el servicio Bonjour <code>_macrokb._tcp</code>.</td></tr>
+<tr><td>Acceso a la red y multidifusión (Android)</td><td>Encontrar el agente para Mac, conectarse y recibir anuncios</td><td></td></tr>
+<tr><td>Rastreo (ATT, iOS)</td><td>Permitirle elegir si los anuncios se personalizan</td><td>Rechazarlo no limita ninguna función de la app.</td></tr>
+</table></div>
+<p>La app no pide acceso a la ubicación, los contactos, el micrófono ni las fotos. Mantener la pantalla encendida mientras está conectada no requiere permiso y puede desactivarse en los ajustes.</p>
+<p><strong>Agente para Mac</strong></p>
+<div class="tablewrap"><table>
+<tr><th>Permiso</th><th>Finalidad</th><th>Nota</th></tr>
+<tr><td>Accesibilidad</td><td>Entregar atajos y texto escrito al Mac</td><td>Sin él, el agente no puede enviar pulsaciones. Solo lee las teclas pulsadas en el Mac mientras usted graba un atajo, y solo escucha: nunca las intercepta.</td></tr>
+<tr><td>Conexiones de red entrantes</td><td>Aceptar la conexión de la app del teléfono</td><td>Solo los dispositivos emparejados pueden enviar órdenes.</td></tr>
+<tr><td>Abrir al iniciar sesión</td><td>Arrancar el agente al encender el Mac</td><td>Solo si usted lo activa en los ajustes.</td></tr>
+</table></div>
+<p>El agente recibe el aviso del sistema de que otra app ha pasado al frente y lee únicamente el nombre y el identificador de esa app. No lee lo que hay en la pantalla ni dentro de ninguna ventana.</p><h2>5. Publicidad</h2><p>La app es gratuita e incluye anuncios de Google AdMob. Los anuncios aparecen solo en la app del teléfono; el agente para Mac no muestra ninguno.</p>
+<p>Según la propia información de Google, el SDK de Google Mobile Ads recopila:</p>
+<ul>
+<li><strong>Identificadores del dispositivo</strong> — el identificador de publicidad (IDFA, ID de publicidad de Android) y similares</li>
+<li><strong>Datos publicitarios</strong> — qué anuncios se mostraron y registros de impresiones y clics</li>
+<li><strong>Ubicación aproximada</strong> — deducida de su dirección IP; la app no usa ningún permiso de ubicación</li>
+<li><strong>Datos de interacción</strong> — aperturas de la app, toques y similares</li>
+<li><strong>Registros de fallos y datos de rendimiento</strong> — diagnósticos que no se usan para rastrear</li>
+</ul>
+<p>Se usan para mostrar y medir anuncios y prevenir el fraude publicitario y, si usted lo ha aceptado, para personalizarlos. La app no tiene cuentas, así que nada de ello se vincula a su identidad. <strong>Sus configuraciones de botones, los botones que pulsa y la app que está delante en su Mac nunca se pasan al SDK de anuncios.</strong> El responsable del tratamiento es Google LLC; los detalles están en su <a href="https://policies.google.com/technologies/ads">política de publicidad</a> y en la <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">divulgación de datos de AdMob</a>.</p>
+<p><strong>Consentimiento (Espacio Económico Europeo y Reino Unido).</strong> En estas regiones la app le pide su consentimiento para el tratamiento de datos personales con fines publicitarios la primera vez que la abre. La pantalla de consentimiento la ofrece la plataforma de mensajes para usuarios (UMP) de Google, que también determina la región y guarda su respuesta. Allí la base jurídica del tratamiento es <strong>su consentimiento</strong>.</p>
+<p><strong>Algunos estados de EE. UU., como California.</strong> La app muestra los avisos que exigen las leyes estatales de privacidad, y usted puede <strong>excluirse de la venta o el intercambio</strong> de información personal para publicidad personalizada.</p>
+<p><strong>Cambiar o retirar su elección.</strong> Puede volver a elegir en cualquier momento desde la pantalla de <strong>Ajustes</strong> de la app. Retirarla no limita nada en la app.</p>
+<p><strong>Anuncios personalizados (iOS).</strong> Aparte, iOS muestra su aviso de Transparencia en el rastreo de apps (ATT). Si lo rechaza, no se facilita el identificador usado para anuncios personalizados, y todas las funciones de la app siguen funcionando. Puede cambiarlo después en <strong>Ajustes → Privacidad y seguridad → Rastreo</strong>.</p><h2>6. Cesión a terceros</h2><p>El desarrollador no vende ni alquila su información. No se comparte nada con nadie más allá del tratamiento publicitario que Google LLC realiza según su propia política, descrito en el apartado 5. El tráfico entre el teléfono y el Mac se queda entre sus propios dispositivos.</p>
+<p>Para solicitar la eliminación de datos recopilados por un tercero, escriba a <a href="mailto:pgmagician@gmail.com">pgmagician@gmail.com</a> y le indicaremos cómo hacerlo.</p><h2>7. Sus derechos y cómo borrar datos</h2><p>La app no tiene cuentas y el desarrollador no guarda nada que le identifique, así que no existe información personal en poder del desarrollador que usted pueda consultar o corregir. Los derechos siguientes se refieren a lo que se recopila a través de la publicidad.</p>
+<p><strong>Espacio Económico Europeo y Reino Unido.</strong> Según el RGPD y el RGPD del Reino Unido, puede solicitar acceso, rectificación, supresión, limitación del tratamiento, oposición y portabilidad, y puede <strong>retirar su consentimiento en cualquier momento</strong> desde la pantalla de <strong>Ajustes</strong> de la app; ello no hace ilícito el tratamiento realizado antes de la retirada. El responsable, Google LLC, está en Estados Unidos, por lo que los datos pueden transferirse fuera de su país. También tiene derecho a presentar una reclamación ante una autoridad de control.</p>
+<p><strong>Algunos estados de EE. UU., como California.</strong> Puede excluirse de la venta o el intercambio de información personal para publicidad personalizada desde la misma pantalla de <strong>Ajustes</strong>. Ejercer este derecho no le supondrá un peor servicio.</p>
+<p><strong>Borrar lo que hay en sus dispositivos.</strong> Todo lo del teléfono se elimina al borrar la app. En el Mac, borre el agente y después la carpeta indicada en el apartado 3. Para desconectar un solo dispositivo, use <strong>Ajustes → El Mac → Desvincular</strong> en la app, o bloquee el dispositivo en la lista del agente. Puede restablecer su identificador de publicidad en los ajustes del dispositivo.</p><h2>8. Privacidad de los menores</h2><p>Esta app no está dirigida a menores de 18 años, y el desarrollador no recopila a sabiendas información personal de ellos.</p><h2>9. Cambios y contacto</h2><p>Si esta política cambia, el cambio y su fecha de revisión se publicarán en esta página.</p>
+<p>Consultas: <a href="mailto:pgmagician@gmail.com">pgmagician@gmail.com</a></p>
+</section>
+<footer><span>MacroKeyboard</span><span class="spacer"></span><a href="../../../macrokeyboard/privacy/">Política de privacidad</a><a href="mailto:pgmagician@gmail.com">Contacto</a></footer>
+</div>
+</body>
+</html>

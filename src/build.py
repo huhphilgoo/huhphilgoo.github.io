@@ -392,6 +392,22 @@ STORE_ICONS = {
     'appStore': '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.2 1.1 0 1.6-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5 0 0-2.3-.9-2.3-3.6ZM14.2 5.4c.6-.8 1-1.9.9-3-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.9 1 .1 2.1-.5 2.7-1.3Z"/></svg>',
 }
 STORE_LABELS = {'play': 'Google Play', 'appStore': 'App Store'}
+
+# A desktop companion that is downloaded from the web rather than a store — the Mac
+# agent MacroKeyboard needs on the computer it drives. Declared like a store: put
+# "macAgent" in `links` (the notarized download, e.g. a GitHub Release asset) or in
+# `comingSoon`. Its label is translated, unlike the store names. Apps that declare
+# neither render exactly as before.
+STORE_ICONS['macAgent'] = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
+                           '<path d="M4 4.5A1.5 1.5 0 0 1 5.5 3h13A1.5 1.5 0 0 1 20 4.5V15a1.5 1.5 '
+                           '0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 15V4.5Zm2 .5v9.5h12V5H6ZM2 18.5h20'
+                           'l-.6 1.3a1.5 1.5 0 0 1-1.4.9H4a1.5 1.5 0 0 1-1.4-.9L2 18.5Z"/></svg>')
+DESKTOP_LABELS = {'macAgent': {'en': 'Mac agent', 'ko': 'Mac 에이전트',
+                               'ja': 'Mac エージェント', 'es': 'Agente para Mac'}}
+
+
+def store_label(key, lang):
+    return DESKTOP_LABELS[key][lang] if key in DESKTOP_LABELS else STORE_LABELS[key]
 SOON_LABELS = {'en': 'Coming soon', 'ko': '곧 출시', 'ja': '近日公開',
                'es': 'Próximamente'}
 
@@ -412,13 +428,13 @@ def store_buttons(app, lang='en'):
     """
     soon = app.get('comingSoon', [])
     out = []
-    for i, key in enumerate(('play', 'appStore')):
+    for i, key in enumerate(('play', 'appStore', 'macAgent')):
         url = app['links'].get(key)
         cls = 'btn-primary' if i == 0 else 'btn-secondary'
         if url:
-            out.append(f'<a class="btn {cls}" href="{E(url)}">{STORE_ICONS[key]}{STORE_LABELS[key]}</a>')
+            out.append(f'<a class="btn {cls}" href="{E(url)}">{STORE_ICONS[key]}{store_label(key, lang)}</a>')
         elif key in soon:
-            label = f'{STORE_LABELS[key]} · {SOON_LABELS[lang]}'
+            label = f'{store_label(key, lang)} · {SOON_LABELS[lang]}'
             out.append(f'<span class="btn btn-soon" aria-disabled="true">'
                        f'{STORE_ICONS[key]}{label}</span>')
     return f'<div class="cta">{"".join(out)}</div>'
@@ -988,12 +1004,12 @@ def hub_page(lang='en'):
                      f'loading="lazy"></div>')
 
         badges = []
-        for key in ('appStore', 'play'):
+        for key in ('appStore', 'play', 'macAgent'):
             url = app['links'].get(key)
             if url:
-                badges.append(f'<a class="badge" href="{E(url)}">{STORE_ICONS[key]}{STORE_LABELS[key]}</a>')
+                badges.append(f'<a class="badge" href="{E(url)}">{STORE_ICONS[key]}{store_label(key, lang)}</a>')
             elif key in app.get('comingSoon', []):
-                badges.append(f'<span class="badge badge-soon">{STORE_ICONS[key]}{STORE_LABELS[key]} · {soon}</span>')
+                badges.append(f'<span class="badge badge-soon">{STORE_ICONS[key]}{store_label(key, lang)} · {soon}</span>')
         badges_html = f'<div class="badges">{"".join(badges)}</div>' if badges else ''
 
         cards.append(f"""<article class="tile">
