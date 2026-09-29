@@ -2713,10 +2713,10 @@
         "ja",
         "es"
       ],
-      "summary": "Your phone as a macro pad for the Mac — buttons and a knob that change with the app in front.",
-      "summaryKo": "휴대폰을 Mac의 매크로패드로. 앞에 나온 앱에 따라 버튼과 노브가 바뀝니다.",
-      "summaryJa": "スマートフォンをMacのマクロパッドに。前面のアプリに合わせてボタンとノブが切り替わります。",
-      "summaryEs": "Su teléfono como teclado de macros para el Mac: botones y una rueda que cambian con la app que tiene delante.",
+      "summary": "Your phone as a macro pad for your computer — buttons and a knob that change with the app in front.",
+      "summaryKo": "휴대폰을 PC의 매크로패드로. 앞에 나온 앱에 따라 버튼과 노브가 바뀝니다.",
+      "summaryJa": "スマートフォンをPCのマクロパッドに。前面のアプリに合わせてボタンとノブが切り替わります。",
+      "summaryEs": "Su teléfono como teclado de macros para el ordenador: botones y una rueda que cambian con la app que tiene delante.",
       "policyUpdated": {
         "ko": "2026년 9월 29일",
         "en": "September 29, 2026",
@@ -2873,11 +2873,11 @@
           {
             "ko": {
               "title": "휴대폰과 Mac 사이에 오가는 것",
-              "body": "<p>앱과 Mac 에이전트는 <strong>이용자의 네트워크 안에서 서로 직접 연결됩니다.</strong> 개발자의 서버나 인터넷의 중계 서버를 거치지 않으며, 개발자는 이 통신 내용을 볼 수 없습니다. 연결은 암호화(TLS)되고, 처음 연결할 때 Mac 화면의 QR 코드로 확인한 그 Mac하고만 통신합니다. 페어링하지 않은 기기의 요청은 거부됩니다.</p>\n<p><strong>휴대폰 → Mac</strong></p><ul>\n<li>페어링할 때: 앱이 처음 실행될 때 만든 무작위 기기 ID와 기기 이름(휴대폰의 네트워크 이름)</li>\n<li>버튼을 누를 때: <strong>어느 버튼을 눌렀는지(버튼 ID)만</strong> 보냅니다</li>\n<li>버튼을 편집할 때: 버튼 구성(이름, 색, 아이콘, 단축키, 입력할 텍스트, 실행할 앱, 노브 설정)</li>\n</ul>\n<p><strong>휴대폰은 셸 명령을 보내지 않습니다.</strong> 스크립트는 Mac에서 이용자가 직접 등록해야 하며, 휴대폰은 등록된 스크립트를 이름으로 고를 수만 있습니다. Mac에 등록되지 않은 스크립트는 실행되지 않습니다.</p>\n<p><strong>Mac → 휴대폰</strong></p><ul>\n<li>Mac의 이름</li>\n<li>지금 Mac에서 앞에 나와 있는 앱의 이름과 식별자(예: <code>com.apple.FinalCut</code>) — 앱별로 버튼 화면을 바꾸는 데 쓰입니다</li>\n<li>Mac에 등록된 스크립트의 이름 목록 — 스크립트의 경로나 내용은 보내지 않습니다</li>\n<li>실행 결과, 그리고 단축키를 녹화할 때 Mac에서 눌린 키</li>\n</ul>"
+              "body": "<p>앱과 Mac 에이전트는 <strong>이용자의 네트워크 안에서 서로 직접 연결됩니다.</strong> 개발자의 서버나 인터넷의 중계 서버를 거치지 않으며, 개발자는 이 통신 내용을 볼 수 없습니다. 연결은 암호화(TLS)되고, 처음 연결할 때 PC 화면의 QR 코드로 확인한 그 Mac하고만 통신합니다. 페어링하지 않은 기기의 요청은 거부됩니다.</p>\n<p><strong>휴대폰 → Mac</strong></p><ul>\n<li>페어링할 때: 앱이 처음 실행될 때 만든 무작위 기기 ID와 기기 이름(휴대폰의 네트워크 이름)</li>\n<li>버튼을 누를 때: <strong>어느 버튼을 눌렀는지(버튼 ID)만</strong> 보냅니다</li>\n<li>버튼을 편집할 때: 버튼 구성(이름, 색, 아이콘, 단축키, 입력할 텍스트, 실행할 앱, 노브 설정)</li>\n</ul>\n<p><strong>휴대폰은 셸 명령을 보내지 않습니다.</strong> 스크립트는 Mac에서 이용자가 직접 등록해야 하며, 휴대폰은 등록된 스크립트를 이름으로 고를 수만 있습니다. Mac에 등록되지 않은 스크립트는 실행되지 않습니다.</p>\n<p><strong>Mac → 휴대폰</strong></p><ul>\n<li>Mac의 이름</li>\n<li>지금 Mac에서 앞에 나와 있는 앱의 이름과 식별자(예: <code>com.apple.FinalCut</code>) — 앱별로 버튼 화면을 바꾸는 데 쓰입니다</li>\n<li>Mac에 등록된 스크립트의 이름 목록 — 스크립트의 경로나 내용은 보내지 않습니다</li>\n<li>실행 결과, 그리고 단축키를 녹화할 때 Mac에서 눌린 키</li>\n</ul>"
             },
             "en": {
               "title": "What passes between the phone and the Mac",
-              "body": "<p>The app and the Mac agent <strong>connect to each other directly, inside your own network.</strong> Nothing goes through a server of the developer's or a relay on the internet, and the developer cannot see any of it. The connection is encrypted (TLS), and the app talks only to the Mac it confirmed through the QR code on that Mac's screen when you first paired. Requests from a device that has not been paired are refused.</p>\n<p><strong>Phone → Mac</strong></p><ul>\n<li>When pairing: a random device ID the app creates on first launch, and the device's name (its network name)</li>\n<li>When you press a button: <strong>only which button was pressed</strong> (its ID)</li>\n<li>When you edit buttons: the button layout — names, colours, icons, shortcuts, text to type, apps to open, knob settings</li>\n</ul>\n<p><strong>The phone never sends a shell command.</strong> A script has to be registered on the Mac by you; the phone can only pick a registered script by its name. A script the Mac does not have registered is never run.</p>\n<p><strong>Mac → phone</strong></p><ul>\n<li>The Mac's name</li>\n<li>The name and identifier of the app currently in front on the Mac (for example <code>com.apple.FinalCut</code>), used to switch to that app's buttons</li>\n<li>The names of scripts registered on the Mac — never their location or contents</li>\n<li>Results, and the keys pressed on the Mac while you are recording a shortcut</li>\n</ul>"
+              "body": "<p>The app and the Mac agent <strong>connect to each other directly, inside your own network.</strong> Nothing goes through a server of the developer's or a relay on the internet, and the developer cannot see any of it. The connection is encrypted (TLS), and the app talks only to the Mac it confirmed through the QR code on that Mac's screen when you first paired. Requests from a device that has not been paired are refused.</p>\n<p><strong>Phone → Mac</strong></p><ul>\n<li>When pairing: a random device ID the app creates on first launch, and the device's name (its network name)</li>\n<li>When you press a button: <strong>only which button was pressed</strong> (its ID)</li>\n<li>When you edit buttons: the button layout — names, colours, icons, shortcuts, text to type, apps to open, knob settings</li>\n</ul>\n<p><strong>The phone never sends a shell command.</strong> A script has to be registered on the Mac by you; the phone can only pick a registered script by its name. A script the Mac does not have registered is never run.</p>\n<p><strong>Mac → phone</strong></p><ul>\n<li>The Mac's name</li>\n<li>The name and identifier of the app currently in front on the computer (for example <code>com.apple.FinalCut</code>), used to switch to that app's buttons</li>\n<li>The names of scripts registered on the Mac — never their location or contents</li>\n<li>Results, and the keys pressed on the Mac while you are recording a shortcut</li>\n</ul>"
             },
             "ja": {
               "title": "スマートフォンとMacのあいだでやり取りされるもの",
@@ -2885,7 +2885,7 @@
             },
             "es": {
               "title": "Lo que pasa entre el teléfono y el Mac",
-              "body": "<p>La app y el agente para Mac <strong>se conectan directamente entre sí, dentro de su propia red.</strong> Nada pasa por un servidor del desarrollador ni por un repetidor en internet, y el desarrollador no puede ver nada de ello. La conexión está cifrada (TLS) y la app solo habla con el Mac que confirmó mediante el código QR de su pantalla al emparejarlo. Las solicitudes de un dispositivo no emparejado se rechazan.</p>\n<p><strong>Teléfono → Mac</strong></p><ul>\n<li>Al emparejar: un ID de dispositivo aleatorio que la app crea al abrirse por primera vez y el nombre del dispositivo (su nombre en la red)</li>\n<li>Al pulsar un botón: <strong>solo qué botón se pulsó</strong> (su ID)</li>\n<li>Al editar los botones: su configuración — nombres, colores, iconos, atajos, texto que escribir, apps que abrir y ajustes de la rueda</li>\n</ul>\n<p><strong>El teléfono nunca envía comandos de shell.</strong> Un script debe registrarlo usted en el Mac; el teléfono solo puede elegir un script registrado por su nombre. Un script que el Mac no tiene registrado nunca se ejecuta.</p>\n<p><strong>Mac → teléfono</strong></p><ul>\n<li>El nombre del Mac</li>\n<li>El nombre y el identificador de la app que está delante en el Mac (por ejemplo <code>com.apple.FinalCut</code>), para cambiar a los botones de esa app</li>\n<li>Los nombres de los scripts registrados en el Mac — nunca su ubicación ni su contenido</li>\n<li>Los resultados y, mientras graba un atajo, las teclas pulsadas en el Mac</li>\n</ul>"
+              "body": "<p>La app y el agente para Mac <strong>se conectan directamente entre sí, dentro de su propia red.</strong> Nada pasa por un servidor del desarrollador ni por un repetidor en internet, y el desarrollador no puede ver nada de ello. La conexión está cifrada (TLS) y la app solo habla con el Mac que confirmó mediante el código QR de su pantalla al emparejarlo. Las solicitudes de un dispositivo no emparejado se rechazan.</p>\n<p><strong>Teléfono → Mac</strong></p><ul>\n<li>Al emparejar: un ID de dispositivo aleatorio que la app crea al abrirse por primera vez y el nombre del dispositivo (su nombre en la red)</li>\n<li>Al pulsar un botón: <strong>solo qué botón se pulsó</strong> (su ID)</li>\n<li>Al editar los botones: su configuración — nombres, colores, iconos, atajos, texto que escribir, apps que abrir y ajustes de la rueda</li>\n</ul>\n<p><strong>El teléfono nunca envía comandos de shell.</strong> Un script debe registrarlo usted en el Mac; el teléfono solo puede elegir un script registrado por su nombre. Un script que el Mac no tiene registrado nunca se ejecuta.</p>\n<p><strong>Mac → teléfono</strong></p><ul>\n<li>El nombre del Mac</li>\n<li>El nombre y el identificador de la app que está delante en el ordenador (por ejemplo <code>com.apple.FinalCut</code>), para cambiar a los botones de esa app</li>\n<li>Los nombres de los scripts registrados en el Mac — nunca su ubicación ni su contenido</li>\n<li>Los resultados y, mientras graba un atajo, las teclas pulsadas en el Mac</li>\n</ul>"
             }
           },
           {
@@ -3140,16 +3140,16 @@
           }
         ],
         "en": {
-          "meta": "Free · iPhone &amp; Android · Mac",
+          "meta": "Free · iPhone &amp; Android · macOS (Windows in the works)",
           "headline": [
-            "Your phone as a",
-            "macro pad"
+            "A macro pad that changes with",
+            "the app you're in"
           ],
-          "lede": "Buttons and a knob on your phone that press shortcuts, type text, open apps and run your scripts on the Mac beside you. Bring Final Cut to the front and the phone turns into Final Cut's pad.",
+          "lede": "Buttons and a knob on your phone that press shortcuts, type text, open apps and run your scripts on the computer beside you. Bring Final Cut to the front and the phone turns into Final Cut's pad.",
           "idea": {
             "eyebrow": "The idea",
             "title": "A macro pad should know which app you are in.",
-            "lede": "A hardware pad holds one set of keys until you change it yourself. VelozPad watches which app is in front on the Mac and swaps the phone's buttons to match — timeline keys in Final Cut, brushes in Photoshop. The pad is the phone you already carry."
+            "lede": "A hardware pad holds one set of keys until you change it yourself. VelozPad watches which app is in front on the computer and swaps the phone's buttons to match — timeline keys in Final Cut, brushes in Photoshop. The pad is the phone you already carry."
           },
           "leftOutTitle": "Deliberately left out",
           "leftOut": [
@@ -3163,10 +3163,10 @@
           "remainsTitle": "What's left",
           "remains": [
             "Up to fifteen buttons and a knob on each pad",
-            "Pads that follow the app in front on the Mac",
-            "Shortcuts recorded by pressing them on the Mac",
+            "Pads that follow the app in front on the computer",
+            "Shortcuts recorded by pressing them on the computer",
             "Text, app launch, media keys and multi-step sequences",
-            "Scripts you register on the Mac, run by name",
+            "Scripts you register on the computer, run by name",
             "Korean, English, Japanese and Spanish"
           ],
           "features": {
@@ -3183,19 +3183,19 @@
               ],
               [
                 "Record a shortcut by pressing it",
-                "Tap record on the phone and press the keys on the Mac. No key codes, no hunting for the ⌘ symbol."
+                "Tap record on the phone and press the keys on the computer. No key codes, no hunting for the ⌘ symbol."
               ],
               [
                 "More than one key",
                 "Type a line of text, open an app, play or pause, or chain steps: open the app, wait, press the shortcut."
               ],
               [
-                "Scripts stay on the Mac",
-                "Register a script on the Mac and the phone can run it by name. The phone never sends a command — only which button was pressed."
+                "Scripts stay on the computer",
+                "Register a script on the computer and the phone can run it by name. The phone never sends a command — only which button was pressed."
               ],
               [
                 "Paired, not just connected",
-                "Pairing is a QR code on the Mac's screen. After that the connection is encrypted and pinned to your Mac, and a device you have not paired is turned away."
+                "Pairing is a QR code on the computer's screen. After that the connection is encrypted and pinned to your computer, and a device you have not paired is turned away."
               ]
             ]
           },
@@ -3203,14 +3203,14 @@
             "eyebrow": "Where it came from",
             "title": "Built for one desk, then made safe.",
             "paragraphs": [
-              "It started with one question: could a button on an iPhone press <strong>⌘C</strong> on a Mac? The first build did exactly that, over the local network, in <strong>September 2026</strong>.",
-              "Everything after that was about not being dangerous. A phone that can make a Mac do things is a remote control for the computer, so pairing, encryption and a rule that <strong>scripts live only on the Mac</strong> came before any of the features above.",
-              "Then the part that makes it worth having: the pad follows the app in front. It has since run on an iPhone and on an Android tablet against the same Mac."
+              "It started with one question: could a button on a phone press <strong>⌘C</strong> on a computer? The first build did exactly that, over the local network, in <strong>September 2026</strong>.",
+              "Everything after that was about not being dangerous. A phone that can make a computer do things is a remote control for it, so pairing, encryption and a rule that <strong>scripts live only on the computer</strong> came before any of the features above.",
+              "Then the part that makes it worth having: the pad follows the app in front. It has since driven the same computer from both iOS and Android devices."
             ],
             "timeline": [
               [
                 "2026.09",
-                "A button on the iPhone presses ⌘C on the Mac"
+                "A button on a phone presses ⌘C on a computer"
               ],
               [
                 "2026.09",
@@ -3229,25 +3229,25 @@
           "privacySection": {
             "eyebrow": "Privacy",
             "title": "Your keystrokes stay on your network.",
-            "lede": "The phone and the Mac talk to each other directly, encrypted, inside your own network — there is no server of ours in between and no account. Your pads and your pairing live on your own devices. The app is free and carries ads, so Google AdMob collects the usual advertising identifier and device information; what you press never goes to it. All of it is written out in the {privacy}."
+            "lede": "The phone and the computer talk to each other directly, encrypted, inside your own network — there is no server of ours in between and no account. Your pads and your pairing live on your own devices. The app is free and carries ads, so Google AdMob collects the usual advertising identifier and device information; what you press never goes to it. All of it is written out in the {privacy}."
           },
           "privacyLinkText": "privacy policy",
           "close": {
             "title": "Put the pad next to the keyboard.",
-            "lede": "The app is coming to the App Store and Google Play. The Mac agent it needs will be a free download from this page."
+            "lede": "The app is coming to the App Store and Google Play. The agent it needs on the computer will be a free download from this page — macOS first, Windows in the works."
           }
         },
         "ko": {
-          "meta": "무료 · iPhone · Android · Mac",
+          "meta": "무료 · iPhone · Android · macOS (Windows 준비 중)",
           "headline": [
-            "휴대폰으로 만드는 Mac",
+            "지금 쓰는 앱에 맞춰 바뀌는",
             "매크로패드"
           ],
-          "lede": "휴대폰의 버튼과 노브로 옆에 있는 Mac에서 단축키를 누르고, 글자를 입력하고, 앱을 열고, 스크립트를 실행합니다. Mac에서 파이널컷을 앞으로 가져오면 휴대폰이 파이널컷 버튼으로 바뀝니다.",
+          "lede": "휴대폰의 버튼과 노브로 옆에 있는 PC에서 단축키를 누르고, 글자를 입력하고, 앱을 열고, 스크립트를 실행합니다. PC에서 파이널컷을 앞으로 가져오면 휴대폰이 파이널컷 버튼으로 바뀝니다.",
           "idea": {
             "eyebrow": "아이디어",
             "title": "매크로패드는 지금 어느 앱인지 알아야 합니다.",
-            "lede": "하드웨어 매크로패드는 손으로 바꾸기 전까지 같은 키를 들고 있습니다. VelozPad는 Mac에서 앞에 나온 앱을 보고 휴대폰의 버튼을 그 앱에 맞게 바꿉니다. 파이널컷에서는 타임라인, 포토샵에서는 브러시. 매크로패드는 이미 들고 다니는 휴대폰입니다."
+            "lede": "하드웨어 매크로패드는 손으로 바꾸기 전까지 같은 키를 들고 있습니다. VelozPad는 PC에서 앞에 나온 앱을 보고 휴대폰의 버튼을 그 앱에 맞게 바꿉니다. 파이널컷에서는 타임라인, 포토샵에서는 브러시. 매크로패드는 이미 들고 다니는 휴대폰입니다."
           },
           "leftOutTitle": "일부러 뺀 것",
           "leftOut": [
@@ -3261,10 +3261,10 @@
           "remainsTitle": "그래서 남은 것",
           "remains": [
             "화면마다 버튼 최대 15개와 노브 하나",
-            "Mac에서 앞에 나온 앱을 따라가는 화면",
-            "Mac에서 직접 눌러 녹화하는 단축키",
+            "PC에서 앞에 나온 앱을 따라가는 화면",
+            "PC에서 직접 눌러 녹화하는 단축키",
             "텍스트 입력, 앱 실행, 미디어 키, 여러 단계 묶기",
-            "Mac에 등록한 스크립트를 이름으로 실행",
+            "PC에 등록한 스크립트를 이름으로 실행",
             "한국어·영어·일본어·스페인어"
           ],
           "features": {
@@ -3281,19 +3281,19 @@
               ],
               [
                 "눌러서 녹화하는 단축키",
-                "휴대폰에서 녹화를 누르고 Mac에서 키를 누르세요. 키 코드도, ⌘ 기호 찾기도 필요 없습니다."
+                "휴대폰에서 녹화를 누르고 PC에서 키를 누르세요. 키 코드도, ⌘ 기호 찾기도 필요 없습니다."
               ],
               [
                 "키 하나 이상",
                 "글자 한 줄 입력, 앱 열기, 재생·정지, 그리고 여러 단계 묶기. 앱을 열고, 기다렸다가, 단축키를 누릅니다."
               ],
               [
-                "스크립트는 Mac에만",
-                "Mac에 스크립트를 등록하면 휴대폰에서 이름으로 실행할 수 있습니다. 휴대폰은 명령을 보내지 않습니다. 어느 버튼을 눌렀는지만 보냅니다."
+                "스크립트는 PC에만",
+                "PC에 스크립트를 등록하면 휴대폰에서 이름으로 실행할 수 있습니다. 휴대폰은 명령을 보내지 않습니다. 어느 버튼을 눌렀는지만 보냅니다."
               ],
               [
                 "연결이 아니라 페어링",
-                "페어링은 Mac 화면의 QR 코드 하나로 끝납니다. 그 뒤로 연결은 암호화되고 이용자의 Mac에만 고정되며, 페어링하지 않은 기기는 들어오지 못합니다."
+                "페어링은 PC 화면의 QR 코드 하나로 끝납니다. 그 뒤로 연결은 암호화되고 이용자의 PC에만 고정되며, 페어링하지 않은 기기는 들어오지 못합니다."
               ]
             ]
           },
@@ -3301,14 +3301,14 @@
             "eyebrow": "어디서 왔나",
             "title": "책상 하나를 위해 만들고, 안전하게 다듬었습니다.",
             "paragraphs": [
-              "질문 하나에서 시작했습니다. 아이폰의 버튼이 Mac에서 <strong>⌘C</strong>를 누를 수 있을까? 첫 빌드가 로컬 네트워크로 바로 그 일을 해낸 것이 <strong>2026년 9월</strong>입니다.",
-              "그다음은 전부 위험하지 않게 만드는 일이었습니다. Mac을 움직이는 휴대폰은 컴퓨터의 리모컨이기 때문에, 페어링과 암호화, 그리고 <strong>스크립트는 Mac에만 둔다</strong>는 원칙이 위의 어떤 기능보다 먼저 들어갔습니다.",
-              "그리고 이 앱을 가질 이유가 되는 부분, 앞에 나온 앱을 따라가는 화면이 붙었습니다. 지금은 같은 Mac을 아이폰과 Android 태블릿으로 모두 움직여 봤습니다."
+              "질문 하나에서 시작했습니다. 휴대폰의 버튼이 PC에서 <strong>⌘C</strong>를 누를 수 있을까? 첫 빌드가 로컬 네트워크로 바로 그 일을 해낸 것이 <strong>2026년 9월</strong>입니다.",
+              "그다음은 전부 위험하지 않게 만드는 일이었습니다. PC를 움직이는 휴대폰은 그 PC의 리모컨이기 때문에, 페어링과 암호화, 그리고 <strong>스크립트는 PC에만 둔다</strong>는 원칙이 위의 어떤 기능보다 먼저 들어갔습니다.",
+              "그리고 이 앱을 가질 이유가 되는 부분, 앞에 나온 앱을 따라가는 화면이 붙었습니다. 지금은 같은 PC를 iOS와 Android 기기 양쪽에서 움직여 봤습니다."
             ],
             "timeline": [
               [
                 "2026.09",
-                "아이폰 버튼으로 Mac에서 ⌘C"
+                "휴대폰 버튼으로 PC에서 ⌘C"
               ],
               [
                 "2026.09",
@@ -3327,25 +3327,25 @@
           "privacySection": {
             "eyebrow": "개인정보",
             "title": "키 입력은 이용자의 네트워크 밖으로 나가지 않습니다.",
-            "lede": "휴대폰과 Mac은 이용자의 네트워크 안에서 암호화된 채로 서로 직접 대화합니다. 사이에 개발자의 서버도, 계정도 없습니다. 버튼 구성과 페어링 정보는 이용자의 기기에만 있습니다. 앱은 무료이며 광고가 붙어 있어 Google AdMob이 일반적인 광고 식별자와 기기 정보를 수집하지만, 이용자가 누르는 버튼은 광고로 가지 않습니다. 자세한 내용은 {privacy}에 모두 적어 두었습니다."
+            "lede": "휴대폰과 PC는 이용자의 네트워크 안에서 암호화된 채로 서로 직접 대화합니다. 사이에 개발자의 서버도, 계정도 없습니다. 버튼 구성과 페어링 정보는 이용자의 기기에만 있습니다. 앱은 무료이며 광고가 붙어 있어 Google AdMob이 일반적인 광고 식별자와 기기 정보를 수집하지만, 이용자가 누르는 버튼은 광고로 가지 않습니다. 자세한 내용은 {privacy}에 모두 적어 두었습니다."
           },
           "privacyLinkText": "개인정보처리방침",
           "close": {
             "title": "키보드 옆에 매크로패드를 두세요.",
-            "lede": "앱은 App Store와 Google Play에 곧 나옵니다. 함께 필요한 Mac 에이전트는 이 페이지에서 무료로 받으실 수 있게 됩니다."
+            "lede": "앱은 App Store와 Google Play에 곧 나옵니다. 함께 필요한 PC용 에이전트는 이 페이지에서 무료로 받으실 수 있게 됩니다. 지금은 macOS용이고, Windows용은 준비 중입니다."
           }
         },
         "ja": {
-          "meta": "無料 · iPhone · Android · Mac",
+          "meta": "無料 · iPhone · Android · macOS（Windows 準備中）",
           "headline": [
-            "スマートフォンでつくる、Macの",
+            "使っているアプリに合わせて変わる、",
             "マクロパッド"
           ],
-          "lede": "スマートフォンのボタンとノブで、隣のMacのショートカットを押し、文字を入力し、アプリを開き、スクリプトを実行します。MacでFinal Cutを前面に出すと、スマートフォンがFinal Cut用のボタンに切り替わります。",
+          "lede": "スマートフォンのボタンとノブで、隣のPCのショートカットを押し、文字を入力し、アプリを開き、スクリプトを実行します。PCでFinal Cutを前面に出すと、スマートフォンがFinal Cut用のボタンに切り替わります。",
           "idea": {
             "eyebrow": "アイデア",
             "title": "マクロパッドは、いまどのアプリなのかを知っているべきです。",
-            "lede": "ハードウェアのマクロパッドは、自分で切り替えるまで同じキーのままです。VelozPadはMacで前面にあるアプリを見て、スマートフォンのボタンをそのアプリに合わせて入れ替えます。Final Cutならタイムライン、Photoshopならブラシ。マクロパッドは、いつも持ち歩いているスマートフォンです。"
+            "lede": "ハードウェアのマクロパッドは、自分で切り替えるまで同じキーのままです。VelozPadはPCで前面にあるアプリを見て、スマートフォンのボタンをそのアプリに合わせて入れ替えます。Final Cutならタイムライン、Photoshopならブラシ。マクロパッドは、いつも持ち歩いているスマートフォンです。"
           },
           "leftOutTitle": "あえて入れなかったもの",
           "leftOut": [
@@ -3359,10 +3359,10 @@
           "remainsTitle": "そうして残ったもの",
           "remains": [
             "画面ごとに最大15個のボタンとノブが1つ",
-            "Macで前面のアプリについていく画面",
-            "Macで実際に押して録画するショートカット",
+            "PCで前面のアプリについていく画面",
+            "PCで実際に押して録画するショートカット",
             "テキスト入力、アプリ起動、メディアキー、複数ステップのまとめ",
-            "Macに登録したスクリプトを名前で実行",
+            "PCに登録したスクリプトを名前で実行",
             "韓国語・英語・日本語・スペイン語"
           ],
           "features": {
@@ -3379,19 +3379,19 @@
               ],
               [
                 "押して録画するショートカット",
-                "スマートフォンで録画を押し、Macでキーを押してください。キーコードも、⌘記号を探す必要もありません。"
+                "スマートフォンで録画を押し、PCでキーを押してください。キーコードも、⌘記号を探す必要もありません。"
               ],
               [
                 "キー1つでは終わらない",
                 "テキストの入力、アプリを開く、再生・停止、そして複数ステップのまとめ。アプリを開き、待って、ショートカットを押します。"
               ],
               [
-                "スクリプトはMacだけに",
-                "Macにスクリプトを登録すると、スマートフォンから名前で実行できます。スマートフォンがコマンドを送ることはありません。送るのはどのボタンを押したかだけです。"
+                "スクリプトはPCだけに",
+                "PCにスクリプトを登録すると、スマートフォンから名前で実行できます。スマートフォンがコマンドを送ることはありません。送るのはどのボタンを押したかだけです。"
               ],
               [
                 "接続ではなく、ペアリング",
-                "ペアリングはMacの画面のQRコード1つで終わります。その後の接続は暗号化され、あなたのMacだけに固定されます。ペアリングしていない端末は入れません。"
+                "ペアリングはPCの画面のQRコード1つで終わります。その後の接続は暗号化され、あなたのPCだけに固定されます。ペアリングしていない端末は入れません。"
               ]
             ]
           },
@@ -3399,14 +3399,14 @@
             "eyebrow": "どこから来たか",
             "title": "1つの机のために作り、安全に仕上げました。",
             "paragraphs": [
-              "始まりは1つの問いでした。iPhoneのボタンでMacの<strong>⌘C</strong>を押せるだろうか。最初のビルドがローカルネットワーク越しにまさにそれをやってのけたのが<strong>2026年9月</strong>です。",
-              "その後はすべて、危なくないものにするための作業でした。Macを動かすスマートフォンはコンピューターのリモコンです。だからペアリングと暗号化、そして<strong>スクリプトはMacだけに置く</strong>という原則が、上のどの機能よりも先に入りました。",
-              "そしてこのアプリを持つ理由になる部分、前面のアプリについていく画面が加わりました。いまは同じMacを、iPhoneからもAndroidタブレットからも動かしています。"
+              "始まりは1つの問いでした。スマートフォンのボタンでPCの<strong>⌘C</strong>を押せるだろうか。最初のビルドがローカルネットワーク越しにまさにそれをやってのけたのが<strong>2026年9月</strong>です。",
+              "その後はすべて、危なくないものにするための作業でした。PCを動かすスマートフォンは、そのPCのリモコンです。だからペアリングと暗号化、そして<strong>スクリプトはPCだけに置く</strong>という原則が、上のどの機能よりも先に入りました。",
+              "そしてこのアプリを持つ理由になる部分、前面のアプリについていく画面が加わりました。いまは同じPCを、iOSからもAndroidからも動かしています。"
             ],
             "timeline": [
               [
                 "2026.09",
-                "iPhoneのボタンでMacの⌘C"
+                "スマホのボタンでPCの⌘C"
               ],
               [
                 "2026.09",
@@ -3425,25 +3425,25 @@
           "privacySection": {
             "eyebrow": "プライバシー",
             "title": "キー入力は、あなたのネットワークの外に出ません。",
-            "lede": "スマートフォンとMacは、あなたのネットワーク内で暗号化したまま直接やり取りします。あいだに開発者のサーバーもアカウントもありません。ボタンの構成とペアリングの情報は、あなたの端末にだけあります。アプリは無料で広告が表示されるため、Google AdMobが一般的な広告識別子と端末情報を収集しますが、あなたが押すボタンが広告に渡ることはありません。詳しくは{privacy}にすべて書いてあります。"
+            "lede": "スマートフォンとPCは、あなたのネットワーク内で暗号化したまま直接やり取りします。あいだに開発者のサーバーもアカウントもありません。ボタンの構成とペアリングの情報は、あなたの端末にだけあります。アプリは無料で広告が表示されるため、Google AdMobが一般的な広告識別子と端末情報を収集しますが、あなたが押すボタンが広告に渡ることはありません。詳しくは{privacy}にすべて書いてあります。"
           },
           "privacyLinkText": "プライバシーポリシー",
           "close": {
             "title": "キーボードの隣に、マクロパッドを。",
-            "lede": "アプリはまもなくApp StoreとGoogle Playで公開されます。あわせて必要なMacエージェントは、このページから無料でダウンロードできるようになります。"
+            "lede": "アプリはまもなくApp StoreとGoogle Playで公開されます。あわせて必要なPC用エージェントは、このページから無料でダウンロードできるようになります。いまはmacOS用で、Windows用は準備中です。"
           }
         },
         "es": {
-          "meta": "Gratis · iPhone y Android · Mac",
+          "meta": "Gratis · iPhone y Android · macOS (Windows en preparación)",
           "headline": [
-            "Su teléfono, convertido en un",
-            "teclado de macros"
+            "Un teclado de macros que cambia con",
+            "la app que usa"
           ],
-          "lede": "Botones y una rueda en el teléfono que pulsan atajos, escriben texto, abren apps y ejecutan sus scripts en el Mac que tiene al lado. Traiga Final Cut al frente y el teléfono se convierte en el panel de Final Cut.",
+          "lede": "Botones y una rueda en el teléfono que pulsan atajos, escriben texto, abren apps y ejecutan sus scripts en el ordenador que tiene al lado. Traiga Final Cut al frente y el teléfono se convierte en el panel de Final Cut.",
           "idea": {
             "eyebrow": "La idea",
             "title": "Un teclado de macros debería saber en qué app está usted.",
-            "lede": "Un teclado de macros físico mantiene las mismas teclas hasta que usted lo cambia. VelozPad mira qué app está delante en el Mac y cambia los botones del teléfono para que encajen: línea de tiempo en Final Cut, pinceles en Photoshop. El teclado es el teléfono que ya lleva encima."
+            "lede": "Un teclado de macros físico mantiene las mismas teclas hasta que usted lo cambia. VelozPad mira qué app está delante en el ordenador y cambia los botones del teléfono para que encajen: línea de tiempo en Final Cut, pinceles en Photoshop. El teclado es el teléfono que ya lleva encima."
           },
           "leftOutTitle": "Dejado fuera a propósito",
           "leftOut": [
@@ -3457,10 +3457,10 @@
           "remainsTitle": "Lo que queda",
           "remains": [
             "Hasta quince botones y una rueda en cada panel",
-            "Paneles que siguen a la app que está delante en el Mac",
-            "Atajos que se graban pulsándolos en el Mac",
+            "Paneles que siguen a la app que está delante en el ordenador",
+            "Atajos que se graban pulsándolos en el ordenador",
             "Texto, abrir apps, teclas multimedia y secuencias de varios pasos",
-            "Scripts registrados en el Mac, ejecutados por su nombre",
+            "Scripts registrados en el ordenador, ejecutados por su nombre",
             "Coreano, inglés, japonés y español"
           ],
           "features": {
@@ -3477,19 +3477,19 @@
               ],
               [
                 "Grabe un atajo pulsándolo",
-                "Toque grabar en el teléfono y pulse las teclas en el Mac. Sin códigos de tecla ni buscar el símbolo ⌘."
+                "Toque grabar en el teléfono y pulse las teclas en el ordenador. Sin códigos de tecla ni buscar el símbolo ⌘."
               ],
               [
                 "Más que una tecla",
                 "Escribir una línea de texto, abrir una app, reproducir o pausar, o encadenar pasos: abrir la app, esperar, pulsar el atajo."
               ],
               [
-                "Los scripts se quedan en el Mac",
-                "Registre un script en el Mac y el teléfono podrá ejecutarlo por su nombre. El teléfono nunca envía una orden: solo qué botón se pulsó."
+                "Los scripts se quedan en el ordenador",
+                "Registre un script en el ordenador y el teléfono podrá ejecutarlo por su nombre. El teléfono nunca envía una orden: solo qué botón se pulsó."
               ],
               [
                 "Emparejado, no solo conectado",
-                "El emparejamiento es un código QR en la pantalla del Mac. A partir de ahí la conexión va cifrada y ligada a su Mac, y un dispositivo no emparejado se rechaza."
+                "El emparejamiento es un código QR en la pantalla del ordenador. A partir de ahí la conexión va cifrada y ligada a su ordenador, y un dispositivo no emparejado se rechaza."
               ]
             ]
           },
@@ -3497,14 +3497,14 @@
             "eyebrow": "De dónde viene",
             "title": "Hecho para una mesa y después, seguro.",
             "paragraphs": [
-              "Empezó con una pregunta: ¿puede un botón del iPhone pulsar <strong>⌘C</strong> en un Mac? La primera versión hizo exactamente eso, por la red local, en <strong>septiembre de 2026</strong>.",
-              "Todo lo que vino después fue para que no fuera peligroso. Un teléfono capaz de mover un Mac es un mando a distancia del ordenador, así que el emparejamiento, el cifrado y la regla de que <strong>los scripts viven solo en el Mac</strong> llegaron antes que cualquiera de las funciones de arriba.",
-              "Luego llegó lo que hace que valga la pena: el panel sigue a la app que está delante. Desde entonces ha manejado el mismo Mac desde un iPhone y desde una tableta Android."
+              "Empezó con una pregunta: ¿puede un botón del móvil pulsar <strong>⌘C</strong> en un ordenador? La primera versión hizo exactamente eso, por la red local, en <strong>septiembre de 2026</strong>.",
+              "Todo lo que vino después fue para que no fuera peligroso. Un teléfono capaz de mover un ordenador es su mando a distancia, así que el emparejamiento, el cifrado y la regla de que <strong>los scripts viven solo en el ordenador</strong> llegaron antes que cualquiera de las funciones de arriba.",
+              "Luego llegó lo que hace que valga la pena: el panel sigue a la app que está delante. Desde entonces ha manejado el mismo ordenador desde dispositivos iOS y Android."
             ],
             "timeline": [
               [
                 "2026.09",
-                "Un botón del iPhone pulsa ⌘C en el Mac"
+                "Un botón del móvil pulsa ⌘C en el ordenador"
               ],
               [
                 "2026.09",
@@ -3523,12 +3523,12 @@
           "privacySection": {
             "eyebrow": "Privacidad",
             "title": "Sus pulsaciones no salen de su red.",
-            "lede": "El teléfono y el Mac hablan directamente entre sí, cifrados, dentro de su propia red: no hay ningún servidor nuestro en medio ni cuenta alguna. Sus paneles y su emparejamiento viven en sus propios dispositivos. La app es gratuita e incluye anuncios, así que Google AdMob recopila el identificador de publicidad y la información del dispositivo habituales; lo que usted pulsa nunca le llega. Todo está detallado en la {privacy}."
+            "lede": "El teléfono y el ordenador hablan directamente entre sí, cifrados, dentro de su propia red: no hay ningún servidor nuestro en medio ni cuenta alguna. Sus paneles y su emparejamiento viven en sus propios dispositivos. La app es gratuita e incluye anuncios, así que Google AdMob recopila el identificador de publicidad y la información del dispositivo habituales; lo que usted pulsa nunca le llega. Todo está detallado en la {privacy}."
           },
           "privacyLinkText": "política de privacidad",
           "close": {
             "title": "Ponga el panel junto al teclado.",
-            "lede": "La app llegará pronto a App Store y Google Play. El agente para Mac que necesita se podrá descargar gratis desde esta página."
+            "lede": "La app llegará pronto a App Store y Google Play. El agente que necesita en el ordenador se podrá descargar gratis desde esta página: primero para macOS; la versión para Windows está en preparación."
           }
         }
       }
