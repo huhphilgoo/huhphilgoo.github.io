@@ -17,7 +17,7 @@ src/promo/
 
 1. **앱 화면 원본을 뽑는다** — `capture_test.dart` 를 앱의 `test/` 에 잠깐 복사해 언어마다 돌린다
    (파일 맨 위 주석에 명령이 있다). 끝나면 앱 저장소에서 지운다.
-2. **렌더한다** — `python3 src/promo/render.py <slug>` (Google Chrome, Pillow 필요)
+2. **렌더한다** — `python3 src/promo/render.py <slug>` (Google Chrome, Pillow 필요). **이미지를 바꿨으면 `promo.json` 의 `prefix` 도 바꾼다** — 이름이 같으면 브라우저가 옛 그림을 계속 보여 준다
 3. **`apps.json` 의 `landing.shots`** 에 이미지와 언어별 `[alt, 캡션]` 을 적고 `python3 src/build.py`
 
 렌더만 확인하려면 브라우저로 `template.html#scene=hero&lang=ko` 를 열면 된다.

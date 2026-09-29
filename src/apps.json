@@ -3020,10 +3020,10 @@
         "shots": [
           {
             "src": {
-              "en": "assets/hero_en.jpg",
-              "ko": "assets/hero_ko.jpg",
-              "ja": "assets/hero_ja.jpg",
-              "es": "assets/hero_es.jpg"
+              "en": "assets/ad-hero_en.jpg",
+              "ko": "assets/ad-hero_ko.jpg",
+              "ja": "assets/ad-hero_ja.jpg",
+              "es": "assets/ad-hero_es.jpg"
             },
             "en": [
               "A phone lying in front of a laptop. The phone's Cut button glows; on the laptop's video timeline a clip is split at the playhead, with a 'Cut ⌘B' label",
@@ -3044,10 +3044,10 @@
           },
           {
             "src": {
-              "en": "assets/switch_en.jpg",
-              "ko": "assets/switch_ko.jpg",
-              "ja": "assets/switch_ja.jpg",
-              "es": "assets/switch_es.jpg"
+              "en": "assets/ad-switch_en.jpg",
+              "ko": "assets/ad-switch_ko.jpg",
+              "ja": "assets/ad-switch_ja.jpg",
+              "es": "assets/ad-switch_es.jpg"
             },
             "en": [
               "Two rows: a video editor window beside the phone's video buttons, and an image editor window beside the phone's brush buttons",
@@ -3068,10 +3068,10 @@
           },
           {
             "src": {
-              "en": "assets/safe_en.jpg",
-              "ko": "assets/safe_ko.jpg",
-              "ja": "assets/safe_ja.jpg",
-              "es": "assets/safe_es.jpg"
+              "en": "assets/ad-safe_en.jpg",
+              "ko": "assets/ad-safe_ko.jpg",
+              "ja": "assets/ad-safe_ja.jpg",
+              "es": "assets/ad-safe_es.jpg"
             },
             "en": [
               "A laptop showing a pairing QR code, and a phone's camera framing it, with two notes: encrypted, paired devices only; only scripts you registered run",
@@ -3092,10 +3092,10 @@
           },
           {
             "src": {
-              "en": "assets/record_en.jpg",
-              "ko": "assets/record_ko.jpg",
-              "ja": "assets/record_ja.jpg",
-              "es": "assets/record_es.jpg"
+              "en": "assets/ad-record_en.jpg",
+              "ko": "assets/ad-record_ko.jpg",
+              "ja": "assets/ad-record_ja.jpg",
+              "es": "assets/ad-record_es.jpg"
             },
             "en": [
               "Two keycaps, ⌘ and C, pressed down, with an arrow to the button editor marked Recording, where the Action field shows ⌘C",
@@ -3116,10 +3116,10 @@
           },
           {
             "src": {
-              "en": "assets/knob_en.jpg",
-              "ko": "assets/knob_ko.jpg",
-              "ja": "assets/knob_ja.jpg",
-              "es": "assets/knob_es.jpg"
+              "en": "assets/ad-knob_en.jpg",
+              "ko": "assets/ad-knob_ko.jpg",
+              "ja": "assets/ad-knob_ja.jpg",
+              "es": "assets/ad-knob_es.jpg"
             },
             "en": [
               "The phone's aluminium knob with a motion arc, beside a timeline where a slow turn moves one frame and a fast spin moves ten",

@@ -5,7 +5,9 @@
 
 Reads src/promo/<slug>/promo.json, prepares any derived crops the template needs,
 renders every scene × language with headless Chrome at 2× and saves 1600×1000 JPGs
-into <slug>/assets/<scene>_<lang>.jpg — the paths apps.json points at.
+into <slug>/assets/<prefix><scene>_<lang>.jpg — the paths apps.json points at.
+Change `prefix` in promo.json when the images change: a new file name is what makes
+browsers drop the old picture (same name → a cached old image keeps showing).
 
 Needs Google Chrome and Pillow (`pip3 install pillow`). See src/promo/README.md.
 """
@@ -55,7 +57,7 @@ def render(app_dir: Path, conf: dict, out_dir: Path) -> None:
                 img = Image.open(png).convert('RGB')
                 if img.size != (W * 2, H * 2):
                     sys.exit(f'{scene}_{lang}: unexpected size {img.size}')
-                dest = out_dir / f'{scene}_{lang}.jpg'
+                dest = out_dir / f"{conf.get('prefix', '')}{scene}_{lang}.jpg"
                 img.resize((W, H), Image.LANCZOS).save(dest, quality=86, optimize=True)
                 print(f'  {dest.relative_to(ROOT)}')
 

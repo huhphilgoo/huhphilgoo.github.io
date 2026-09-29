@@ -1,4 +1,5 @@
 {
+  "prefix": "ad-",
   "scenes": ["hero", "switch", "record", "knob", "safe"],
   "langs": ["ko", "en", "ja", "es"],
   "crops": [
