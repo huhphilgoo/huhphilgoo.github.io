@@ -977,6 +977,18 @@ HUB_TEXT = {
 }
 
 
+def icon_version(slug):
+    """A short fingerprint of the app's icon file, appended to its URL.
+
+    The file is always <slug>/assets/icon.png, so a browser that saw the old icon
+    keeps showing it from cache. A query string that changes with the file's
+    contents makes the new one load; an unchanged icon keeps its URL.
+    """
+    import hashlib
+    path = ROOT / slug / 'assets' / 'icon.png'
+    return hashlib.sha1(path.read_bytes()).hexdigest()[:8] if path.exists() else '0'
+
+
 def hub_page(lang='en'):
     """The site root, laid out like a store shelf: one card per app.
 
@@ -1026,7 +1038,7 @@ def hub_page(lang='en'):
   {cover}
   <div class="body">
     <div class="head">
-      <img class="icon" src="{E(up + slug)}/assets/icon.png" alt="" width="64" height="64">
+      <img class="icon" src="{E(up + slug)}/assets/icon.png?v={icon_version(slug)}" alt="" width="64" height="64">
       <div>
         <h3><a href="{E(detail)}">{E(name)}</a></h3>{sub}
         <span class="cat">{E(cat)}</span>
