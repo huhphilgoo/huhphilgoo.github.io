@@ -1,0 +1,8 @@
+{
+  "scenes": ["hero", "switch", "record", "knob", "safe"],
+  "langs": ["ko", "en", "ja", "es"],
+  "crops": [
+    { "name": "editor_crop", "from": "editor", "trimTop": true },
+    { "name": "knob", "from": "pad", "box": [1110, 80, 1648, 700] }
+  ]
+}

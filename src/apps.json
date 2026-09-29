@@ -3026,44 +3026,20 @@
               "es": "assets/hero_es.jpg"
             },
             "en": [
-              "Six coloured buttons — play, cut, undo, marker, next frame, save — beside a large aluminium knob labelled Timeline",
-              "Final Cut's pad: six keys and a timeline knob."
+              "A phone lying in front of a laptop. The phone's Cut button glows; on the laptop's video timeline a clip is split at the playhead, with a 'Cut ⌘B' label",
+              "Press Cut on the phone, and the clip on the computer splits."
             ],
             "ko": [
-              "재생·컷·실행 취소·마커·앞 프레임·저장 여섯 버튼과, 타임라인이라고 적힌 큰 알루미늄 노브",
-              "파이널컷용 화면. 버튼 여섯 개와 타임라인 노브."
+              "노트북 앞에 놓인 폰. 폰의 컷 버튼이 빛나고, 노트북 영상 타임라인에서 재생 헤드 자리의 클립이 잘려 있으며 '컷 ⌘B' 표시가 떠 있다",
+              "폰에서 컷을 누르면, 컴퓨터의 클립이 잘립니다."
             ],
             "ja": [
-              "再生・カット・取り消し・マーカー・次のコマ・保存の6つのボタンと、タイムラインと書かれた大きなアルミのノブ",
-              "Final Cut用の画面。6つのボタンとタイムラインのノブ。"
+              "ノートPCの前に置かれたスマホ。カットボタンが光り、PCの動画タイムラインでは再生ヘッドの位置でクリップが分かれ、「カット ⌘B」と表示されている",
+              "スマホでカットを押すと、PCのクリップが分かれます。"
             ],
             "es": [
-              "Seis botones de colores — reproducir, cortar, deshacer, marcador, cuadro siguiente, guardar — junto a una gran rueda de aluminio con la etiqueta Línea de tiempo",
-              "El panel de Final Cut: seis teclas y una rueda para la línea de tiempo."
-            ]
-          },
-          {
-            "src": {
-              "en": "assets/editor_en.jpg",
-              "ko": "assets/editor_ko.jpg",
-              "ja": "assets/editor_ja.jpg",
-              "es": "assets/editor_es.jpg"
-            },
-            "en": [
-              "The button editor: a preview of a blue Copy button, its name, the shortcut ⌘C, sixteen colours and an icon picker",
-              "One screen to edit a button. The shortcut was recorded by pressing it on the Mac."
-            ],
-            "ko": [
-              "버튼 편집 화면. 파란 복사 버튼 미리보기와 이름, 단축키 ⌘C, 색 16가지, 아이콘 고르기",
-              "버튼 하나를 한 화면에서 고칩니다. 단축키는 Mac에서 직접 눌러 녹화했습니다."
-            ],
-            "ja": [
-              "ボタンの編集画面。青いコピーボタンのプレビューと名前、ショートカット⌘C、16色、アイコンの選択",
-              "ボタンは1画面で編集します。ショートカットはMacで実際に押して録画しました。"
-            ],
-            "es": [
-              "El editor de botones: vista previa de un botón azul Copiar, su nombre, el atajo ⌘C, dieciséis colores y un selector de iconos",
-              "Un botón se edita en una sola pantalla. El atajo se grabó pulsándolo en el Mac."
+              "Un móvil delante de un portátil. El botón Cortar del móvil brilla; en la línea de tiempo del portátil un clip queda dividido en el cabezal, con la etiqueta 'Cortar ⌘B'",
+              "Pulsa Cortar en el móvil y el clip del ordenador se divide."
             ]
           },
           {
@@ -3074,20 +3050,92 @@
               "es": "assets/switch_es.jpg"
             },
             "en": [
-              "Two pads, one above the other: Final Cut's keys with a timeline knob, and Photoshop's keys with a brush-size knob",
-              "Bring Photoshop to the front and the timeline keys give way to brushes."
+              "Two rows: a video editor window beside the phone's video buttons, and an image editor window beside the phone's brush buttons",
+              "Change the app in front and the buttons change with it."
             ],
             "ko": [
-              "위아래 두 화면. 타임라인 노브가 있는 파이널컷 버튼과, 브러시 크기 노브가 있는 포토샵 버튼",
-              "Mac에서 포토샵을 앞으로 가져오면 타임라인 버튼이 브러시 버튼으로 바뀝니다."
+              "두 줄. 영상 편집 창 옆에는 폰의 영상 버튼, 이미지 편집 창 옆에는 폰의 브러시 버튼",
+              "앞에 나온 앱이 바뀌면 버튼도 따라 바뀝니다."
             ],
             "ja": [
-              "上下に並んだ2つの画面。タイムラインのノブがあるFinal Cutのボタンと、ブラシサイズのノブがあるPhotoshopのボタン",
-              "MacでPhotoshopを前面に出すと、タイムラインのボタンがブラシのボタンに変わります。"
+              "2段の図。動画編集ウィンドウの横にスマホの動画ボタン、画像編集ウィンドウの横にスマホのブラシボタン",
+              "前面のアプリが替わると、ボタンもついてきます。"
             ],
             "es": [
-              "Dos paneles, uno encima del otro: las teclas de Final Cut con una rueda de línea de tiempo y las de Photoshop con una rueda de tamaño de pincel",
-              "Traiga Photoshop al frente y las teclas de la línea de tiempo dejan paso a los pinceles."
+              "Dos filas: una ventana de edición de vídeo junto a los botones de vídeo del móvil, y una de edición de imagen junto a los botones de pincel",
+              "Cambia la app que tienes delante y los botones cambian con ella."
+            ]
+          },
+          {
+            "src": {
+              "en": "assets/safe_en.jpg",
+              "ko": "assets/safe_ko.jpg",
+              "ja": "assets/safe_ja.jpg",
+              "es": "assets/safe_es.jpg"
+            },
+            "en": [
+              "A laptop showing a pairing QR code, and a phone's camera framing it, with two notes: encrypted, paired devices only; only scripts you registered run",
+              "One QR code to pair. What runs is decided on the computer."
+            ],
+            "ko": [
+              "페어링 QR을 띄운 노트북과, 그 QR을 비추는 폰 카메라. '암호화 연결 · 페어링한 기기만', 'PC에 등록한 스크립트만 실행' 두 표시",
+              "QR 한 번으로 페어링. 무엇을 실행할지는 컴퓨터가 정합니다."
+            ],
+            "ja": [
+              "ペアリング用QRを表示したノートPCと、それを映すスマホのカメラ。「暗号化接続 · ペアリングした端末だけ」「PCに登録したスクリプトだけ実行」の2つの表示",
+              "QRひとつでペアリング。何を実行するかはPCが決めます。"
+            ],
+            "es": [
+              "Un portátil con un código QR de emparejamiento y la cámara de un móvil enfocándolo, con dos notas: conexión cifrada solo con dispositivos emparejados; solo se ejecutan tus scripts registrados",
+              "Un QR para emparejar. Qué se ejecuta lo decide el ordenador."
+            ]
+          },
+          {
+            "src": {
+              "en": "assets/record_en.jpg",
+              "ko": "assets/record_ko.jpg",
+              "ja": "assets/record_ja.jpg",
+              "es": "assets/record_es.jpg"
+            },
+            "en": [
+              "Two keycaps, ⌘ and C, pressed down, with an arrow to the button editor marked Recording, where the Action field shows ⌘C",
+              "Press the shortcut on the computer; the editor records it."
+            ],
+            "ko": [
+              "눌린 ⌘, C 두 키캡에서 화살표가 '녹화 중' 표시가 붙은 버튼 편집 화면으로 이어지고, 동작 칸에 ⌘C가 들어가 있다",
+              "컴퓨터에서 단축키를 누르면 편집 화면이 그대로 받아 적습니다."
+            ],
+            "ja": [
+              "押された⌘とCの2つのキーから、「録画中」のボタン編集画面へ矢印が伸び、動作欄に⌘Cが入っている",
+              "PCでショートカットを押すと、編集画面がそのまま記録します。"
+            ],
+            "es": [
+              "Dos teclas pulsadas, ⌘ y C, con una flecha hacia el editor de botones marcado Grabando, donde el campo Acción muestra ⌘C",
+              "Pulsa el atajo en el ordenador y el editor lo registra."
+            ]
+          },
+          {
+            "src": {
+              "en": "assets/knob_en.jpg",
+              "ko": "assets/knob_ko.jpg",
+              "ja": "assets/knob_ja.jpg",
+              "es": "assets/knob_es.jpg"
+            },
+            "en": [
+              "The phone's aluminium knob with a motion arc, beside a timeline where a slow turn moves one frame and a fast spin moves ten",
+              "A slow turn moves one frame; a fast spin moves ten."
+            ],
+            "ko": [
+              "움직임 호가 그려진 폰의 알루미늄 노브와, 천천히 돌리면 한 칸·확 돌리면 열 칸 가는 타임라인",
+              "천천히 돌리면 한 칸, 확 돌리면 열 칸."
+            ],
+            "ja": [
+              "動きの弧が描かれたスマホのアルミのノブと、ゆっくり回すと1コマ、勢いよく回すと10コマ進むタイムライン",
+              "ゆっくり回せば1コマ、勢いよく回せば10コマ。"
+            ],
+            "es": [
+              "La rueda de aluminio del móvil con un arco de movimiento, junto a una línea de tiempo donde un giro lento avanza un cuadro y uno rápido avanza diez",
+              "Un giro lento avanza un cuadro; uno rápido, diez."
             ]
           }
         ],

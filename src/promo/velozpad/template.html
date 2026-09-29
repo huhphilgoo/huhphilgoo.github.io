@@ -1,0 +1,285 @@
+<!doctype html>
+<!--
+  VelozPad 광고 이미지 틀. 1600×1000 한 장 = 장면 하나.
+  주소 뒤에 #scene=hero&lang=ko 처럼 붙여 장면과 언어를 고른다.
+  장면: hero · switch · record · knob · safe      언어: ko · en · ja · es
+  앱 화면은 raw/ 의 실제 캡처(앱 위젯을 테스트로 그린 것)만 쓴다.
+-->
+<html><head><meta charset="utf-8">
+<style>
+:root{
+  --bg1:#f7f5f0; --bg2:#eceef2; --ink:#1b1e24; --muted:#5d6472; --faint:#8a909c;
+  --accent:#f2b544;          /* 빛·화살표 — 앱의 호박색 타일 */
+  --em:#a86f12;              /* 밝은 바탕 위 강조 글자 — 호박색은 흐려서 진하게 */
+  --blue:#3f7be8; --green:#1f9d74; --purple:#8a6bd8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1600px;height:1000px;overflow:hidden}
+body{font-family:-apple-system,"Apple SD Gothic Neo","Hiragino Sans",sans-serif;color:var(--ink);position:relative;
+  background:radial-gradient(900px 560px at 74% 82%,rgba(242,181,68,.22),transparent 70%),
+             radial-gradient(760px 520px at 10% 90%,rgba(63,123,232,.14),transparent 70%),
+             linear-gradient(180deg,var(--bg1),var(--bg2));}
+.scene{display:none;position:absolute;inset:0}
+/* 라틴 문자 언어는 라틴 글꼴을 먼저 — 안 그러면 ó 같은 글자를 한국어 글꼴이 대신 그린다 */
+html:lang(en) body,html:lang(es) body{font-family:system-ui,"Helvetica Neue",-apple-system,sans-serif}
+html:lang(ja) body{font-family:"Hiragino Sans",system-ui,sans-serif}
+.scene.on{display:block}
+
+/* 헤드라인 — 넘치면 글자를 줄인다(아래 fit()) */
+.head{position:absolute;left:80px;right:80px;top:70px;text-align:center}
+.head h1{font-size:74px;font-weight:800;letter-spacing:-2px;line-height:1.14;word-break:keep-all}
+.head h1 em{font-style:normal;color:var(--em)}
+.head p{margin-top:20px;font-size:26px;color:var(--muted);letter-spacing:-.3px;word-break:keep-all}
+
+/* ── 기기: 노트북 ───────────────── */
+.laptop{position:absolute}
+.lid{background:#0b0c0f;border-radius:26px 26px 8px 8px;padding:16px 16px 20px;
+  box-shadow:0 0 0 2px #2c3038,0 34px 70px rgba(30,35,45,.28)}
+.screen{border-radius:8px;overflow:hidden;background:#f6f7f9;position:relative}
+.base{position:relative;height:30px;margin:0 -7%;background:linear-gradient(180deg,#e3e5e9 0,#c3c6cc 30%,#8e929a 100%);
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);border-radius:0 0 10px 10px;filter:drop-shadow(0 16px 24px rgba(30,35,45,.25))}
+.base:before{content:"";position:absolute;left:50%;top:0;width:16%;height:9px;margin-left:-8%;background:#b3b7be;border-radius:0 0 10px 10px}
+.base:after{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:rgba(255,255,255,.7)}
+.menubar{height:26px;background:#e9ebef;border-bottom:1px solid #dcdfe4;display:flex;align-items:center;gap:8px;padding:0 12px}
+.menubar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}
+.menubar i:nth-child(2){background:#febc2e}.menubar i:nth-child(3){background:#28c840}
+.menubar span{margin-left:12px;font-size:13px;color:#4a505b;font-weight:600}
+
+/* 일반적인 영상 편집기 — 특정 제품을 흉내 내지 않는다 */
+.viewer{position:absolute;left:14px;right:14px;top:40px;height:48%;border-radius:6px;
+  background:linear-gradient(135deg,#3a4a6b,#b86e4b 55%,#e2b86a)}
+.viewer:after{content:"";position:absolute;left:47%;top:36%;border:24px solid transparent;border-left:40px solid rgba(255,255,255,.85)}
+.tracks{position:absolute;left:14px;right:14px;top:calc(48% + 54px);bottom:14px;border-radius:8px;background:#fff;border:1px solid #e2e5ea;padding:14px 12px}
+.track{height:30px;margin-bottom:10px;position:relative}
+.clip{position:absolute;top:0;bottom:0;border-radius:6px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.35);
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.0) 0 26px,rgba(255,255,255,.45) 26px 28px)}
+.playhead{position:absolute;top:6px;bottom:6px;left:58%;width:2px;background:#ff4d4d;box-shadow:0 0 12px #ff4d4d}
+.playhead:before{content:"";position:absolute;top:-6px;left:-6px;border:7px solid transparent;border-top:9px solid #ff4d4d}
+/* 일반적인 그림 편집기 */
+.canvasbg{position:absolute;left:14px;right:14px;top:40px;bottom:14px;border-radius:6px;background:#fff;overflow:hidden;box-shadow:0 0 0 1px #e2e5ea}
+.toolcol{position:absolute;left:0;top:0;bottom:0;width:44px;background:#eef0f3;border-right:1px solid #dcdfe4}
+.toolcol b{display:block;width:22px;height:22px;margin:12px auto;border-radius:6px;background:#d3d7de}
+.toolcol b.on{background:var(--accent)}
+
+/* ── 기기: 폰(가로) ─────────────── */
+.phone{position:absolute;background:#0b0c0f;border-radius:56px;padding:15px;
+  box-shadow:0 0 0 3px #3a3f48,0 40px 80px rgba(30,35,45,.3)}
+.phone .glass{width:100%;height:100%;border-radius:42px;overflow:hidden;background:#f1f2f5;position:relative}
+.phone .island{position:absolute;left:22px;top:50%;width:24px;height:88px;margin-top:-44px;border-radius:13px;background:#0b0c0f;z-index:2}
+.phone .scr{position:absolute;left:54px;right:0;top:0;bottom:0}
+.phone .scr img{width:100%;height:100%;display:block}
+/* 버튼 위의 빛 — 앱의 성공 플래시처럼 타일 색이 번진다 */
+.glow{position:absolute;border-radius:22%;
+  box-shadow:0 0 0 3px rgba(242,181,68,.9),0 0 26px 10px rgba(242,181,68,.75),0 0 70px 24px rgba(242,181,68,.35)}
+
+/* ── 공통 조각 ──────────────────── */
+.chip{position:absolute;display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;
+  background:#fff;border:1.5px solid rgba(168,111,18,.35);font-size:21px;font-weight:600;color:var(--ink);
+  box-shadow:0 10px 26px rgba(30,35,45,.12);white-space:nowrap;z-index:6}
+.chip b{color:var(--em)}
+.bubble{position:absolute;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:12px;
+  background:var(--accent);color:#1b1d22;font-weight:800;font-size:20px;box-shadow:0 8px 24px rgba(242,181,68,.45);white-space:nowrap}
+kbd{font-family:"Apple Symbols","Helvetica Neue",-apple-system;font-weight:700;background:rgba(0,0,0,.14);padding:2px 8px;border-radius:6px}
+.arrow{position:absolute;height:3px;background:linear-gradient(90deg,rgba(242,181,68,.2),var(--accent))}
+.arrow:after{content:"";position:absolute;right:-4px;top:-8px;border:9px solid transparent;border-left:14px solid var(--accent)}
+.tag{position:absolute;font-size:20px;font-weight:700;color:var(--muted);letter-spacing:-.2px;white-space:nowrap}
+.card{position:absolute;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(30,35,45,.2),0 0 0 1px rgba(30,35,45,.06)}
+.card img{display:block;width:100%}
+.keycap{position:absolute;width:150px;height:150px;border-radius:30px;
+  background:linear-gradient(170deg,#ffffff,#e4e7ec);border:1px solid #d5d9e0;box-shadow:0 10px 0 #b7bcc6,0 30px 50px rgba(30,35,45,.25);
+  display:grid;place-items:center;font-size:74px;font-weight:600;color:#23262c}
+.keycap.down{transform:translateY(8px);box-shadow:0 2px 0 #b7bcc6,0 18px 30px rgba(30,35,45,.22)}
+.rec{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:#e5484d;
+  font-size:21px;font-weight:700;box-shadow:0 10px 30px rgba(229,72,77,.45)}
+.rec:before{content:"";width:12px;height:12px;border-radius:50%;background:#fff}
+.cutpiece{outline:3px solid #fff;box-shadow:0 0 0 5px rgba(242,181,68,.85),0 0 22px rgba(242,181,68,.7)}
+</style></head>
+<body>
+
+<!-- 1. 대표 ─────────────────────────────────────── -->
+<section class="scene" id="hero">
+  <div class="head"><h1 data-t="hero.h"></h1><p data-t="hero.p"></p></div>
+  <div class="laptop" style="left:640px;top:300px;width:800px">
+    <div class="lid"><div class="screen" style="height:480px">
+      <div class="menubar"><i></i><i></i><i></i><span data-t="video"></span></div>
+      <div class="viewer"></div>
+      <div class="tracks">
+        <div class="track"><div class="clip" style="left:0;width:34%;background-color:#4b7bd8"></div><div class="clip" style="left:35%;width:22.4%;background-color:#5a8ae6"></div><div class="clip cutpiece" style="left:58.6%;width:5.4%;background-color:#5a8ae6"></div><div class="clip" style="left:65%;width:30%;background-color:#4b7bd8"></div></div>
+        <div class="track"><div class="clip" style="left:8%;width:40%;background-color:#2f9e78"></div><div class="clip" style="left:50%;width:22%;background-color:#39b089"></div></div>
+        <div class="track"><div class="clip" style="left:0;width:92%;background-color:#8a6bd8;opacity:.85"></div></div>
+        <div class="playhead"></div>
+        <div class="bubble" style="left:calc(58% - 60px);top:-46px">✂︎ <span data-t="cut"></span> <kbd>⌘B</kbd></div>
+      </div>
+    </div></div><div class="base"></div>
+  </div>
+  <div class="chip" style="left:250px;top:440px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f2b544" stroke-width="2.4" stroke-linecap="round"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1.3" fill="#f2b544" stroke="none"/></svg><span data-t="wifi"></span></div>
+  <div class="phone" style="left:110px;top:548px;width:790px;height:362px;transform:rotate(-4deg);z-index:3">
+    <div class="glass"><div class="island"></div><div class="scr"><img data-src="pad"><div class="glow" style="left:24.2%;top:12.6%;width:16.6%;height:35.9%"></div></div></div>
+  </div>
+</section>
+
+<!-- 2. 앱별 자동 전환 ────────────────────────────── -->
+<section class="scene" id="switch">
+  <div class="head"><h1 data-t="switch.h"></h1><p data-t="switch.p"></p></div>
+  <!-- 윗줄: 영상 편집 → 영상 버튼 -->
+  <div class="laptop" style="left:150px;top:300px;width:420px">
+    <div class="lid" style="padding:10px 10px 12px;border-radius:18px 18px 6px 6px"><div class="screen" style="height:250px">
+      <div class="menubar"><i></i><i></i><i></i><span data-t="video"></span></div>
+      <div class="viewer" style="height:44%"></div>
+      <div class="tracks" style="top:calc(44% + 50px);padding:8px"><div class="track" style="height:18px;margin-bottom:6px"><div class="clip" style="left:0;width:60%;background-color:#4b7bd8"></div></div><div class="track" style="height:18px"><div class="clip" style="left:20%;width:50%;background-color:#2f9e78"></div></div></div>
+    </div></div><div class="base" style="height:16px"></div>
+  </div>
+  <div class="arrow" style="left:620px;top:450px;width:130px"></div>
+  <div class="phone" style="left:790px;top:330px;width:660px;height:300px;padding:12px;border-radius:46px">
+    <div class="glass" style="border-radius:35px"><div class="island" style="left:18px;width:20px;height:72px;margin-top:-36px"></div><div class="scr" style="left:44px"><img data-src="pad"></div></div>
+  </div>
+  <!-- 아랫줄: 이미지 편집 → 브러시 버튼 -->
+  <div class="laptop" style="left:150px;top:650px;width:420px">
+    <div class="lid" style="padding:10px 10px 12px;border-radius:18px 18px 6px 6px"><div class="screen" style="height:250px">
+      <div class="menubar"><i></i><i></i><i></i><span data-t="image"></span></div>
+      <div class="canvasbg" style="top:34px;left:8px;right:8px;bottom:8px"><div class="toolcol"><b class="on"></b><b></b><b></b><b></b></div>
+        <svg viewBox="0 0 400 200" style="position:absolute;left:44px;top:0;width:calc(100% - 44px);height:100%"><path d="M30 150 C 90 40, 160 60, 200 120 S 320 170, 370 50" fill="none" stroke="#e0703f" stroke-width="16" stroke-linecap="round"/><path d="M60 60 C 120 110, 200 30, 260 70" fill="none" stroke="#3f7be8" stroke-width="10" stroke-linecap="round" opacity=".8"/></svg></div>
+    </div></div><div class="base" style="height:16px"></div>
+  </div>
+  <div class="arrow" style="left:620px;top:800px;width:130px"></div>
+  <div class="phone" style="left:790px;top:680px;width:660px;height:300px;padding:12px;border-radius:46px">
+    <div class="glass" style="border-radius:35px"><div class="island" style="left:18px;width:20px;height:72px;margin-top:-36px"></div><div class="scr" style="left:44px"><img data-src="pad_ps"></div></div>
+  </div>
+</section>
+
+<!-- 3. 단축키 녹화 ───────────────────────────────── -->
+<section class="scene" id="record">
+  <div class="head"><h1 data-t="record.h"></h1><p data-t="record.p"></p></div>
+  <div class="keycap down" style="left:120px;top:530px;width:180px;height:180px;font-size:88px">⌘</div>
+  <div class="keycap down" style="left:330px;top:530px;width:180px;height:180px;font-size:88px">C</div>
+  <div class="tag" style="left:124px;top:750px;font-size:22px" data-t="pressHere"></div>
+  <div class="arrow" style="left:548px;top:620px;width:110px"></div>
+  <div class="card" style="left:690px;top:460px;width:850px">
+    <img data-src="editor_crop">
+    <div class="glow" style="left:17.8%;top:58.7%;width:39.1%;height:12.9%;border-radius:12px"></div>
+  </div>
+  <div class="rec" style="left:690px;top:396px" data-t="recording"></div>
+</section>
+
+<!-- 4. 노브 ─────────────────────────────────────── -->
+<section class="scene" id="knob">
+  <div class="head"><h1 data-t="knob.h"></h1><p data-t="knob.p"></p></div>
+  <div class="card" style="left:150px;top:320px;width:500px;border-radius:40px;background:#f7f8fa">
+    <img data-src="knob">
+  </div>
+  <svg style="position:absolute;left:110px;top:280px" width="580" height="660" viewBox="0 0 580 660">
+    <path d="M290 40 A 250 250 0 0 1 530 300" fill="none" stroke="#f2b544" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+    <path d="M300 18 A 272 272 0 0 1 552 300" fill="none" stroke="#f2b544" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+    <path d="M530 300 l-16 -26 M530 300 l24 -18" stroke="#f2b544" stroke-width="6" stroke-linecap="round"/>
+  </svg>
+  <!-- 오른쪽: 타임라인이 움직이는 모습 -->
+  <div class="laptop" style="left:780px;top:320px;width:700px">
+    <div class="lid"><div class="screen" style="height:420px">
+      <div class="menubar"><i></i><i></i><i></i><span data-t="video"></span></div>
+      <div style="position:absolute;left:28px;right:28px;top:78px">
+        <div class="tag" style="position:static;margin-bottom:14px" data-t="slow"></div>
+        <div style="position:relative;height:96px;border-radius:10px;background:repeating-linear-gradient(90deg,#f4b860 0 34px,#fff 34px 38px,#7fb0f0 38px 72px,#fff 72px 76px,#8fd3b6 76px 110px,#fff 110px 114px,#f29b86 114px 148px,#fff 148px 152px);box-shadow:0 0 0 1px #e2e5ea">
+          <div class="playhead" style="left:30%;top:0;bottom:0"></div><div class="playhead" style="left:33%;top:0;bottom:0;opacity:.35"></div>
+          <div class="bubble" style="left:35%;top:28px;font-size:20px;padding:6px 12px"><kbd>→</kbd></div>
+        </div>
+        <div class="tag" style="position:static;margin:56px 0 14px;color:var(--em)" data-t="fast"></div>
+        <div style="position:relative;height:96px;border-radius:10px;background:repeating-linear-gradient(90deg,#f4b860 0 34px,#fff 34px 38px,#7fb0f0 38px 72px,#fff 72px 76px,#8fd3b6 76px 110px,#fff 110px 114px,#f29b86 114px 148px,#fff 148px 152px);box-shadow:0 0 0 1px #e2e5ea">
+          <div class="playhead" style="left:12%;top:0;bottom:0;opacity:.35"></div>
+          <div style="position:absolute;left:12%;width:57%;top:44px;height:8px;border-radius:4px;background:linear-gradient(90deg,rgba(168,111,18,0),rgba(168,111,18,.85))"></div>
+          <div class="playhead" style="left:69%;top:0;bottom:0"></div>
+          <div class="bubble" style="left:71%;top:28px;font-size:20px;padding:6px 12px"><kbd>⇧→</kbd></div>
+        </div>
+      </div>
+    </div></div><div class="base"></div>
+  </div>
+</section>
+
+<!-- 5. 안전 ─────────────────────────────────────── -->
+<section class="scene" id="safe">
+  <div class="head"><h1 data-t="safe.h"></h1><p data-t="safe.p"></p></div>
+  <div class="laptop" style="left:170px;top:330px;width:640px">
+    <div class="lid"><div class="screen" style="height:380px;background:#f2f3f6">
+      <div class="menubar"><i></i><i></i><i></i><span data-t="addDevice"></span></div>
+      <canvas id="qr" width="232" height="232" style="position:absolute;left:50%;top:56%;margin:-116px 0 0 -116px;border-radius:12px;background:#fff;box-shadow:0 0 0 12px #fff,0 6px 24px rgba(0,0,0,.12)"></canvas>
+    </div></div><div class="base"></div>
+  </div>
+  <!-- 폰: 카메라로 QR 을 비춘다 -->
+  <div class="phone" style="left:880px;top:420px;width:600px;height:280px;padding:12px;border-radius:44px;transform:rotate(3deg)">
+    <div class="glass" style="border-radius:34px;background:#15171b"><div class="island" style="left:18px;width:20px;height:70px;margin-top:-35px"></div>
+      <svg viewBox="0 0 600 280" style="position:absolute;inset:0;width:100%;height:100%">
+        <rect x="200" y="50" width="180" height="180" rx="10" fill="#fff" opacity=".9"/>
+        <g stroke="#f2b544" stroke-width="8" fill="none" stroke-linecap="round"><path d="M180 70 v-30 h30M400 70 v-30 h-30M180 210 v30 h30M400 210 v30 h-30"/></g>
+      </svg>
+      <canvas id="qr2" width="160" height="160" style="position:absolute;left:220px;top:60px;width:140px;height:140px;opacity:.9"></canvas>
+    </div>
+  </div>
+  <div class="chip" style="left:900px;top:760px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f2b544" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-t="encrypted"></span></div>
+  <div class="chip" style="left:900px;top:840px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f2b544" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l4 4-4 4M11 17h9"/></svg><span data-t="onlyScripts"></span></div>
+</section>
+
+<script>
+const COPY = {
+ ko:{ 'hero.h':'휴대폰이 PC의 <em>매크로패드</em>로', 'hero.p':'버튼 하나로 단축키 · 텍스트 · 앱 실행 · 스크립트까지',
+      'switch.h':'앱을 바꾸면, <em>버튼도</em> 바뀝니다', 'switch.p':'영상 편집에선 타임라인, 이미지 편집에선 브러시 — 알아서',
+      'record.h':'단축키는 <em>눌러서</em> 녹화', 'record.p':'키 코드를 몰라도 됩니다. PC에서 누르면 그대로 담깁니다',
+      'knob.h':'돌리면 한 칸, <em>확 돌리면</em> 멀리', 'knob.p':'손을 떼면 바로 멈춥니다',
+      'safe.h':'명령은 <em>PC에만</em>, 폰은 버튼만', 'safe.p':'QR 한 번으로 페어링 · 암호화 연결 · 등록한 스크립트만 실행',
+      video:'영상 편집', image:'이미지 편집', cut:'컷', wifi:'같은 Wi-Fi · <b>암호화 연결</b>',
+      pressHere:'PC에서 누르면', recording:'녹화 중', slow:'천천히 — 한 칸씩', fast:'확 — 열 칸씩',
+      addDevice:'기기 추가', encrypted:'<b>암호화</b> 연결 · 페어링한 기기만', onlyScripts:'PC에 <b>등록한 스크립트</b>만 실행' },
+ en:{ 'hero.h':'Your phone, a <em>macro pad</em> for your computer', 'hero.p':'Shortcuts, text, apps and scripts — one button each',
+      'switch.h':'Switch apps, and <em>the buttons follow</em>', 'switch.p':'Timeline keys for video, brushes for images — on their own',
+      'record.h':'Record a shortcut by <em>pressing it</em>', 'record.p':'No key codes. Press it on the computer and it is saved',
+      'knob.h':'Turn for a frame, <em>spin</em> to fly', 'knob.p':'Let go and it stops — right away',
+      'safe.h':'Commands stay <em>on the computer</em>. The phone just presses', 'safe.p':'Pair with one QR code · Encrypted · Only scripts you registered run',
+      video:'Video editor', image:'Image editor', cut:'Cut', wifi:'Same Wi-Fi · <b>encrypted</b>',
+      pressHere:'Press it on the computer', recording:'Recording', slow:'Slowly — one frame at a time', fast:'Fast — ten frames at a time',
+      addDevice:'Add device', encrypted:'<b>Encrypted</b> · paired devices only', onlyScripts:'Only <b>scripts you registered</b> run' },
+ ja:{ 'hero.h':'スマホが、PCの<em>マクロパッド</em>に', 'hero.p':'ショートカットも文字も、アプリもスクリプトも、ボタンひとつで',
+      'switch.h':'アプリを替えると、<em>ボタンも</em>替わる', 'switch.p':'動画編集ならタイムライン、画像編集ならブラシ — 自動で',
+      'record.h':'ショートカットは<em>押して</em>録画', 'record.p':'キーコードは要りません。PCで押せば、そのまま登録',
+      'knob.h':'回せば1コマ、<em>勢いよく</em>回せば遠くへ', 'knob.p':'指を離せば、すぐ止まる',
+      'safe.h':'コマンドは<em>PCだけ</em>に。スマホはボタンだけ', 'safe.p':'QRひとつでペアリング · 暗号化接続 · 登録したスクリプトだけ実行',
+      video:'動画編集', image:'画像編集', cut:'カット', wifi:'同じWi-Fi · <b>暗号化接続</b>',
+      pressHere:'PCで押すと', recording:'録画中', slow:'ゆっくり — 1コマずつ', fast:'勢いよく — 10コマずつ',
+      addDevice:'端末を追加', encrypted:'<b>暗号化</b>接続 · ペアリングした端末だけ', onlyScripts:'PCに<b>登録したスクリプト</b>だけ実行' },
+ es:{ 'hero.h':'Tu móvil, un <em>teclado de macros</em> para tu ordenador', 'hero.p':'Atajos, texto, apps y scripts, cada uno con un botón',
+      'switch.h':'Cambia de app y <em>los botones te siguen</em>', 'switch.p':'Línea de tiempo para vídeo, pinceles para imagen, sin tocar nada',
+      'record.h':'Graba un atajo <em>pulsándolo</em>', 'record.p':'Sin códigos de tecla. Púlsalo en el ordenador y queda guardado',
+      'knob.h':'Gira para un cuadro, <em>dale fuerte</em> para volar', 'knob.p':'Suelta y se detiene al instante',
+      'safe.h':'Las órdenes, <em>solo en el ordenador</em>. El móvil solo pulsa', 'safe.p':'Empareja con un QR · Conexión cifrada · Solo se ejecutan tus scripts',
+      video:'Editor de vídeo', image:'Editor de imagen', cut:'Cortar', wifi:'Misma Wi-Fi · <b>cifrado</b>',
+      pressHere:'Púlsalo en el ordenador', recording:'Grabando', slow:'Despacio — de un cuadro en uno', fast:'Rápido — de diez en diez',
+      addDevice:'Añadir dispositivo', encrypted:'Conexión <b>cifrada</b> · solo dispositivos emparejados', onlyScripts:'Solo se ejecutan <b>tus scripts registrados</b>' },
+};
+const q = Object.fromEntries(location.hash.slice(1).split('&').map(kv => kv.split('=')));
+const lang = q.lang || 'ko', scene = q.scene || 'hero', T = COPY[lang];
+document.documentElement.lang = lang;
+document.getElementById(scene).classList.add('on');
+document.querySelectorAll('[data-t]').forEach(el => { el.innerHTML = T[el.dataset.t]; });
+document.querySelectorAll('[data-src]').forEach(el => { el.src = `raw/${el.dataset.src}_${lang}.png`; });
+
+// 헤드라인이 두 줄을 넘거나 폭을 넘으면 글자를 줄인다
+// 먼저 한 줄에 넣어 본다(52px 까지). 그래도 안 되면 두 줄로 두고 74px 부터 다시 맞춘다.
+document.querySelectorAll('.scene.on .head h1').forEach(h => {
+  const lines = () => Math.round(h.scrollHeight / (parseFloat(h.style.fontSize || 74) * 1.14));
+  let size = 74;
+  while (lines() > 1 && size > 52) { size -= 2; h.style.fontSize = size + 'px'; }
+  if (lines() > 1) {
+    size = 74; h.style.fontSize = size + 'px';
+    while ((lines() > 2 || h.scrollWidth > h.clientWidth) && size > 44) { size -= 2; h.style.fontSize = size + 'px'; }
+  }
+});
+
+// 그림용 QR — 실제 페어링 코드가 아니라 모양만 흉내 낸 무늬다
+function drawQR(id, n, px) {
+  const c = document.getElementById(id); if (!c) return; const g = c.getContext('2d');
+  let s = 7; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.fillStyle = '#15171b';
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) if (rnd() > .52) g.fillRect(x * px, y * px, px, px);
+  [[0,0],[n-7,0],[0,n-7]].forEach(([x,y]) => { g.fillStyle='#15171b'; g.fillRect(x*px,y*px,7*px,7*px);
+    g.fillStyle='#fff'; g.fillRect((x+1)*px,(y+1)*px,5*px,5*px); g.fillStyle='#15171b'; g.fillRect((x+2)*px,(y+2)*px,3*px,3*px); });
+}
+drawQR('qr', 29, 8); drawQR('qr2', 29, 5.5);
+</script>
+</body></html>

@@ -28,6 +28,8 @@ files in the repo *are* the site.
    Korean at `/<slug>/ko/`, cross-linked by the EN/KO switcher and `hreflang` tags.
    Images and the palette are shared between the two, so they are declared once.
 3. Run `python3 src/build.py`, review, commit, push.
+   For advertising-style landing images (headline + device scene + real app screens)
+   rather than bare screenshots, see `src/promo/README.md` — VelozPad is the first one.
 4. Point the store listings at the new URL:
    - Play Console → 앱 콘텐츠 → 개인정보처리방침 → `…/<slug>/privacy/`
    - App Store Connect → 앱 정보 → 개인정보 보호 정책 URL → same

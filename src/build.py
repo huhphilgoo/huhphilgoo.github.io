@@ -874,8 +874,10 @@ def landing_page(app, lang):
   {shot(1)}
 </section>"""
 
-    # Apps without a palette have no home for shot(1); give it to the features section
-    feature_shot = '' if sw else shot(1)
+    # Apps without a palette have no home for shot(1); give it to the features section.
+    # Shots beyond the third (index 3 onward) follow in the features section, in order —
+    # an app with three shots or fewer renders exactly as before.
+    feature_shot = ('' if sw else shot(1)) + ''.join(shot(i) for i in range(3, len(shots)))
 
     sibling = (f'<p class="lede" style="margin-top:18px">{T["story"]["sibling"]}</p>'
                if T['story'].get('sibling') else '')
