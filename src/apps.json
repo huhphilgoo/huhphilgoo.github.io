@@ -2125,9 +2125,10 @@
         "appStore": "Color Express",
         "appStoreJa": "カラーエクスプレス"
       },
-      "links": {},
+      "links": {
+        "appStore": "https://apps.apple.com/app/id6790679793"
+      },
       "comingSoon": [
-        "appStore",
         "play"
       ],
       "languages": [
@@ -2371,6 +2372,10 @@
                 "70 levels, six solver-verified layouts each"
               ],
               [
+                "2026.09",
+                "Released on the App Store"
+              ],
+              [
                 "Now",
                 "Version 1.0.0 — Korean, English, Japanese, Spanish"
               ]
@@ -2384,7 +2389,7 @@
           "privacyLinkText": "privacy policy",
           "close": {
             "title": "Clear a path.",
-            "lede": "Free, and it works offline — the network is only used for ads. Coming to the App Store and Google Play."
+            "lede": "Free, and it works offline — the network is only used for ads. Out now on the App Store, and coming to Google Play."
           }
         },
         "ko": {
@@ -2469,6 +2474,10 @@
                 "70개 레벨, 검증된 배치 6개씩"
               ],
               [
+                "2026.09",
+                "App Store 출시"
+              ],
+              [
                 "지금",
                 "버전 1.0.0 — 한국어·영어·일본어·스페인어"
               ]
@@ -2482,7 +2491,7 @@
           "privacyLinkText": "개인정보 처리방침",
           "close": {
             "title": "길을 여세요.",
-            "lede": "무료이고 오프라인에서도 돌아갑니다. 네트워크는 광고에만 씁니다. App Store와 Google Play에 곧 출시됩니다."
+            "lede": "무료이고 오프라인에서도 돌아갑니다. 네트워크는 광고에만 씁니다. App Store에서 받으실 수 있고, Google Play에는 곧 출시됩니다."
           }
         },
         "ja": {
@@ -2567,6 +2576,10 @@
                 "70レベル、検証済みの配置を6つずつ"
               ],
               [
+                "2026.09",
+                "App Storeで公開"
+              ],
+              [
                 "現在",
                 "バージョン1.0.0 — 韓国語・英語・日本語・スペイン語"
               ]
@@ -2580,7 +2593,7 @@
           "privacyLinkText": "プライバシーポリシー",
           "close": {
             "title": "道をひらこう。",
-            "lede": "無料で、オフラインでも動きます。ネットワークは広告にのみ使用します。App StoreとGoogle Playで近日公開。"
+            "lede": "無料で、オフラインでも動きます。ネットワークは広告にのみ使用します。App Storeで公開中。Google Playは近日公開です。"
           }
         },
         "es": {
@@ -2665,6 +2678,10 @@
                 "70 niveles, seis tableros verificados cada uno"
               ],
               [
+                "2026.09",
+                "Publicado en la App Store"
+              ],
+              [
                 "Ahora",
                 "Versión 1.0.0 — coreano, inglés, japonés y español"
               ]
@@ -2678,7 +2695,7 @@
           "privacyLinkText": "política de privacidad",
           "close": {
             "title": "Abre un camino.",
-            "lede": "Gratis y funciona sin conexión: la red solo se usa para los anuncios. Próximamente en App Store y Google Play."
+            "lede": "Gratis y funciona sin conexión: la red solo se usa para los anuncios. Ya disponible en la App Store; próximamente en Google Play."
           }
         }
       }
