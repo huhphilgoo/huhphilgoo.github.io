@@ -1050,11 +1050,9 @@
         "appStoreJa": "ペイントプロ"
       },
       "links": {
-        "appStore": "https://apps.apple.com/app/id1567221567"
+        "appStore": "https://apps.apple.com/app/id1567221567",
+        "play": "https://play.google.com/store/apps/details?id=com.huhfeelgood.paintboardpro"
       },
-      "comingSoon": [
-        "play"
-      ],
       "summary": "A drawing board that takes a stylus seriously — five pen tips, pressure, and shapes that snap clean.",
       "summaryKo": "펜을 제대로 쓰는 그림판. 펜촉 다섯 가지, 필압, 그리고 삐뚤게 그려도 반듯해지는 도형.",
       "policyUpdated": {
