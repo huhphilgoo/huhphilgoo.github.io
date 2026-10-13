@@ -1735,7 +1735,7 @@
             "A calculator built into the amount field",
             "Live exchange rates across eleven currencies",
             "Payment method and card issuer on every record",
-            ["Budgets per category and for the month", "soon"],
+            "Budgets per category and for the month",
             "CSV and JSON export you can take anywhere"
           ],
           "features": {
@@ -1760,8 +1760,7 @@
               ],
               [
                 "Budgets you set yourself",
-                "A cap for the month or for one category. It is there to be checked, not to send you notifications.",
-                "soon"
+                "A cap for the month or for one category. It is there to be checked, not to send you notifications."
               ],
               [
                 "Your own categories",
@@ -1791,8 +1790,12 @@
                 "Released on Google Play"
               ],
               [
+                "2026.10",
+                "2.1 — budgets per category and for the month"
+              ],
+              [
                 "Now",
-                "Version 2.0.0 — Korean, English, Japanese, Spanish"
+                "Version 2.1.0 — Korean, English, Japanese, Spanish"
               ]
             ]
           },
@@ -1834,7 +1837,7 @@
             "금액 칸에 들어 있는 계산기",
             "11개 통화의 실시간 환율",
             "기록마다 남는 결제 수단과 카드사",
-            ["카테고리별, 그리고 이번 달 예산", "soon"],
+            "카테고리별, 그리고 이번 달 예산",
             "어디로든 가져갈 수 있는 CSV·JSON 내보내기"
           ],
           "features": {
@@ -1859,8 +1862,7 @@
               ],
               [
                 "직접 정하는 예산",
-                "이번 달 전체, 또는 카테고리 하나에 한도를 둡니다. 알림을 보내려고 있는 게 아니라 들여다보라고 있는 기능입니다.",
-                "soon"
+                "이번 달 전체, 또는 카테고리 하나에 한도를 둡니다. 알림을 보내려고 있는 게 아니라 들여다보라고 있는 기능입니다."
               ],
               [
                 "나만의 카테고리",
@@ -1890,8 +1892,12 @@
                 "Google Play 출시"
               ],
               [
+                "2026.10",
+                "2.1 — 카테고리별·월 예산"
+              ],
+              [
                 "현재",
-                "버전 2.0.0 — 한국어·영어·일본어·스페인어"
+                "버전 2.1.0 — 한국어·영어·일본어·스페인어"
               ]
             ]
           },
@@ -1933,7 +1939,7 @@
             "金額欄に入っている電卓",
             "11通貨の最新レート",
             "記録ごとに残る支払い方法とカード会社",
-            ["カテゴリー別と今月の予算", "soon"],
+            "カテゴリー別と今月の予算",
             "どこへでも持ち出せるCSV・JSON書き出し"
           ],
           "features": {
@@ -1958,8 +1964,7 @@
               ],
               [
                 "自分で決める予算",
-                "今月全体、またはカテゴリー1つに上限を置きます。通知を送るためではなく、見に行くための機能です。",
-                "soon"
+                "今月全体、またはカテゴリー1つに上限を置きます。通知を送るためではなく、見に行くための機能です。"
               ],
               [
                 "自分のカテゴリー",
@@ -1989,8 +1994,12 @@
                 "Google Playで公開"
               ],
               [
+                "2026.10",
+                "2.1 — カテゴリー別と月の予算"
+              ],
+              [
                 "現在",
-                "バージョン2.0.0 — 韓国語・英語・日本語・スペイン語"
+                "バージョン2.1.0 — 韓国語・英語・日本語・スペイン語"
               ]
             ]
           },
@@ -2032,7 +2041,7 @@
             "Una calculadora dentro del campo de importe",
             "Tipos de cambio actuales en once monedas",
             "Método de pago y entidad emisora en cada registro",
-            ["Presupuestos por categoría y para el mes", "soon"],
+            "Presupuestos por categoría y para el mes",
             "Exportación a CSV y JSON que puedes llevarte"
           ],
           "features": {
@@ -2057,8 +2066,7 @@
               ],
               [
                 "Presupuestos que pones tú",
-                "Un límite para el mes o para una categoría. Está para que lo consultes, no para mandarte notificaciones.",
-                "soon"
+                "Un límite para el mes o para una categoría. Está para que lo consultes, no para mandarte notificaciones."
               ],
               [
                 "Tus propias categorías",
@@ -2088,8 +2096,12 @@
                 "Publicada en Google Play"
               ],
               [
+                "2026.10",
+                "2.1 — presupuestos por categoría y por mes"
+              ],
+              [
                 "Ahora",
-                "Versión 2.0.0 — coreano, inglés, japonés y español"
+                "Versión 2.1.0 — coreano, inglés, japonés y español"
               ]
             ]
           },
