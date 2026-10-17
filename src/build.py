@@ -264,6 +264,32 @@ a.badge:hover{border-color:var(--accent)}
 .year{font-family:var(--util);font-size:.78rem;color:var(--accent);letter-spacing:.06em;flex:none;width:44px}
 .rule span:last-child{font-size:.95rem;color:var(--muted)}
 
+/* landing — "layout": "showcase" (K-Pockit): one row per feature, picture and
+   benefit side by side, alternating sides; then a "who it's for" card grid */
+.feat{display:grid;grid-template-columns:1.08fr 1fr;gap:56px;align-items:center;
+  padding:64px 0;border-top:1px solid var(--line-soft)}
+.feat.flip{grid-template-columns:1fr 1.08fr}
+.feat.flip .pic{order:2}
+/* grid items default to min-width:auto — a 1200px picture would widen the column
+   past the viewport on a phone; let both columns shrink */
+.feat>*{min-width:0}
+.feat .pic img{width:100%;display:block;border-radius:22px;box-shadow:var(--shadow)}
+.feat .tag{display:inline-block;font-family:var(--util);font-size:.68rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:999px;
+  padding:3px 10px;margin-bottom:16px}
+.feat h2{word-break:keep-all;overflow-wrap:break-word}
+.feat .lede{margin-top:14px;word-break:keep-all;overflow-wrap:break-word}
+.feat .points{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:10px}
+.feat .points li{display:flex;gap:10px;align-items:baseline;font-size:.97rem;
+  word-break:keep-all;overflow-wrap:break-word}
+.hero .heroshot{margin-top:46px}
+.hero .heroshot img{width:100%;display:block;border-radius:24px;box-shadow:var(--shadow)}
+.who{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:34px}
+.who .card{padding:22px}
+.who .emoji{font-size:1.8rem;line-height:1;display:block;margin-bottom:14px}
+.who h3{margin-bottom:8px;word-break:keep-all;overflow-wrap:break-word}
+.who p{font-size:.92rem;color:var(--muted);word-break:keep-all;overflow-wrap:break-word}
+
 /* policy */
 .policy h2{margin:44px 0 14px}
 .policy h2:first-of-type{margin-top:32px}
@@ -301,6 +327,8 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
 
 @media (max-width:860px){
   .two,.story{grid-template-columns:1fr}
+  .feat,.feat.flip{grid-template-columns:1fr;gap:28px;padding:48px 0}
+  .feat.flip .pic{order:0}
   .grid{grid-template-columns:repeat(2,1fr)}
   .swatches{grid-template-columns:repeat(9,1fr)}
   section{padding:56px 0}
@@ -823,6 +851,8 @@ def landing_page(app, lang):
     hard-coded, which is the thing that breaks when a locale is added carelessly.
     """
     L = app['landing']
+    if L.get('layout') == 'showcase':
+        return showcase_page(app, lang)
     T = L[lang]
     depth = 1 if lang == 'en' else 2
     up = '../' * (depth - 1)          # from this page back to the app's own directory
@@ -954,6 +984,93 @@ def landing_page(app, lang):
   <p class="lede" style="margin-top:12px">{close['lede']}</p>
   {store_buttons(app, lang)}
   {shot(2)}
+</section>
+
+{footer(depth, app, lang)}
+</div>"""
+
+    summary = {'ko': app.get('summaryKo'), 'ja': app.get('summaryJa'),
+               'es': app.get('summaryEs')}.get(lang) or app['summary']
+    return page(app['name'], body, depth, app.get('icon', '🎨'), summary,
+                lang=lang, head_extra=alternates)
+
+
+def showcase_page(app, lang):
+    """Landing page for apps with `"layout": "showcase"` (K-Pockit, 2026-10).
+
+    No origin story, no "left out / kept" lists, no timeline: a hero with one wide
+    picture, then one row per feature (picture + benefit + points, sides alternating),
+    a "who it's for" grid, a short privacy note and the store buttons again.
+    Pictures are per-locale: `src` may hold `{lang}`.
+    """
+    L = app['landing']
+    T = L[lang]
+    depth = 1 if lang == 'en' else 2
+    up = '../' * (depth - 1)
+    base = SITE['baseUrl']
+    slug = app['slug']
+
+    def img(src, alt):
+        return f'<img src="{E(up + src.replace("{lang}", lang))}" alt="{E(alt)}" loading="lazy">'
+
+    head, mark, *rest = T['headline']
+    tail = rest[0] if rest else ''
+    underline = ('<svg viewBox="0 0 340 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16 '
+                 'C58 6, 96 20, 150 12 C204 4, 246 18, 336 9"/></svg>')
+
+    rows = []
+    for i, f in enumerate(T['showcase']):
+        pts = ''.join(f'<li><span class="tick">+</span><span>{E(x)}</span></li>' for x in f.get('points', []))
+        tag = f'<span class="tag">{E(f["tag"])}</span>' if f.get('tag') else ''
+        rows.append(f"""<div class="feat{' flip' if i % 2 else ''}">
+  <div class="pic">{img(f['img'], f['alt'])}</div>
+  <div>{tag}<h2>{E(f['title'])}</h2><p class="lede">{E(f['text'])}</p><ul class="points">{pts}</ul></div>
+</div>""")
+
+    who = T['who']
+    cards = ''.join(f'<div class="card"><span class="emoji" aria-hidden="true">{e}</span>'
+                    f'<h3>{E(t)}</h3><p>{E(d)}</p></div>' for e, t, d in who['items'])
+
+    privacy_href = f'{up}privacy/'
+    priv = T['privacySection']
+    privacy_lede = priv['lede'].replace(
+        '{privacy}', f'<a href="{privacy_href}">{E(T["privacyLinkText"])}</a>')
+    hrefs = rel_hrefs(app, lang)
+    alternates = ''.join(
+        f'\n<link rel="alternate" hreflang="{c}" href="{base}/{slug}/{lang_dir(c)}">'
+        for c in langs_of(app))
+    close = T['close']
+
+    body = f"""<div class="wrap">
+{masthead(depth, T['meta'], langnav(lang, hrefs))}
+
+<section class="hero">
+  <h1>{E(head)}
+    <span class="markword">{E(mark)}{underline}</span>{E(tail)}.
+  </h1>
+  <p class="lede">{T['lede']}</p>
+  {store_buttons(app, lang)}
+  <div class="heroshot">{img(L['heroImg'], T['heroAlt'])}</div>
+</section>
+
+{''.join(rows)}
+
+<section>
+  <p class="eyebrow">{E(who['eyebrow'])}</p>
+  <h2>{E(who['title'])}</h2>
+  <div class="who">{cards}</div>
+</section>
+
+<section>
+  <p class="eyebrow">{E(priv['eyebrow'])}</p>
+  <h2>{E(priv['title'])}</h2>
+  <p class="lede" style="margin-top:14px">{privacy_lede}</p>
+</section>
+
+<section>
+  <h2>{E(close['title'])}</h2>
+  <p class="lede" style="margin-top:12px">{close['lede']}</p>
+  {store_buttons(app, lang)}
 </section>
 
 {footer(depth, app, lang)}

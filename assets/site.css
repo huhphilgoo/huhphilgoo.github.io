@@ -155,6 +155,32 @@ a.badge:hover{border-color:var(--accent)}
 .year{font-family:var(--util);font-size:.78rem;color:var(--accent);letter-spacing:.06em;flex:none;width:44px}
 .rule span:last-child{font-size:.95rem;color:var(--muted)}
 
+/* landing — "layout": "showcase" (K-Pockit): one row per feature, picture and
+   benefit side by side, alternating sides; then a "who it's for" card grid */
+.feat{display:grid;grid-template-columns:1.08fr 1fr;gap:56px;align-items:center;
+  padding:64px 0;border-top:1px solid var(--line-soft)}
+.feat.flip{grid-template-columns:1fr 1.08fr}
+.feat.flip .pic{order:2}
+/* grid items default to min-width:auto — a 1200px picture would widen the column
+   past the viewport on a phone; let both columns shrink */
+.feat>*{min-width:0}
+.feat .pic img{width:100%;display:block;border-radius:22px;box-shadow:var(--shadow)}
+.feat .tag{display:inline-block;font-family:var(--util);font-size:.68rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:999px;
+  padding:3px 10px;margin-bottom:16px}
+.feat h2{word-break:keep-all;overflow-wrap:break-word}
+.feat .lede{margin-top:14px;word-break:keep-all;overflow-wrap:break-word}
+.feat .points{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-direction:column;gap:10px}
+.feat .points li{display:flex;gap:10px;align-items:baseline;font-size:.97rem;
+  word-break:keep-all;overflow-wrap:break-word}
+.hero .heroshot{margin-top:46px}
+.hero .heroshot img{width:100%;display:block;border-radius:24px;box-shadow:var(--shadow)}
+.who{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:34px}
+.who .card{padding:22px}
+.who .emoji{font-size:1.8rem;line-height:1;display:block;margin-bottom:14px}
+.who h3{margin-bottom:8px;word-break:keep-all;overflow-wrap:break-word}
+.who p{font-size:.92rem;color:var(--muted);word-break:keep-all;overflow-wrap:break-word}
+
 /* policy */
 .policy h2{margin:44px 0 14px}
 .policy h2:first-of-type{margin-top:32px}
@@ -192,6 +218,8 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
 
 @media (max-width:860px){
   .two,.story{grid-template-columns:1fr}
+  .feat,.feat.flip{grid-template-columns:1fr;gap:28px;padding:48px 0}
+  .feat.flip .pic{order:0}
   .grid{grid-template-columns:repeat(2,1fr)}
   .swatches{grid-template-columns:repeat(9,1fr)}
   section{padding:56px 0}
