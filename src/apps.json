@@ -1794,8 +1794,12 @@
                 "2.1 — budgets per category and for the month"
               ],
               [
+                "2026.10",
+                "2.2 — receipt scanning, custom payment methods, two-pane view when unfolded"
+              ],
+              [
                 "Now",
-                "Version 2.1.0 — Korean, English, Japanese, Spanish"
+                "Version 2.2.0 — Korean, English, Japanese, Spanish"
               ]
             ]
           },
@@ -1896,8 +1900,12 @@
                 "2.1 — 카테고리별·월 예산"
               ],
               [
+                "2026.10",
+                "2.2 — 영수증 스캔, 결제수단 직접 입력, 펼친 화면 두 칸"
+              ],
+              [
                 "현재",
-                "버전 2.1.0 — 한국어·영어·일본어·스페인어"
+                "버전 2.2.0 — 한국어·영어·일본어·스페인어"
               ]
             ]
           },
@@ -1998,8 +2006,12 @@
                 "2.1 — カテゴリー別と月の予算"
               ],
               [
+                "2026.10",
+                "2.2 — レシート読み取り、支払い方法の手入力、開いた画面の2分割表示"
+              ],
+              [
                 "現在",
-                "バージョン2.1.0 — 韓国語・英語・日本語・スペイン語"
+                "バージョン2.2.0 — 韓国語・英語・日本語・スペイン語"
               ]
             ]
           },
@@ -2100,8 +2112,12 @@
                 "2.1 — presupuestos por categoría y por mes"
               ],
               [
+                "2026.10",
+                "2.2 — escaneo de recibos, métodos de pago propios y vista doble al desplegar"
+              ],
+              [
                 "Ahora",
-                "Versión 2.1.0 — coreano, inglés, japonés y español"
+                "Versión 2.2.0 — coreano, inglés, japonés y español"
               ]
             ]
           },
