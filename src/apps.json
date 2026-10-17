@@ -1521,20 +1521,21 @@
       "summaryJa": "続けられる家計簿。1件4タップ、ドーナツ統計、そして端末の外に出ない記録。",
       "summaryEs": "Un control de gastos que sí mantienes: cuatro toques por registro, estadísticas de anillo y nada sale de tu teléfono.",
       "policyUpdated": {
-        "ko": "2026년 9월 9일",
-        "en": "September 9, 2026",
-        "ja": "2026年9月9日",
-        "es": "9 de septiembre de 2026"
+        "ko": "2026년 10월 17일",
+        "en": "October 17, 2026",
+        "ja": "2026年10月17日",
+        "es": "17 de octubre de 2026"
       },
       "privacy": {
         "storage": {
-          "ko": "이용자가 기록한 거래 내역, 카테고리, 예산, 결제 수단 정보는 기기 안의 데이터베이스에만 저장되며 개발자의 서버로 전송되지 않습니다. 본 앱은 회원가입이나 계정이 없고, 앱을 삭제하면 데이터도 함께 삭제됩니다. 이용자가 환율 환산을 요청할 때에 한해 공개 환율 서비스(api.frankfurter.app)에 통화 코드가 전달되며, 거래 내역이나 개인정보는 포함되지 않습니다. CSV·JSON 내보내기는 이용자가 직접 실행할 때만 동작하고, 파일은 이용자가 지정한 위치에 저장됩니다.",
-          "en": "Transactions, categories, budgets and payment-method information are stored only in a database on your device and are never transmitted to the developer's server. The app has no sign-up and no account, and the data is deleted with the app. When — and only when — you ask for a currency conversion, a currency code is sent to a public exchange-rate service (api.frankfurter.app); no transaction data or personal information is included. CSV and JSON export runs only when you start it, and the file is written where you choose.",
-          "ja": "ユーザーが記録した取引、カテゴリー、予算、支払い方法の情報は端末内のデータベースにのみ保存され、開発者のサーバーに送信されることはありません。本アプリには会員登録もアカウントもなく、アプリを削除するとデータも一緒に削除されます。ユーザーが為替換算を求めたときに限り、公開の為替サービス（api.frankfurter.app）へ通貨コードが送られますが、取引内容や個人情報は含まれません。CSV・JSONの書き出しはユーザーが実行したときのみ動作し、ファイルはユーザーが指定した場所に保存されます。",
-          "es": "Los movimientos, las categorías, los presupuestos y la información sobre métodos de pago se guardan únicamente en una base de datos del dispositivo y nunca se transmiten al servidor del desarrollador. La aplicación no tiene registro ni cuenta, y los datos se eliminan junto con la aplicación. Solo cuando usted solicita una conversión de moneda se envía un código de moneda a un servicio público de tipos de cambio (api.frankfurter.app); no se incluye ningún movimiento ni información personal. La exportación a CSV y JSON solo se ejecuta cuando usted la inicia, y el archivo se guarda donde usted indique."
+          "ko": "이용자가 기록한 거래 내역, 카테고리, 예산, 결제 수단 정보는 기기 안의 데이터베이스에만 저장되며 개발자의 서버로 전송되지 않습니다. 본 앱은 회원가입이나 계정이 없고, 앱을 삭제하면 데이터도 함께 삭제됩니다. 이용자가 환율 환산을 요청할 때에 한해 공개 환율 서비스(api.frankfurter.app)에 통화 코드가 전달되며, 거래 내역이나 개인정보는 포함되지 않습니다. CSV·JSON 내보내기는 이용자가 직접 실행할 때만 동작하고, 파일은 이용자가 지정한 위치에 저장됩니다. 영수증 스캔 기능을 쓰면 이용자가 찍거나 고른 사진에서 기기 안에서만 글자를 읽어 금액·날짜·가게 이름을 채웁니다. 인식에 쓴 사진 사본은 인식이 끝나면 바로 삭제되며, 사진과 인식된 글자는 개발자나 다른 곳으로 전송되거나 저장되지 않습니다.",
+          "en": "Transactions, categories, budgets and payment-method information are stored only in a database on your device and are never transmitted to the developer's server. The app has no sign-up and no account, and the data is deleted with the app. When — and only when — you ask for a currency conversion, a currency code is sent to a public exchange-rate service (api.frankfurter.app); no transaction data or personal information is included. CSV and JSON export runs only when you start it, and the file is written where you choose. When you use receipt scanning, the text in the photo you take or pick is read on the device only, to fill in the amount, date and store name. The copy of the photo used for recognition is deleted as soon as recognition finishes, and neither the photo nor the recognized text is sent to the developer or anywhere else, or stored.",
+          "ja": "ユーザーが記録した取引、カテゴリー、予算、支払い方法の情報は端末内のデータベースにのみ保存され、開発者のサーバーに送信されることはありません。本アプリには会員登録もアカウントもなく、アプリを削除するとデータも一緒に削除されます。ユーザーが為替換算を求めたときに限り、公開の為替サービス（api.frankfurter.app）へ通貨コードが送られますが、取引内容や個人情報は含まれません。CSV・JSONの書き出しはユーザーが実行したときのみ動作し、ファイルはユーザーが指定した場所に保存されます。 レシート読み取り機能を使うと、ユーザーが撮影または選択した写真の文字を端末内だけで読み取り、金額・日付・店名を入力します。読み取りに使った写真のコピーは読み取りが終わるとすぐに削除され、写真と読み取った文字が開発者やほかの場所へ送信・保存されることはありません。",
+          "es": "Los movimientos, las categorías, los presupuestos y la información sobre métodos de pago se guardan únicamente en una base de datos del dispositivo y nunca se transmiten al servidor del desarrollador. La aplicación no tiene registro ni cuenta, y los datos se eliminan junto con la aplicación. Solo cuando usted solicita una conversión de moneda se envía un código de moneda a un servicio público de tipos de cambio (api.frankfurter.app); no se incluye ningún movimiento ni información personal. La exportación a CSV y JSON solo se ejecuta cuando usted la inicia, y el archivo se guarda donde usted indique. Cuando usa el escaneo de recibos, el texto de la foto que toma o elige se lee solo en el dispositivo para rellenar el importe, la fecha y el comercio. La copia de la foto usada para el reconocimiento se elimina en cuanto termina, y ni la foto ni el texto reconocido se envían al desarrollador ni a ningún otro lugar, ni se guardan."
         },
         "services": [
-          "admob"
+          "admob",
+          "mlkit"
         ],
         "consent": {
           "ump": true,
@@ -1628,6 +1629,50 @@
               "Permiso de seguimiento (ATT)",
               "En iOS, para permitirle aceptar o rechazar los anuncios personalizados",
               "Si lo rechaza, todas las funciones siguen disponibles"
+            ]
+          },
+          {
+            "ko": [
+              "카메라",
+              "영수증을 찍어 금액·날짜·가게 이름을 채우기 위해 (iOS)",
+              "찍은 사진은 기기 안에서만 읽고 저장하지 않음. Android에서는 기기의 기본 카메라 앱으로 찍으므로 앱에 카메라 권한이 없음"
+            ],
+            "en": [
+              "Camera",
+              "To photograph a receipt and fill in the amount, date and store name (iOS)",
+              "The photo is read on the device and not kept. On Android the device's own camera app takes the photo, so the app holds no camera permission"
+            ],
+            "ja": [
+              "カメラ",
+              "レシートを撮影して金額・日付・店名を入力するため（iOS）",
+              "撮影した写真は端末内で読み取るだけで保存しません。Androidでは端末標準のカメラアプリで撮影するため、アプリにカメラの権限はありません"
+            ],
+            "es": [
+              "Cámara",
+              "Para fotografiar un recibo y rellenar el importe, la fecha y el comercio (iOS)",
+              "La foto se lee en el dispositivo y no se guarda. En Android la toma la app de cámara del propio dispositivo, por lo que la aplicación no tiene permiso de cámara"
+            ]
+          },
+          {
+            "ko": [
+              "사진",
+              "앨범에서 영수증 사진을 고르기 위해",
+              "이용자가 고른 사진 한 장만 읽으며, 다른 사진은 읽지 않음"
+            ],
+            "en": [
+              "Photos",
+              "To pick a receipt photo from your library",
+              "Only the one photo you pick is read; no other photo is accessed"
+            ],
+            "ja": [
+              "写真",
+              "アルバムからレシートの写真を選ぶため",
+              "ユーザーが選んだ写真1枚だけを読み取り、ほかの写真は読み取りません"
+            ],
+            "es": [
+              "Fotos",
+              "Para elegir la foto de un recibo de su galería",
+              "Solo se lee la foto que usted elige; no se accede a ninguna otra"
             ]
           }
         ],
