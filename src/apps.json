@@ -1150,20 +1150,24 @@
       "landing": {
         "layout": "studio",
         "heroImg": "assets/ad-hero_{lang}.jpg",
-        "_shotsNote": "shots[0] is only the hub cover now; the studio layout does not read shots.",
+        "_shotsNote": "shots[0] is only the hub cover now (the same per-language hero image); the studio layout does not read shots.",
         "shots": [
           {
-            "src": "assets/draw.jpg",
+            "src": {
+              "en": "assets/ad-hero_en.jpg",
+              "ko": "assets/ad-hero_ko.jpg",
+              "ja": "assets/ad-hero_ja.jpg"
+            },
             "en": [
-              "A hand-drawn landscape — house, tree, hills and a sun — on PaintBoardPro's white canvas, with the floating toolbar along the top",
+              "PaintBoardPro on a tablet and a foldable phone, both showing a village drawn in the app — hills, a house, a sun with brush-stroke rays, trees and flowers — with feature labels around them",
               "One canvas, one toolbar. Everything else gets out of the way."
             ],
             "ko": [
-              "흰 캔버스에 손으로 그린 집과 나무, 언덕과 태양. 위쪽에 떠 있는 도구 막대",
+              "태블릿과 폴더블 폰에 띄운 그림판 프로. 앱으로 그린 언덕과 집, 붓 터치 햇살, 나무와 꽃이 있는 마을 그림 둘레에 기능 설명",
               "캔버스 하나, 도구 막대 하나. 나머지는 물러나 있습니다."
             ],
             "ja": [
-              "PaintBoardProの白いキャンバスに手描きされた家、木、丘、太陽。上部にツールバーが浮かんでいる",
+              "タブレットと折りたたみスマホに表示したPaintBoardPro。アプリで描いた丘と家、筆の光の太陽、木と花のある村の絵の周りに機能の説明",
               "キャンバスが1枚、ツールバーが1本。あとは邪魔をしません。"
             ]
           }
@@ -1181,7 +1185,7 @@
           },
           "privacyLinkText": "개인정보처리방침",
           "lede": "다섯 가지 펜촉, 애플펜슬과 S펜의 필압, 화면에 편하게 얹는 손. 삐뚤게 그린 도형은 반듯하게 정리되고, 닫힌 곳은 탭 한 번으로 칠해집니다.",
-          "heroAlt": "흰 캔버스에 손으로 그린 집과 나무, 언덕과 태양. 위쪽에 떠 있는 도구 막대",
+          "heroAlt": "태블릿과 폴더블 폰에 띄운 그림판 프로. 앱으로 그린 언덕과 집, 붓 터치 햇살, 나무와 꽃이 있는 마을 그림 둘레에 기능 설명",
           "chips": [],
           "numbers": [
             [
@@ -1400,7 +1404,7 @@
           },
           "privacyLinkText": "privacy policy",
           "lede": "Five pen tips, pressure from your Apple Pencil or S Pen, and a palm you can rest on the screen. Rough shapes come out clean, and one tap fills any closed area.",
-          "heroAlt": "A hand-drawn landscape — house, tree, hills and a sun — on PaintBoardPro's white canvas, with the floating toolbar along the top",
+          "heroAlt": "PaintBoardPro on a tablet and a foldable phone, both showing a village drawn in the app — hills, a house, a sun with brush-stroke rays, trees and flowers — with feature labels around them",
           "chips": [],
           "numbers": [
             [
@@ -1619,7 +1623,7 @@
           },
           "privacyLinkText": "プライバシーポリシー",
           "lede": "5種類のペン先、Apple PencilとSペンの筆圧、そして画面に置いたままでいい手。ざっくり描いた図形はまっすぐ整い、囲んだ場所はワンタップで塗れます。",
-          "heroAlt": "PaintBoardProの白いキャンバスに手描きされた家、木、丘、太陽。上部にツールバーが浮かんでいる",
+          "heroAlt": "タブレットと折りたたみスマホに表示したPaintBoardPro。アプリで描いた丘と家、筆の光の太陽、木と花のある村の絵の周りに機能の説明",
           "chips": [],
           "numbers": [
             [
@@ -3622,10 +3626,7 @@
     },
     {
       "slug": "velozpad",
-      "category": {
-        "en": "Productivity",
-        "ko": "생산성"
-      },
+      "category": {"en": "Productivity", "ko": "생산성"},
       "icon": "⌨️",
       "name": "VelozPad",
       "nameKo": "VelozPad",
