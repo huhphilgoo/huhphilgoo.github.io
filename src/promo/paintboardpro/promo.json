@@ -1,0 +1,6 @@
+{
+  "prefix": "ad-",
+  "scenes": ["hero", "pens", "shapes", "fill", "text", "fold"],
+  "langs": ["ko", "en", "ja"],
+  "crops": []
+}

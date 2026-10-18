@@ -306,6 +306,99 @@ a.badge:hover{border-color:var(--accent)}
 .who h3{margin-bottom:8px;word-break:keep-all;overflow-wrap:break-word}
 .who p{font-size:.92rem;color:var(--muted);word-break:keep-all;overflow-wrap:break-word}
 
+/* landing — "layout": "studio" (PaintBoardPro, 2026-10): deliberately NOT the
+   showcase zigzag. Centred hero over one big framed screen with floating chips,
+   a band of numbers, a tabbed feature tour (CSS-only radios: tabs left, one
+   stage right) and a bento grid of smaller wins with tiles of mixed sizes. */
+.studio{--tone:#0A84FF;--tone-soft:rgba(10,132,255,.10)}
+.studio .hero{text-align:center}
+.studio .hero .lede{margin:18px auto 0}
+.studio .hero .cta{justify-content:center}
+.stagewrap{position:relative;margin:56px auto 0;max-width:940px}
+.stagewrap .frame{background:var(--sheet);border:1px solid var(--line);border-radius:28px;
+  overflow:hidden;box-shadow:var(--shadow)}
+.stagewrap .frame img{width:100%;display:block}
+.chips{list-style:none;margin:0;padding:0}
+.chips li{position:absolute;display:flex;align-items:center;gap:8px;background:var(--sheet);
+  border:1px solid var(--line);border-radius:999px;padding:9px 16px 9px 12px;box-shadow:var(--shadow);
+  font-family:var(--display);font-weight:700;font-size:.95rem;white-space:nowrap}
+.chips li span{font-size:1.15rem;line-height:1}
+.chips li:nth-child(1){left:-46px;top:16%;transform:rotate(-3deg)}
+.chips li:nth-child(2){right:-40px;top:9%;transform:rotate(2.5deg)}
+.chips li:nth-child(3){left:-30px;bottom:14%;transform:rotate(2deg)}
+.chips li:nth-child(4){right:-52px;bottom:22%;transform:rotate(-2deg)}
+.numbers{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:8px;
+  background:var(--sheet);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.numbers div{padding:26px 16px;text-align:center;border-left:1px solid var(--line-soft)}
+.numbers div:first-child{border-left:0}
+.numbers b{display:block;font-family:var(--display);font-size:clamp(2rem,4.4vw,3rem);
+  line-height:1;color:var(--tone);letter-spacing:-.03em}
+.numbers span{display:block;margin-top:8px;font-size:.9rem;color:var(--muted);word-break:keep-all}
+.tour{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:34px;
+  margin-top:36px;align-items:start}
+.tour>input{position:absolute;opacity:0;pointer-events:none}
+.tour .tabs{display:flex;flex-direction:column;gap:10px;grid-column:1;grid-row:1}
+.tour .tabs label{display:flex;gap:14px;align-items:center;cursor:pointer;padding:16px 18px;
+  border:1px solid var(--line);border-radius:16px;background:var(--sheet);
+  transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease}
+.tour .tabs label:hover{transform:translateX(3px)}
+.tour .tabs .n{font-family:var(--util);font-size:.72rem;color:var(--muted);flex:none;width:22px}
+.tour .tabs b{display:block;font-family:var(--display);font-size:1.06rem;word-break:keep-all;overflow-wrap:break-word}
+.tour .tabs small{display:block;color:var(--muted);font-size:.86rem;word-break:keep-all;margin-top:2px}
+.tour .stage{grid-column:2;grid-row:1;background:var(--sheet);border:1px solid var(--line);
+  border-radius:24px;padding:14px;box-shadow:var(--shadow)}
+.tour .panel{display:none}
+.tour .panel img{width:100%;display:block;border-radius:14px;background:var(--ground);aspect-ratio:16/10;object-fit:cover}
+.tour .panel .say{padding:20px 10px 8px}
+.tour .panel h3{font-size:1.3rem;word-break:keep-all;overflow-wrap:break-word}
+.tour .panel p{color:var(--muted);margin-top:8px;word-break:keep-all;overflow-wrap:break-word}
+.tour .panel ul{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.tour .panel li{font-size:.86rem;background:var(--tone-soft);color:var(--ink);border-radius:999px;
+  padding:5px 12px;word-break:keep-all}
+.tour>input:focus-visible+label{outline:none}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:36px}
+.gallery figure{margin:0;background:var(--sheet);border:1px solid var(--line);border-radius:20px;
+  overflow:hidden;display:flex;flex-direction:column}
+.gallery figure:first-child{grid-column:span 2;grid-row:span 2}
+.gallery img{width:100%;display:block;aspect-ratio:2556/1868;object-fit:cover;flex:1}
+.gallery figcaption{padding:14px 16px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.gallery figcaption b{font-family:var(--display);font-size:1rem;margin-right:6px;word-break:keep-all}
+.gallery figcaption span{font-size:.78rem;background:var(--tone-soft);border-radius:999px;padding:3px 10px;
+  word-break:keep-all}
+.studio .lede.center{margin:14px 0 0}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.bento .tile2{grid-column:span 2}
+.bento>div{background:var(--sheet);border:1px solid var(--line);border-radius:20px;padding:24px;
+  min-width:0}
+.bento>div:nth-child(3n+1){background:linear-gradient(160deg,var(--tone-soft),transparent 70%),var(--sheet)}
+.bento .emoji{font-size:1.9rem;line-height:1;display:block;margin-bottom:16px}
+.bento h3{font-size:1.12rem;margin-bottom:8px;word-break:keep-all;overflow-wrap:break-word}
+.bento p{font-size:.93rem;color:var(--muted);word-break:keep-all;overflow-wrap:break-word}
+.tour #tour0:checked~.stage .p0{display:block}
+.tour #tour0:checked~.tabs label[for="tour0"]{border-color:var(--tone);box-shadow:0 0 0 3px var(--tone-soft)}
+.tour #tour0:focus-visible~.tabs label[for="tour0"]{outline:2px solid var(--tone);outline-offset:2px}
+.tour #tour1:checked~.stage .p1{display:block}
+.tour #tour1:checked~.tabs label[for="tour1"]{border-color:var(--tone);box-shadow:0 0 0 3px var(--tone-soft)}
+.tour #tour1:focus-visible~.tabs label[for="tour1"]{outline:2px solid var(--tone);outline-offset:2px}
+.tour #tour2:checked~.stage .p2{display:block}
+.tour #tour2:checked~.tabs label[for="tour2"]{border-color:var(--tone);box-shadow:0 0 0 3px var(--tone-soft)}
+.tour #tour2:focus-visible~.tabs label[for="tour2"]{outline:2px solid var(--tone);outline-offset:2px}
+.tour #tour3:checked~.stage .p3{display:block}
+.tour #tour3:checked~.tabs label[for="tour3"]{border-color:var(--tone);box-shadow:0 0 0 3px var(--tone-soft)}
+.tour #tour3:focus-visible~.tabs label[for="tour3"]{outline:2px solid var(--tone);outline-offset:2px}
+.tour #tour4:checked~.stage .p4{display:block}
+.tour #tour4:checked~.tabs label[for="tour4"]{border-color:var(--tone);box-shadow:0 0 0 3px var(--tone-soft)}
+.tour #tour4:focus-visible~.tabs label[for="tour4"]{outline:2px solid var(--tone);outline-offset:2px}
+.tour #tour5:checked~.stage .p5{display:block}
+.tour #tour5:checked~.tabs label[for="tour5"]{border-color:var(--tone);box-shadow:0 0 0 3px var(--tone-soft)}
+.tour #tour5:focus-visible~.tabs label[for="tour5"]{outline:2px solid var(--tone);outline-offset:2px}
+.tour #tour6:checked~.stage .p6{display:block}
+.tour #tour6:checked~.tabs label[for="tour6"]{border-color:var(--tone);box-shadow:0 0 0 3px var(--tone-soft)}
+.tour #tour6:focus-visible~.tabs label[for="tour6"]{outline:2px solid var(--tone);outline-offset:2px}
+.tour #tour7:checked~.stage .p7{display:block}
+.tour #tour7:checked~.tabs label[for="tour7"]{border-color:var(--tone);box-shadow:0 0 0 3px var(--tone-soft)}
+.tour #tour7:focus-visible~.tabs label[for="tour7"]{outline:2px solid var(--tone);outline-offset:2px}
+
 /* policy */
 .policy h2{margin:44px 0 14px}
 .policy h2:first-of-type{margin-top:32px}
@@ -345,11 +438,32 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
   .two,.story{grid-template-columns:1fr}
   .feat,.feat.flip{grid-template-columns:1fr;gap:28px;padding:48px 0}
   .feat.flip .pic{order:0}
+  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}
+  .chips li{position:static;transform:none!important;box-shadow:none}
+  .numbers{grid-template-columns:repeat(3,1fr)}
+  .numbers div:nth-child(4){border-left:0}
+  .numbers div:nth-child(n+4){border-top:1px solid var(--line-soft)}
+  .tour{grid-template-columns:minmax(0,1fr);gap:18px}
+  .tour>*{min-width:0}
+  .tour .tabs{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:4px}
+  .tour .tabs label{flex:none;padding:10px 14px}
+  .tour .tabs small,.tour .tabs .n{display:none}
+  .tour .tabs label:hover{transform:none}
+  .tour .stage{grid-column:1;grid-row:2}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
   .grid{grid-template-columns:repeat(2,1fr)}
   .swatches{grid-template-columns:repeat(9,1fr)}
   section{padding:56px 0}
 }
 @media (max-width:520px){
+  .bento{grid-template-columns:1fr}
+  .gallery{grid-template-columns:minmax(0,1fr)}
+  .gallery figure:first-child{grid-column:auto;grid-row:auto}
+  .bento .tile2{grid-column:auto}
+  .numbers{grid-template-columns:repeat(2,1fr)}
+  .numbers div{border-left:0!important;border-top:1px solid var(--line-soft)}
+  .numbers div:first-child{grid-column:span 2;border-top:0}
   .grid{grid-template-columns:1fr}
   body{font-size:16px}
   .idblock dl{grid-template-columns:1fr;gap:3px 0}
@@ -869,6 +983,8 @@ def landing_page(app, lang):
     L = app['landing']
     if L.get('layout') == 'showcase':
         return showcase_page(app, lang)
+    if L.get('layout') == 'studio':
+        return studio_page(app, lang)
     T = L[lang]
     depth = 1 if lang == 'en' else 2
     up = '../' * (depth - 1)          # from this page back to the app's own directory
@@ -1075,6 +1191,132 @@ def showcase_page(app, lang):
   <p class="eyebrow">{E(who['eyebrow'])}</p>
   <h2>{E(who['title'])}</h2>
   <div class="who">{cards}</div>
+</section>
+
+<section>
+  <p class="eyebrow">{E(priv['eyebrow'])}</p>
+  <h2>{E(priv['title'])}</h2>
+  <p class="lede" style="margin-top:14px">{privacy_lede}</p>
+</section>
+
+<section>
+  <h2>{E(close['title'])}</h2>
+  <p class="lede" style="margin-top:12px">{close['lede']}</p>
+  {store_buttons(app, lang)}
+</section>
+
+{footer(depth, app, lang)}
+</div>"""
+
+    summary = {'ko': app.get('summaryKo'), 'ja': app.get('summaryJa'),
+               'es': app.get('summaryEs')}.get(lang) or app['summary']
+    return page(app['name'], body, depth, app.get('icon', '🎨'), summary,
+                lang=lang, head_extra=alternates)
+
+
+def studio_page(app, lang):
+    """Landing page for apps with `"layout": "studio"` (PaintBoardPro, 2026-10).
+
+    The owner asked for something that is NOT K-Pockit's zigzag: a centred hero over
+    one big framed screen with floating feature chips, a band of numbers, a tabbed
+    tour (radio inputs + CSS, no JS: tabs on the left, one stage on the right) and a
+    bento grid of smaller wins. Pictures are per-locale: `img` may hold `{lang}`.
+    """
+    L = app['landing']
+    T = L[lang]
+    depth = 1 if lang == 'en' else 2
+    up = '../' * (depth - 1)
+    base = SITE['baseUrl']
+    slug = app['slug']
+
+    def img(src, alt, lazy=True):
+        loading = ' loading="lazy"' if lazy else ''
+        return f'<img src="{E(up + src.replace("{lang}", lang))}" alt="{E(alt)}"{loading}>'
+
+    head, mark, *rest = T['headline']
+    tail = rest[0] if rest else ''
+    underline = ('<svg viewBox="0 0 340 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16 '
+                 'C58 6, 96 20, 150 12 C204 4, 246 18, 336 9"/></svg>')
+
+    chips = ''.join(f'<li><span aria-hidden="true">{e}</span>{E(t)}</li>' for e, t in T['chips'])
+    chips_html = f'<ul class="chips">{chips}</ul>' if chips else ''
+
+    gal = T.get('gallery')
+    gallery = ''
+    if gal:
+        figs = ''.join(
+            f'<figure>{img(g["img"], g["alt"])}<figcaption><b>{E(g["title"])}</b>'
+            + ''.join(f'<span>{E(x)}</span>' for x in g['tools']) + '</figcaption></figure>'
+            for g in gal['items'])
+        gallery = f"""<section>
+  <p class="eyebrow">{E(gal['eyebrow'])}</p>
+  <h2>{E(gal['title'])}</h2>
+  <p class="lede center">{E(gal['lede'])}</p>
+  <div class="gallery">{figs}</div>
+</section>"""
+    nums = ''.join(f'<div><b>{E(n)}</b><span>{E(t)}</span></div>' for n, t in T['numbers'])
+
+    tour = T['tour']
+    radios, tabs, panels = [], [], []
+    for i, f in enumerate(tour['items']):
+        radios.append(f'<input type="radio" name="tour" id="tour{i}"{" checked" if i == 0 else ""}>')
+        tabs.append(f'<label for="tour{i}"><span class="n">0{i + 1}</span>'
+                    f'<span><b>{E(f["tab"])}</b><small>{E(f["hint"])}</small></span></label>')
+        pts = ''.join(f'<li>{E(x)}</li>' for x in f.get('points', []))
+        panels.append(f'<div class="panel p{i}">{img(f["img"], f["alt"])}'
+                      f'<div class="say"><h3>{E(f["title"])}</h3><p>{E(f["text"])}</p>'
+                      f'<ul>{pts}</ul></div></div>')
+
+    bento = T['bento']
+    wide_cls = ' class="tile2"'
+    tiles = ''.join(f'<div{wide_cls if wide else ""}><span class="emoji" aria-hidden="true">{e}</span>'
+                    f'<h3>{E(t)}</h3><p>{E(d)}</p></div>' for e, t, d, wide in bento['items'])
+
+    privacy_href = f'{up}privacy/'
+    priv = T['privacySection']
+    privacy_lede = priv['lede'].replace(
+        '{privacy}', f'<a href="{privacy_href}">{E(T["privacyLinkText"])}</a>')
+    hrefs = rel_hrefs(app, lang)
+    alternates = ''.join(
+        f'\n<link rel="alternate" hreflang="{c}" href="{base}/{slug}/{lang_dir(c)}">'
+        for c in langs_of(app))
+    close = T['close']
+
+    body = f"""<div class="wrap studio">
+{masthead(depth, T['meta'], langnav(lang, hrefs))}
+
+<section class="hero">
+  <h1>{E(head)}
+    <span class="markword">{E(mark)}{underline}</span>{E(tail)}.
+  </h1>
+  <p class="lede">{T['lede']}</p>
+  {store_buttons(app, lang)}
+  <div class="stagewrap">
+    <div class="frame">{img(L['heroImg'], T['heroAlt'], lazy=False)}</div>
+    {chips_html}
+  </div>
+</section>
+
+<section>
+  <div class="numbers">{nums}</div>
+</section>
+
+{gallery}
+
+<section>
+  <p class="eyebrow">{E(tour['eyebrow'])}</p>
+  <h2>{E(tour['title'])}</h2>
+  <div class="tour">
+    {''.join(radios)}
+    <div class="tabs">{''.join(tabs)}</div>
+    <div class="stage">{''.join(panels)}</div>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">{E(bento['eyebrow'])}</p>
+  <h2>{E(bento['title'])}</h2>
+  <div class="bento">{tiles}</div>
 </section>
 
 <section>

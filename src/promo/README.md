@@ -52,3 +52,16 @@ src/promo/
   템플릿의 `kbd` 는 기호 글꼴을 먼저 쓴다
 - 템플릿에서 영어·스페인어가 한국어 글꼴을 먼저 잡으면 `ó` 만 다른 글꼴로 크게 나온다 —
   `html:lang(…)` 로 언어별 글꼴 순서를 정해 두었다
+
+## PaintBoardPro (`paintboardpro/`)
+
+VelozPad 과 같은 틀이지만 원본이 다르다: 그림이 앱으로 **직접 그린 그림**이다.
+`raw/` 는 `prep.py` 가 채운다 — paintboard 앱 저장소의 `integration_test/landing_art.dart`
+(실제 제스처로 펜촉 5종·필압·도형 인식·페인트통·글자를 써서 그리는 도구, 사용법은 그쪽 WORKLOG 58)
+가 그린 렌더를 복사하고, 랜딩 페이지 갤러리 이미지(`paintboardpro/assets/art-*`)도 함께 만든다.
+
+    python3 src/promo/paintboardpro/prep.py
+    python3 src/promo/render.py paintboardpro
+    python3 src/build.py
+
+랜딩 페이지는 `"layout": "studio"` — K-Pockit 의 지그재그(showcase)와 일부러 다른 배치다.

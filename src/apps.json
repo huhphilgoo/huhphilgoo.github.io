@@ -1148,6 +1148,9 @@
         "minAge": 18
       },
       "landing": {
+        "layout": "studio",
+        "heroImg": "assets/ad-hero_{lang}.jpg",
+        "_shotsNote": "shots[0] is only the hub cover now; the studio layout does not read shots.",
         "shots": [
           {
             "src": "assets/draw.jpg",
@@ -1163,234 +1166,444 @@
               "PaintBoardProの白いキャンバスに手描きされた家、木、丘、太陽。上部にツールバーが浮かんでいる",
               "キャンバスが1枚、ツールバーが1本。あとは邪魔をしません。"
             ]
-          },
-          {
-            "src": "assets/shapes.jpg",
-            "en": [
-              "A circle, rectangle, triangle and five-pointed star, each drawn by hand and snapped to a clean shape",
-              "All four were drawn freehand. Pausing at the end is what squared them up."
-            ],
-            "ko": [
-              "손으로 그린 원, 사각형, 삼각형, 별. 모두 반듯한 도형으로 정리된 모습",
-              "넷 다 손으로 그린 것입니다. 끝에서 잠깐 멈춘 것이 전부입니다."
-            ],
-            "ja": [
-              "手描きされた円、四角形、三角形、五芒星が、それぞれきれいな図形に整えられた画面",
-              "4つとも手描きです。最後に少し止めた、それだけです。"
-            ]
-          },
-          {
-            "src": "assets/pens.jpg",
-            "en": [
-              "Five strokes in different colours, one per pen tip, with the tip picker and size slider open below them",
-              "The five tips, drawn side by side. Each keeps its own thickness."
-            ],
-            "ko": [
-              "펜촉별로 하나씩 그은 다섯 가지 획과, 그 아래 열려 있는 펜촉 선택 패널과 굵기 슬라이더",
-              "다섯 펜촉을 나란히 그은 모습. 굵기는 펜촉마다 따로 기억합니다."
-            ],
-            "ja": [
-              "ペン先ごとに1本ずつ引かれた5本の線と、その下に開いたペン先選択パネルと太さスライダー",
-              "5種類のペン先を並べて引いたところ。太さはペン先ごとに記憶します。"
-            ]
           }
         ],
-        "en": {
-          "meta": "Free · iOS &amp; Android",
-          "headline": [
-            "A drawing board that takes a",
-            "stylus"
-          ],
-          "lede": "Five pen tips that actually feel different, pressure from your Apple Pencil or S Pen, and a palm you can rest on the screen. Draw a shape roughly and it comes out straight.",
-          "idea": {
-            "eyebrow": "The idea",
-            "title": "Most drawing apps treat a stylus as a mouse with a point.",
-            "lede": "It isn't one. It knows how hard you are pressing, it knows a hand is resting beside it, and it is held at an angle. PaintBoardPro was built around those three facts, and everything below follows from them."
-          },
-          "leftOutTitle": "Deliberately left out",
-          "leftOut": [
-            "Layers and blend modes",
-            "Accounts and sign-in",
-            "Subscriptions and in-app purchases",
-            "A cloud that holds your drawings",
-            "First-run tours and tooltips",
-            "A brush engine with fifty presets"
-          ],
-          "remainsTitle": "What's left",
-          "remains": [
-            "Five pen tips, each with its own width",
-            "Pressure and palm rejection on a real stylus",
-            "Shape recognition for line, circle, rectangle, triangle and star",
-            "A paint bucket that fills an enclosed area in one tap",
-            "Text in six Korean typefaces, movable and rotatable",
-            "Photo backgrounds, and PNG export straight from the canvas"
-          ],
-          "features": {
-            "eyebrow": "What's in it",
-            "title": "Six things, done properly.",
-            "items": [
-              [
-                "Five pen tips",
-                "Round, pencil, flat, highlighter and calligraphy. The highlighter builds up where strokes cross. The calligraphy nib thickens and thins with the direction you move. Each tip remembers its own width."
-              ],
-              [
-                "Pressure, and a palm you can rest",
-                "Press harder for a thicker line. While the pen is down, touches from your hand are ignored — so you can lean on the screen the way you lean on paper."
-              ],
-              [
-                "Shapes that snap",
-                "Draw a line, circle, ellipse, rectangle, triangle or star and hold still for a moment. It squares up at the angle you drew it, and one undo brings the hand-drawn original back."
-              ],
-              [
-                "Paint bucket",
-                "Tap inside any enclosed outline and it fills. The fill is fixed into the drawing, so you can draw over it and erase it like everything else."
-              ],
-              [
-                "Text on canvas",
-                "Six bundled Korean typefaces plus the system font. Drag to move, pinch to resize, twist to rotate. Text lives in the drawing, so the eraser reaches it."
-              ],
-              [
-                "Any colour you want",
-                "A full picker with grid, spectrum and slider modes, and a hex field. Ink, page and text colours are set independently."
-              ]
-            ]
-          },
-          "story": {
-            "eyebrow": "Where it came from",
-            "title": "Five years on iOS, now everywhere.",
-            "paragraphs": [
-              "The first version shipped on the App Store in <strong>2021</strong>, written in Swift. It was the app I wanted when a tablet and a pen were sitting in front of me and everything available treated the pen as a blunt finger.",
-              "This year I rewrote it from nothing in <strong>Flutter</strong> so Android tablets could have it as well. Two things came out of the rewrite that the original never had: real pressure with palm rejection, and shape recognition — neither of which is a feature you notice, which is the point.",
-              "It is still one canvas. There are still no layers. The pen is still the whole interface."
-            ],
-            "timeline": [
-              [
-                "2021",
-                "First release — native Swift, iPhone and iPad"
-              ],
-              [
-                "2024",
-                "Custom typefaces, photo backgrounds"
-              ],
-              [
-                "2026",
-                "Rewritten in Flutter; pressure, palm rejection, shape snapping"
-              ],
-              [
-                "Now",
-                "Version 2.0.0 — on the App Store, Android coming"
-              ]
-            ],
-            "sibling": "There's also <strong>PaintBoard</strong> on both stores — a <strong>separate, simpler app</strong> with a fixed eighteen-colour palette and four tools, not a free tier of this one. If you draw with a finger and want fewer decisions, that is the one to get."
-          },
-          "privacySection": {
-            "eyebrow": "Privacy",
-            "title": "Your drawings stay on your device.",
-            "lede": "There is no server to upload them to, and no account to attach them to. Everything is handled on the device and is gone when you delete the app. The app is free and carries ads, which means Google AdMob and Firebase Analytics collect the usual advertising identifier and device information — all of it written out in the {privacy}."
-          },
-          "privacyLinkText": "privacy policy",
-          "close": {
-            "title": "Go draw something.",
-            "lede": "Free on the App Store, with the Android release on the way. It works offline — the network is only ever used for ads."
-          }
-        },
         "ko": {
           "meta": "무료 · iOS &amp; Android",
           "headline": [
             "펜을 제대로 쓰는",
             "그림판"
           ],
-          "lede": "정말로 다르게 느껴지는 다섯 가지 펜촉, 애플펜슬과 S펜의 필압, 그리고 화면에 얹어도 되는 손. 대충 그린 도형은 반듯하게 나옵니다.",
-          "idea": {
-            "eyebrow": "만든 이유",
-            "title": "대부분의 그림 앱은 스타일러스를 끝이 뾰족한 마우스로 취급합니다.",
-            "lede": "펜은 마우스가 아닙니다. 얼마나 세게 눌렸는지 알고, 옆에 손이 얹혀 있다는 것도 알고, 기울어진 채로 쥐어집니다. 그림판 프로는 이 세 가지 사실 위에 만들었고, 아래의 모든 것이 거기서 나왔습니다."
-          },
-          "leftOutTitle": "일부러 뺀 것",
-          "leftOut": [
-            "레이어와 블렌드 모드",
-            "계정과 로그인",
-            "구독과 인앱결제",
-            "그림을 보관하는 클라우드",
-            "첫 실행 안내와 툴팁",
-            "프리셋 오십 개짜리 브러시 엔진"
-          ],
-          "remainsTitle": "그래서 남은 것",
-          "remains": [
-            "굵기를 각각 기억하는 다섯 가지 펜촉",
-            "실제 스타일러스의 필압과 손바닥 오터치 방지",
-            "선·원·사각형·삼각형·별을 알아보는 도형 인식",
-            "닫힌 영역을 한 번에 칠하는 페인트통",
-            "한글 서체 6종, 옮기고 돌릴 수 있는 텍스트",
-            "사진 배경과 캔버스에서 바로 내보내는 PNG"
-          ],
-          "features": {
-            "eyebrow": "들어 있는 것",
-            "title": "여섯 가지, 제대로.",
-            "items": [
-              [
-                "다섯 가지 펜촉",
-                "둥근펜, 연필, 납작펜, 형광펜, 캘리그래피. 형광펜은 겹쳐 그은 만큼 진해지고, 캘리그래피는 긋는 방향에 따라 굵기가 저절로 달라집니다. 굵기는 펜촉마다 따로 기억합니다."
-              ],
-              [
-                "필압, 그리고 얹어도 되는 손",
-                "세게 누르면 굵게 그려집니다. 펜이 닿아 있는 동안에는 손의 터치를 무시하기 때문에, 종이에 쓸 때처럼 손을 얹고 그릴 수 있습니다."
-              ],
-              [
-                "반듯해지는 도형",
-                "선, 원, 타원, 사각형, 삼각형, 별을 그린 뒤 잠깐 멈추면 정리됩니다. 기울여 그리면 그 각도 그대로 정리되고, 되돌리기 한 번이면 손그림이 그대로 돌아옵니다."
-              ],
-              [
-                "페인트통",
-                "닫힌 윤곽 안을 탭하면 채워집니다. 채운 결과는 그림 안에 고정되므로 위에 덧그릴 수도, 지울 수도 있습니다."
-              ],
-              [
-                "캔버스 위의 텍스트",
-                "한글 서체 6종과 기본 서체. 끌어서 옮기고, 벌려서 키우고, 비틀어서 돌립니다. 텍스트도 그림 안에 있어서 지우개로 지워집니다."
-              ],
-              [
-                "원하는 색 아무거나",
-                "격자·스펙트럼·슬라이더 세 가지 방식과 헥사 입력을 갖춘 색상 선택기. 그림 색, 배경 색, 글자 색을 따로 정합니다."
-              ]
-            ]
-          },
-          "story": {
-            "eyebrow": "어디서 왔나",
-            "title": "iOS에서 5년, 이제 양쪽으로.",
-            "paragraphs": [
-              "첫 버전은 <strong>2021년</strong> App Store에 Swift로 냈습니다. 태블릿과 펜을 앞에 두고 그리려는데, 나와 있는 앱들이 하나같이 펜을 뭉툭한 손가락으로 취급하던 것이 이유였습니다.",
-              "올해 <strong>Flutter</strong>로 처음부터 다시 썼습니다. 안드로이드 태블릿에서도 쓸 수 있도록요. 재작성에서 원본에 없던 두 가지가 생겼습니다. 손바닥 오터치를 막는 진짜 필압, 그리고 도형 인식입니다. 둘 다 쓰면서 의식하지 않게 되는 기능이고, 그게 목적이었습니다.",
-              "여전히 캔버스는 하나입니다. 레이어는 여전히 없습니다. 펜이 여전히 인터페이스의 전부입니다."
-            ],
-            "timeline": [
-              [
-                "2021",
-                "첫 출시 — 네이티브 Swift, iPhone·iPad"
-              ],
-              [
-                "2024",
-                "전용 서체, 사진 배경 추가"
-              ],
-              [
-                "2026",
-                "Flutter로 전면 재작성. 필압, 손바닥 방지, 도형 인식"
-              ],
-              [
-                "현재",
-                "버전 2.0.0 — App Store 출시, 안드로이드 준비 중"
-              ]
-            ],
-            "sibling": "양쪽 스토어에 <strong>그림판</strong>도 있습니다. 18색 고정 팔레트와 도구 네 개를 가진 <strong>별개의 더 단순한 앱</strong>이고, 이 앱의 무료 버전이 아닙니다. 손가락으로 그리고 결정할 것이 적은 쪽을 원하시면 그쪽이 맞습니다."
-          },
           "privacySection": {
             "eyebrow": "개인정보",
             "title": "그림은 기기 안에 남습니다.",
             "lede": "업로드할 서버도, 그림을 묶어둘 계정도 없습니다. 모든 처리가 기기에서 이뤄지고, 앱을 지우면 함께 사라집니다. 앱은 무료이고 광고가 붙기 때문에 Google AdMob과 Firebase Analytics가 통상적인 광고 식별자와 기기 정보를 수집합니다. 그 내용은 전부 {privacy}에 적어두었습니다."
           },
           "privacyLinkText": "개인정보처리방침",
+          "lede": "다섯 가지 펜촉, 애플펜슬과 S펜의 필압, 화면에 편하게 얹는 손. 삐뚤게 그린 도형은 반듯하게 정리되고, 닫힌 곳은 탭 한 번으로 칠해집니다.",
+          "heroAlt": "흰 캔버스에 손으로 그린 집과 나무, 언덕과 태양. 위쪽에 떠 있는 도구 막대",
+          "chips": [],
+          "numbers": [
+            [
+              "5",
+              "펜촉"
+            ],
+            [
+              "6",
+              "알아보는 도형"
+            ],
+            [
+              "6",
+              "한글 서체"
+            ],
+            [
+              "50",
+              "단계 되돌리기"
+            ],
+            [
+              "0",
+              "가입·로그인"
+            ]
+          ],
+          "tour": {
+            "eyebrow": "둘러보기",
+            "title": "하나씩 눌러 보세요.",
+            "items": [
+              {
+                "tab": "펜촉 5종",
+                "hint": "둥근펜부터 캘리그래피까지",
+                "img": "assets/ad-pens_{lang}.jpg",
+                "alt": "다섯 가지 펜촉으로 그은 선과 펜촉·굵기 선택 패널",
+                "title": "정말로 다르게 그려지는 다섯 가지 펜촉",
+                "text": "둥근펜, 연필, 납작펜, 형광펜, 캘리그래피. 형광펜은 겹쳐 그은 만큼 진해지고, 캘리그래피는 긋는 방향에 따라 굵기가 저절로 달라집니다.",
+                "points": [
+                  "굵기는 펜촉마다 따로 기억",
+                  "펜촉과 굵기를 한 패널에서",
+                  "지우개도 자기 굵기를 기억"
+                ]
+              },
+              {
+                "tab": "도형 인식",
+                "hint": "그리고 잠깐 멈추면",
+                "img": "assets/ad-shapes_{lang}.jpg",
+                "alt": "손으로 그린 뒤 반듯하게 정리된 원, 사각형, 삼각형, 별",
+                "title": "삐뚤게 그려도 반듯하게",
+                "text": "선, 원, 타원, 사각형, 삼각형, 별을 그린 뒤 펜을 떼기 전에 잠깐 멈추면 반듯하게 정리됩니다. 기울여 그리면 그 각도 그대로입니다.",
+                "points": [
+                  "되돌리기 한 번이면 손그림으로",
+                  "일부러 구불구불 그린 선은 그대로",
+                  "손가락으로도, 펜으로도"
+                ]
+              },
+              {
+                "tab": "페인트통",
+                "hint": "탭 한 번으로 채우기",
+                "img": "assets/ad-fill_{lang}.jpg",
+                "alt": "검은 윤곽 안을 분홍, 연두, 하늘, 노랑으로 채운 그림",
+                "title": "닫힌 곳은 한 번에 칠하기",
+                "text": "윤곽 안을 탭하면 그 영역만 채워집니다. 채운 색은 그림 안에 고정되어 위에 덧그리거나 지울 수 있습니다.",
+                "points": [
+                  "탭한 자리의 색을 기준으로",
+                  "선 가장자리까지 깔끔하게",
+                  "되돌리기 지원"
+                ]
+              },
+              {
+                "tab": "글자 얹기",
+                "hint": "서체 6종, 이동·회전",
+                "img": "assets/ad-text_{lang}.jpg",
+                "alt": "크림색 캔버스 위의 글자와 서체 선택 목록",
+                "title": "그림 위에 글자까지",
+                "text": "한글 서체 6종과 기본 서체. 끌어서 옮기고, 두 손가락으로 벌려 키우고, 비틀어 돌립니다. 글자도 그림의 일부라 지우개로 지워집니다.",
+                "points": [
+                  "글자 색 따로 지정",
+                  "두 손가락으로 크기·회전",
+                  "지우개로 지우기"
+                ]
+              },
+              {
+                "tab": "폴더블",
+                "hint": "펼친 화면에 맞춘 배치",
+                "img": "assets/ad-fold_{lang}.jpg",
+                "alt": "폴더블 휴대폰의 펼친 화면에서 도구 막대 아래로 넓게 펼쳐진 캔버스",
+                "title": "펼치면, 펼친 만큼 넓게",
+                "text": "폴더블 휴대폰을 펼치면 도구 막대가 늘 보이고 그림판이 화면을 넓게 씁니다. 접었다 펴도 그리던 그림은 그대로입니다.",
+                "points": [
+                  "iPhone Duo",
+                  "갤럭시 Z 폴드처럼 가로로 넓은 화면",
+                  "태블릿은 원래 배치 그대로"
+                ]
+              }
+            ]
+          },
+          "bento": {
+            "eyebrow": "작은 것도 챙겼어요",
+            "title": "매일 쓰기 편하게.",
+            "items": [
+              [
+                "✍️",
+                "누르는 만큼 굵게",
+                "애플펜슬과 S펜의 필압을 읽어, 세게 누르면 굵게 살살 그으면 가늘게 그려집니다.",
+                true
+              ],
+              [
+                "✋",
+                "손을 얹고 그리기",
+                "펜이 화면에 닿아 있는 동안 손바닥 터치는 무시합니다.",
+                false
+              ],
+              [
+                "🎨",
+                "원하는 색 아무거나",
+                "격자·스펙트럼·슬라이더와 헥스 입력. 그림·배경·글자 색을 따로 정합니다.",
+                false
+              ],
+              [
+                "🖼️",
+                "사진 위에 그리기",
+                "앨범의 사진을 배경으로 불러와 그 위에 그립니다.",
+                false
+              ],
+              [
+                "🔄",
+                "돌리고 키우고",
+                "캔버스를 돌리고 확대해서 편한 각도로 그립니다.",
+                false
+              ],
+              [
+                "🔒",
+                "가입 없이, 오프라인으로",
+                "계정도 로그인도 없습니다. 그림은 기기 안에만 남고, 인터넷은 광고에만 씁니다.",
+                true
+              ]
+            ]
+          },
           "close": {
             "title": "이제 그려보세요.",
-            "lede": "App Store에서 무료이고, 안드로이드는 준비 중입니다. 오프라인에서 동작하며 네트워크는 광고에만 씁니다."
+            "lede": "App Store와 Google Play에서 무료입니다. 오프라인에서도 동작하고, 네트워크는 광고에만 씁니다."
+          },
+          "gallery": {
+            "eyebrow": "그림판 프로로 그린 그림",
+            "title": "이 앱 하나로 여기까지.",
+            "lede": "아래 그림은 모두 그림판 프로 안에서, 앱에 있는 도구만으로 그렸습니다.",
+            "items": [
+              {
+                "img": "assets/art-village_{lang}.jpg",
+                "title": "오늘의 산책",
+                "alt": "그림판 프로로 그린 오늘의 산책",
+                "tools": [
+                  "페인트통",
+                  "도형 인식",
+                  "캘리그래피",
+                  "연필",
+                  "형광펜",
+                  "글자"
+                ]
+              },
+              {
+                "img": "assets/art-bouquet_{lang}.jpg",
+                "title": "꽃다발",
+                "alt": "그림판 프로로 그린 꽃다발",
+                "tools": [
+                  "형광펜",
+                  "캘리그래피",
+                  "필압",
+                  "납작펜",
+                  "연필"
+                ]
+              },
+              {
+                "img": "assets/art-city_{lang}.jpg",
+                "title": "밤의 도시",
+                "alt": "그림판 프로로 그린 밤의 도시",
+                "tools": [
+                  "도형 인식",
+                  "페인트통",
+                  "납작펜",
+                  "글자"
+                ]
+              },
+              {
+                "img": "assets/art-fish_{lang}.jpg",
+                "title": "줄무늬 물고기",
+                "alt": "그림판 프로로 그린 줄무늬 물고기",
+                "tools": [
+                  "도형 인식",
+                  "페인트통",
+                  "캘리그래피"
+                ]
+              },
+              {
+                "img": "assets/art-card_{lang}.jpg",
+                "title": "생일 카드",
+                "alt": "그림판 프로로 그린 생일 카드",
+                "tools": [
+                  "도형 인식",
+                  "페인트통",
+                  "형광펜",
+                  "글자"
+                ]
+              }
+            ]
+          }
+        },
+        "en": {
+          "meta": "Free · iOS &amp; Android",
+          "headline": [
+            "A drawing board that takes a",
+            "stylus"
+          ],
+          "privacySection": {
+            "eyebrow": "Privacy",
+            "title": "Your drawings stay on your device.",
+            "lede": "There is no server to upload them to, and no account to attach them to. Everything is handled on the device and is gone when you delete the app. The app is free and carries ads, which means Google AdMob and Firebase Analytics collect the usual advertising identifier and device information — all of it written out in the {privacy}."
+          },
+          "privacyLinkText": "privacy policy",
+          "lede": "Five pen tips, pressure from your Apple Pencil or S Pen, and a palm you can rest on the screen. Rough shapes come out clean, and one tap fills any closed area.",
+          "heroAlt": "A hand-drawn landscape — house, tree, hills and a sun — on PaintBoardPro's white canvas, with the floating toolbar along the top",
+          "chips": [],
+          "numbers": [
+            [
+              "5",
+              "pen tips"
+            ],
+            [
+              "6",
+              "shapes it recognises"
+            ],
+            [
+              "6",
+              "Korean typefaces"
+            ],
+            [
+              "50",
+              "levels of undo"
+            ],
+            [
+              "0",
+              "sign-ups"
+            ]
+          ],
+          "tour": {
+            "eyebrow": "Take the tour",
+            "title": "Tap through it, one at a time.",
+            "items": [
+              {
+                "tab": "5 pen tips",
+                "hint": "Round to calligraphy",
+                "img": "assets/ad-pens_{lang}.jpg",
+                "alt": "Strokes from five pen tips, with the tip and size panel open",
+                "title": "Five tips that really draw differently",
+                "text": "Round, pencil, flat, highlighter and calligraphy. The highlighter deepens where strokes overlap; the calligraphy nib thickens and thins with the direction you pull it.",
+                "points": [
+                  "Each tip remembers its own size",
+                  "Tip and size in one panel",
+                  "The eraser keeps its own size too"
+                ]
+              },
+              {
+                "tab": "Shape snap",
+                "hint": "Draw, then hold still",
+                "img": "assets/ad-shapes_{lang}.jpg",
+                "alt": "A circle, rectangle, triangle and star drawn by hand and snapped clean",
+                "title": "Wobbly in, clean out",
+                "text": "Draw a line, circle, ellipse, rectangle, triangle or star and pause before lifting the pen — it straightens out, at whatever angle you drew it.",
+                "points": [
+                  "One undo brings your drawing back",
+                  "Lines you meant to be wavy stay wavy",
+                  "Finger or pen"
+                ]
+              },
+              {
+                "tab": "Paint bucket",
+                "hint": "Fill in one tap",
+                "img": "assets/ad-fill_{lang}.jpg",
+                "alt": "Black outlines filled with pink, lime, light blue and yellow",
+                "title": "Fill a closed area in one tap",
+                "text": "Tap inside an outline and only that area fills. The fill stays fixed in the drawing, so you can draw over it or erase it.",
+                "points": [
+                  "Fills from the colour you tapped",
+                  "Clean right up to the line",
+                  "Undo works as usual"
+                ]
+              },
+              {
+                "tab": "Text",
+                "hint": "6 typefaces, move and rotate",
+                "img": "assets/ad-text_{lang}.jpg",
+                "alt": "Text on a cream canvas with the typeface list open",
+                "title": "Words on the drawing, too",
+                "text": "Six Korean typefaces plus the system one. Drag to move, pinch to resize, twist to rotate. Text is part of the drawing, so the eraser takes it off.",
+                "points": [
+                  "Its own text colour",
+                  "Two fingers to size and rotate",
+                  "Erasable like any stroke"
+                ]
+              },
+              {
+                "tab": "Foldables",
+                "hint": "Laid out for the open screen",
+                "img": "assets/ad-fold_{lang}.jpg",
+                "alt": "The canvas spread wide under the toolbar on an unfolded foldable phone",
+                "title": "Unfold it, and the board grows",
+                "text": "On an unfolded foldable the toolbar stays in view and the board takes the width of the screen. Fold and unfold — your drawing stays exactly where it was.",
+                "points": [
+                  "iPhone Duo",
+                  "Wide inner screens like Galaxy Z Fold",
+                  "Tablets keep the original layout"
+                ]
+              }
+            ]
+          },
+          "bento": {
+            "eyebrow": "The small things",
+            "title": "Made for everyday drawing.",
+            "items": [
+              [
+                "✍️",
+                "Press harder, draw thicker",
+                "Reads Apple Pencil and S Pen pressure: lean in for a bold line, ease off for a fine one.",
+                true
+              ],
+              [
+                "✋",
+                "Rest your hand",
+                "While the pen is touching the screen, palm touches are ignored.",
+                false
+              ],
+              [
+                "🎨",
+                "Any colour you like",
+                "Grid, spectrum, sliders and hex. Separate colours for ink, page and text.",
+                false
+              ],
+              [
+                "🖼️",
+                "Draw over a photo",
+                "Bring in a photo from your library as the background and draw on top.",
+                false
+              ],
+              [
+                "🔄",
+                "Turn and zoom",
+                "Rotate and zoom the canvas to draw at a comfortable angle.",
+                false
+              ],
+              [
+                "🔒",
+                "No sign-up, works offline",
+                "No account, no login. Your drawings stay on the device; the network is only used for ads.",
+                true
+              ]
+            ]
+          },
+          "close": {
+            "title": "Go draw something.",
+            "lede": "Free on the App Store and Google Play. It works offline — the network is only ever used for ads."
+          },
+          "gallery": {
+            "eyebrow": "Drawn in PaintBoardPro",
+            "title": "All of this, in one app.",
+            "lede": "Every picture below was drawn inside PaintBoardPro, with nothing but the tools in the app.",
+            "items": [
+              {
+                "img": "assets/art-village_{lang}.jpg",
+                "title": "A walk today",
+                "alt": "A walk today — drawn in PaintBoardPro",
+                "tools": [
+                  "Paint bucket",
+                  "Shape snap",
+                  "Calligraphy",
+                  "Pencil",
+                  "Highlighter",
+                  "Text"
+                ]
+              },
+              {
+                "img": "assets/art-bouquet_{lang}.jpg",
+                "title": "Bouquet",
+                "alt": "Bouquet — drawn in PaintBoardPro",
+                "tools": [
+                  "Highlighter",
+                  "Calligraphy",
+                  "Pressure",
+                  "Flat tip",
+                  "Pencil"
+                ]
+              },
+              {
+                "img": "assets/art-city_{lang}.jpg",
+                "title": "City at night",
+                "alt": "City at night — drawn in PaintBoardPro",
+                "tools": [
+                  "Shape snap",
+                  "Paint bucket",
+                  "Flat tip",
+                  "Text"
+                ]
+              },
+              {
+                "img": "assets/art-fish_{lang}.jpg",
+                "title": "Striped fish",
+                "alt": "Striped fish — drawn in PaintBoardPro",
+                "tools": [
+                  "Shape snap",
+                  "Paint bucket",
+                  "Calligraphy"
+                ]
+              },
+              {
+                "img": "assets/art-card_{lang}.jpg",
+                "title": "Birthday card",
+                "alt": "Birthday card — drawn in PaintBoardPro",
+                "tools": [
+                  "Shape snap",
+                  "Paint bucket",
+                  "Highlighter",
+                  "Text"
+                ]
+              }
+            ]
           }
         },
         "ja": {
@@ -1399,97 +1612,217 @@
             "ペンを本気で扱う",
             "お絵かき"
           ],
-          "lede": "本当に描き味の違う5種類のペン先、Apple PencilとSペンの筆圧、そして画面に置いたままでいい手。ざっくり描いた図形はまっすぐ整います。",
-          "idea": {
-            "eyebrow": "作った理由",
-            "title": "多くのお絵かきアプリは、スタイラスを「先の尖ったマウス」として扱っています。",
-            "lede": "ペンはマウスではありません。どれだけ強く押されたかを知っていて、そばに手が置かれていることも分かり、傾けて握られます。ペイントプロはこの3つの事実の上に作られていて、以下のすべてがそこから決まりました。"
-          },
-          "leftOutTitle": "あえて入れなかったもの",
-          "leftOut": [
-            "レイヤーとブレンドモード",
-            "アカウントとログイン",
-            "サブスクリプションとアプリ内課金",
-            "作品を預けるクラウド",
-            "初回起動の案内とツールチップ",
-            "プリセット50種類のブラシエンジン"
-          ],
-          "remainsTitle": "そうして残ったもの",
-          "remains": [
-            "太さをそれぞれ記憶する5種類のペン先",
-            "実機のスタイラスの筆圧とパームリジェクション",
-            "線・円・四角形・三角形・星を見分ける図形認識",
-            "閉じた領域をひと塗りで埋める塗りつぶし",
-            "内蔵の6書体で置ける、動かせて回せるテキスト",
-            "写真の背景と、キャンバスからそのまま書き出すPNG"
-          ],
-          "features": {
-            "eyebrow": "入っているもの",
-            "title": "6つを、きちんと。",
-            "items": [
-              [
-                "5種類のペン先",
-                "丸ペン、鉛筆、平ペン、蛍光ペン、カリグラフィ。蛍光ペンは重ねた分だけ濃くなり、カリグラフィは動かす向きによって太さが自然に変わります。太さはペン先ごとに記憶します。"
-              ],
-              [
-                "筆圧と、置いたままでいい手",
-                "強く押せば太く描けます。ペンが触れているあいだは手のタッチを無視するので、紙に書くときのように手を乗せたまま描けます。"
-              ],
-              [
-                "まっすぐ整う図形",
-                "線、円、楕円、四角形、三角形、星を描いたあと少し止めると整います。傾けて描けばその角度のまま整い、取り消しを一度押せば手描きの線が戻ります。"
-              ],
-              [
-                "塗りつぶし",
-                "閉じた輪郭の内側をタップすると塗りつぶされます。塗った結果は絵の一部として残るので、上から描き足すことも消すこともできます。"
-              ],
-              [
-                "キャンバスの上のテキスト",
-                "内蔵の6書体とシステムフォント。ドラッグで移動、ピンチで拡大、ひねって回転。テキストも絵の中にあるので消しゴムで消せます。"
-              ],
-              [
-                "好きな色を自由に",
-                "グリッド・スペクトラム・スライダーの3つのモードとHEX入力を備えたカラーピッカー。線の色、背景の色、文字の色をそれぞれ指定できます。"
-              ]
-            ]
-          },
-          "story": {
-            "eyebrow": "どこから来たか",
-            "title": "iOSで5年、そしてどこでも。",
-            "paragraphs": [
-              "最初のバージョンは<strong>2021年</strong>にSwiftでApp Storeに出しました。タブレットとペンを目の前にして描こうとしたのに、出ているアプリがどれもペンを「鈍い指」として扱っていた、それが理由でした。",
-              "今年<strong>Flutter</strong>でゼロから書き直しました。Androidタブレットでも使えるようにするためです。書き直しで、元になかったものが2つ増えました。パームリジェクションを伴う本物の筆圧と、図形認識です。どちらも使っているうちに意識しなくなる機能で、それが狙いでした。",
-              "キャンバスは今も1枚です。レイヤーは今もありません。ペンが今もインターフェースのすべてです。"
-            ],
-            "timeline": [
-              [
-                "2021",
-                "初回リリース — ネイティブSwift、iPhone・iPad"
-              ],
-              [
-                "2024",
-                "専用書体、写真の背景を追加"
-              ],
-              [
-                "2026",
-                "Flutterで全面的に書き直し。筆圧、パームリジェクション、図形認識"
-              ],
-              [
-                "現在",
-                "バージョン2.0.0 — App Storeで公開中、Androidは準備中"
-              ]
-            ],
-            "sibling": "両方のストアに<strong>ペイント</strong>もあります。18色の固定パレットと4つの道具を持つ<strong>別のもっとシンプルなアプリ</strong>で、こちらの無料版ではありません。指で描いて、決めることを減らしたい方にはそちらが合っています。"
-          },
           "privacySection": {
             "eyebrow": "プライバシー",
             "title": "描いた絵は端末の中に残ります。",
             "lede": "アップロードするサーバーも、作品を結び付けるアカウントもありません。すべての処理は端末で行われ、アプリを削除すれば一緒に消えます。本アプリは無料で広告が入るため、Google AdMobとFirebase Analyticsが一般的な広告識別子と端末情報を収集します。その内容はすべて{privacy}に記載しています。"
           },
           "privacyLinkText": "プライバシーポリシー",
+          "lede": "5種類のペン先、Apple PencilとSペンの筆圧、そして画面に置いたままでいい手。ざっくり描いた図形はまっすぐ整い、囲んだ場所はワンタップで塗れます。",
+          "heroAlt": "PaintBoardProの白いキャンバスに手描きされた家、木、丘、太陽。上部にツールバーが浮かんでいる",
+          "chips": [],
+          "numbers": [
+            [
+              "5",
+              "ペン先"
+            ],
+            [
+              "6",
+              "認識する図形"
+            ],
+            [
+              "6",
+              "内蔵書体"
+            ],
+            [
+              "50",
+              "段階の取り消し"
+            ],
+            [
+              "0",
+              "会員登録"
+            ]
+          ],
+          "tour": {
+            "eyebrow": "ツアー",
+            "title": "ひとつずつタップしてみてください。",
+            "items": [
+              {
+                "tab": "ペン先5種類",
+                "hint": "丸ペンからカリグラフィーまで",
+                "img": "assets/ad-pens_{lang}.jpg",
+                "alt": "5種類のペン先で描いた線と、ペン先・太さの選択パネル",
+                "title": "本当に描き味の違う5種類のペン先",
+                "text": "丸ペン、鉛筆、平ペン、蛍光ペン、カリグラフィー。蛍光ペンは重ねた分だけ濃くなり、カリグラフィーは引く方向で太さが自然に変わります。",
+                "points": [
+                  "太さはペン先ごとに記憶",
+                  "ペン先と太さをひとつのパネルで",
+                  "消しゴムも自分の太さを記憶"
+                ]
+              },
+              {
+                "tab": "図形補正",
+                "hint": "描いて少し止める",
+                "img": "assets/ad-shapes_{lang}.jpg",
+                "alt": "手描きのあときれいに整った円、四角、三角、星",
+                "title": "ゆがんでも、まっすぐに",
+                "text": "線、円、楕円、四角、三角、星を描いて、ペンを離す前に少し止めると整います。傾けて描けば、その角度のままです。",
+                "points": [
+                  "取り消し1回で手描きに戻る",
+                  "わざと波打たせた線はそのまま",
+                  "指でもペンでも"
+                ]
+              },
+              {
+                "tab": "塗りつぶし",
+                "hint": "ワンタップで",
+                "img": "assets/ad-fill_{lang}.jpg",
+                "alt": "黒い輪郭の中をピンク、黄緑、水色、黄色で塗った絵",
+                "title": "囲んだ場所をワンタップで",
+                "text": "輪郭の中をタップすると、その範囲だけが塗られます。塗った色は絵の中に固定され、上から描いたり消したりできます。",
+                "points": [
+                  "タップした場所の色を基準に",
+                  "線のきわまできれいに",
+                  "取り消しにも対応"
+                ]
+              },
+              {
+                "tab": "文字入れ",
+                "hint": "内蔵の6書体、移動・回転",
+                "img": "assets/ad-text_{lang}.jpg",
+                "alt": "クリーム色のキャンバスの文字と書体リスト",
+                "title": "絵の上に文字も",
+                "text": "内蔵の6書体と標準書体。ドラッグで移動、ピンチで拡大、ひねって回転。文字も絵の一部なので消しゴムで消せます。",
+                "points": [
+                  "文字の色を個別に",
+                  "2本指でサイズと回転",
+                  "消しゴムで消せる"
+                ]
+              },
+              {
+                "tab": "折りたたみ",
+                "hint": "開いた画面に合わせて",
+                "img": "assets/ad-fold_{lang}.jpg",
+                "alt": "折りたたみスマートフォンを開いた画面で、ツールバーの下に広がるキャンバス",
+                "title": "開けば、開いた分だけ広く",
+                "text": "折りたたみスマートフォンを開くとツールバーが常に表示され、キャンバスが画面を広く使います。閉じて開いても描いた絵はそのままです。",
+                "points": [
+                  "iPhone Duo",
+                  "Galaxy Z Foldのような横長の内側画面",
+                  "タブレットは元のレイアウトのまま"
+                ]
+              }
+            ]
+          },
+          "bento": {
+            "eyebrow": "細かいところまで",
+            "title": "毎日描きやすく。",
+            "items": [
+              [
+                "✍️",
+                "押した分だけ太く",
+                "Apple PencilとSペンの筆圧を読み取り、強く押せば太く、軽く引けば細く描けます。",
+                true
+              ],
+              [
+                "✋",
+                "手を置いて描ける",
+                "ペンが画面に触れている間、手のひらのタッチは無視します。",
+                false
+              ],
+              [
+                "🎨",
+                "好きな色を自由に",
+                "グリッド・スペクトラム・スライダーとHEX入力。線・背景・文字の色を別々に。",
+                false
+              ],
+              [
+                "🖼️",
+                "写真の上に描く",
+                "アルバムの写真を背景に読み込んで、その上に描けます。",
+                false
+              ],
+              [
+                "🔄",
+                "回して、拡大して",
+                "キャンバスを回転・拡大して、描きやすい角度で。",
+                false
+              ],
+              [
+                "🔒",
+                "登録なし、オフラインで",
+                "アカウントもログインもありません。絵は端末の中だけに残り、ネットワークは広告にしか使いません。",
+                true
+              ]
+            ]
+          },
           "close": {
             "title": "さあ、描いてみてください。",
-            "lede": "App Storeで無料、Androidは準備中です。オフラインで動作し、ネットワークは広告にしか使いません。"
+            "lede": "App StoreとGoogle Playで無料です。オフラインで動作し、ネットワークは広告にしか使いません。"
+          },
+          "gallery": {
+            "eyebrow": "ペイントプロで描いた絵",
+            "title": "このアプリひとつで、ここまで。",
+            "lede": "下の絵はすべて、ペイントプロのツールだけで描きました。",
+            "items": [
+              {
+                "img": "assets/art-village_{lang}.jpg",
+                "title": "今日のおさんぽ",
+                "alt": "ペイントプロで描いた「今日のおさんぽ」",
+                "tools": [
+                  "塗りつぶし",
+                  "図形補正",
+                  "カリグラフィー",
+                  "鉛筆",
+                  "蛍光ペン",
+                  "文字"
+                ]
+              },
+              {
+                "img": "assets/art-bouquet_{lang}.jpg",
+                "title": "花束",
+                "alt": "ペイントプロで描いた「花束」",
+                "tools": [
+                  "蛍光ペン",
+                  "カリグラフィー",
+                  "筆圧",
+                  "平ペン",
+                  "鉛筆"
+                ]
+              },
+              {
+                "img": "assets/art-city_{lang}.jpg",
+                "title": "夜の街",
+                "alt": "ペイントプロで描いた「夜の街」",
+                "tools": [
+                  "図形補正",
+                  "塗りつぶし",
+                  "平ペン",
+                  "文字"
+                ]
+              },
+              {
+                "img": "assets/art-fish_{lang}.jpg",
+                "title": "しましまの魚",
+                "alt": "ペイントプロで描いた「しましまの魚」",
+                "tools": [
+                  "図形補正",
+                  "塗りつぶし",
+                  "カリグラフィー"
+                ]
+              },
+              {
+                "img": "assets/art-card_{lang}.jpg",
+                "title": "誕生日カード",
+                "alt": "ペイントプロで描いた「誕生日カード」",
+                "tools": [
+                  "図形補正",
+                  "塗りつぶし",
+                  "蛍光ペン",
+                  "文字"
+                ]
+              }
+            ]
           }
         }
       },
