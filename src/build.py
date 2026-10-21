@@ -426,6 +426,85 @@ td:first-child{color:var(--ink);font-weight:600;white-space:nowrap}
 .langswitch a:hover{color:var(--ink);border-color:var(--accent)}
 
 /* EN / KO switcher in the masthead */
+/* landing — "layout": "reel" (bshort, 2026-10): a video app, so the page moves.
+   Neither the showcase zigzag nor the studio tabs: a split hero with three phones
+   playing real template previews, three numbered steps on real screens, a wall of
+   looks grouped by mood, and dark spotlight cards (the app's own night + lime)
+   that carry a video or screens each. Media sits in dark bezels; the page around
+   it keeps the site's light ground. */
+.reel{--lime:#D6FF4A;--night:#0D0E10;--night-2:#17191C;--night-ink:#F4F5F2;--night-muted:rgba(244,245,242,.66)}
+.reel .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);gap:44px;align-items:center}
+.reel .hero>*{min-width:0}
+.reel .facts{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.reel .facts li{background:var(--night);color:var(--night-ink);border-radius:999px;padding:6px 14px 6px 12px;
+  font-size:.86rem;word-break:keep-all}
+.reel .facts li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:var(--lime);margin-right:8px;vertical-align:1px}
+.phones{position:relative;height:560px}
+.phone{position:absolute;background:var(--night);border-radius:34px;padding:7px;
+  box-shadow:0 30px 60px -24px rgba(13,14,16,.55),0 2px 6px rgba(13,14,16,.18)}
+.phone video,.phone img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:27px;background:var(--night-2)}
+.phones .phone{width:214px}
+.phones .phone:nth-child(1){left:2%;top:74px;transform:rotate(-7deg)}
+.phones .phone:nth-child(2){left:50%;top:0;width:250px;transform:translateX(-50%);z-index:2}
+.phones .phone:nth-child(3){right:2%;top:96px;transform:rotate(6deg)}
+.screen{background:var(--night);border-radius:30px;padding:7px;box-shadow:var(--shadow)}
+.screen img{display:block;width:100%;aspect-ratio:1206/2622;object-fit:cover;border-radius:24px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:40px;counter-reset:step}
+.step .screen{max-width:250px;margin:0 auto}
+.step .say{margin-top:22px;display:flex;gap:14px;align-items:flex-start}
+.step .n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--lime);color:#000;
+  display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1rem}
+.step h3{font-size:1.12rem;word-break:keep-all}
+.step p{color:var(--muted);font-size:.94rem;margin-top:6px;word-break:keep-all;overflow-wrap:break-word}
+.looks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:36px}
+.looks .mood{background:var(--night);border-radius:22px;padding:10px 10px 14px}
+.looks .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.looks img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;background:var(--night-2)}
+.looks .label{display:flex;justify-content:space-between;align-items:baseline;padding:12px 4px 0;color:var(--night-ink)}
+.looks .label b{font-family:var(--display);font-size:1rem}
+.looks .label span{font-size:.8rem;color:var(--night-muted)}
+.spots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:36px}
+.spot{background:var(--night);color:var(--night-ink);border-radius:30px;overflow:hidden;
+  display:flex;flex-direction:column;min-width:0}
+.spot .media{padding:30px 30px 0;display:flex;gap:16px;justify-content:center;align-items:flex-end;flex:1}
+.spot .media .phone,.spot .media .screen{position:static;width:min(220px,46%);box-shadow:none;background:var(--night-2)}
+.spot .media .wideshot{width:100%;display:block;border-radius:18px}
+.spot .say{padding:26px 32px 32px}
+.spot .tag{display:inline-block;background:var(--lime);color:#000;border-radius:999px;padding:3px 11px;
+  font-family:var(--util);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.spot h3{font-size:1.45rem;letter-spacing:-.02em;word-break:keep-all;overflow-wrap:break-word}
+.spot p{color:var(--night-muted);margin-top:10px;word-break:keep-all;overflow-wrap:break-word}
+.spot.wide{grid-column:span 2;flex-direction:row;align-items:center}
+.spot.wide .media{flex:1.35;padding:30px}
+.spot.wide .say{flex:1;padding:30px 40px 30px 10px}
+.spot.wide.flip{flex-direction:row-reverse}
+.spot.wide.flip .say{padding:30px 10px 30px 40px}
+@media (max-width:860px){
+  .reel .hero{grid-template-columns:minmax(0,1fr);gap:34px}
+  .phones{height:470px;max-width:520px;margin:0 auto;width:100%}
+  .phones .phone{width:180px}
+  .phones .phone:nth-child(2){width:210px}
+  .steps{grid-template-columns:minmax(0,1fr);gap:44px}
+  .step .screen{max-width:210px}
+  .looks{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .spots{grid-template-columns:minmax(0,1fr)}
+  .spot.wide,.spot.wide.flip{grid-column:auto;flex-direction:column;align-items:stretch}
+  .spot.wide .media{padding:24px 24px 0}
+  .spot.wide .say,.spot.wide.flip .say{padding:24px 28px 30px}
+}
+@media (max-width:520px){
+  .phones{height:360px}
+  .phones .phone{width:132px;border-radius:24px;padding:5px}
+  .phones .phone video{border-radius:19px}
+  .phones .phone:nth-child(2){width:158px}
+  .phones .phone:nth-child(1){top:58px}
+  .phones .phone:nth-child(3){top:72px}
+  .looks{gap:12px}
+  .spot .media{padding:22px 18px 0}
+  .spot .say{padding:22px 22px 26px}
+}
+
 .langnav{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--sheet)}
 .langnav a{font-family:var(--util);font-size:.72rem;letter-spacing:.09em;text-decoration:none;
   color:var(--muted);padding:5px 11px;line-height:1.5}
@@ -985,6 +1064,8 @@ def landing_page(app, lang):
         return showcase_page(app, lang)
     if L.get('layout') == 'studio':
         return studio_page(app, lang)
+    if L.get('layout') == 'reel':
+        return reel_page(app, lang)
     T = L[lang]
     depth = 1 if lang == 'en' else 2
     up = '../' * (depth - 1)          # from this page back to the app's own directory
@@ -1338,6 +1419,144 @@ def studio_page(app, lang):
                'es': app.get('summaryEs')}.get(lang) or app['summary']
     return page(app['name'], body, depth, app.get('icon', '🎨'), summary,
                 lang=lang, head_extra=alternates)
+
+
+def reel_page(app, lang):
+    """Landing page for apps with `"layout": "reel"` (bshort, 2026-10).
+
+    The owner asked for more pictures and a page that is neither K-Pockit's zigzag
+    nor PaintBoardPro's studio. bshort makes videos, so the page plays them: a split
+    hero with three phones looping real template previews, three numbered steps on
+    real screens, a wall of looks grouped by mood, then dark spotlight cards that each
+    carry a video or app screens. No origin story, no timeline, no left-out lists.
+    Media paths may hold `{lang}`. Videos are muted, looped and inline so phones
+    autoplay them; each has a poster so the page reads before anything plays.
+    """
+    L = app['landing']
+    T = L[lang]
+    depth = 1 if lang == 'en' else 2
+    up = '../' * (depth - 1)
+    base = SITE['baseUrl']
+    slug = app['slug']
+
+    def src(path):
+        return E(up + path.replace('{lang}', lang))
+
+    def video(path, alt):
+        poster = path.rsplit('.', 1)[0] + '.jpg'
+        return (f'<video src="{src(path)}" poster="{src(poster)}" autoplay muted loop playsinline '
+                f'preload="metadata" aria-label="{E(alt)}"></video>')
+
+    def img(path, alt, cls=''):
+        c = f' class="{cls}"' if cls else ''
+        return f'<img{c} src="{src(path)}" alt="{E(alt)}" loading="lazy">'
+
+    def media(m):
+        """One spotlight/step picture: {"video": …} | {"screen": …} | {"wide": …} | {"wideVideo": …}."""
+        if 'video' in m:
+            return f'<div class="phone">{video(m["video"], m["alt"])}</div>'
+        if 'screen' in m:
+            return f'<div class="screen">{img(m["screen"], m["alt"])}</div>'
+        if 'wideVideo' in m:
+            poster = m['wideVideo'].rsplit('.', 1)[0] + '.jpg'
+            return (f'<video class="wideshot" src="{src(m["wideVideo"])}" poster="{src(poster)}" autoplay muted '
+                    f'loop playsinline preload="metadata" aria-label="{E(m["alt"])}"></video>')
+        return img(m['wide'], m['alt'], 'wideshot')
+
+    head, mark, *rest = T['headline']
+    tail = rest[0] if rest else ''
+    underline = ('<svg viewBox="0 0 340 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 16 '
+                 'C58 6, 96 20, 150 12 C204 4, 246 18, 336 9"/></svg>')
+
+    facts = ''.join(f'<li>{E(x)}</li>' for x in T['facts'])
+    phones = ''.join(f'<div class="phone">{video(v, a)}</div>' for v, a in zip(L['heroVideos'], T['heroAlts']))
+
+    st = T['steps']
+    steps = ''.join(
+        f'<div class="step"><div class="screen">{img(x["screen"], x["alt"])}</div>'
+        f'<div class="say"><span class="n">{i + 1}</span><div><h3>{E(x["title"])}</h3><p>{E(x["text"])}</p></div></div></div>'
+        for i, x in enumerate(st['items']))
+
+    lk = T['looks']
+    moods = ''.join(
+        '<div class="mood"><div class="tiles">'
+        + ''.join(img(t, f'{g["name"]} — {g["note"]}') for t in g['tiles'])
+        + f'</div><div class="label"><b>{E(g["name"])}</b><span>{E(g["note"])}</span></div></div>'
+        for g in lk['moods'])
+
+    sp = T['spots']
+    cards = []
+    for x in sp['items']:
+        cls = 'spot' + (' wide' if x.get('wide') else '') + (' flip' if x.get('flip') else '')
+        tag = f'<span class="tag">{E(x["tag"])}</span>' if x.get('tag') else ''
+        pics = ''.join(media(m) for m in x['media'])
+        cards.append(f'<div class="{cls}"><div class="media">{pics}</div>'
+                     f'<div class="say">{tag}<h3>{E(x["title"])}</h3><p>{E(x["text"])}</p></div></div>')
+
+    privacy_href = f'{up}privacy/'
+    priv = T['privacySection']
+    privacy_lede = priv['lede'].replace(
+        '{privacy}', f'<a href="{privacy_href}">{E(T["privacyLinkText"])}</a>')
+    hrefs = rel_hrefs(app, lang)
+    alternates = ''.join(
+        f'\n<link rel="alternate" hreflang="{c}" href="{base}/{slug}/{lang_dir(c)}">'
+        for c in langs_of(app))
+    close = T['close']
+
+    body = f"""<div class="wrap reel">
+{masthead(depth, T['meta'], langnav(lang, hrefs))}
+
+<section class="hero">
+  <div>
+    <h1>{E(head)}
+      <span class="markword">{E(mark)}{underline}</span>{E(tail)}.
+    </h1>
+    <p class="lede">{T['lede']}</p>
+    {store_buttons(app, lang)}
+    <ul class="facts">{facts}</ul>
+  </div>
+  <div class="phones">{phones}</div>
+</section>
+
+<section>
+  <p class="eyebrow">{E(st['eyebrow'])}</p>
+  <h2>{E(st['title'])}</h2>
+  <div class="steps">{steps}</div>
+</section>
+
+<section>
+  <p class="eyebrow">{E(lk['eyebrow'])}</p>
+  <h2>{E(lk['title'])}</h2>
+  <p class="lede" style="margin-top:14px">{E(lk['lede'])}</p>
+  <div class="looks">{moods}</div>
+</section>
+
+<section>
+  <p class="eyebrow">{E(sp['eyebrow'])}</p>
+  <h2>{E(sp['title'])}</h2>
+  <div class="spots">{''.join(cards)}</div>
+</section>
+
+<section>
+  <p class="eyebrow">{E(priv['eyebrow'])}</p>
+  <h2>{E(priv['title'])}</h2>
+  <p class="lede" style="margin-top:14px">{privacy_lede}</p>
+</section>
+
+<section>
+  <h2>{E(close['title'])}</h2>
+  <p class="lede" style="margin-top:12px">{close['lede']}</p>
+  {store_buttons(app, lang)}
+</section>
+
+{footer(depth, app, lang)}
+</div>"""
+
+    summary = {'ko': app.get('summaryKo'), 'ja': app.get('summaryJa'),
+               'es': app.get('summaryEs')}.get(lang) or app['summary']
+    return page(app['name'], body, depth, app.get('icon', '🎬'), summary,
+                lang=lang, head_extra=alternates)
+
 
 
 # ── hub ───────────────────────────────────────────────────────────────────────
