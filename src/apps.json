@@ -672,7 +672,7 @@
           "admob"
         ],
         "consent": {
-          "ump": false,
+          "ump": true,
           "att": true
         },
         "permissions": [
