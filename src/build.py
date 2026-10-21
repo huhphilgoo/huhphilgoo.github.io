@@ -101,6 +101,18 @@ SERVICES = {
 E = html.escape
 
 
+def css_version():
+    """A short fingerprint of the stylesheet, appended to its URL — same idea as icon_version.
+
+    Every page shares assets/site.css and GitHub Pages lets browsers cache it for ten
+    minutes. After a layout change a visitor could get the new HTML with the old
+    stylesheet and see the page scrambled (bshort reel, 2026-10-21). A query string
+    that changes with the CSS makes the new one load; unchanged CSS keeps its URL.
+    """
+    import hashlib
+    return hashlib.sha1(CSS.encode('utf-8')).hexdigest()[:8]
+
+
 def page(title, body, css_depth, favicon='📱', description='', lang='en', head_extra=''):
     """Wrap body content in a full document. css_depth = how many ../ to reach the root."""
     up = '../' * css_depth
@@ -112,7 +124,7 @@ def page(title, body, css_depth, favicon='📱', description='', lang='en', head
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(title)}</title>{desc}{head_extra}
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{favicon}</text></svg>">
-<link rel="stylesheet" href="{up}assets/site.css">
+<link rel="stylesheet" href="{up}assets/site.css?v={css_version()}">
 </head>
 <body>
 {body}
