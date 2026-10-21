@@ -1,0 +1,944 @@
+{
+  "schemaVersion": 3,
+  "seasons": [
+    {
+      "id": "halloween2026",
+      "nameKey": "season.halloween2026.name",
+      "startsAt": "2026-10-20",
+      "endsAt": "2026-11-02"
+    }
+  ],
+  "templates": [
+    {
+      "id": "hw.party",
+      "moodId": "halloween2026",
+      "displayNameKey": "template.hw.party.name",
+      "style": "sequential",
+      "clipDuration": 2.2,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "spinZoom",
+        "duration": 0.6
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.08,
+        "panFraction": 0.6
+      },
+      "colorGrade": {
+        "saturation": 1.1,
+        "contrast": 1.2,
+        "temperature": 4200,
+        "brightness": -0.08,
+        "vignetteIntensity": 1.1
+      },
+      "bgm": {
+        "fileName": "bgm-hw.party.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-hw.party.mp4"
+      },
+      "textOverlays": [
+        {
+          "fontKey": "Futura-CondensedExtraBold",
+          "fontSize": 52,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.hw.party.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.06
+          },
+          "motion": {
+            "startTime": 0.2,
+            "inDuration": 0.6,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "tracking": 10,
+          "scrimOpacity": 0.45
+        },
+        {
+          "fontKey": "JollyLodger-Regular",
+          "fontSize": 150,
+          "colorHex": "#FF8A1F",
+          "defaultTextKey": "template.hw.party.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.115
+          },
+          "motion": {
+            "startTime": 0.45,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.3
+          },
+          "scrimOpacity": 0.45
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "hw-pumpkin-dance.mp4",
+          "placement": {
+            "x": 0.78,
+            "y": 0.86
+          },
+          "widthFraction": 0.66,
+          "motion": {
+            "startTime": 0.6,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.2
+          },
+          "chromaKey": {
+            "color": "green"
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "hw-pumpkin-dance.mp4",
+          "placement": {
+            "x": 0.2,
+            "y": 0.88
+          },
+          "widthFraction": 0.5,
+          "motion": {
+            "startTime": 1.1,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.2
+          },
+          "chromaKey": {
+            "color": "green"
+          },
+          "flipped": true,
+          "followsGaze": true
+        },
+        {
+          "fileName": "fluent-bat.png",
+          "placement": {
+            "x": 0.14,
+            "y": 0.3
+          },
+          "widthFraction": 0.12,
+          "motion": {
+            "startTime": 0.8,
+            "inDuration": 1.0,
+            "easing": "easeOut",
+            "inOffset": [
+              -0.4,
+              -0.1
+            ]
+          },
+          "flipped": true,
+          "loop": {
+            "type": "bob",
+            "amplitude": 0.012,
+            "period": 0.9
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "fluent-bat.png",
+          "placement": {
+            "x": 0.87,
+            "y": 0.33
+          },
+          "widthFraction": 0.1,
+          "motion": {
+            "startTime": 1.0,
+            "inDuration": 1.0,
+            "easing": "easeOut",
+            "inOffset": [
+              0.4,
+              -0.1
+            ]
+          },
+          "loop": {
+            "type": "bob",
+            "amplitude": 0.012,
+            "period": 0.9,
+            "phase": 0.4
+          },
+          "followsGaze": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "flash",
+          "onCuts": true,
+          "intensity": 0.55,
+          "duration": 0.2
+        }
+      ],
+      "minEngineVersion": 2
+    },
+    {
+      "id": "hw.haunted",
+      "moodId": "halloween2026",
+      "displayNameKey": "template.hw.haunted.name",
+      "style": "sequential",
+      "clipDuration": 3.2,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "glitch",
+        "duration": 0.5
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.08,
+        "panFraction": 0.6
+      },
+      "colorGrade": {
+        "saturation": 0.55,
+        "contrast": 1.15,
+        "temperature": 9800,
+        "brightness": -0.1,
+        "vignetteIntensity": 1.0
+      },
+      "bgm": {
+        "fileName": "bgm-hw.haunted.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-hw.haunted.mp4"
+      },
+      "textOverlays": [
+        {
+          "fontKey": "Nosifer-Regular",
+          "fontSize": 110,
+          "colorHex": "#C8102E",
+          "defaultTextKey": "template.hw.haunted.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.075
+          },
+          "motion": {
+            "startTime": 0.3,
+            "inDuration": 1.2,
+            "easing": "easeOut",
+            "inFade": true,
+            "inOffset": [
+              0,
+              -0.03
+            ]
+          },
+          "scrimOpacity": 0.5
+        },
+        {
+          "fontKey": "Griffy-Regular",
+          "fontSize": 64,
+          "colorHex": "#E6E6E6",
+          "defaultTextKey": "template.hw.haunted.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.13
+          },
+          "motion": {
+            "startTime": 1.0,
+            "inDuration": 1.2,
+            "easing": "easeOut",
+            "inFade": true
+          },
+          "scrimOpacity": 0.5
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "hw-zombie.png",
+          "placement": {
+            "x": 0.21,
+            "y": 0.774
+          },
+          "widthFraction": 0.56,
+          "motion": {
+            "startTime": 1.6,
+            "inDuration": 1.8,
+            "easing": "easeOut",
+            "inOffset": [
+              -0.5,
+              0
+            ]
+          },
+          "loop": {
+            "type": "wiggle",
+            "amplitude": 3,
+            "period": 1.3
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "hw-haunted-house.png",
+          "placement": {
+            "x": 0.76,
+            "y": 0.889
+          },
+          "widthFraction": 0.5,
+          "motion": {
+            "startTime": 0.0,
+            "inDuration": 1.4,
+            "easing": "easeOut",
+            "inFade": true,
+            "inOffset": [
+              0,
+              0.08
+            ]
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "fluent-spider.png",
+          "placement": {
+            "x": 0.85,
+            "y": 0.06
+          },
+          "widthFraction": 0.1,
+          "motion": {
+            "startTime": 2.2,
+            "inDuration": 1.5,
+            "easing": "easeOut",
+            "inOffset": [
+              0,
+              -0.15
+            ]
+          },
+          "loop": {
+            "type": "bob",
+            "amplitude": 0.01,
+            "period": 2.4
+          },
+          "followsGaze": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "flicker",
+          "intensity": 0.5,
+          "rate": 10
+        },
+        {
+          "type": "shake",
+          "onCuts": true,
+          "intensity": 0.5
+        }
+      ],
+      "minEngineVersion": 2
+    },
+    {
+      "id": "hw.monsters",
+      "moodId": "halloween2026",
+      "displayNameKey": "template.hw.monsters.name",
+      "style": "sequential",
+      "clipDuration": 2.6,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "whip",
+        "duration": 0.4
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.08,
+        "panFraction": 0.6
+      },
+      "colorGrade": {
+        "saturation": 0.95,
+        "contrast": 1.05,
+        "brightness": -0.04,
+        "tint": 15,
+        "vignetteIntensity": 0.6
+      },
+      "bgm": {
+        "fileName": "bgm-hw.monsters.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-hw.monsters.mp4"
+      },
+      "textOverlays": [
+        {
+          "fontKey": "HennyPenny-Regular",
+          "fontSize": 96,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.hw.monsters.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.07
+          },
+          "motion": {
+            "startTime": 0.2,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.5
+          },
+          "scrimOpacity": 0.45
+        },
+        {
+          "fontKey": "JollyLodger-Regular",
+          "fontSize": 88,
+          "colorHex": "#FFB347",
+          "defaultTextKey": "template.hw.monsters.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.125
+          },
+          "motion": {
+            "startTime": 0.6,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "hw-skeleton-wave.png",
+          "placement": {
+            "x": 0.2,
+            "y": 0.84
+          },
+          "widthFraction": 0.44,
+          "motion": {
+            "startTime": 0.4,
+            "inDuration": 0.9,
+            "easing": "easeOut",
+            "inOffset": [
+              0,
+              0.35
+            ]
+          },
+          "tint": "#FFFFFF",
+          "loop": {
+            "type": "wiggle",
+            "amplitude": 4,
+            "period": 1.5
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "hw-ghost-line.png",
+          "placement": {
+            "x": 0.84,
+            "y": 0.3
+          },
+          "widthFraction": 0.28,
+          "motion": {
+            "startTime": 1.0,
+            "inDuration": 1.0,
+            "easing": "easeOut",
+            "inScale": 0.5,
+            "inFade": true
+          },
+          "tint": "#FFFFFF",
+          "opacity": 0.92,
+          "loop": {
+            "type": "float",
+            "amplitude": 0.02,
+            "period": 2.4
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "hw-mummy.png",
+          "placement": {
+            "x": 0.84,
+            "y": 0.82
+          },
+          "widthFraction": 0.32,
+          "motion": {
+            "startTime": 1.8,
+            "inDuration": 0.9,
+            "easing": "spring",
+            "inOffset": [
+              0.4,
+              0
+            ]
+          },
+          "loop": {
+            "type": "bob",
+            "amplitude": 0.008,
+            "period": 1.1
+          },
+          "followsGaze": true
+        }
+      ],
+      "effects": [],
+      "minEngineVersion": 2
+    },
+    {
+      "id": "hw.dracula",
+      "moodId": "halloween2026",
+      "displayNameKey": "template.hw.dracula.name",
+      "style": "sequential",
+      "clipDuration": 2.8,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "iris",
+        "duration": 0.6
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 0.9,
+        "contrast": 1.08,
+        "brightness": -0.03,
+        "vignetteIntensity": 0.7
+      },
+      "bgm": {
+        "fileName": "bgm-hw.dracula.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-hw.dracula.mp4"
+      },
+      "textOverlays": [
+        {
+          "fontKey": "Griffy-Regular",
+          "fontSize": 76,
+          "colorHex": "#F2F2F2",
+          "defaultTextKey": "template.hw.dracula.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.06
+          },
+          "motion": {
+            "startTime": 0.4,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        },
+        {
+          "fontKey": "Creepster-Regular",
+          "fontSize": 130,
+          "colorHex": "#D7141F",
+          "defaultTextKey": "template.hw.dracula.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.115
+          },
+          "motion": {
+            "startTime": 0.9,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "hw-dracula-wave.mov",
+          "placement": {
+            "x": 0.8,
+            "y": 0.778
+          },
+          "widthFraction": 0.92,
+          "motion": {
+            "startTime": 0.2,
+            "inDuration": 1.0,
+            "easing": "easeOut",
+            "inOffset": [
+              0,
+              0.35
+            ],
+            "inFade": false
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "fluent-bat.png",
+          "placement": {
+            "x": 0.12,
+            "y": 0.28
+          },
+          "widthFraction": 0.12,
+          "rotation": -12,
+          "motion": {
+            "startTime": 1.2,
+            "inDuration": 0.9,
+            "easing": "easeOut",
+            "inOffset": [
+              -0.3,
+              -0.1
+            ]
+          },
+          "loop": {
+            "type": "bob",
+            "amplitude": 0.012,
+            "period": 1.1
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "fluent-bat.png",
+          "placement": {
+            "x": 0.88,
+            "y": 0.24
+          },
+          "widthFraction": 0.09,
+          "flipped": true,
+          "rotation": 10,
+          "motion": {
+            "startTime": 1.5,
+            "inDuration": 0.9,
+            "easing": "easeOut",
+            "inOffset": [
+              0.3,
+              -0.1
+            ]
+          },
+          "loop": {
+            "type": "bob",
+            "amplitude": 0.01,
+            "period": 0.9,
+            "phase": 0.3
+          },
+          "followsGaze": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "flash",
+          "onCuts": true,
+          "intensity": 0.35
+        }
+      ],
+      "minEngineVersion": 2
+    },
+    {
+      "id": "hw.peekaboo",
+      "moodId": "halloween2026",
+      "displayNameKey": "template.hw.peekaboo.name",
+      "style": "sequential",
+      "clipDuration": 2.4,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "whip",
+        "duration": 0.4
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 1.08,
+        "contrast": 1.05,
+        "brightness": 0.02,
+        "vignetteIntensity": 0.4
+      },
+      "bgm": {
+        "fileName": "bgm-hw.monsters.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-hw.peekaboo.mp4"
+      },
+      "textOverlays": [
+        {
+          "fontKey": "JollyLodger-Regular",
+          "fontSize": 130,
+          "colorHex": "#FF8A1F",
+          "defaultTextKey": "template.hw.peekaboo.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.07
+          },
+          "motion": {
+            "startTime": 0.3,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        },
+        {
+          "fontKey": "Griffy-Regular",
+          "fontSize": 64,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.hw.peekaboo.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.125
+          },
+          "motion": {
+            "startTime": 0.9,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "hw-witchkid-peek.mov",
+          "placement": {
+            "x": 0.8,
+            "y": 0.42
+          },
+          "widthFraction": 0.4,
+          "followsGaze": true
+        },
+        {
+          "fileName": "hw-witchkid-pumpkin.mov",
+          "placement": {
+            "x": 0.21,
+            "y": 0.75
+          },
+          "widthFraction": 0.42,
+          "flipped": true,
+          "motion": {
+            "startTime": 2.4,
+            "inDuration": 0.01,
+            "inFade": false
+          },
+          "followsGaze": true
+        }
+      ],
+      "minEngineVersion": 2
+    },
+    {
+      "id": "hw.skeleton",
+      "moodId": "halloween2026",
+      "displayNameKey": "template.hw.skeleton.name",
+      "style": "sequential",
+      "clipDuration": 2.2,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "tvOff",
+        "duration": 0.5
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 0.92,
+        "contrast": 1.12,
+        "brightness": -0.04,
+        "vignetteIntensity": 0.7
+      },
+      "bgm": {
+        "fileName": "bgm-hw.party.m4a",
+        "volume": 0.9
+      },
+      "samplePreview": {
+        "fileName": "sample-hw.skeleton.mp4"
+      },
+      "textOverlays": [
+        {
+          "fontKey": "Creepster-Regular",
+          "fontSize": 80,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.hw.skeleton.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.055
+          },
+          "motion": {
+            "startTime": 0.3,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        },
+        {
+          "fontKey": "Creepster-Regular",
+          "fontSize": 170,
+          "colorHex": "#FFB347",
+          "defaultTextKey": "template.hw.skeleton.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.115
+          },
+          "motion": {
+            "startTime": 0.7,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "hw-skeleton-dance.mov",
+          "placement": {
+            "x": 0.2,
+            "y": 0.735
+          },
+          "widthFraction": 0.62,
+          "motion": {
+            "startTime": 0.0,
+            "inDuration": 0.6,
+            "easing": "easeOut",
+            "inOffset": [
+              -0.5,
+              0
+            ],
+            "inFade": false
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "fluent-skull.png",
+          "placement": {
+            "x": 0.82,
+            "y": 0.86
+          },
+          "widthFraction": 0.14,
+          "motion": {
+            "startTime": 1.0,
+            "inDuration": 0.6,
+            "easing": "spring",
+            "inScale": 0.2
+          },
+          "loop": {
+            "type": "wiggle",
+            "amplitude": 10,
+            "period": 0.55
+          },
+          "followsGaze": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "flash",
+          "onCuts": true,
+          "intensity": 0.4
+        }
+      ],
+      "minEngineVersion": 2
+    }
+  ],
+  "strings": {
+    "season.halloween2026.name": {
+      "ko": "🎃 할로윈",
+      "en": "🎃 Halloween",
+      "ja": "🎃 ハロウィン",
+      "es": "🎃 Halloween"
+    },
+    "template.hw.party.name": {
+      "ko": "펌킨 파티",
+      "en": "Pumpkin Party",
+      "ja": "パンプキンパーティー",
+      "es": "Fiesta de Calabazas"
+    },
+    "template.hw.party.text1": {
+      "ko": "HAPPY",
+      "en": "HAPPY",
+      "ja": "HAPPY",
+      "es": "HAPPY"
+    },
+    "template.hw.party.text2": {
+      "ko": "HALLOWEEN",
+      "en": "HALLOWEEN",
+      "ja": "HALLOWEEN",
+      "es": "HALLOWEEN"
+    },
+    "template.hw.haunted.name": {
+      "ko": "유령의 집",
+      "en": "Haunted House",
+      "ja": "おばけ屋敷",
+      "es": "Casa Embrujada"
+    },
+    "template.hw.haunted.text1": {
+      "ko": "BEWARE",
+      "en": "BEWARE",
+      "ja": "BEWARE",
+      "es": "BEWARE"
+    },
+    "template.hw.haunted.text2": {
+      "ko": "the house is waiting…",
+      "en": "the house is waiting…",
+      "ja": "the house is waiting…",
+      "es": "the house is waiting…"
+    },
+    "template.hw.monsters.name": {
+      "ko": "꼬마 몬스터",
+      "en": "Little Monsters",
+      "ja": "ちびモンスター",
+      "es": "Pequeños Monstruos"
+    },
+    "template.hw.monsters.text1": {
+      "ko": "Little Monsters",
+      "en": "Little Monsters",
+      "ja": "Little Monsters",
+      "es": "Little Monsters"
+    },
+    "template.hw.monsters.text2": {
+      "ko": "trick or treat!",
+      "en": "trick or treat!",
+      "ja": "trick or treat!",
+      "es": "trick or treat!"
+    },
+    "template.hw.dracula.name": {
+      "ko": "드라큘라와 한 컷",
+      "en": "Me & Dracula",
+      "ja": "ドラキュラと一枚",
+      "es": "Yo y Drácula"
+    },
+    "template.hw.dracula.text1": {
+      "ko": "Hello,",
+      "en": "Hello,",
+      "ja": "Hello,",
+      "es": "Hello,"
+    },
+    "template.hw.dracula.text2": {
+      "ko": "MORTAL!",
+      "en": "MORTAL!",
+      "ja": "MORTAL!",
+      "es": "MORTAL!"
+    },
+    "template.hw.peekaboo.text1": {
+      "ko": "PEEKABOO!",
+      "en": "PEEKABOO!",
+      "ja": "PEEKABOO!",
+      "es": "PEEKABOO!"
+    },
+    "template.hw.peekaboo.text2": {
+      "ko": "trick or treat?",
+      "en": "trick or treat?",
+      "ja": "trick or treat?",
+      "es": "trick or treat?"
+    },
+    "template.hw.skeleton.text1": {
+      "ko": "SHAKE YOUR",
+      "en": "SHAKE YOUR",
+      "ja": "SHAKE YOUR",
+      "es": "SHAKE YOUR"
+    },
+    "template.hw.skeleton.text2": {
+      "ko": "BONES",
+      "en": "BONES",
+      "ja": "BONES",
+      "es": "BONES"
+    },
+    "template.hw.peekaboo.name": {
+      "ko": "빼꼼 꼬마 마녀",
+      "en": "Peekaboo Witch",
+      "ja": "ひょっこり魔女",
+      "es": "Brujita Escondida"
+    },
+    "template.hw.skeleton.name": {
+      "ko": "해골 댄스",
+      "en": "Skeleton Dance",
+      "ja": "ガイコツダンス",
+      "es": "Baile de Esqueletos"
+    }
+  }
+}
