@@ -19,6 +19,22 @@ Do **not** hand-edit the HTML — it is overwritten on every build. Edit `src/ap
 Commit the result. There is no CI and no build step on GitHub's side; the generated
 files in the repo *are* the site.
 
+**One exception — `bshort/bshort-content/` is not generated.** It holds bshort's seasonal
+templates, which the app downloads at runtime so new templates ship without an App Store
+release. The build never touches it; do not delete it while tidying generated files.
+
+    bshort/bshort-content/
+      draft/                 test channel — only DEBUG builds of the app read it
+        templates-v3.json    seasons · templates · strings in ko/en/ja/es
+        assets/              music (m4a) and previews (mp4) the app downloads
+        photos/              sample photos used only to render previews; never downloaded
+      templates-v3.json      live channel — release builds read it
+      assets/
+
+The file name carries the template schema version so older app versions keep reading
+the file they understand. The format is documented in the bshort repo
+(`Support/RemoteTemplateStore.swift`).
+
 ## Adding an app
 
 1. Add an entry to `src/apps.json`.
