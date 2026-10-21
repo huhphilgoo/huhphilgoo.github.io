@@ -199,11 +199,11 @@
         "vignetteIntensity": 1.0
       },
       "bgm": {
-        "fileName": "bgm-hw.haunted.m4a",
+        "fileName": "bgm-hw.haunted.v2.m4a",
         "volume": 0.85
       },
       "samplePreview": {
-        "fileName": "sample-hw.haunted.mp4"
+        "fileName": "sample-hw.haunted.v2.mp4"
       },
       "textOverlays": [
         {
@@ -492,11 +492,11 @@
         "vignetteIntensity": 0.7
       },
       "bgm": {
-        "fileName": "bgm-hw.dracula.m4a",
+        "fileName": "bgm-hw.dracula.v2.m4a",
         "volume": 0.85
       },
       "samplePreview": {
-        "fileName": "sample-hw.dracula.mp4"
+        "fileName": "sample-hw.dracula.v2.mp4"
       },
       "textOverlays": [
         {
