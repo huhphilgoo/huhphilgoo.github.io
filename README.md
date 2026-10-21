@@ -24,12 +24,11 @@ templates, which the app downloads at runtime so new templates ship without an A
 release. The build never touches it; do not delete it while tidying generated files.
 
     bshort/bshort-content/
-      draft/                 test channel — only DEBUG builds of the app read it
-        templates-v3.json    seasons · templates · strings in ko/en/ja/es
-        assets/              music (m4a) and previews (mp4) the app downloads
-        photos/              sample photos used only to render previews; never downloaded
-      templates-v3.json      live channel — release builds read it
-      assets/
+      templates-v3.json      seasons · templates · strings in ko/en/ja/es
+      assets/                music (m4a) and previews (mp4) the app downloads
+
+Drafts are **not** kept here — this repository is public. They live in the private bshort
+repository (`SeasonalTemplates/draft/`) and are copied here only when a season goes live.
 
 The file name carries the template schema version so older app versions keep reading
 the file they understand. The format is documented in the bshort repo
