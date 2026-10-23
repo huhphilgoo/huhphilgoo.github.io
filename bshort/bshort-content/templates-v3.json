@@ -6,6 +6,12 @@
       "nameKey": "season.halloween2026.name",
       "startsAt": "2026-10-20",
       "endsAt": "2026-11-02"
+    },
+    {
+      "id": "christmas2026",
+      "nameKey": "season.christmas2026.name",
+      "startsAt": "2026-12-01",
+      "endsAt": "2026-12-26"
     }
   ],
   "templates": [
@@ -823,6 +829,894 @@
         }
       ],
       "minEngineVersion": 2
+    },
+    {
+      "id": "xm.santa",
+      "moodId": "christmas2026",
+      "displayNameKey": "template.xm.santa.name",
+      "style": "sequential",
+      "clipDuration": 2.4,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "spinZoom",
+        "duration": 0.5
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 1.08,
+        "contrast": 1.05,
+        "brightness": 0.0,
+        "vignetteIntensity": 0.5
+      },
+      "bgm": {
+        "fileName": "bgm-xm.santa.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-xm.santa.mp4"
+      },
+      "minEngineVersion": 2,
+      "textOverlays": [
+        {
+          "fontKey": "MountainsofChristmas-Bold",
+          "fontSize": 128,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.xm.santa.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.07
+          },
+          "motion": {
+            "startTime": 0.3,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        },
+        {
+          "fontKey": "GreatVibes-Regular",
+          "fontSize": 76,
+          "colorHex": "#FFD57A",
+          "defaultTextKey": "template.xm.santa.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.13
+          },
+          "motion": {
+            "startTime": 0.9,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "xm-santa-dance.mov",
+          "placement": {
+            "x": 0.76,
+            "y": 0.745
+          },
+          "widthFraction": 0.48,
+          "motion": {
+            "startTime": 0.2,
+            "inDuration": 0.9,
+            "easing": "easeOut",
+            "inOffset": [
+              0,
+              0.35
+            ],
+            "inFade": false
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "xm-santa-sack.png",
+          "placement": {
+            "x": 0.17,
+            "y": 0.902
+          },
+          "widthFraction": 0.27,
+          "motion": {
+            "startTime": 0.8,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.2
+          },
+          "loop": {
+            "type": "wiggle",
+            "amplitude": 4,
+            "period": 1.2
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "xm-snow.mp4",
+          "placement": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "widthFraction": 1.0,
+          "opacity": 1.0,
+          "chromaKey": {
+            "color": "green",
+            "tolerance": 45,
+            "minSaturation": 0.35
+          }
+        }
+      ],
+      "effects": [
+        {
+          "type": "flash",
+          "onCuts": true,
+          "intensity": 0.25
+        }
+      ]
+    },
+    {
+      "id": "xm.peek",
+      "moodId": "christmas2026",
+      "displayNameKey": "template.xm.peek.name",
+      "style": "sequential",
+      "clipDuration": 2.2,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "whip",
+        "duration": 0.4
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 1.1,
+        "contrast": 1.04,
+        "brightness": 0.02,
+        "vignetteIntensity": 0.35
+      },
+      "bgm": {
+        "fileName": "bgm-xm.peek.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-xm.peek.mp4"
+      },
+      "minEngineVersion": 2,
+      "textOverlays": [
+        {
+          "fontKey": "Pacifico-Regular",
+          "fontSize": 120,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.xm.peek.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.075
+          },
+          "motion": {
+            "startTime": 0.3,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        },
+        {
+          "fontKey": "GreatVibes-Regular",
+          "fontSize": 72,
+          "colorHex": "#FFD57A",
+          "defaultTextKey": "template.xm.peek.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.135
+          },
+          "motion": {
+            "startTime": 0.9,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "xm-cat-wall.mov",
+          "placement": {
+            "x": 0.64,
+            "y": 0.6
+          },
+          "widthFraction": 0.72,
+          "followsGaze": true
+        },
+        {
+          "fileName": "xm-gift-man.mov",
+          "placement": {
+            "x": 0.26,
+            "y": 0.834
+          },
+          "widthFraction": 0.52,
+          "motion": {
+            "startTime": 0.6,
+            "inDuration": 0.9,
+            "easing": "easeOut",
+            "inOffset": [
+              0,
+              0.35
+            ],
+            "inFade": false
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "xm-gift.png",
+          "placement": {
+            "x": 0.14,
+            "y": 0.3
+          },
+          "widthFraction": 0.15,
+          "rotation": -10,
+          "motion": {
+            "startTime": 1.2,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.2
+          },
+          "loop": {
+            "type": "bob",
+            "amplitude": 0.012,
+            "period": 1.4
+          },
+          "followsGaze": true
+        }
+      ]
+    },
+    {
+      "id": "xm.card",
+      "moodId": "christmas2026",
+      "displayNameKey": "template.xm.card.name",
+      "style": "sequential",
+      "clipDuration": 3.0,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "crossDissolve",
+        "duration": 0.8
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 1.0,
+        "contrast": 1.02,
+        "brightness": 0.02,
+        "vignetteIntensity": 0.45
+      },
+      "bgm": {
+        "fileName": "bgm-xm.card.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-xm.card.mp4"
+      },
+      "minEngineVersion": 2,
+      "textOverlays": [
+        {
+          "fontKey": "GreatVibes-Regular",
+          "fontSize": 80,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.xm.card.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.335
+          },
+          "motion": {
+            "startTime": 1.6,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.8
+          },
+          "scrimOpacity": 0.0
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "xm-holly-frame.png",
+          "placement": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "widthFraction": 1.0
+        },
+        {
+          "fileName": "xm-merry-script.mov",
+          "placement": {
+            "x": 0.5,
+            "y": 0.2
+          },
+          "widthFraction": 0.64,
+          "videoLoops": false,
+          "motion": {
+            "startTime": 0.2,
+            "inDuration": 0.01,
+            "inFade": false
+          }
+        },
+        {
+          "fileName": "xm-elves-tree.png",
+          "placement": {
+            "x": 0.24,
+            "y": 0.832
+          },
+          "widthFraction": 0.36,
+          "motion": {
+            "startTime": 0.6,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.5
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "xm-gift.png",
+          "placement": {
+            "x": 0.8,
+            "y": 0.892
+          },
+          "widthFraction": 0.18,
+          "motion": {
+            "startTime": 1.0,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.2
+          },
+          "loop": {
+            "type": "bob",
+            "amplitude": 0.008,
+            "period": 1.6
+          },
+          "followsGaze": true
+        }
+      ]
+    },
+    {
+      "id": "xm.snow",
+      "moodId": "christmas2026",
+      "displayNameKey": "template.xm.snow.name",
+      "style": "sequential",
+      "clipDuration": 2.8,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "iris",
+        "duration": 0.6
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 0.85,
+        "contrast": 1.05,
+        "brightness": 0.03,
+        "vignetteIntensity": 0.5
+      },
+      "bgm": {
+        "fileName": "bgm-xm.snow.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-xm.snow.mp4"
+      },
+      "minEngineVersion": 2,
+      "textOverlays": [
+        {
+          "fontKey": "SnowburstOne-Regular",
+          "fontSize": 120,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.xm.snow.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.07
+          },
+          "motion": {
+            "startTime": 0.3,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        },
+        {
+          "fontKey": "CinzelDecorative-Bold",
+          "fontSize": 54,
+          "colorHex": "#DDEBFF",
+          "defaultTextKey": "template.xm.snow.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.13
+          },
+          "motion": {
+            "startTime": 0.9,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "xm-snowman.png",
+          "placement": {
+            "x": 0.76,
+            "y": 0.83
+          },
+          "widthFraction": 0.46,
+          "motion": {
+            "startTime": 0.3,
+            "inDuration": 0.9,
+            "easing": "easeOut",
+            "inOffset": [
+              0,
+              0.35
+            ],
+            "inFade": false
+          },
+          "loop": {
+            "type": "wiggle",
+            "amplitude": 4,
+            "period": 1.6
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "xm-tree-mint.png",
+          "placement": {
+            "x": 0.2,
+            "y": 0.84
+          },
+          "widthFraction": 0.36,
+          "motion": {
+            "startTime": 0.6,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.5
+          },
+          "loop": {
+            "type": "wiggle",
+            "amplitude": 2,
+            "period": 2.2
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "xm-snow.mp4",
+          "placement": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "widthFraction": 1.0,
+          "opacity": 0.9,
+          "chromaKey": {
+            "color": "green",
+            "tolerance": 45,
+            "minSaturation": 0.35
+          }
+        }
+      ]
+    },
+    {
+      "id": "xm.cats",
+      "moodId": "christmas2026",
+      "displayNameKey": "template.xm.cats.name",
+      "style": "sequential",
+      "clipDuration": 2.2,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "slideUp",
+        "duration": 0.45
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 1.08,
+        "contrast": 1.04,
+        "brightness": 0.02,
+        "vignetteIntensity": 0.35
+      },
+      "bgm": {
+        "fileName": "bgm-xm.cats.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-xm.cats.mp4"
+      },
+      "minEngineVersion": 2,
+      "textOverlays": [
+        {
+          "fontKey": "EmilysCandy-Regular",
+          "fontSize": 104,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.xm.cats.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.07
+          },
+          "motion": {
+            "startTime": 0.3,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        },
+        {
+          "fontKey": "Pacifico-Regular",
+          "fontSize": 58,
+          "colorHex": "#FFB3C1",
+          "defaultTextKey": "template.xm.cats.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.13
+          },
+          "motion": {
+            "startTime": 0.9,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "xm-cats-peek.mov",
+          "placement": {
+            "x": 0.28,
+            "y": 0.89
+          },
+          "widthFraction": 1.3
+        },
+        {
+          "fileName": "xm-sparkle-tree.mov",
+          "placement": {
+            "x": 0.77,
+            "y": 0.31
+          },
+          "widthFraction": 0.46,
+          "videoLoops": false,
+          "followsGaze": true
+        }
+      ]
+    },
+    {
+      "id": "xm.hohoho",
+      "moodId": "christmas2026",
+      "displayNameKey": "template.xm.hohoho.name",
+      "style": "sequential",
+      "clipDuration": 2.0,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "zoomPunch",
+        "duration": 0.4
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 1.12,
+        "contrast": 1.08,
+        "brightness": 0.0,
+        "vignetteIntensity": 0.45
+      },
+      "bgm": {
+        "fileName": "bgm-xm.hohoho.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-xm.hohoho.mp4"
+      },
+      "minEngineVersion": 2,
+      "textOverlays": [
+        {
+          "fontKey": "BerkshireSwash-Regular",
+          "fontSize": 150,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.xm.hohoho.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.07
+          },
+          "motion": {
+            "startTime": 0.3,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        },
+        {
+          "fontKey": "GreatVibes-Regular",
+          "fontSize": 72,
+          "colorHex": "#FFD57A",
+          "defaultTextKey": "template.xm.hohoho.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.135
+          },
+          "motion": {
+            "startTime": 0.9,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.45
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "xm-santa-doll.mov",
+          "placement": {
+            "x": 0.2,
+            "y": 0.753
+          },
+          "widthFraction": 0.4,
+          "motion": {
+            "startTime": 0.2,
+            "inDuration": 0.9,
+            "easing": "easeOut",
+            "inOffset": [
+              0,
+              0.35
+            ],
+            "inFade": false
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "xm-elephant-walk.mov",
+          "placement": {
+            "x": 0.5,
+            "y": 0.868
+          },
+          "widthFraction": 1.0,
+          "videoLoops": false,
+          "followsGaze": true
+        }
+      ],
+      "effects": [
+        {
+          "type": "flash",
+          "onCuts": true,
+          "intensity": 0.3
+        }
+      ]
+    },
+    {
+      "id": "xm.cottage",
+      "moodId": "christmas2026",
+      "displayNameKey": "template.xm.cottage.name",
+      "style": "sequential",
+      "clipDuration": 3.0,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "crossDissolve",
+        "duration": 0.8
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 0.9,
+        "contrast": 1.04,
+        "brightness": 0.04,
+        "vignetteIntensity": 0.35
+      },
+      "bgm": {
+        "fileName": "bgm-xm.cottage.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-xm.cottage.mp4"
+      },
+      "minEngineVersion": 2,
+      "textOverlays": [
+        {
+          "fontKey": "GreatVibes-Regular",
+          "fontSize": 110,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.xm.cottage.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.08
+          },
+          "motion": {
+            "startTime": 0.4,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.35
+        },
+        {
+          "fontKey": "CinzelDecorative-Bold",
+          "fontSize": 48,
+          "colorHex": "#E8F1FF",
+          "defaultTextKey": "template.xm.cottage.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.14
+          },
+          "motion": {
+            "startTime": 1.0,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.35
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "xm-cottage-full.png",
+          "placement": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "widthFraction": 1.0
+        },
+        {
+          "fileName": "xm-snow.mp4",
+          "placement": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "widthFraction": 1.0,
+          "opacity": 1.0,
+          "chromaKey": {
+            "color": "green",
+            "tolerance": 45,
+            "minSaturation": 0.35
+          }
+        }
+      ]
+    },
+    {
+      "id": "xm.sparkle",
+      "moodId": "christmas2026",
+      "displayNameKey": "template.xm.sparkle.name",
+      "style": "sequential",
+      "clipDuration": 2.6,
+      "aspectFillMode": "cropFill",
+      "transition": {
+        "type": "fadeThroughBlack",
+        "duration": 0.6
+      },
+      "kenBurns": {
+        "enabled": true,
+        "minZoom": 1.0,
+        "maxZoom": 1.06,
+        "panFraction": 0.5
+      },
+      "colorGrade": {
+        "saturation": 0.9,
+        "contrast": 1.1,
+        "brightness": -0.05,
+        "vignetteIntensity": 0.8
+      },
+      "bgm": {
+        "fileName": "bgm-xm.sparkle.m4a",
+        "volume": 0.85
+      },
+      "samplePreview": {
+        "fileName": "sample-xm.sparkle.mp4"
+      },
+      "minEngineVersion": 2,
+      "textOverlays": [
+        {
+          "fontKey": "GreatVibes-Regular",
+          "fontSize": 120,
+          "colorHex": "#FFFFFF",
+          "defaultTextKey": "template.xm.sparkle.text1",
+          "placement": {
+            "x": 0.5,
+            "y": 0.08
+          },
+          "motion": {
+            "startTime": 0.4,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.4
+        },
+        {
+          "fontKey": "CinzelDecorative-Bold",
+          "fontSize": 50,
+          "colorHex": "#FFE7A8",
+          "defaultTextKey": "template.xm.sparkle.text2",
+          "placement": {
+            "x": 0.5,
+            "y": 0.14
+          },
+          "motion": {
+            "startTime": 1.0,
+            "inDuration": 0.8,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "scrimOpacity": 0.4
+        }
+      ],
+      "stickers": [
+        {
+          "fileName": "xm-sparkle-tree.mov",
+          "placement": {
+            "x": 0.76,
+            "y": 0.7
+          },
+          "widthFraction": 0.56,
+          "videoLoops": false,
+          "followsGaze": true
+        },
+        {
+          "fileName": "xm-tree-cute.png",
+          "placement": {
+            "x": 0.17,
+            "y": 0.879
+          },
+          "widthFraction": 0.28,
+          "motion": {
+            "startTime": 0.8,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.4
+          },
+          "loop": {
+            "type": "wiggle",
+            "amplitude": 3,
+            "period": 1.8
+          },
+          "followsGaze": true
+        },
+        {
+          "fileName": "xm-gift.png",
+          "placement": {
+            "x": 0.36,
+            "y": 0.943
+          },
+          "widthFraction": 0.13,
+          "motion": {
+            "startTime": 1.3,
+            "inDuration": 0.7,
+            "easing": "spring",
+            "inScale": 0.2
+          },
+          "followsGaze": true
+        }
+      ]
     }
   ],
   "strings": {
@@ -939,6 +1833,150 @@
       "en": "Skeleton Dance",
       "ja": "ガイコツダンス",
       "es": "Baile de Esqueletos"
+    },
+    "season.christmas2026.name": {
+      "ko": "🎄 크리스마스",
+      "en": "🎄 Christmas",
+      "ja": "🎄 クリスマス",
+      "es": "🎄 Navidad"
+    },
+    "template.xm.santa.name": {
+      "ko": "산타와 댄스",
+      "en": "Dance with Santa",
+      "ja": "サンタとダンス",
+      "es": "Baile con Santa"
+    },
+    "template.xm.peek.name": {
+      "ko": "깜짝 선물",
+      "en": "Surprise Gift",
+      "ja": "サプライズギフト",
+      "es": "Regalo Sorpresa"
+    },
+    "template.xm.card.name": {
+      "ko": "크리스마스 카드",
+      "en": "Christmas Card",
+      "ja": "クリスマスカード",
+      "es": "Tarjeta Navideña"
+    },
+    "template.xm.snow.name": {
+      "ko": "눈 오는 날",
+      "en": "Let It Snow",
+      "ja": "雪の日",
+      "es": "Día de Nieve"
+    },
+    "template.xm.cats.name": {
+      "ko": "냥냥 크리스마스",
+      "en": "Meowy Christmas",
+      "ja": "にゃんにゃんクリスマス",
+      "es": "Navidad Gatuna"
+    },
+    "template.xm.hohoho.name": {
+      "ko": "호호호 산타",
+      "en": "Ho Ho Ho",
+      "ja": "ホーホーホー",
+      "es": "Jo Jo Jo"
+    },
+    "template.xm.santa.text1": {
+      "ko": "Merry Christmas",
+      "en": "Merry Christmas",
+      "ja": "Merry Christmas",
+      "es": "Merry Christmas"
+    },
+    "template.xm.santa.text2": {
+      "ko": "& a happy new year",
+      "en": "& a happy new year",
+      "ja": "& a happy new year",
+      "es": "& a happy new year"
+    },
+    "template.xm.peek.text1": {
+      "ko": "Surprise!",
+      "en": "Surprise!",
+      "ja": "Surprise!",
+      "es": "Surprise!"
+    },
+    "template.xm.peek.text2": {
+      "ko": "a little gift for you",
+      "en": "a little gift for you",
+      "ja": "a little gift for you",
+      "es": "a little gift for you"
+    },
+    "template.xm.card.text1": {
+      "ko": "with love",
+      "en": "with love",
+      "ja": "with love",
+      "es": "with love"
+    },
+    "template.xm.snow.text1": {
+      "ko": "Let it snow",
+      "en": "Let it snow",
+      "ja": "Let it snow",
+      "es": "Let it snow"
+    },
+    "template.xm.snow.text2": {
+      "ko": "WHITE CHRISTMAS",
+      "en": "WHITE CHRISTMAS",
+      "ja": "WHITE CHRISTMAS",
+      "es": "WHITE CHRISTMAS"
+    },
+    "template.xm.cats.text1": {
+      "ko": "Meowy Christmas",
+      "en": "Meowy Christmas",
+      "ja": "Meowy Christmas",
+      "es": "Meowy Christmas"
+    },
+    "template.xm.cats.text2": {
+      "ko": "purr-fect holidays",
+      "en": "purr-fect holidays",
+      "ja": "purr-fect holidays",
+      "es": "purr-fect holidays"
+    },
+    "template.xm.hohoho.text1": {
+      "ko": "HO HO HO",
+      "en": "HO HO HO",
+      "ja": "HO HO HO",
+      "es": "HO HO HO"
+    },
+    "template.xm.hohoho.text2": {
+      "ko": "Merry Christmas",
+      "en": "Merry Christmas",
+      "ja": "Merry Christmas",
+      "es": "Merry Christmas"
+    },
+    "template.xm.cottage.name": {
+      "ko": "겨울 마을",
+      "en": "Winter Cottage",
+      "ja": "冬の村",
+      "es": "Casita de Invierno"
+    },
+    "template.xm.sparkle.name": {
+      "ko": "반짝 트리",
+      "en": "Sparkle Tree",
+      "ja": "きらきらツリー",
+      "es": "Árbol Brillante"
+    },
+    "template.xm.cottage.text1": {
+      "ko": "Winter Wonderland",
+      "en": "Winter Wonderland",
+      "ja": "Winter Wonderland",
+      "es": "Winter Wonderland"
+    },
+    "template.xm.cottage.text2": {
+      "ko": "WARM WISHES",
+      "en": "WARM WISHES",
+      "ja": "WARM WISHES",
+      "es": "WARM WISHES"
+    },
+    "template.xm.sparkle.text1": {
+      "ko": "Silent Night",
+      "en": "Silent Night",
+      "ja": "Silent Night",
+      "es": "Silent Night"
+    },
+    "template.xm.sparkle.text2": {
+      "ko": "HOLY NIGHT",
+      "en": "HOLY NIGHT",
+      "ja": "HOLY NIGHT",
+      "es": "HOLY NIGHT"
     }
   }
 }
