@@ -1213,9 +1213,9 @@
       "summary": "A drawing board that takes a stylus seriously — five pen tips, pressure, and shapes that snap clean.",
       "summaryKo": "펜을 제대로 쓰는 그림판. 펜촉 다섯 가지, 필압, 그리고 삐뚤게 그려도 반듯해지는 도형.",
       "policyUpdated": {
-        "ko": "2026년 8월 19일",
-        "en": "August 19, 2026",
-        "ja": "2026年8月19日"
+        "ko": "2026년 11월 10일",
+        "en": "November 10, 2026",
+        "ja": "2026年11月10日"
       },
       "privacy": {
         "storage": {
@@ -1224,8 +1224,7 @@
           "ja": "ユーザーが本アプリで描いた絵、入力したテキスト、読み込んだ写真は、すべてユーザーの端末内でのみ処理され、開発者のサーバーに送信されることはありません。本アプリには会員登録もアカウントもなく、作品を保管するクラウドも用意していません。絵を共有するときだけPNGファイルが端末の一時フォルダに一時的に作成され、OSがこれを削除します。"
         },
         "services": [
-          "admob",
-          "firebaseAnalytics"
+          "admob"
         ],
         "consent": {
           "ump": true,
@@ -1287,17 +1286,17 @@
           {
             "ko": [
               "네트워크 접근",
-              "광고 수신 및 이용 통계 전송",
+              "광고 수신",
               "그리기 기능 자체는 오프라인에서도 동작"
             ],
             "en": [
               "Network access",
-              "To receive ads and send usage analytics",
+              "To receive ads",
               "The drawing features themselves work offline"
             ],
             "ja": [
               "ネットワークアクセス",
-              "広告の受信と利用状況の送信のため",
+              "広告の受信のため",
               "お絵かき機能自体はオフラインでも動作します"
             ]
           }
@@ -1338,7 +1337,7 @@
           "privacySection": {
             "eyebrow": "개인정보",
             "title": "그림은 기기 안에 남습니다.",
-            "lede": "업로드할 서버도, 그림을 묶어둘 계정도 없습니다. 모든 처리가 기기에서 이뤄지고, 앱을 지우면 함께 사라집니다. 앱은 무료이고 광고가 붙기 때문에 Google AdMob과 Firebase Analytics가 통상적인 광고 식별자와 기기 정보를 수집합니다. 그 내용은 전부 {privacy}에 적어두었습니다."
+            "lede": "업로드할 서버도, 그림을 묶어둘 계정도 없습니다. 모든 처리가 기기에서 이뤄지고, 앱을 지우면 함께 사라집니다. 앱은 무료이고 광고가 붙기 때문에 Google AdMob이 통상적인 광고 식별자와 기기 정보를 수집합니다. 그 내용은 전부 {privacy}에 적어두었습니다."
           },
           "privacyLinkText": "개인정보처리방침",
           "lede": "다섯 가지 펜촉, 애플펜슬과 S펜의 필압, 화면에 편하게 얹는 손. 삐뚤게 그린 도형은 반듯하게 정리되고, 닫힌 곳은 탭 한 번으로 칠해집니다.",
@@ -1557,7 +1556,7 @@
           "privacySection": {
             "eyebrow": "Privacy",
             "title": "Your drawings stay on your device.",
-            "lede": "There is no server to upload them to, and no account to attach them to. Everything is handled on the device and is gone when you delete the app. The app is free and carries ads, which means Google AdMob and Firebase Analytics collect the usual advertising identifier and device information — all of it written out in the {privacy}."
+            "lede": "There is no server to upload them to, and no account to attach them to. Everything is handled on the device and is gone when you delete the app. The app is free and carries ads, which means Google AdMob collects the usual advertising identifier and device information — all of it written out in the {privacy}."
           },
           "privacyLinkText": "privacy policy",
           "lede": "Five pen tips, pressure from your Apple Pencil or S Pen, and a palm you can rest on the screen. Rough shapes come out clean, and one tap fills any closed area.",
@@ -1776,7 +1775,7 @@
           "privacySection": {
             "eyebrow": "プライバシー",
             "title": "描いた絵は端末の中に残ります。",
-            "lede": "アップロードするサーバーも、作品を結び付けるアカウントもありません。すべての処理は端末で行われ、アプリを削除すれば一緒に消えます。本アプリは無料で広告が入るため、Google AdMobとFirebase Analyticsが一般的な広告識別子と端末情報を収集します。その内容はすべて{privacy}に記載しています。"
+            "lede": "アップロードするサーバーも、作品を結び付けるアカウントもありません。すべての処理は端末で行われ、アプリを削除すれば一緒に消えます。本アプリは無料で広告が入るため、Google AdMobが一般的な広告識別子と端末情報を収集します。その内容はすべて{privacy}に記載しています。"
           },
           "privacyLinkText": "プライバシーポリシー",
           "lede": "5種類のペン先、Apple PencilとSペンの筆圧、そして画面に置いたままでいい手。ざっくり描いた図形はまっすぐ整い、囲んだ場所はワンタップで塗れます。",
