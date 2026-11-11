@@ -2283,7 +2283,7 @@
             },
             {
               "img": "assets/receipt_{lang}.jpg",
-              "tag": "NEW · Receipt scanning",
+              "tag": "Receipt scanning",
               "title": "Just snap the receipt",
               "text": "Take a photo or pick one from your library, and the amount, date and store name are read and filled in. Check them, then save.",
               "points": [
@@ -2331,7 +2331,7 @@
             },
             {
               "img": "assets/pay_{lang}.jpg",
-              "tag": "NEW · Custom names",
+              "tag": "Custom names",
               "title": "Your payment methods, your way",
               "text": "If a payment method or card issuer isn't listed, just type its name. Names you enter show up in the list next time.",
               "points": [
@@ -2343,7 +2343,7 @@
             },
             {
               "img": "assets/two_{lang}.jpg",
-              "tag": "NEW · Big screens",
+              "tag": "Big screens",
               "title": "Unfold for records and stats side by side",
               "text": "On unfolded foldables, iPhone Duo and tablets, your records sit on the left and your stats on the right. Change the month on one side and the other follows.",
               "points": [
@@ -2534,7 +2534,7 @@
             },
             {
               "img": "assets/receipt_{lang}.jpg",
-              "tag": "NEW · 영수증 스캔",
+              "tag": "영수증 스캔",
               "title": "영수증은 찍기만 하세요",
               "text": "사진을 찍거나 앨범에서 고르면 금액, 날짜, 가게 이름을 읽어 채워 줍니다. 저장하기 전에 맞는지 확인만 하면 됩니다.",
               "points": [
@@ -2582,7 +2582,7 @@
             },
             {
               "img": "assets/pay_{lang}.jpg",
-              "tag": "NEW · 직접 입력",
+              "tag": "직접 입력",
               "title": "내 결제수단 그대로",
               "text": "목록에 없는 결제수단이나 카드사는 이름을 직접 적으면 됩니다. 한 번 적은 이름은 다음부터 목록에 나타납니다.",
               "points": [
@@ -2594,7 +2594,7 @@
             },
             {
               "img": "assets/two_{lang}.jpg",
-              "tag": "NEW · 큰 화면",
+              "tag": "큰 화면",
               "title": "펼치면 내역과 통계를 나란히",
               "text": "펼친 폴더블 폰, 아이폰 듀오, 태블릿에서는 왼쪽에 거래 내역, 오른쪽에 통계를 함께 보여 줍니다. 한쪽에서 달을 넘기면 다른 쪽도 따라옵니다.",
               "points": [
@@ -2785,7 +2785,7 @@
             },
             {
               "img": "assets/receipt_{lang}.jpg",
-              "tag": "NEW · レシート読み取り",
+              "tag": "レシート読み取り",
               "title": "レシートは撮るだけ",
               "text": "写真を撮るかアルバムから選ぶと、金額・日付・店名を読み取って入力します。保存前に確認するだけです。",
               "points": [
@@ -2833,7 +2833,7 @@
             },
             {
               "img": "assets/pay_{lang}.jpg",
-              "tag": "NEW · 手入力",
+              "tag": "手入力",
               "title": "自分の支払い方法をそのまま",
               "text": "一覧にない支払い方法やカード会社は、名前を手入力するだけ。一度入力した名前は次回から一覧に表示されます。",
               "points": [
@@ -2845,7 +2845,7 @@
             },
             {
               "img": "assets/two_{lang}.jpg",
-              "tag": "NEW · 大画面",
+              "tag": "大画面",
               "title": "開くと履歴と統計を並べて",
               "text": "開いた折りたたみスマホ、iPhone Duo、タブレットでは、左に取引履歴、右に統計を並べて表示します。片方で月を変えるともう片方も合わせて変わります。",
               "points": [
@@ -3036,7 +3036,7 @@
             },
             {
               "img": "assets/receipt_{lang}.jpg",
-              "tag": "NUEVO · Escanear recibos",
+              "tag": "Escanear recibos",
               "title": "Solo fotografía el recibo",
               "text": "Haz una foto o elígela de tu galería y se leen y rellenan el importe, la fecha y el comercio. Revísalos y guarda.",
               "points": [
@@ -3084,7 +3084,7 @@
             },
             {
               "img": "assets/pay_{lang}.jpg",
-              "tag": "NUEVO · Nombres propios",
+              "tag": "Nombres propios",
               "title": "Tus métodos de pago, tal cual",
               "text": "Si un método de pago o un emisor de tarjeta no está en la lista, escribe su nombre. Los nombres que escribas aparecerán la próxima vez.",
               "points": [
@@ -3096,7 +3096,7 @@
             },
             {
               "img": "assets/two_{lang}.jpg",
-              "tag": "NUEVO · Pantallas grandes",
+              "tag": "Pantallas grandes",
               "title": "Despliega y ve movimientos y estadísticas a la vez",
               "text": "En plegables abiertos, iPhone Duo y tabletas, tus movimientos quedan a la izquierda y las estadísticas a la derecha. Cambia de mes en un lado y el otro te sigue.",
               "points": [
