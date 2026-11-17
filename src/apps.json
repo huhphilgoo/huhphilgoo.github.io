@@ -2255,8 +2255,9 @@
         "en": {
           "meta": "Free · No account",
           "headline": [
-            "A budget app you actually",
-            "keep"
+            "A",
+            "budget app",
+            " you actually keep"
           ],
           "lede": "Tap the date, amount and category, and you're done. Snap a receipt to fill it in, then let the stats and calendar show where this month went. No sign-up, no bank linking — your records stay on your phone.",
           "heroAlt": "Pockit's transaction list, statistics and calendar screens",
@@ -3008,8 +3009,9 @@
         "es": {
           "meta": "Gratis · Sin cuenta",
           "headline": [
-            "Un control de gastos que sí",
-            "mantienes"
+            "Un",
+            "control de gastos",
+            " que sí mantienes"
           ],
           "lede": "Toca la fecha, el importe y la categoría, y listo. Fotografía un recibo para rellenarlo, y deja que las estadísticas y el calendario te muestren adónde fue el mes. Sin registro ni conexión con el banco: tus datos se quedan en tu teléfono.",
           "heroAlt": "Pantallas de movimientos, estadísticas y calendario de Pockit",
