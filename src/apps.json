@@ -1997,13 +1997,17 @@
     {
       "slug": "pockit",
       "category": {"en": "Finance", "ko": "금융"},
-      "name": "K-Pockit",
-      "nameKo": "K-Pockit",
+      "name": "Pockit",
+      "nameKo": "포킷 가계부",
+      "nameJa": "Pockit 家計簿",
+      "nameEs": "Pockit - Control de Gastos",
       "icon": "💸",
       "package": "com.hpg.expense_tracker",
       "storeNames": {
-        "play": "K-Pockit",
-        "appStore": "K-Pockit"
+        "play": "포킷 가계부 - Pockit",
+        "appStore": "Pockit - Budget & Expenses",
+        "appStoreJa": "Pockit 家計簿",
+        "appStoreEs": "Pockit - Control de Gastos"
       },
       "links": {
         "appStore": "https://apps.apple.com/app/id6762417616",
@@ -2255,7 +2259,7 @@
             "keep"
           ],
           "lede": "Tap the date, amount and category, and you're done. Snap a receipt to fill it in, then let the stats and calendar show where this month went. No sign-up, no bank linking — your records stay on your phone.",
-          "heroAlt": "K-Pockit's transaction list, statistics and calendar screens",
+          "heroAlt": "Pockit's transaction list, statistics and calendar screens",
           "showcase": [
             {
               "img": "assets/widgets_{lang}.jpg",
@@ -2267,7 +2271,7 @@
                 "One tap to start logging in a category",
                 "Small, medium and large; on iPhone, the Lock Screen too"
               ],
-              "alt": "A home screen with K-Pockit's budget, spending and quick-entry widgets"
+              "alt": "A home screen with Pockit's budget, spending and quick-entry widgets"
             },
             {
               "img": "assets/input_{lang}.jpg",
@@ -2398,7 +2402,7 @@
           "idea": {
             "eyebrow": "The idea",
             "title": "Nobody quits a budget app because it lacked features.",
-            "lede": "They quit because logging a coffee took a minute and a half. K-Pockit is built around the twenty seconds a day you will actually spend on this: the entry screen is the first thing you reach, and everything that would slow it down — accounts, bank connections, setup wizards — was left out."
+            "lede": "They quit because logging a coffee took a minute and a half. Pockit is built around the twenty seconds a day you will actually spend on this: the entry screen is the first thing you reach, and everything that would slow it down — accounts, bank connections, setup wizards — was left out."
           },
           "leftOutTitle": "Deliberately left out",
           "leftOut": [
@@ -2506,7 +2510,7 @@
             "가계부"
           ],
           "lede": "날짜, 금액, 카테고리만 누르면 끝. 영수증은 찍기만 하면 채워지고, 통계와 달력이 이번 달 돈이 어디로 갔는지 보여 줍니다. 가입도 계좌 연동도 없이, 기록은 폰 안에만 남습니다.",
-          "heroAlt": "K-Pockit의 거래 내역, 통계, 달력 화면",
+          "heroAlt": "포킷의 거래 내역, 통계, 달력 화면",
           "showcase": [
             {
               "img": "assets/widgets_{lang}.jpg",
@@ -2518,7 +2522,7 @@
                 "버튼 하나로 그 카테고리 기록 시작",
                 "작은·중간·큰 크기, 아이폰은 잠금화면에도"
               ],
-              "alt": "K-Pockit의 예산·지출·빠른 기록 위젯이 놓인 홈 화면"
+              "alt": "포킷의 예산·지출·빠른 기록 위젯이 놓인 홈 화면"
             },
             {
               "img": "assets/input_{lang}.jpg",
@@ -2649,7 +2653,7 @@
           "idea": {
             "eyebrow": "만든 이유",
             "title": "가계부를 포기하는 이유는 기능이 부족해서가 아닙니다.",
-            "lede": "커피 하나 적는 데 1분 30초가 걸려서 그만둡니다. K-Pockit은 하루에 실제로 쓸 수 있는 20초에 맞춰 만들었습니다. 입력 화면이 가장 먼저 손에 닿고, 그 20초를 늘리는 것들 — 계정, 계좌 연동, 초기 설정 마법사 — 은 넣지 않았습니다."
+            "lede": "커피 하나 적는 데 1분 30초가 걸려서 그만둡니다. 포킷은 하루에 실제로 쓸 수 있는 20초에 맞춰 만들었습니다. 입력 화면이 가장 먼저 손에 닿고, 그 20초를 늘리는 것들 — 계정, 계좌 연동, 초기 설정 마법사 — 은 넣지 않았습니다."
           },
           "leftOutTitle": "일부러 뺀 것",
           "leftOut": [
@@ -2757,7 +2761,7 @@
             "家計簿"
           ],
           "lede": "日付・金額・カテゴリーをタップすれば記録完了。レシートは撮るだけで入力され、統計とカレンダーで今月のお金の行き先が分かります。登録も口座連携もなく、記録はスマホの中だけに残ります。",
-          "heroAlt": "K-Pockitの取引履歴・統計・カレンダー画面",
+          "heroAlt": "Pockitの取引履歴・統計・カレンダー画面",
           "showcase": [
             {
               "img": "assets/widgets_{lang}.jpg",
@@ -2769,7 +2773,7 @@
                 "ボタンひとつでそのカテゴリの記録を開始",
                 "小・中・大のサイズ、iPhoneはロック画面にも"
               ],
-              "alt": "K-Pockitの予算・支出・入力ウィジェットを置いたホーム画面"
+              "alt": "Pockitの予算・支出・入力ウィジェットを置いたホーム画面"
             },
             {
               "img": "assets/input_{lang}.jpg",
@@ -2900,7 +2904,7 @@
           "idea": {
             "eyebrow": "作った理由",
             "title": "家計簿をやめる理由は、機能が足りないからではありません。",
-            "lede": "コーヒー1杯を記録するのに1分30秒かかるからやめるのです。K-Pockitは、実際に使える1日20秒に合わせて作りました。入力画面が一番手前にあり、その20秒を延ばすもの — アカウント、口座連携、初期設定ウィザード — は入れていません。"
+            "lede": "コーヒー1杯を記録するのに1分30秒かかるからやめるのです。Pockitは、実際に使える1日20秒に合わせて作りました。入力画面が一番手前にあり、その20秒を延ばすもの — アカウント、口座連携、初期設定ウィザード — は入れていません。"
           },
           "leftOutTitle": "あえて入れなかったもの",
           "leftOut": [
@@ -3008,7 +3012,7 @@
             "mantienes"
           ],
           "lede": "Toca la fecha, el importe y la categoría, y listo. Fotografía un recibo para rellenarlo, y deja que las estadísticas y el calendario te muestren adónde fue el mes. Sin registro ni conexión con el banco: tus datos se quedan en tu teléfono.",
-          "heroAlt": "Pantallas de movimientos, estadísticas y calendario de K-Pockit",
+          "heroAlt": "Pantallas de movimientos, estadísticas y calendario de Pockit",
           "showcase": [
             {
               "img": "assets/widgets_{lang}.jpg",
@@ -3020,7 +3024,7 @@
                 "Un toque para empezar a registrar en una categoría",
                 "Pequeño, mediano y grande; en iPhone, también en la pantalla de bloqueo"
               ],
-              "alt": "Pantalla de inicio con los widgets de presupuesto, gastos y entrada rápida de K-Pockit"
+              "alt": "Pantalla de inicio con los widgets de presupuesto, gastos y entrada rápida de Pockit"
             },
             {
               "img": "assets/input_{lang}.jpg",
@@ -3151,7 +3155,7 @@
           "idea": {
             "eyebrow": "La idea",
             "title": "Nadie abandona una app de gastos porque le falten funciones.",
-            "lede": "La abandona porque anotar un café llevaba minuto y medio. K-Pockit está hecha para los veinte segundos al día que de verdad vas a dedicarle: la pantalla de entrada es lo primero que tocas, y todo lo que alargaría esos segundos — cuentas, vinculación bancaria, asistentes de configuración — se quedó fuera."
+            "lede": "La abandona porque anotar un café llevaba minuto y medio. Pockit está hecha para los veinte segundos al día que de verdad vas a dedicarle: la pantalla de entrada es lo primero que tocas, y todo lo que alargaría esos segundos — cuentas, vinculación bancaria, asistentes de configuración — se quedó fuera."
           },
           "leftOutTitle": "Dejado fuera a propósito",
           "leftOut": [
